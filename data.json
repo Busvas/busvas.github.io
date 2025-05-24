@@ -1,0 +1,737 @@
+{
+    "provincias": [
+        {
+            "id": "chimborazo",
+            "nombre": "Chimborazo",
+            "terminales": [
+                {
+                    "id": "riobamba",
+                    "nombre": "Riobamba",
+                    "cooperativas": [
+                        {
+                            "id": "riobamba",
+                            "nombre": "Coop Riobamba",
+                            "logo": "riobamba.png",
+                            "rating_global": {
+                                "puntualidad": 4.5,
+                                "comodidad": 4.2,
+                                "cinturón de seguridad": 3,
+                                "horarios actualizados": 4
+                            },
+                            "telefono": "03 296 1583",
+                            "sitio_web": "https://www.facebook.com/TransportesRiobamba/?locale=es_LA",
+                            "servicios": [
+                                "WiFi",
+                                "Aire acondicionado",
+                                "Enchufes"
+                            ],
+                            "rutas": [
+                                {
+                                    "destino": "Santo Domingo",
+                                    "horarios": [
+                                        "03:20",
+                                        "04:40",
+                                        "05:50",
+                                        "06:50",
+                                        "08:45",
+                                        "10:50",
+                                        "12:20",
+                                        "14:20",
+                                        "15:50",
+                                        "17:50"
+                                    ],
+                                    "costo": "08.00"
+                                },
+                                {
+                                    "destino": "Quito",
+                                    "horarios": [
+                                        "03:45",
+                                        "04:45",
+                                        "06:15",
+                                        "10:30",
+                                        "11:15",
+                                        "13:45",
+                                        "16:00",
+                                        "16:45",
+                                        "21:30"
+                                    ]
+                                },
+                                {
+                                    "destino": "Guayaquil",
+                                    "horarios": [
+                                        "01:00",
+                                        "06:00",
+                                        "09:00",
+                                        "15:00"
+                                    ]
+                                },
+                                {
+                                    "destino": "Puyo",
+                                    "horarios": [
+                                        "09:00",
+                                        "14:30",
+                                        "18:00"
+                                    ]
+                                },
+                                {
+                                    "destino": "Puyo - Tena",
+                                    "horarios": [
+                                        "04:00",
+                                        "05:00",
+                                        "08:00",
+                                        "10:00",
+                                        "12:00",
+                                        "15:00"
+                                    ]
+                                },
+                                {
+                                    "destino": "Macas",
+                                    "horarios": [
+                                        "02:00",
+                                        "05:00",
+                                        "07:00",
+                                        "10:00",
+                                        "13:00",
+                                        "14:15",
+                                        "16:00",
+                                        "17:30",
+                                        "19:00"
+                                    ]
+                                },
+                                {
+                                    "destino": "Gualaquiza - Zamora",
+                                    "horarios": [
+                                        "19:00",
+                                        "20:45"
+                                    ]
+                                },
+                                {
+                                    "destino": "Baños",
+                                    "horarios": [
+                                        "05:40",
+                                        "07:20",
+                                        "10:40",
+                                        "12:20",
+                                        "15:40",
+                                        "17:20",
+                                        "18:20"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "chimborazo",
+                            "nombre": "Coop Chimborazo",
+                            "logo": "chimborazo.png",
+                            "rating_global": {},
+                            "telefono": "(03) 2962 012",
+                            "sitio_web": "https://cooperativachimborazo.com",
+                            "servicios": [
+                                "WiFi",
+                                "Aire acondicionado",
+                                "TV"
+                            ],
+                            "rutas": [
+                                {
+                                    "destino": "Quito",
+                                    "horarios": [
+                                        "03:15",
+                                        "05:30",
+                                        "06:30",
+                                        "06:45",
+                                        "09:15",
+                                        "09:30",
+                                        "10:45",
+                                        "11:00",
+                                        "12:00",
+                                        "12:30",
+                                        "13:15",
+                                        "14:00",
+                                        "15:15",
+                                        "17:00",
+                                        "17:30",
+                                        "19:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Guayaquil",
+                                    "horarios": [
+                                        "05:30",
+                                        "10:00",
+                                        "12:00",
+                                        "14:30",
+                                        "17:30",
+                                        "18:30"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "bolivar",
+                            "nombre": "Coop Bolivar",
+                            "logo": "bolivar.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Guaranda",
+                                    "horarios": [
+                                        "05:00",
+                                        "05:45",
+                                        "08:30",
+                                        "11:00",
+                                        "13:10",
+                                        "14:00",
+                                        "15:00",
+                                        "17:00"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "10noviembre",
+                            "nombre": "Coop 10 de Noviembre",
+                            "logo": "10noviembre.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Guaranda - San Miguel",
+                                    "horarios": [
+                                        "07:30",
+                                        "10:30",
+                                        "16:00",
+                                        "20:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Guaranda - San Miguel - Chillanes",
+                                    "horarios": [
+                                        "10:30"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "sangay",
+                            "nombre": "Coop Sangay",
+                            "logo": "sangay.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Latacunga",
+                                    "horarios": [
+                                        "05:10",
+                                        "07:40",
+                                        "11:40",
+                                        "13:40",
+                                        "15:40",
+                                        "17:40",
+                                        "18:40"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "banos",
+                            "nombre": "Coop Baños",
+                            "logo": "banos.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Baños",
+                                    "horarios": [
+                                        "09:20",
+                                        "11:20",
+                                        "16:20"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Coca (Puyo-Tena-Loreto)",
+                                    "horarios": [
+                                        "21:00",
+                                        "21:45",
+                                        "00:00",
+                                        "01:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Lago Agrio (Loreto-Coca-Sacha-Proyecto)",
+                                    "horarios": [
+                                        "23:30",
+                                        "04:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Sushufindi (Tena-Loreto-Coca-Sacha)",
+                                    "horarios": [
+                                        "19:45",
+                                        "23:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Libertad (Guayaquil-Santa Elena)",
+                                    "horarios": [
+                                        "20:45",
+                                        "22:45",
+                                        "00:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Guayaquil",
+                                    "horarios": [
+                                        "14:15",
+                                        "16:30",
+                                        "20:45",
+                                        "22:45",
+                                        "00:30",
+                                        "02:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Huaquillas (El Triunfo-Naranjal-Machala)",
+                                    "horarios": [
+                                        "23:30",
+                                        "02:30",
+                                        "04:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Manta (Guayaquil-Nobol-Jipijapa-Portoviejo)",
+                                    "horarios": [
+                                        "22:45"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "patria",
+                            "nombre": "Coop Patria",
+                            "logo": "patria.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Guayaquil",
+                                    "horarios": [
+                                        "00:30",
+                                        "02:00",
+                                        "03:00",
+                                        "03:30",
+                                        "04:30",
+                                        "05:00",
+                                        "06:30",
+                                        "07:00",
+                                        "07:30",
+                                        "08:00",
+                                        "08:30",
+                                        "09:30",
+                                        "10:30",
+                                        "11:00",
+                                        "11:30",
+                                        "12:40",
+                                        "13:30",
+                                        "14:00",
+                                        "15:30",
+                                        "16:00",
+                                        "16:30",
+                                        "17:00",
+                                        "18:00",
+                                        "19:00",
+                                        "19:40",
+                                        "20:30",
+                                        "21:30",
+                                        "22:30",
+                                        "23:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Quito",
+                                    "horarios": [
+                                        "03:30",
+                                        "05:00",
+                                        "07:00",
+                                        "08:00",
+                                        "08:30",
+                                        "09:45",
+                                        "10:00",
+                                        "11:30",
+                                        "11:45",
+                                        "12:15",
+                                        "13:00",
+                                        "14:15",
+                                        "14:30",
+                                        "16:15",
+                                        "17:45",
+                                        "18:15",
+                                        "18:45",
+                                        "19:15",
+                                        "19:45",
+                                        "20:15",
+                                        "22:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Machala",
+                                    "horarios": [
+                                        "09:45",
+                                        "14:15"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Cuenca",
+                                    "horarios": [
+                                        "05:30",
+                                        "07:30",
+                                        "09:30",
+                                        "11:00",
+                                        "13:00",
+                                        "15:30",
+                                        "16:45",
+                                        "19:30",
+                                        "22:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Babahoyo",
+                                    "horarios": [
+                                        "06:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Huaquillas",
+                                    "horarios": [
+                                        "21:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Santa Elena",
+                                    "horarios": [
+                                        "23:30"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "ecuador",
+                            "nombre": "Coop Ecuador",
+                            "logo": "ecuador.png",
+                            "rating_global": {},
+                            "telefono": "032 962 011",
+                            "rutas": [
+                                {
+                                    "destino": "Quito",
+                                    "horarios": [
+                                        "01:30",
+                                        "01:30",
+                                        "02:00",
+                                        "02:15",
+                                        "02:45",
+                                        "04:15",
+                                        "04:30",
+                                        "05:45",
+                                        "06:00",
+                                        "07:30",
+                                        "08:45",
+                                        "09:00",
+                                        "13:30",
+                                        "14:50",
+                                        "15:30",
+                                        "15:45",
+                                        "17:15",
+                                        "18:00",
+                                        "19:30",
+                                        "20:00",
+                                        "20:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Tena",
+                                    "horarios": [
+                                        "17:35",
+                                        "18:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Guayaquil",
+                                    "horarios": [
+                                        "04:00",
+                                        "13:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Cuenca",
+                                    "horarios": [
+                                        "05:30",
+                                        "07:30",
+                                        "09:30",
+                                        "11:00",
+                                        "13:00",
+                                        "15:30",
+                                        "16:45",
+                                        "19:30",
+                                        "22:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Babahoyo",
+                                    "horarios": [
+                                        "06:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Huaquillas",
+                                    "horarios": [
+                                        "21:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Santa Elena",
+                                    "horarios": [
+                                        "23:30"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "santo-domingo",
+            "nombre": "Sto Dgo de los Tsáchilas",
+            "terminales": [
+                {
+                    "id": "santo-domingo",
+                    "nombre": "Santo Domingo",
+                    "cooperativas": [
+                        {
+                            "id": "riobamba",
+                            "nombre": "Coop Riobamba",
+                            "logo": "riobamba.png",
+                            "rating_global": {
+                                "puntualidad": 4.5,
+                                "comodidad": 4.2,
+                                "cinturón de seguridad": 2,
+                                "horarios actualizados": 2
+                            },
+                            "telefono": "02 3778 852",
+                            "sitio_web": "https://www.facebook.com/TransportesRiobamba/?locale=es_LA",
+                            "servicios": [
+                                "Aire acondicionado cuando quieren, no actualizan los horarios"
+                            ],
+                            "rutas": [
+                                {
+                                    "destino": "Riobamba",
+                                    "horarios": [
+                                        "02:00",
+                                        "03:45",
+                                        "06:00",
+                                        "07:00",
+                                        "08:00",
+                                        "09:00",
+                                        "10:30",
+                                        "11:30",
+                                        "13:30",
+                                        "14:45",
+                                        "15:45",
+                                        "16:50",
+                                        "19:00"
+                                    ],
+                                    "costo": "08.00"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bolivar",
+            "nombre": "Bolivar",
+            "terminales": [
+                {
+                    "id": "guaranda",
+                    "nombre": "Guaranda",
+                    "cooperativas": [
+                        {
+                            "id": "bolivar",
+                            "nombre": "Coop Bolivar",
+                            "logo": "bolivar.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Riobamba",
+                                    "horarios": [
+                                        "06:00",
+                                        "08:00",
+                                        "10:00",
+                                        "12:00",
+                                        "13:00",
+                                        "14:00",
+                                        "16:00",
+                                        "18:00"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "pichincha",
+            "nombre": "Pichincha",
+            "terminales": [
+                {
+                    "id": "quitumbe",
+                    "nombre": "Sur Quitumbe",
+                    "cooperativas": [
+                        {
+                            "id": "patria",
+                            "nombre": "Coop Patria",
+                            "logo": "patria.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Riobamba",
+                                    "horarios": [
+                                        "06:00",
+                                        "08:00",
+                                        "10:00",
+                                        "12:00",
+                                        "13:00",
+                                        "14:00",
+                                        "16:00",
+                                        "18:00"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "zamora",
+            "nombre": "Zamora Chinchipe",
+            "terminales": [
+                {
+                    "id": "yantzaza",
+                    "nombre": "Yantzaza",
+                    "cooperativas": [
+                        {
+                            "id": "cariamanga",
+                            "nombre": "Coop Union Cariamanga Int",
+                            "logo": "cariamanga.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "El Pangui",
+                                    "horarios": [
+                                        "08:40",
+                                        "10:15",
+                                        "13:15",
+                                        "17:45",
+                                        "20:15"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cariamanga",
+                            "nombre": "Coop Union Cariamanga Int",
+                            "logo": "cariamanga.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "El Pangui",
+                                    "horarios": [
+                                        "08:40",
+                                        "10:15",
+                                        "13:15",
+                                        "17:45",
+                                        "20:15"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "ciudades_principales": [
+        "Quito",
+        "Guayaquil",
+        "Cuenca",
+        "Santo Domingo",
+        "Riobamba"
+    ],
+    "anuncios": {
+            "provincias": {
+                "imagen": "img/anuncios/banner-ofi.png",
+                "link": "https://www.facebook.com/ofisolucionesintegrales?locale=es_LA"
+            },
+            "terminales": {
+                "imagen": "img/anuncios/banner-ofi.png",
+                "link": "https://www.facebook.com/ofisolucionesintegrales?locale=es_LA"
+            },
+            "cooperativas": {
+                "imagen": "img/anuncios/banner-ofi.png",
+                "link": "https://www.facebook.com/ofisolucionesintegrales?locale=es_LA"
+            }
+        
+    }
+}
