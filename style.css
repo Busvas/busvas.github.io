@@ -518,6 +518,7 @@ img {
   padding: 5px;
   height: 100px;
   overflow: hidden;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
 }
 
 .card-img {
@@ -532,14 +533,13 @@ img {
 }
 
 .card-body {
-  padding: 1rem;
+  padding: 0rem 0.2rem;
   text-align: center;
 }
 
 .card-title {
   font-weight: 600;
   color: var(--primary);
-  margin-bottom: 0.3rem;
   font-size: 1.1rem;
 }
 
