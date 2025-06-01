@@ -636,6 +636,1758 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "id": "carcelen",
+                    "nombre": "Norte Carcelen",
+                    "cooperativas": [
+                        {
+                            "id": "esmeraldas",
+                            "nombre": "Trans Esmeraldas",
+                            "logo": "esmeraldas.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Terminal terrestre Esmeraldas",
+                                    "horarios": [
+                                        "11:10",
+                                        "14:05",
+                                        "16:30",
+                                        "19:40",
+                                        "20:40",
+                                        "23:15",
+                                        "00:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Atacames",
+                                    "horarios": [
+                                        "08:00",
+                                        "11:10",
+                                        "14:05",
+                                        "18:10",
+                                        "22:15",
+                                        "23:55",
+                                        "00:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Machala",
+                                    "horarios": [
+                                        "21:15",
+                                        "22:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Manta",
+                                    "horarios": [
+                                        "19:45",
+                                        "21:45",
+                                        "22:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Guayaquil",
+                                    "horarios": [
+                                        "20:50",
+                                        "22:10"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre del Coca",
+                                    "horarios": [
+                                        "21:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Lago Agrio",
+                                    "horarios": [
+                                        "23:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Huaquillas",
+                                    "horarios": [
+                                        "18:40",
+                                        "19:44",
+                                        "21:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Portoviejo",
+                                    "horarios": [
+                                        "21:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "San Lorenzo",
+                                    "horarios": [
+                                        "23:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Santa Elena",
+                                    "horarios": [
+                                        "20:30",
+                                        "21:20"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Zaruma",
+                                    "horarios": [
+                                        "Sin Horarios"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Montañita",
+                                    "horarios": [
+                                        "21:20",
+                                        "22:20"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "aerotaxi",
+                            "nombre": "Aerotaxi",
+                            "logo": "aerotaxi.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Terminal terrestre Esmeraldas",
+                                    "horarios": [
+                                        "08:55",
+                                        "11:30",
+                                        "13:45",
+                                        "16:00",
+                                        "22:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Guayaquil",
+                                    "horarios": [
+                                        "07:30",
+                                        "10:00",
+                                        "12:00",
+                                        "14:40",
+                                        "17:35",
+                                        "21:00",
+                                        "21:50",
+                                        "22:20"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "occidental",
+                            "nombre": "Occidental",
+                            "logo": "occidental.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Terminal terrestre Esmeraldas",
+                                    "horarios": [
+                                        "10:00",
+                                        "14:20",
+                                        "22:00",
+                                        "23:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Camilo Ponce Enriquez",
+                                    "horarios": [
+                                        "11:30",
+                                        "17:15",
+                                        "20:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Viche",
+                                    "horarios": [
+                                        "14:20",
+                                        "22:15",
+                                        "23:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Ventanas",
+                                    "horarios": [
+                                        "11:30",
+                                        "17:15",
+                                        "20:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Tonchigue",
+                                    "horarios": [
+                                        "22:00",
+                                        "23:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Tonsupa",
+                                    "horarios": [
+                                        "10:00",
+                                        "22:00",
+                                        "23:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Sua",
+                                    "horarios": [
+                                        "22:00",
+                                        "23:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Same",
+                                    "horarios": [
+                                        "22:00",
+                                        "23:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Santo Domingo",
+                                    "horarios": [
+                                        "11:30",
+                                        "14:25",
+                                        "17:15",
+                                        "20:30",
+                                        "23:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Santa Rosa",
+                                    "horarios": [
+                                        "17:15",
+                                        "20:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre El Guabo",
+                                    "horarios": [
+                                        "11:30",
+                                        "17:15",
+                                        "20:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Huaquillas",
+                                    "horarios": [
+                                        "11:30",
+                                        "17:15",
+                                        "20:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre La Concordia",
+                                    "horarios": [
+                                        "14:20",
+                                        "22:00",
+                                        "23:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Arenillas",
+                                    "horarios": [
+                                        "17:15",
+                                        "20:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre La Independencia",
+                                    "horarios": [
+                                        "14:20",
+                                        "22:00",
+                                        "23:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Babahoyo",
+                                    "horarios": [
+                                        "11:30",
+                                        "17:15",
+                                        "20:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Buena Fe",
+                                    "horarios": [
+                                        "11:30",
+                                        "17:15",
+                                        "20:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre La Unión",
+                                    "horarios": [
+                                        "14:20",
+                                        "22:00",
+                                        "23:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal Terrestre de Machala",
+                                    "horarios": [
+                                        "17:15",
+                                        "20:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Naranjal",
+                                    "horarios": [
+                                        "11:30",
+                                        "17:15",
+                                        "20:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Pasaje",
+                                    "horarios": [
+                                        "20:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Quevedo",
+                                    "horarios": [
+                                        "11:30",
+                                        "17:15",
+                                        "20:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Quininde",
+                                    "horarios": [
+                                        "14:20",
+                                        "22:00",
+                                        "23:45"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "san cristobal",
+                            "nombre": "Coop. San Cristobal",
+                            "logo": "-",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Terminal Terrestre de Tulcán",
+                                    "horarios": [
+                                        "00:30",
+                                        "01:45",
+                                        "07:40",
+                                        "08:40",
+                                        "11:20",
+                                        "17:40",
+                                        "21:00",
+                                        "23:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Otavalo",
+                                    "horarios": [
+                                        "21:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal Terrestre de Ibarra",
+                                    "horarios": [
+                                        "17:40"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Temrinal Terrestre de Santa Elena",
+                                    "horarios": [
+                                        "19:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Guayaquil",
+                                    "horarios": [
+                                        "01:00",
+                                        "09:15",
+                                        "11:15",
+                                        "12:15",
+                                        "14:15",
+                                        "15:10",
+                                        "17:50",
+                                        "19:45",
+                                        "20:40",
+                                        "22:40",
+                                        "23:50"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal Terrestre de Huaquillas",
+                                    "horarios": [
+                                        "16:40",
+                                        "22:50"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal Terrestre de Machala",
+                                    "horarios": [
+                                        "16:40",
+                                        "22:50"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "flota imbabura",
+                            "nombre": "Flota Imbabura",
+                            "logo": "-",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Terminal terrestre de Cuenca",
+                                    "horarios": [
+                                        "17:30",
+                                        "19:00",
+                                        "20:30",
+                                        "21:15",
+                                        "22:00",
+                                        "13:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Guayaquil",
+                                    "horarios": [
+                                        "08:45",
+                                        "13:45",
+                                        "19:45",
+                                        "20:30",
+                                        "21:45",
+                                        "22:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Manta",
+                                    "horarios": [
+                                        "22:00",
+                                        "22:15"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Temrina terrestre de Santa Elena",
+                                    "horarios": [
+                                        "19:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Guayaquil",
+                                    "horarios": [
+                                        "01:00",
+                                        "09:15",
+                                        "11:15",
+                                        "12:15",
+                                        "14:15",
+                                        "15:10",
+                                        "17:50",
+                                        "19:45",
+                                        "20:40",
+                                        "22:40",
+                                        "23:50"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal Terrestre de Huaquillas",
+                                    "horarios": [
+                                        "16:40",
+                                        "22:50"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal Terrestre de Machala",
+                                    "horarios": [
+                                        "16:40",
+                                        "22:50"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "transporte ecuador",
+                            "nombre": "Coop. Ecuador",
+                            "logo": "patria.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Terminal terrestre Ventanas",
+                                    "horarios": [
+                                        "05:15",
+                                        "07:00",
+                                        "08:20",
+                                        "10:30",
+                                        "11:15",
+                                        "12:05",
+                                        "13:15",
+                                        "14:25",
+                                        "15:40",
+                                        "18:05",
+                                        "21:00",
+                                        "22:05",
+                                        "23:21",
+                                        "23:55"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Santo Domingo",
+                                    "horarios": [
+                                        "05:15",
+                                        "07:00",
+                                        "08:20",
+                                        "10:30",
+                                        "11:15",
+                                        "12:05",
+                                        "13:15",
+                                        "14:25",
+                                        "15:40",
+                                        "18:05",
+                                        "21:00",
+                                        "22:05",
+                                        "23:21",
+                                        "23:55"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Quevedo",
+                                    "horarios": [
+                                        "05:15",
+                                        "07:00",
+                                        "08:20",
+                                        "10:30",
+                                        "11:15",
+                                        "12:05",
+                                        "13:15",
+                                        "14:25",
+                                        "15:40",
+                                        "18:05",
+                                        "21:00",
+                                        "22:05",
+                                        "23:21",
+                                        "23:55"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Babahoyo",
+                                    "horarios": [
+                                        "05:15",
+                                        "07:00",
+                                        "08:20",
+                                        "10:30",
+                                        "11:15",
+                                        "12:05",
+                                        "13:15",
+                                        "14:25",
+                                        "15:40",
+                                        "18:05",
+                                        "21:00",
+                                        "22:05",
+                                        "23:21",
+                                        "23:55"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Guayaquil",
+                                    "horarios": [
+                                        "05:15",
+                                        "07:00",
+                                        "08:20",
+                                        "10:30",
+                                        "11:15",
+                                        "12:05",
+                                        "13:15",
+                                        "14:25",
+                                        "15:40",
+                                        "18:05",
+                                        "21:00",
+                                        "22:05",
+                                        "23:21",
+                                        "23:55"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "reina del camino",
+                            "nombre": "Reina del Camino",
+                            "logo": "patria.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Tosagua",
+                                    "horarios": [
+                                        "11:05",
+                                        "14:00",
+                                        "17:00",
+                                        "21:00",
+                                        "22:40",
+                                        "23:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre San Vicente",
+                                    "horarios": [
+                                        "23:55"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Junin",
+                                    "horarios": [
+                                        "08:00",
+                                        "19:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Portoviejo",
+                                    "horarios": [
+                                        "08:00",
+                                        "11:05",
+                                        "14:00",
+                                        "17:00",
+                                        "19:00",
+                                        "21:00",
+                                        "22:40",
+                                        "23:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Chone",
+                                    "horarios": [
+                                        "08:00",
+                                        "11:05",
+                                        "14:00",
+                                        "17:00",
+                                        "19:00",
+                                        "21:00",
+                                        "22:40",
+                                        "23:00",
+                                        "23:55"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Manta",
+                                    "horarios": [
+                                        "08:00",
+                                        "11:05",
+                                        "14:00",
+                                        "17:00",
+                                        "19:00",
+                                        "21:00",
+                                        "22:15",
+                                        "22:30",
+                                        "22:40",
+                                        "23:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Bahia de Caráquez",
+                                    "horarios": [
+                                        "23:55"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Buena Fe",
+                                    "horarios": [
+                                        "05:15",
+                                        "07:00",
+                                        "08:20",
+                                        "10:30",
+                                        "11:15",
+                                        "12:05",
+                                        "13:15",
+                                        "14:25",
+                                        "15:40",
+                                        "18:05",
+                                        "21:00",
+                                        "22:05",
+                                        "23:21",
+                                        "23:55"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Calceta",
+                                    "horarios": [
+                                        "08:00",
+                                        "19:00"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "vencedores",
+                            "nombre": "Trans Vencedores",
+                            "logo": "vencedores.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Tulcán",
+                                    "horarios": [
+                                        "05:10",
+                                        "09:00",
+                                        "12:30",
+                                        "15:10"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Riobamba",
+                                    "horarios": [
+                                        "04:15",
+                                        "08:00",
+                                        "10:15",
+                                        "12:00",
+                                        "13:30",
+                                        "15:10",
+                                        "16:45",
+                                        "19:45",
+                                        "20:15"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre San Vicente",
+                                    "horarios": [
+                                        "14:45",
+                                        "23:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Pedernales",
+                                    "horarios": [
+                                        "07:30",
+                                        "10:00",
+                                        "13:15",
+                                        "21:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Canoa",
+                                    "horarios": [
+                                        "03:45",
+                                        "11:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Jama",
+                                    "horarios": [
+                                        "14:40",
+                                        "23:00",
+                                        "24:00"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "coactur",
+                            "nombre": "Coactur",
+                            "logo": "patria.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Terminal terrestre de Portoviejo",
+                                    "horarios": [
+                                        "09:00",
+                                        "12:00",
+                                        "15:00",
+                                        "17:45",
+                                        "19:30",
+                                        "21:10",
+                                        "23:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Pedernales",
+                                    "horarios": [
+                                        "20:15"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Manta",
+                                    "horarios": [
+                                        "09:00",
+                                        "12:00",
+                                        "15:00",
+                                        "17:45",
+                                        "19:30",
+                                        "21:10",
+                                        "23:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Montecristi",
+                                    "horarios": [
+                                        "09:00",
+                                        "12:00",
+                                        "15:00",
+                                        "17:45",
+                                        "19:30",
+                                        "21:10",
+                                        "23:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Chone",
+                                    "horarios": [
+                                        "09:00",
+                                        "12:00",
+                                        "15:00",
+                                        "17:45",
+                                        "19:30",
+                                        "21:10",
+                                        "23:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Bahia de Caráquez",
+                                    "horarios": [
+                                        "20:15"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "panamericana",
+                            "nombre": "Panamericana",
+                            "logo": "panamericana.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Terminal terrestre Santa Rosa",
+                                    "horarios": [
+                                        "18:15"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Manta",
+                                    "horarios": [
+                                        "21:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Arenillas",
+                                    "horarios": [
+                                        "18:15"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Guayaquil",
+                                    "horarios": [
+                                        "21:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Huaquillas",
+                                    "horarios": [
+                                        "18:15"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Machala",
+                                    "horarios": [
+                                        "18:15"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Milagro",
+                                    "horarios": [
+                                        "11:30",
+                                        "17:15",
+                                        "20:30",
+                                        "22:00",
+                                        "23:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Muisne",
+                                    "horarios": [
+                                        "23:45"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "loja",
+                            "nombre": "Coop. Transporte Loja",
+                            "logo": "-.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Terminal terrestre Shushufindi",
+                                    "horarios": [
+                                        "22:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Sacha",
+                                    "horarios": [
+                                        "22:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Coca",
+                                    "horarios": [
+                                        "22:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Macara",
+                                    "horarios": [
+                                        "18:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Loja",
+                                    "horarios": [
+                                        "19:15",
+                                        "20:00",
+                                        "20:45",
+                                        "21:15"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Célica",
+                                    "horarios": [
+                                        "18:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Alamor",
+                                    "horarios": [
+                                        "18:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Machala",
+                                    "horarios": [
+                                        "21:30"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "carlos aray",
+                            "nombre": "Coop. Carlos Alberto Aray",
+                            "logo": "carlos_aray.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Terminal terrestre de Manta",
+                                    "horarios": [
+                                        "09:00",
+                                        "10:10",
+                                        "13:00",
+                                        "19:00"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "kennedy",
+                            "nombre": "Coop Kennedy",
+                            "logo": "patria.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Terminal terrestre Santo Domingo",
+                                    "horarios": [
+                                        "05:15",
+                                        "08:15",
+                                        "10:45",
+                                        "14:00",
+                                        "17:30"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "aloag",
+                            "nombre": "Coop Aloag",
+                            "logo": "patria.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Puerto Quito",
+                                    "horarios": [
+                                        "04:20",
+                                        "05:45",
+                                        "06:45",
+                                        "09:45",
+                                        "11:15",
+                                        "12:25",
+                                        "13:35",
+                                        "14:30",
+                                        "15:30",
+                                        "16:30",
+                                        "19:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Pedro Vicente Maldonado",
+                                    "horarios": [
+                                        "04:20",
+                                        "05:45",
+                                        "06:45",
+                                        "09:45",
+                                        "11:15",
+                                        "12:25",
+                                        "13:35",
+                                        "14:30",
+                                        "15:30",
+                                        "16:30",
+                                        "19:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Nanegalito",
+                                    "horarios": [
+                                        "04:20",
+                                        "05:45",
+                                        "06:45",
+                                        "09:45",
+                                        "11:15",
+                                        "12:25",
+                                        "13:35",
+                                        "14:30",
+                                        "15:30",
+                                        "16:30",
+                                        "19:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "San Miguel de los Bancos",
+                                    "horarios": [
+                                        "04:20",
+                                        "05:45",
+                                        "06:45",
+                                        "09:45",
+                                        "11:15",
+                                        "12:25",
+                                        "13:35",
+                                        "14:30",
+                                        "15:30",
+                                        "16:30",
+                                        "19:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Santo Domingo",
+                                    "horarios": [
+                                        "07:00",
+                                        "08:30",
+                                        "09:30",
+                                        "10:10",
+                                        "12:30",
+                                        "14:30",
+                                        "16:20",
+                                        "18:00"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "amazonas",
+                            "nombre": "Coop Transportes Amazonas",
+                            "logo": "amazonas.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Terminal terrestre de Tena",
+                                    "horarios": [
+                                        "11:30",
+                                        "12:00",
+                                        "14:00",
+                                        "15:00",
+                                        "15:30",
+                                        "17:00",
+                                        "18:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Puyo",
+                                    "horarios": [
+                                        "07:55",
+                                        "12:00",
+                                        "15:35",
+                                        "17:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Misahualli",
+                                    "horarios": [
+                                        "11:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Archidona",
+                                    "horarios": [
+                                        "11:30",
+                                        "12:00",
+                                        "14:00",
+                                        "15:00",
+                                        "15:30",
+                                        "17:00",
+                                        "18:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Baeza",
+                                    "horarios": [
+                                        "11:30",
+                                        "12:00",
+                                        "14:00",
+                                        "15:00",
+                                        "15:30",
+                                        "17:00",
+                                        "18:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Papallacta",
+                                    "horarios": [
+                                        "11:30",
+                                        "12:00",
+                                        "14:00",
+                                        "15:00",
+                                        "15:30",
+                                        "17:00",
+                                        "18:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Baños",
+                                    "horarios": [
+                                        "19:25"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Sur de Ambato",
+                                    "horarios": [
+                                        "03:00",
+                                        "10:20",
+                                        "19:15"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "expresso tulcan",
+                            "nombre": "Expreso Tulcán",
+                            "logo": "expreso_tulcan.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Terminal terrestre San Gabriel",
+                                    "horarios": [
+                                        "01:00",
+                                        "02:00",
+                                        "03:15",
+                                        "04:40",
+                                        "07:10",
+                                        "09:20",
+                                        "10:30",
+                                        "12:00",
+                                        "13:20",
+                                        "14:10",
+                                        "15:40",
+                                        "17:30",
+                                        "20:40",
+                                        "22:00",
+                                        "23:59"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Tulcán",
+                                    "horarios": [
+                                        "01:00",
+                                        "02:00",
+                                        "03:15",
+                                        "04:40",
+                                        "07:10",
+                                        "09:20",
+                                        "10:30",
+                                        "12:00",
+                                        "13:20",
+                                        "14:10",
+                                        "15:40",
+                                        "17:30",
+                                        "20:40",
+                                        "22:00",
+                                        "23:59"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Otavalo",
+                                    "horarios": [
+                                        "01:00",
+                                        "02:00",
+                                        "03:15",
+                                        "04:40",
+                                        "07:10",
+                                        "09:20",
+                                        "10:30",
+                                        "12:00",
+                                        "13:20",
+                                        "14:10",
+                                        "15:40",
+                                        "17:30",
+                                        "20:40",
+                                        "22:00",
+                                        "23:59"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Julio Andrade - Huaca",
+                                    "horarios": [
+                                        "01:00",
+                                        "02:00",
+                                        "03:15",
+                                        "04:40",
+                                        "07:10",
+                                        "09:20",
+                                        "10:30",
+                                        "12:00",
+                                        "13:20",
+                                        "14:10",
+                                        "15:40",
+                                        "17:30",
+                                        "20:40",
+                                        "22:00",
+                                        "23:59"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Ibarra",
+                                    "horarios": [
+                                        "01:00",
+                                        "02:00",
+                                        "03:15",
+                                        "04:40",
+                                        "07:10",
+                                        "09:20",
+                                        "10:30",
+                                        "12:00",
+                                        "13:20",
+                                        "14:10",
+                                        "15:40",
+                                        "17:30",
+                                        "20:40",
+                                        "22:00",
+                                        "23:59"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Bolívar",
+                                    "horarios": [
+                                        "01:00",
+                                        "02:00",
+                                        "03:15",
+                                        "04:40",
+                                        "07:10",
+                                        "09:20",
+                                        "10:30",
+                                        "12:00",
+                                        "13:20",
+                                        "14:10",
+                                        "15:40",
+                                        "17:30",
+                                        "20:40",
+                                        "22:00",
+                                        "23:59"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Atuntaqui",
+                                    "horarios": [
+                                        "01:00",
+                                        "02:00",
+                                        "03:15",
+                                        "04:40",
+                                        "07:10",
+                                        "09:20",
+                                        "10:30",
+                                        "12:00",
+                                        "13:20",
+                                        "14:10",
+                                        "15:40",
+                                        "17:30",
+                                        "20:40",
+                                        "22:00",
+                                        "23:59"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "transportes baños",
+                            "nombre": "Coop Transportes Baños",
+                            "logo": "transportes_banos.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Terminal terrestre Shushufindi",
+                                    "horarios": [
+                                        "22:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Sacha",
+                                    "horarios": [
+                                        "22:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Puyo",
+                                    "horarios": [
+                                        "20:05"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Macas",
+                                    "horarios": [
+                                        "20:05"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Loreto",
+                                    "horarios": [
+                                        "22:50"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Lago Agrio",
+                                    "horarios": [
+                                        "22:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Coca",
+                                    "horarios": [
+                                        "22:50"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Baños",
+                                    "horarios": [
+                                        "20:05"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "pullman carchi",
+                            "nombre": "Coop Pullman Carchi",
+                            "logo": "pullman_carchi.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Terminal terrestre de Tulcán",
+                                    "horarios": [
+                                        "02:45",
+                                        "03:45",
+                                        "04:30",
+                                        "05:40",
+                                        "06:30",
+                                        "07:20",
+                                        "08:00",
+                                        "08:50",
+                                        "10:00",
+                                        "10:40",
+                                        "11:30",
+                                        "12:10",
+                                        "13:10",
+                                        "14:00",
+                                        "15:00",
+                                        "15:50",
+                                        "16:30",
+                                        "17:20",
+                                        "18:45",
+                                        "20:00",
+                                        "23:45"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "expreso turismo",
+                            "nombre": "Coop Expreso Turismo",
+                            "logo": "expreso_turismo.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Terminal terrestre de Tulcán",
+                                    "horarios": [
+                                        "04:50",
+                                        "06:00",
+                                        "07:50",
+                                        "09:50",
+                                        "10:50",
+                                        "13:00",
+                                        "14:50",
+                                        "16:20",
+                                        "18:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Ibarra",
+                                    "horarios": [
+                                        "04:50",
+                                        "05:10",
+                                        "05:30",
+                                        "06:00",
+                                        "06:20",
+                                        "06:40",
+                                        "07:20",
+                                        "07:50",
+                                        "08:10",
+                                        "08:30",
+                                        "08:50",
+                                        "09:30",
+                                        "09:50",
+                                        "10:20",
+                                        "10:40",
+                                        "11:30",
+                                        "12:00",
+                                        "12:20",
+                                        "13:00",
+                                        "13:20",
+                                        "13:50",
+                                        "14:10",
+                                        "14:50",
+                                        "15:10",
+                                        "15:30",
+                                        "16:20",
+                                        "16:40",
+                                        "17:00",
+                                        "17:30",
+                                        "18:00",
+                                        "18:30",
+                                        "18:50",
+                                        "19:30",
+                                        "20:10",
+                                        "20:50"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "velotax",
+                            "nombre": "Transportes Velotax",
+                            "logo": "velotax.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Terminal terrestre de Tulcán",
+                                    "horarios": [
+                                        "00:15",
+                                        "01:20",
+                                        "02:15",
+                                        "03:30",
+                                        "04:20",
+                                        "05:20",
+                                        "06:10",
+                                        "06:40",
+                                        "07:30",
+                                        "08:20",
+                                        "09:10",
+                                        "10:10",
+                                        "11:00",
+                                        "11:40",
+                                        "12:40",
+                                        "13:30",
+                                        "14:20",
+                                        "15:20",
+                                        "16:10",
+                                        "17:00",
+                                        "17:50",
+                                        "18:20",
+                                        "19:15",
+                                        "20:20",
+                                        "21:30",
+                                        "22:20",
+                                        "23:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Ibarra",
+                                    "horarios": [
+                                        "00:15",
+                                        "01:20",
+                                        "02:15",
+                                        "03:30",
+                                        "04:20",
+                                        "05:20",
+                                        "06:10",
+                                        "06:40",
+                                        "07:30",
+                                        "08:20",
+                                        "09:10",
+                                        "10:10",
+                                        "11:00",
+                                        "11:40",
+                                        "12:40",
+                                        "13:30",
+                                        "14:20",
+                                        "15:20",
+                                        "16:10",
+                                        "17:00",
+                                        "17:50",
+                                        "18:20",
+                                        "19:15",
+                                        "20:20",
+                                        "21:30",
+                                        "22:20",
+                                        "23:00"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "flor del valle",
+                            "nombre": "Coop Flor del Valle",
+                            "logo": "patria.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Mindo",
+                                    "horarios": [
+                                        "08:00",
+                                        "09:00",
+                                        "16:00",
+                                        "13:00 Feridados"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "San Miguel de los Bancos",
+                                    "horarios": [
+                                        "06:00",
+                                        "15:00"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "tax gacela",
+                            "nombre": "Tax Gacela",
+                            "logo": "tax_gacela.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Terminal terrestre de Tulcán",
+                                    "horarios": [
+                                        "03:00",
+                                        "04:10",
+                                        "05:50",
+                                        "06:50",
+                                        "08:30",
+                                        "09:40",
+                                        "11:10",
+                                        "11:50",
+                                        "12:50",
+                                        "13:50",
+                                        "15:30",
+                                        "16:40",
+                                        "18:10",
+                                        "19:10"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "putumayo",
+                            "nombre": "Coop. Putumayo",
+                            "logo": "putumayo.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Terminal terrestre de Lago Agrio",
+                                    "horarios": [
+                                        "12:30",
+                                        "18:45",
+                                        "21:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Coca",
+                                    "horarios": [
+                                        "12:30",
+                                        "18:45",
+                                        "21:00"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "san francisco",
+                            "nombre": "Coop. Touris San Francisco",
+                            "logo": "san_francisco.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Terminal terrestre Sucua",
+                                    "horarios": [
+                                        "14:30",
+                                        "20:15"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre Puyo",
+                                    "horarios": [
+                                        "09:15",
+                                        "12:30",
+                                        "14:30",
+                                        "17:00",
+                                        "20:15",
+                                        "22:50"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Terminal terrestre de Macas",
+                                    "horarios": [
+                                        "12:30",
+                                        "20:15"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -710,6 +2462,564 @@
                     ]
                 }
             ]
+        },
+        {
+            "id": "santa-elena",
+            "nombre": "Santa Elena",
+            "terminales": [
+                {
+                    "id": "yantzaza",
+                    "nombre": "Yantzaza",
+                    "cooperativas": [
+                        {
+                            "id": "cariamanga",
+                            "nombre": "Coop Union Cariamanga Int",
+                            "logo": "cariamanga.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "guayas",
+            "nombre": "Guayas",
+            "terminales": [
+                {
+                    "id": "yantzaza",
+                    "nombre": "Yantzaza",
+                    "cooperativas": [
+                        {
+                            "id": "cariamanga",
+                            "nombre": "Coop Union Cariamanga Int",
+                            "logo": "cariamanga.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "oro",
+            "nombre": "El Oro",
+            "terminales": [
+                {
+                    "id": "yantzaza",
+                    "nombre": "Yantzaza",
+                    "cooperativas": [
+                        {
+                            "id": "cariamanga",
+                            "nombre": "Coop Union Cariamanga Int",
+                            "logo": "cariamanga.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "azuay",
+            "nombre": "Azuay",
+            "terminales": [
+                {
+                    "id": "yantzaza",
+                    "nombre": "Yantzaza",
+                    "cooperativas": [
+                        {
+                            "id": "cariamanga",
+                            "nombre": "Coop Union Cariamanga Int",
+                            "logo": "cariamanga.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "canar",
+            "nombre": "Cañar",
+            "terminales": [
+                {
+                    "id": "yantzaza",
+                    "nombre": "Yantzaza",
+                    "cooperativas": [
+                        {
+                            "id": "cariamanga",
+                            "nombre": "Coop Union Cariamanga Int",
+                            "logo": "cariamanga.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "rios",
+            "nombre": "Los Ríos",
+            "terminales": [
+                {
+                    "id": "yantzaza",
+                    "nombre": "Yantzaza",
+                    "cooperativas": [
+                        {
+                            "id": "cariamanga",
+                            "nombre": "Coop Union Cariamanga Int",
+                            "logo": "cariamanga.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "cotopaxi",
+            "nombre": "Cotopaxi",
+            "terminales": [
+                {
+                    "id": "yantzaza",
+                    "nombre": "Yantzaza",
+                    "cooperativas": [
+                        {
+                            "id": "cariamanga",
+                            "nombre": "Coop Union Cariamanga Int",
+                            "logo": "cariamanga.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "imbabura",
+            "nombre": "Imbabura",
+            "terminales": [
+                {
+                    "id": "yantzaza",
+                    "nombre": "Yantzaza",
+                    "cooperativas": [
+                        {
+                            "id": "cariamanga",
+                            "nombre": "Coop Union Cariamanga Int",
+                            "logo": "cariamanga.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "napo",
+            "nombre": "Napo",
+            "terminales": [
+                {
+                    "id": "yantzaza",
+                    "nombre": "Yantzaza",
+                    "cooperativas": [
+                        {
+                            "id": "cariamanga",
+                            "nombre": "Coop Union Cariamanga Int",
+                            "logo": "cariamanga.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "tungurahua",
+            "nombre": "Tungurahua",
+            "terminales": [
+                {
+                    "id": "yantzaza",
+                    "nombre": "Yantzaza",
+                    "cooperativas": [
+                        {
+                            "id": "cariamanga",
+                            "nombre": "Coop Union Cariamanga Int",
+                            "logo": "cariamanga.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "orellana",
+            "nombre": "Orellana",
+            "terminales": [
+                {
+                    "id": "yantzaza",
+                    "nombre": "Yantzaza",
+                    "cooperativas": [
+                        {
+                            "id": "cariamanga",
+                            "nombre": "Coop Union Cariamanga Int",
+                            "logo": "cariamanga.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "carchi",
+            "nombre": "Carchi",
+            "terminales": [
+                {
+                    "id": "yantzaza",
+                    "nombre": "Yantzaza",
+                    "cooperativas": [
+                        {
+                            "id": "cariamanga",
+                            "nombre": "Coop Union Cariamanga Int",
+                            "logo": "cariamanga.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "esmeraldas",
+            "nombre": "Esmeraldas",
+            "terminales": [
+                {
+                    "id": "yantzaza",
+                    "nombre": "Yantzaza",
+                    "cooperativas": [
+                        {
+                            "id": "cariamanga",
+                            "nombre": "Coop Union Cariamanga Int",
+                            "logo": "cariamanga.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "loja",
+            "nombre": "Loja",
+            "terminales": [
+                {
+                    "id": "yantzaza",
+                    "nombre": "Yantzaza",
+                    "cooperativas": [
+                        {
+                            "id": "cariamanga",
+                            "nombre": "Coop Union Cariamanga Int",
+                            "logo": "cariamanga.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "manabi",
+            "nombre": "Manabi",
+            "terminales": [
+                {
+                    "id": "yantzaza",
+                    "nombre": "Yantzaza",
+                    "cooperativas": [
+                        {
+                            "id": "cariamanga",
+                            "nombre": "Coop Union Cariamanga Int",
+                            "logo": "cariamanga.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+          {
+            "id": "morona",
+            "nombre": "Morona",
+            "terminales": [
+                {
+                    "id": "yantzaza",
+                    "nombre": "Yantzaza",
+                    "cooperativas": [
+                        {
+                            "id": "cariamanga",
+                            "nombre": "Coop Union Cariamanga Int",
+                            "logo": "cariamanga.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+          {
+            "id": "pastaza",
+            "nombre": "Pastaza",
+            "terminales": [
+                {
+                    "id": "yantzaza",
+                    "nombre": "Yantzaza",
+                    "cooperativas": [
+                        {
+                            "id": "cariamanga",
+                            "nombre": "Coop Union Cariamanga Int",
+                            "logo": "cariamanga.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+          {
+            "id": "sucumbios",
+            "nombre": "Sucumbios",
+            "terminales": [
+                {
+                    "id": "yantzaza",
+                    "nombre": "Yantzaza",
+                    "cooperativas": [
+                        {
+                            "id": "cariamanga",
+                            "nombre": "Coop Union Cariamanga Int",
+                            "logo": "cariamanga.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "ciudades_principales": [
@@ -720,18 +3030,17 @@
         "Riobamba"
     ],
     "anuncios": {
-            "provincias": {
-                "imagen": "img/anuncios/banner-ofi.png",
-                "link": "https://www.facebook.com/ofisolucionesintegrales?locale=es_LA"
-            },
-            "terminales": {
-                "imagen": "img/anuncios/banner-ofi.png",
-                "link": "https://www.facebook.com/ofisolucionesintegrales?locale=es_LA"
-            },
-            "cooperativas": {
-                "imagen": "img/anuncios/banner-ofi.png",
-                "link": "https://www.facebook.com/ofisolucionesintegrales?locale=es_LA"
-            }
-        
+        "provincias": {
+            "imagen": "img/anuncios/banner-ofi.png",
+            "link": "https://www.facebook.com/ofisolucionesintegrales?locale=es_LA"
+        },
+        "terminales": {
+            "imagen": "img/anuncios/banner-ofi.png",
+            "link": "https://www.facebook.com/ofisolucionesintegrales?locale=es_LA"
+        },
+        "cooperativas": {
+            "imagen": "img/anuncios/banner-ofi.png",
+            "link": "https://www.facebook.com/ofisolucionesintegrales?locale=es_LA"
+        }
     }
 }
