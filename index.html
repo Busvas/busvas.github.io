@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Barra de navegación principal -->
     <nav class="navbar">
         <button class="sidebar-toggle" aria-label="Abrir menú">
             <i class="fas fa-bars"></i>
         </button>
-        <h1 class="logo">Busvas</h1>
+        <div class="logo">
+            <a href="#" id="logo-link">
+                <img class="img-logo" src="img/logos/busvasLogo2.png" alt="Busvas Logo">
+            </a>
+        </div>
     </nav>
 
     <!-- Barra de ruta (breadcrumbs) -->
@@ -32,7 +38,7 @@
     </div>
 
 
-    
+
 
     <!-- Sidebar para móviles -->
     <aside class="sidebar">
@@ -75,20 +81,25 @@
             <div id="terminal-grid" class="card-grid">
                 <!-- Tarjetas de terminales se insertarán aquí via JS -->
             </div>
+
+            <!-- Cooperativas destacadas debajo de los terminales -->
+            <section id="featured-section" class="section">
+                <h2><i class="fas fa-trophy"></i> Cooperativas Destacadas</h2>
+                <div class="featured-description">
+                    <p>Las mejores cooperativas en rutas entre ciudades principales:</p>
+                </div>
+                <div id="featured-cooperatives" class="featured-grid"></div>
+            </section>
         </section>
 
         <!-- Sección de cooperativas -->
         <section id="cooperative-section" class="section">
             <div class="header-container">
                 <h2><i class="fas fa-route"></i> Rutas desde <span id="current-terminal-name"></span></h2>
-                <button id="toggle-all" class="toggle-all-btn">MOSTRAR TODAS</button>
+                <button id="toggle-all" class="toggle-all-btn"></button>
             </div>
-            <div id="cooperative-ads" class="ads-container">
-                <!-- Contenedor para anuncios de cooperativas -->
-            </div>
-            <div id="cooperative-container" class="cooperative-grid">
-                <!-- Tarjetas de cooperativas se insertarán aquí via JS -->
-            </div>
+            <div id="cooperative-ads" class="ads-container"></div>
+            <div id="cooperative-container" class="cooperative-grid"></div>
         </section>
     </main>
 
@@ -97,4 +108,6 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
+
