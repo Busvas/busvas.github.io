@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
         DOM.btnTerminal.textContent = terminal.nombre;
         DOM.btnTerminal.disabled = false;
         renderCooperatives();
-        showSection('cooperative');
+        navigateTo('cooperative');
     }
 
     // 5. Renderizar cooperativas de un terminal
@@ -170,13 +170,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
             card.innerHTML = `
                 <div class="coop-header" data-index="${index}">
-                    <img src="img/terminales/${coop.logo || 'default.png'}" 
+                    <img src="img/terminales/${coop.logo || ''}" 
                          alt="${coop.nombre}" class="coop-logo">
                     <div class="coop-info">
                         <h3>${coop.nombre}</h3>
-                        <div class="coop-rating" data-rating='${JSON.stringify(coop.rating_global)}'>
-                            ${generateStarRating(rating)}
-                            <span>${rating.toFixed(1)}</span>
+                        <div class="coop-rating-row">
+                            <div class="coop-rating" data-rating='${JSON.stringify(coop.rating_global)}'>
+                                ${generateStarRating(rating)}
+                                <span>${rating.toFixed(1)}</span>
+                            </div>
+                            <span 
+                                class="info-icon" 
+                                data-coop='${JSON.stringify({
+                                    nombre: coop.nombre,
+                                    telefono: coop.telefono || '',
+                                    sitio_web: coop.sitio_web || '',
+                                    servicios: coop.servicios || []
+                                })}'
+                                title="Información de la cooperativa"
+                                style="position:relative;"
+                            >
+                                <i class="fas fa-info-circle"></i>
+                            </span>
                         </div>
                     </div>
                     <button class="accordion-toggle" aria-expanded="${index === 0}">></button>
@@ -186,26 +201,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             `;
 
-            // Add event listener for the entire header
-            const header = card.querySelector('.coop-header');
-            header.addEventListener('click', () => {
-                const body = card.querySelector('.coop-body');
-                const toggleButton = header.querySelector('.accordion-toggle');
+            // Agrega eventos para el tooltip de rating
+            const ratingEl = card.querySelector('.coop-rating');
+            if (ratingEl) {
+                ratingEl.addEventListener('mouseenter', showRatingTooltip);
+                ratingEl.addEventListener('mouseleave', hideTooltip);
+            }
 
-                // Obtener el estado actual usando getComputedStyle
-                const isOpen = window.getComputedStyle(body).display === 'block';
-
-                // Alternar el estado del acordeón actual
-                body.style.display = isOpen ? 'none' : 'block';
-                toggleButton.setAttribute('aria-expanded', !isOpen);
-                header.setAttribute('aria-expanded', !isOpen); // Si usas CSS basado en header
-
-                // Actualizar el estado del botón "toggle-all"
-                updateToggleButtonState();
-            });
+            addTooltipEvents(card);
 
             DOM.cooperativeContainer.appendChild(card);
         });
+
+        setupAccordionEvents();
+        updateToggleButtonState();
     }
 
     /* ========== COOPERATIVAS DESTACADAS ========== */
@@ -246,9 +255,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="featured-card-header">
                     ${index === 0 ? '<span class="featured-badge">TOP 1</span>' : ''}
                     <div class="featured-coop-info">
-                        <img src="img/logos/${coop.logo || 'default.png'}" 
+                        <img src="img/terminales/${coop.logo || ''}" 
                              class="featured-coop-logo" 
-                             onerror="this.src='img/logos/default.png'">
+                             onerror="this.src=''">
                         <div>
                             <h3>${coop.nombre}</h3>
                             <div class="coop-rating" data-rating='${JSON.stringify(coop.rating_global)}'>
@@ -259,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                 </div>
                 <div class="featured-routes">
-                    ${coop.mainRoutes.slice(0, 2).map(route => `
+                    ${coop.mainRoutes.slice(0, 3).map(route => `
                         <div class="featured-route">
                             <div class="route-direction">
                                 <span class="route-city">${coop.terminal}</span>
@@ -267,13 +276,20 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <span class="route-city">${route.destino}</span>
                             </div>
                             <div class="route-meta">
-                                <span>${route.horarios.slice(0, 2).join(' - ')}</span>
+                                <span>${route.horarios.slice(0, 15).join(' - ')}</span>
                                 <span>$${route.costo}</span>
                             </div>
                         </div>
                     `).join('')}
                 </div>
             `;
+
+            // Agrega eventos para el tooltip de rating
+            const ratingEl = card.querySelector('.coop-rating');
+            if (ratingEl) {
+                ratingEl.addEventListener('mouseenter', showRatingTooltip);
+                ratingEl.addEventListener('mouseleave', hideTooltip);
+            }
 
             addTooltipEvents(card);
             DOM.featuredCooperative.appendChild(card);
@@ -339,19 +355,58 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* ========== TOOLTIPS ========== */
     function addTooltipEvents(element) {
-        // Tooltip para el rating
-        const ratingElements = element.querySelectorAll('.coop-rating');
-        ratingElements.forEach(el => {
-            el.addEventListener('mouseenter', showRatingTooltip);
-            el.addEventListener('mouseleave', hideTooltip);
-        });
-
-        // Tooltip para el icono de información
         const infoIcons = element.querySelectorAll('.info-icon');
         infoIcons.forEach(icon => {
-            icon.addEventListener('mouseenter', showInfoTooltip);
-            icon.addEventListener('mouseleave', hideTooltip);
+            icon.addEventListener('click', function (e) {
+                e.stopPropagation();
+                toggleInfoModal(icon);
+            });
         });
+    }
+
+    // Cierra el modal si se hace clic fuera
+    document.addEventListener('click', function (e) {
+        document.querySelectorAll('.info-modal').forEach(modal => {
+            if (!modal.contains(e.target)) {
+                modal.remove();
+            }
+        });
+    });
+
+    function toggleInfoModal(target) {
+        // Siempre usa el span.info-icon como base
+        const infoIcon = target.closest('.info-icon');
+        if (!infoIcon) return;
+
+        // Si ya existe el modal para este icono, ciérralo y sal
+        const existingModal = infoIcon.querySelector('.info-modal');
+        if (existingModal) {
+            existingModal.remove();
+            return;
+        }
+
+        // Elimina cualquier otro modal abierto
+        document.querySelectorAll('.info-modal').forEach(m => m.remove());
+
+        const coopData = JSON.parse(infoIcon.dataset.coop);
+        let modal = document.createElement('div');
+        modal.className = 'info-modal';
+        modal.innerHTML = `
+            <strong>${coopData.nombre}</strong><br>
+            ${coopData.telefono ? `<p><strong>Teléfono:</strong> <span class="copy-phone" style="cursor:pointer;color:#234f9e;">${coopData.telefono}</span></p>` : ''}
+            ${coopData.sitio_web ? `<p><strong>Sitio web:</strong> <a href="${coopData.sitio_web}" target="_blank" style="color:#234f9e;">${coopData.sitio_web}</a></p>` : ''}
+            ${coopData.servicios && coopData.servicios.length > 0 ? `<p><strong>Servicios:</strong> ${coopData.servicios.join(', ')}</p>` : ''}
+        `;
+        // Permite copiar el teléfono al hacer clic
+        modal.querySelectorAll('.copy-phone').forEach(span => {
+            span.addEventListener('click', function (e) {
+                e.stopPropagation();
+                navigator.clipboard.writeText(span.textContent);
+                span.style.background = "#e0f7fa";
+            });
+        });
+
+        infoIcon.appendChild(modal);
     }
 
     function showRatingTooltip(e) {
@@ -441,7 +496,13 @@ document.addEventListener('DOMContentLoaded', function () {
             section.classList.remove('active-section');
         });
 
-        DOM.sections[sectionName].classList.add('active-section');
+        if (sectionName === 'home') {
+            DOM.sections.home.classList.add('active-section');
+            DOM.sections.featured.classList.add('active-section');
+        } else {
+            DOM.sections[sectionName].classList.add('active-section');
+        }
+        // NO renderices cooperativas aquí
     }
 
     /* ========== EVENT LISTENERS ========== */
@@ -454,16 +515,33 @@ document.addEventListener('DOMContentLoaded', function () {
         // Navegación
         DOM.btnHome.addEventListener('click', () => {
             resetNavigation();
-            navigateTo('home'); // Antes: showSection('home');
+            navigateTo('home');
         });
 
         DOM.btnProvince.addEventListener('click', () => {
-            navigateTo('terminal'); // Antes: showSection('terminal');
+            navigateTo('terminal');
         });
 
         DOM.btnTerminal.addEventListener('click', () => {
-            navigateTo('cooperative'); // Antes: showSection('cooperative');
+            if (appData.currentTerminal) {
+                renderCooperatives();
+                navigateTo('cooperative');
+            }
         });
+
+        document.getElementById('logo-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            showSection('home');
+            // Si tienes breadcrumbs, también puedes resetearlos aquí
+        });
+
+        // Botón mostrar/ocultar todas
+        const toggleAllBtn = document.getElementById('toggle-all');
+        if (toggleAllBtn) {
+            toggleAllBtn.addEventListener('click', function () {
+                toggleAllAccordions();
+            });
+        }
     }
 
     /* ========== FUNCIONES UTILITARIAS ========== */
@@ -510,22 +588,27 @@ document.addEventListener('DOMContentLoaded', function () {
         renderAds('cooperative', appData.anuncios.cooperativas);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    function setupAccordionEvents() {
+        const allHeaders = DOM.cooperativeContainer.querySelectorAll('.coop-header');
+        allHeaders.forEach(header => {
+            header.addEventListener('click', function(e) {
+                // Evita que el acordeón se active si el clic fue en un elemento interactivo
+                if (
+                    e.target.closest('.info-icon') ||
+                    e.target.closest('.coop-rating') ||
+                    e.target.closest('button') ||
+                    e.target.closest('a')
+                ) {
+                    return;
+                }
+                const body = header.nextElementSibling;
+                if (!body) return;
+                const expanded = header.querySelector('.accordion-toggle').getAttribute('aria-expanded') === 'true';
+                header.querySelector('.accordion-toggle').setAttribute('aria-expanded', !expanded);
+                body.style.display = expanded ? 'none' : 'block';
+            });
+        });
+    }
 
     function navigateTo(section) {
         // Muestra la sección correspondiente
@@ -547,132 +630,56 @@ document.addEventListener('DOMContentLoaded', function () {
     // Inicialización
     window.addEventListener("load", () => {
         const hash = window.location.hash.substring(1);
-        if (hash) {
-            showSection(hash);
-        } else {
-            showSection('home');
+        if (hash === 'cooperative' && appData.currentTerminal) {
+            renderCooperatives();
         }
+        showSection(hash || 'home');
     });
 });
 
+function updateToggleButtonState() {
+    const allToggles = document.querySelectorAll('.accordion-toggle');
+    if (!allToggles.length) return;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    const DOM = {
-        cooperativeContainer: document.getElementById('cooperative-container'),
-        toggleAllButton: document.getElementById('toggle-all')
-    };
-
-    // Verifica si todos los acordeones están abiertos
-    function areAllAccordionsOpen() {
-        return Array.from(DOM.cooperativeContainer.querySelectorAll('.coop-header')).every(header =>
-            header.getAttribute('aria-expanded') === 'true'
-        );
-    }
-
-    // Verifica si todos los acordeones están cerrados
-    function areAllAccordionsClosed() {
-        return Array.from(DOM.cooperativeContainer.querySelectorAll('.coop-header')).every(header =>
-            header.getAttribute('aria-expanded') === 'false'
-        );
-    }
-
-    // Alternar todos los acordeones
-    function toggleAllAccordions(open) {
-        const allHeaders = DOM.cooperativeContainer.querySelectorAll('.coop-header');
-        const allBodies = DOM.cooperativeContainer.querySelectorAll('.coop-body');
-        const allToggles = DOM.cooperativeContainer.querySelectorAll('.accordion-toggle');
-
-        allHeaders.forEach(header => {
-            header.setAttribute('aria-expanded', open);
-        });
-
-        allBodies.forEach(body => {
-            body.style.display = open ? 'block' : 'none';
-        });
-
-        allToggles.forEach(toggle => {
-            toggle.setAttribute('aria-expanded', open);
-        });
-
-        DOM.toggleAllButton.textContent = open ? 'OCULTAR' : 'MOSTRAR';
-        updateToggleButtonState();
-    }
-
-    // Manejador del botón "toggle-all"
-    DOM.toggleAllButton.addEventListener('click', () => {
-        const allOpen = areAllAccordionsOpen();
-        toggleAllAccordions(!allOpen);
+    allToggles.forEach(toggle => {
+        const body = toggle.closest('.coop-header').nextElementSibling;
+        if (!body) return;
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.textContent = expanded ? '<' : '>';
     });
 
-    // Actualizar estado del botón según el estado actual
-    function updateToggleButtonState() {
-        if (areAllAccordionsOpen()) {
-            DOM.toggleAllButton.textContent = 'OCULTAR';
-        } else if (areAllAccordionsClosed()) {
-            DOM.toggleAllButton.textContent = 'MOSTRAR';
-        } else {
-            const someOpen = Array.from(DOM.cooperativeContainer.querySelectorAll('.coop-header')).some(header =>
-                header.getAttribute('aria-expanded') === 'true'
-            );
-            DOM.toggleAllButton.textContent = someOpen ? 'OCULTAR' : 'MOSTRAR';
-        }
+    // Actualiza el texto del botón global
+    const toggleAllBtn = document.getElementById('toggle-all');
+    if (toggleAllBtn) {
+        // Si al menos uno está abierto, el botón dice OCULTAR TODAS
+        const anyOpen = Array.from(allToggles).some(toggle => toggle.getAttribute('aria-expanded') === 'true');
+        toggleAllBtn.textContent = anyOpen ? 'OCULTAR TODAS' : 'MOSTRAR TODAS';
     }
+}
 
-    // Manejar el clic en un acordeón individual
-    function handleAccordionClick(header, body) {
-        const isOpen = header.getAttribute('aria-expanded') === 'true';
-        header.setAttribute('aria-expanded', !isOpen);
-        body.style.display = isOpen ? 'none' : 'block';
-        const toggleButton = header.querySelector('.accordion-toggle');
-        toggleButton.setAttribute('aria-expanded', !isOpen);
-        updateToggleButtonState();
+function toggleAllAccordions() {
+    const allToggles = document.querySelectorAll('.accordion-toggle');
+    if (!allToggles.length) return;
+
+    // Determina si hay al menos un acordeón cerrado
+    const shouldOpen = Array.from(allToggles).some(toggle => toggle.getAttribute('aria-expanded') === 'false');
+
+    allToggles.forEach(toggle => {
+        const body = toggle.closest('.coop-header').nextElementSibling;
+        if (!body) return;
+        toggle.setAttribute('aria-expanded', shouldOpen);
+        body.style.display = shouldOpen ? 'block' : 'none';
+        toggle.textContent = shouldOpen ? '<' : '>';
+    });
+
+    // Cambia el texto del botón global
+    const toggleAllBtn = document.getElementById('toggle-all');
+    if (toggleAllBtn) {
+        toggleAllBtn.textContent = shouldOpen ? 'OCULTAR TODAS' : 'MOSTRAR TODAS';
     }
+}
 
-    // Agregar eventos a cada acordeón
-    function setupAccordionEvents() {
-        const allHeaders = DOM.cooperativeContainer.querySelectorAll('.coop-header');
-        allHeaders.forEach(header => {
-            const body = header.nextElementSibling;
-            header.addEventListener('click', () => handleAccordionClick(header, body));
-        });
-    }
 
-    // Inicialización
-    setupAccordionEvents();
-    updateToggleButtonState();
-});
 
 
 
