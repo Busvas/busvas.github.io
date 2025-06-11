@@ -123,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
         DOM.btnTerminal.disabled = true;
         DOM.btnTerminal.textContent = 'Terminal';
         renderTerminals();
+        renderFeaturedCooperatives(); 
         showSection('terminal');
     }
 
@@ -182,11 +183,11 @@ document.addEventListener('DOMContentLoaded', function () {
                             <span 
                                 class="info-icon" 
                                 data-coop='${JSON.stringify({
-                                    nombre: coop.nombre,
-                                    telefono: coop.telefono || '',
-                                    sitio_web: coop.sitio_web || '',
-                                    servicios: coop.servicios || []
-                                })}'
+                nombre: coop.nombre,
+                telefono: coop.telefono || '',
+                sitio_web: coop.sitio_web || '',
+                servicios: coop.servicios || []
+            })}'
                                 title="Información de la cooperativa"
                                 style="position:relative;"
                             >
@@ -219,17 +220,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* ========== COOPERATIVAS DESTACADAS ========== */
     function renderFeaturedCooperatives() {
+        console.log("Renderizando cooperativas destacadas...");
         DOM.featuredCooperative.innerHTML = '';
 
         const allCooperatives = [];
         appData.provincias.forEach(provincia => {
             provincia.terminales.forEach(terminal => {
                 terminal.cooperativas.forEach(coop => {
-                    const mainRoutes = coop.rutas.filter(ruta =>
-                        appData.ciudadesPrincipales.includes(ruta.destino) &&
-                        appData.ciudadesPrincipales.some(c => terminal.nombre.includes(c))
-                    );
+                    // No filtra por rutas principales, solo toma las rutas que existan
+                    const mainRoutes = coop.rutas && coop.rutas.length > 0 ? coop.rutas : [];
 
+                    // Si tiene al menos una ruta, la agregamos
                     if (mainRoutes.length > 0) {
                         allCooperatives.push({
                             ...coop,
@@ -243,9 +244,16 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
+        // Si quieres priorizar las que sí cumplen el filtro original, puedes ordenarlas primero
+        // pero aquí simplemente mostramos las mejores por rating
         const topCooperatives = allCooperatives
             .sort((a, b) => b.rating - a.rating)
             .slice(0, 3);
+
+        if (topCooperatives.length === 0) {
+            DOM.featuredCooperative.innerHTML = '<div style="padding:1rem;">No hay cooperativas destacadas disponibles.</div>';
+            return;
+        }
 
         topCooperatives.forEach((coop, index) => {
             const card = document.createElement('div');
@@ -276,8 +284,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <span class="route-city">${route.destino}</span>
                             </div>
                             <div class="route-meta">
-                                <span>${route.horarios.slice(0, 15).join(' - ')}</span>
-                                <span>$${route.costo}</span>
+                                <span>${route.horarios ? route.horarios.slice(0, 15).join(' - ') : ''}</span>
+                                <span>${route.costo ? '$' + route.costo : ''}</span>
                             </div>
                         </div>
                     `).join('')}
@@ -294,6 +302,8 @@ document.addEventListener('DOMContentLoaded', function () {
             addTooltipEvents(card);
             DOM.featuredCooperative.appendChild(card);
         });
+
+        console.log("Cooperativas encontradas:", allCooperatives.length);
     }
 
     /* ========== FUNCIONES AUXILIARES ========== */
@@ -496,13 +506,12 @@ document.addEventListener('DOMContentLoaded', function () {
             section.classList.remove('active-section');
         });
 
-        if (sectionName === 'home') {
-            DOM.sections.home.classList.add('active-section');
+        DOM.sections[sectionName].classList.add('active-section');
+
+        // Si estás mostrando terminales, activa también la sección de destacados
+        if (sectionName === 'terminal') {
             DOM.sections.featured.classList.add('active-section');
-        } else {
-            DOM.sections[sectionName].classList.add('active-section');
         }
-        // NO renderices cooperativas aquí
     }
 
     /* ========== EVENT LISTENERS ========== */
@@ -591,7 +600,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function setupAccordionEvents() {
         const allHeaders = DOM.cooperativeContainer.querySelectorAll('.coop-header');
         allHeaders.forEach(header => {
-            header.addEventListener('click', function(e) {
+            header.addEventListener('click', function (e) {
                 // Evita que el acordeón se active si el clic fue en un elemento interactivo
                 if (
                     e.target.closest('.info-icon') ||
@@ -653,7 +662,7 @@ function updateToggleButtonState() {
     if (toggleAllBtn) {
         // Si al menos uno está abierto, el botón dice OCULTAR TODAS
         const anyOpen = Array.from(allToggles).some(toggle => toggle.getAttribute('aria-expanded') === 'true');
-        toggleAllBtn.textContent = anyOpen ? 'OCULTAR TODAS' : 'MOSTRAR TODAS';
+        toggleAllBtn.textContent = anyOpen ? 'MOSTRAR' : 'OCULTAR';
     }
 }
 
@@ -675,15 +684,6 @@ function toggleAllAccordions() {
     // Cambia el texto del botón global
     const toggleAllBtn = document.getElementById('toggle-all');
     if (toggleAllBtn) {
-        toggleAllBtn.textContent = shouldOpen ? 'OCULTAR TODAS' : 'MOSTRAR TODAS';
+        toggleAllBtn.textContent = shouldOpen ? 'OCULTAR' : 'MOSTRAR';
     }
 }
-
-
-
-
-
-
-
-
-
