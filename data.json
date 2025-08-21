@@ -1,23 +1,30 @@
 {
+    "anuncio": {
+        "imagen": "img/anuncios/banner-ofi.png",
+        "link": "https://www.facebook.com/ofisolucionesintegrales?locale=es_LA"
+    },
     "provincias": [
         {
             "id": "chimborazo",
             "nombre": "Chimborazo",
+            "anuncio": {
+                "imagen": "img/anuncios/banner-asesor.png",
+                "link": "https://wa.me/593990332338?text=Hola%20vi%20su%20anuncio%20en%20busvas.com,%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20fondos%20de%20inversi%C3%B3n%20para%20empezar%20a%20ahorrar"
+            },
             "terminales": [
                 {
                     "id": "riobamba",
                     "nombre": "Riobamba",
+                    "anuncio": {
+                        "imagen": "img/anuncios/banner-oasis.png",
+                        "link": "https://www.instagram.com/oasisrestaurant2024/?hl=es"
+                    },
                     "cooperativas": [
                         {
                             "id": "riobamba",
                             "nombre": "Coop Riobamba",
                             "logo": "riobamba.png",
-                            "rating_global": {
-                                "puntualidad": 4.5,
-                                "comodidad": 4.2,
-                                "cinturón de seguridad": 3,
-                                "horarios actualizados": 4
-                            },
+                            "rating_global": {},
                             "telefono": "03 296 1583",
                             "sitio_web": "https://www.facebook.com/TransportesRiobamba/?locale=es_LA",
                             "servicios": [
@@ -525,21 +532,24 @@
         {
             "id": "santo-domingo-de-los-tsachilas",
             "nombre": "Sto Dgo de los Tsáchilas",
+            "anuncio": {
+                "imagen": "img/anuncios/banner-bambuka.png",
+                "link": "https://maps.app.goo.gl/i3fm9kdoQigrJKZ66"
+            },
             "terminales": [
                 {
                     "id": "santo-domingo",
                     "nombre": "Santo Domingo",
+                    "anuncio": {
+                        "imagen": "img/anuncios/banner-bambuka.png",
+                        "link": "https://www.instagram.com/bambukarestobar/?hl=es"
+                    },
                     "cooperativas": [
                         {
                             "id": "riobamba",
                             "nombre": "Coop Riobamba",
                             "logo": "riobamba.png",
-                            "rating_global": {
-                                "puntualidad": 4.5,
-                                "comodidad": 4.2,
-                                "cinturón de seguridad": 2,
-                                "horarios actualizados": 2
-                            },
+                            "rating_global": {},
                             "telefono": "02 3778 852",
                             "sitio_web": "https://www.facebook.com/TransportesRiobamba/?locale=es_LA",
                             "servicios": [
@@ -574,10 +584,18 @@
         {
             "id": "bolivar",
             "nombre": "Bolivar",
+            "anuncio": {
+                "imagen": "img/anuncios/banner-anita.png",
+                "link": "https://maps.app.goo.gl/JWjWiWVEeCrZhn5m9"
+            },
             "terminales": [
                 {
                     "id": "guaranda",
                     "nombre": "Guaranda",
+                    "anuncio": {
+                        "imagen": "img/anuncios/banner-anita.png",
+                        "link": "https://maps.app.goo.gl/JWjWiWVEeCrZhn5m9"
+                    },
                     "cooperativas": [
                         {
                             "id": "bolivar",
@@ -2394,10 +2412,18 @@
         {
             "id": "zamora",
             "nombre": "Zamora Chinchipe",
+            "anuncio": {
+                "imagen": "img/anuncios/banner-croster.png",
+                "link": "https://www.instagram.com/croster.yantzaza/?hl=es"
+            },
             "terminales": [
                 {
                     "id": "yantzaza",
                     "nombre": "Yantzaza",
+                    "anuncio": {
+                        "imagen": "img/anuncios/banner-croster.png",
+                        "link": "https://www.instagram.com/croster.yantzaza/?hl=es"
+                    },
                     "cooperativas": [
                         {
                             "id": "cariamanga",
@@ -2466,62 +2492,24 @@
         {
             "id": "santa-elena",
             "nombre": "Santa Elena",
-            "terminales": [
-                {
-                    "id": "yantzaza",
-                    "nombre": "Yantzaza",
-                    "cooperativas": [
-                        {
-                            "id": "cariamanga",
-                            "nombre": "Coop Union Cariamanga Int",
-                            "logo": "cariamanga.png",
-                            "rating_global": {},
-                            "rutas": [
-                                {
-                                    "destino": "Loja",
-                                    "horarios": [
-                                        "09:35",
-                                        "11:35",
-                                        "13:40",
-                                        "18:55",
-                                        "23:35"
-                                    ],
-                                    "costo": ""
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "terminales": []
         },
         {
             "id": "guayas",
             "nombre": "Guayas",
+            "anuncio": {
+                "imagen": "img/anuncios/banner-kc.png",
+                "link": "https://www.instagram.com/kevincamachomusic/?hl=es"
+            },
             "terminales": [
                 {
                     "id": "guayaquil",
                     "nombre": "Guayaquil",
-                    "cooperativas": [
-                        {
-                            "id": "cariamanga",
-                            "nombre": "Coop Union Cariamanga Int",
-                            "logo": "cariamanga.png",
-                            "rating_global": {},
-                            "rutas": [
-                                {
-                                    "destino": "Loja",
-                                    "horarios": [
-                                        "09:35",
-                                        "11:35",
-                                        "13:40",
-                                        "18:55",
-                                        "23:35"
-                                    ],
-                                    "costo": ""
-                                }
-                            ]
-                        }
-                    ]
+                    "anuncio": {
+                        "imagen": "img/anuncios/banner-kc.png",
+                        "link": "https://www.instagram.com/kevincamachomusic/?hl=es"
+                    },
+                    "cooperativas": []
                 }
             ]
         },
@@ -2529,496 +2517,112 @@
             "id": "oro",
             "nombre": "El Oro",
             "terminales": [
-                {
-                    "id": "yantzaza",
-                    "nombre": "Yantzaza",
-                    "cooperativas": [
-                        {
-                            "id": "cariamanga",
-                            "nombre": "Coop Union Cariamanga Int",
-                            "logo": "cariamanga.png",
-                            "rating_global": {},
-                            "rutas": [
-                                {
-                                    "destino": "Loja",
-                                    "horarios": [
-                                        "09:35",
-                                        "11:35",
-                                        "13:40",
-                                        "18:55",
-                                        "23:35"
-                                    ],
-                                    "costo": ""
-                                }
-                            ]
-                        }
-                    ]
-                }
+               
             ]
         },
         {
             "id": "azuay",
             "nombre": "Azuay",
             "terminales": [
-                {
-                    "id": "yantzaza",
-                    "nombre": "Yantzaza",
-                    "cooperativas": [
-                        {
-                            "id": "cariamanga",
-                            "nombre": "Coop Union Cariamanga Int",
-                            "logo": "cariamanga.png",
-                            "rating_global": {},
-                            "rutas": [
-                                {
-                                    "destino": "Loja",
-                                    "horarios": [
-                                        "09:35",
-                                        "11:35",
-                                        "13:40",
-                                        "18:55",
-                                        "23:35"
-                                    ],
-                                    "costo": ""
-                                }
-                            ]
-                        }
-                    ]
-                }
+               
             ]
         },
         {
             "id": "canar",
             "nombre": "Cañar",
             "terminales": [
-                {
-                    "id": "yantzaza",
-                    "nombre": "Yantzaza",
-                    "cooperativas": [
-                        {
-                            "id": "cariamanga",
-                            "nombre": "Coop Union Cariamanga Int",
-                            "logo": "cariamanga.png",
-                            "rating_global": {},
-                            "rutas": [
-                                {
-                                    "destino": "Loja",
-                                    "horarios": [
-                                        "09:35",
-                                        "11:35",
-                                        "13:40",
-                                        "18:55",
-                                        "23:35"
-                                    ],
-                                    "costo": ""
-                                }
-                            ]
-                        }
-                    ]
-                }
+                
             ]
         },
         {
             "id": "rios",
             "nombre": "Los Ríos",
             "terminales": [
-                {
-                    "id": "yantzaza",
-                    "nombre": "Yantzaza",
-                    "cooperativas": [
-                        {
-                            "id": "cariamanga",
-                            "nombre": "Coop Union Cariamanga Int",
-                            "logo": "cariamanga.png",
-                            "rating_global": {},
-                            "rutas": [
-                                {
-                                    "destino": "Loja",
-                                    "horarios": [
-                                        "09:35",
-                                        "11:35",
-                                        "13:40",
-                                        "18:55",
-                                        "23:35"
-                                    ],
-                                    "costo": ""
-                                }
-                            ]
-                        }
-                    ]
-                }
+               
             ]
         },
         {
             "id": "cotopaxi",
             "nombre": "Cotopaxi",
             "terminales": [
-                {
-                    "id": "yantzaza",
-                    "nombre": "Yantzaza",
-                    "cooperativas": [
-                        {
-                            "id": "cariamanga",
-                            "nombre": "Coop Union Cariamanga Int",
-                            "logo": "cariamanga.png",
-                            "rating_global": {},
-                            "rutas": [
-                                {
-                                    "destino": "Loja",
-                                    "horarios": [
-                                        "09:35",
-                                        "11:35",
-                                        "13:40",
-                                        "18:55",
-                                        "23:35"
-                                    ],
-                                    "costo": ""
-                                }
-                            ]
-                        }
-                    ]
-                }
+              
             ]
         },
         {
             "id": "imbabura",
             "nombre": "Imbabura",
             "terminales": [
-                {
-                    "id": "yantzaza",
-                    "nombre": "Yantzaza",
-                    "cooperativas": [
-                        {
-                            "id": "cariamanga",
-                            "nombre": "Coop Union Cariamanga Int",
-                            "logo": "cariamanga.png",
-                            "rating_global": {},
-                            "rutas": [
-                                {
-                                    "destino": "Loja",
-                                    "horarios": [
-                                        "09:35",
-                                        "11:35",
-                                        "13:40",
-                                        "18:55",
-                                        "23:35"
-                                    ],
-                                    "costo": ""
-                                }
-                            ]
-                        }
-                    ]
-                }
+               
             ]
         },
         {
             "id": "napo",
             "nombre": "Napo",
             "terminales": [
-                {
-                    "id": "yantzaza",
-                    "nombre": "Yantzaza",
-                    "cooperativas": [
-                        {
-                            "id": "cariamanga",
-                            "nombre": "Coop Union Cariamanga Int",
-                            "logo": "cariamanga.png",
-                            "rating_global": {},
-                            "rutas": [
-                                {
-                                    "destino": "Loja",
-                                    "horarios": [
-                                        "09:35",
-                                        "11:35",
-                                        "13:40",
-                                        "18:55",
-                                        "23:35"
-                                    ],
-                                    "costo": ""
-                                }
-                            ]
-                        }
-                    ]
-                }
+               
             ]
         },
         {
             "id": "tungurahua",
             "nombre": "Tungurahua",
             "terminales": [
-                {
-                    "id": "yantzaza",
-                    "nombre": "Yantzaza",
-                    "cooperativas": [
-                        {
-                            "id": "cariamanga",
-                            "nombre": "Coop Union Cariamanga Int",
-                            "logo": "cariamanga.png",
-                            "rating_global": {},
-                            "rutas": [
-                                {
-                                    "destino": "Loja",
-                                    "horarios": [
-                                        "09:35",
-                                        "11:35",
-                                        "13:40",
-                                        "18:55",
-                                        "23:35"
-                                    ],
-                                    "costo": ""
-                                }
-                            ]
-                        }
-                    ]
-                }
+               
             ]
         },
         {
             "id": "orellana",
             "nombre": "Orellana",
             "terminales": [
-                {
-                    "id": "yantzaza",
-                    "nombre": "Yantzaza",
-                    "cooperativas": [
-                        {
-                            "id": "cariamanga",
-                            "nombre": "Coop Union Cariamanga Int",
-                            "logo": "cariamanga.png",
-                            "rating_global": {},
-                            "rutas": [
-                                {
-                                    "destino": "Loja",
-                                    "horarios": [
-                                        "09:35",
-                                        "11:35",
-                                        "13:40",
-                                        "18:55",
-                                        "23:35"
-                                    ],
-                                    "costo": ""
-                                }
-                            ]
-                        }
-                    ]
-                }
+               
             ]
         },
         {
             "id": "carchi",
             "nombre": "Carchi",
             "terminales": [
-                {
-                    "id": "yantzaza",
-                    "nombre": "Yantzaza",
-                    "cooperativas": [
-                        {
-                            "id": "cariamanga",
-                            "nombre": "Coop Union Cariamanga Int",
-                            "logo": "cariamanga.png",
-                            "rating_global": {},
-                            "rutas": [
-                                {
-                                    "destino": "Loja",
-                                    "horarios": [
-                                        "09:35",
-                                        "11:35",
-                                        "13:40",
-                                        "18:55",
-                                        "23:35"
-                                    ],
-                                    "costo": ""
-                                }
-                            ]
-                        }
-                    ]
-                }
+               
             ]
         },
         {
             "id": "esmeraldas",
             "nombre": "Esmeraldas",
             "terminales": [
-                {
-                    "id": "yantzaza",
-                    "nombre": "Yantzaza",
-                    "cooperativas": [
-                        {
-                            "id": "cariamanga",
-                            "nombre": "Coop Union Cariamanga Int",
-                            "logo": "cariamanga.png",
-                            "rating_global": {},
-                            "rutas": [
-                                {
-                                    "destino": "Loja",
-                                    "horarios": [
-                                        "09:35",
-                                        "11:35",
-                                        "13:40",
-                                        "18:55",
-                                        "23:35"
-                                    ],
-                                    "costo": ""
-                                }
-                            ]
-                        }
-                    ]
-                }
+               
             ]
         },
         {
             "id": "loja",
             "nombre": "Loja",
             "terminales": [
-                {
-                    "id": "yantzaza",
-                    "nombre": "Yantzaza",
-                    "cooperativas": [
-                        {
-                            "id": "cariamanga",
-                            "nombre": "Coop Union Cariamanga Int",
-                            "logo": "cariamanga.png",
-                            "rating_global": {},
-                            "rutas": [
-                                {
-                                    "destino": "Loja",
-                                    "horarios": [
-                                        "09:35",
-                                        "11:35",
-                                        "13:40",
-                                        "18:55",
-                                        "23:35"
-                                    ],
-                                    "costo": ""
-                                }
-                            ]
-                        }
-                    ]
-                }
+              
             ]
         },
         {
             "id": "manabi",
             "nombre": "Manabi",
             "terminales": [
-                {
-                    "id": "yantzaza",
-                    "nombre": "Yantzaza",
-                    "cooperativas": [
-                        {
-                            "id": "cariamanga",
-                            "nombre": "Coop Union Cariamanga Int",
-                            "logo": "cariamanga.png",
-                            "rating_global": {},
-                            "rutas": [
-                                {
-                                    "destino": "Loja",
-                                    "horarios": [
-                                        "09:35",
-                                        "11:35",
-                                        "13:40",
-                                        "18:55",
-                                        "23:35"
-                                    ],
-                                    "costo": ""
-                                }
-                            ]
-                        }
-                    ]
-                }
+              
             ]
         },
         {
             "id": "morona",
             "nombre": "Morona",
             "terminales": [
-                {
-                    "id": "yantzaza",
-                    "nombre": "Yantzaza",
-                    "cooperativas": [
-                        {
-                            "id": "cariamanga",
-                            "nombre": "Coop Union Cariamanga Int",
-                            "logo": "cariamanga.png",
-                            "rating_global": {},
-                            "rutas": [
-                                {
-                                    "destino": "Loja",
-                                    "horarios": [
-                                        "09:35",
-                                        "11:35",
-                                        "13:40",
-                                        "18:55",
-                                        "23:35"
-                                    ],
-                                    "costo": ""
-                                }
-                            ]
-                        }
-                    ]
-                }
+                
             ]
         },
         {
             "id": "pastaza",
             "nombre": "Pastaza",
             "terminales": [
-                {
-                    "id": "yantzaza",
-                    "nombre": "Yantzaza",
-                    "cooperativas": [
-                        {
-                            "id": "cariamanga",
-                            "nombre": "Coop Union Cariamanga Int",
-                            "logo": "cariamanga.png",
-                            "rating_global": {},
-                            "rutas": [
-                                {
-                                    "destino": "Loja",
-                                    "horarios": [
-                                        "09:35",
-                                        "11:35",
-                                        "13:40",
-                                        "18:55",
-                                        "23:35"
-                                    ],
-                                    "costo": ""
-                                }
-                            ]
-                        }
-                    ]
-                }
+               
             ]
         },
         {
             "id": "sucumbios",
             "nombre": "Sucumbios",
             "terminales": [
-                {
-                    "id": "yantzaza",
-                    "nombre": "Yantzaza",
-                    "cooperativas": [
-                        {
-                            "id": "cariamanga",
-                            "nombre": "Coop Union Cariamanga Int",
-                            "logo": "cariamanga.png",
-                            "rating_global": {},
-                            "rutas": [
-                                {
-                                    "destino": "Loja",
-                                    "horarios": [
-                                        "09:35",
-                                        "11:35",
-                                        "13:40",
-                                        "18:55",
-                                        "23:35"
-                                    ],
-                                    "costo": ""
-                                }
-                            ]
-                        }
-                    ]
-                }
+               
             ]
         }
     ],
@@ -3028,46 +2632,5 @@
         "Cuenca",
         "Santo Domingo",
         "Riobamba"
-    ],
-    "anuncios": {
-        "provincias": {
-            "imagen": "img/anuncios/banner-ofi.png",
-            "link": "https://www.facebook.com/ofisolucionesintegrales?locale=es_LA"
-        },
-        "terminales": {
-            "chimborazo": {
-                "imagen": "img/anuncios/banner-asesor.png",
-                "link": "https://wa.me/593990332338?text=Hola%20vi%20su%20anuncio%20en%20busvas.com,%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20fondos%20de%20inversi%C3%B3n%20para%20empezar%20a%20ahorrar."
-            },
-            "santo-domingo-de-los-tsachilas": {
-                "imagen": "img/anuncios/banner-bambuka.png",
-                "link": "https://www.instagram.com/bambukarestobar/?hl=es"
-            },
-            "bolivar": {
-                "imagen": "img/anuncios/banner-anita.png",
-                "link": "https://www.facebook.com/lastortillasdemamaanita?locale=es_LA"
-            },
-            "guayas": {
-                "imagen": "img/anuncios/banner-kc.png",
-                "link": "https://www.instagram.com/kevincamachomusic/?hl=es"
-            },
-            "zamora": {
-                "imagen": "img/anuncios/banner-croster.png",
-                "link": "https://www.instagram.com/croster.yantzaza/?hl=es"
-            }
-        },
-        "cooperativas": {
-            "riobamba": {
-                "imagen": "img/anuncios/banner-asesor.png",
-                "link": "https://wa.me/593990332338?text=Hola%20vi%20su%20anuncio%20en%20busvas.com,%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20fondos%20de%20inversi%C3%B3n%20para%20empezar%20a%20ahorrar."
-            }
-            
-            
-        }
-    }
+    ]
 }
-
-
-
-
-

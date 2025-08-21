@@ -1,73 +1,29 @@
 /* Contenedor de anuncios */
 
 .ads-container {
-  display: flex;
+  display: flex; /* Cambia a flex para centrar el contenido */
   justify-content: center;
-  /* Centra horizontalmente */
   align-items: center;
-  /* Centra verticalmente */
-  text-align: center;
-  margin: 0.5rem auto;
-  /* Centra el contenedor y agrega margen */
+  margin: 1rem auto;
   border-radius: 10px;
-  width: 100% !important;
-  max-height: 150px !important;
-  /* Altura máxima del contenedor */
   overflow: hidden;
-  /* Asegura que el contenido no desborde */
+  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+  max-width: 500px; /* Ajusta según tu diseño */
 }
 
 /* Imagen dentro del contenedor */
 .ads-container img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
   display: block;
-  margin: 5px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
   border-radius: 5px;
-  max-height: 150px;
-    box-shadow: white 0px 0px 5px 0px;
-
+  margin: 0 auto;
 }
 
-/* Media queries para ajustar el ancho del contenedor */
-@media (min-width: 1024px) {
-  .ads-container {
-    width: 100%;
-    /* En pantallas grandes, ocupa el 50% del ancho */
+/* Responsividad: la imagen nunca será más grande que el viewport */
+@media (max-width: 600px) {
+  .ads-container img {
+    max-width: 100vw;
   }
-
-}
-
-@media (max-width: 768px) {
-  .ads-container {
-    width: 100% !important;
-    /* En pantallas medianas, ocupa el 70% del ancho */
-  }
- 
-  
-}
-
-@media (max-width: 425px) {
-  .ads-container {
-    width: 100% !important;
-    /* En pantallas pequeñas, ocupa el 90% del ancho */
-  }
-  
-}
-
-@media (max-width: 375px) {
-  .ads-container {
-    width: 100% !important;
-    /* En pantallas muy pequeñas, ocupa el 100% del ancho */
-  }
-
-}
-
-@media (max-width: 320px) {
-  .ads-container {
-    width: 100% !important;
-    /* En pantallas muy pequeñas, ocupa el 100% del ancho */
-  }
-
 }

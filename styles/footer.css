@@ -1,4 +1,3 @@
-
 /* Footer global */
 .footer {
   background: var(--primary);
@@ -66,4 +65,15 @@
   font-size: 0.95rem;
   color: var(--gray-light);
   margin-top: 0.5rem;
+}
+
+/* Estilos para la descripción del footer */
+.footer-description {
+  max-width: 500px;
+  margin: 0 auto 1rem auto;
+  text-align: center;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  padding: 0 1rem;
 }

@@ -10,18 +10,30 @@
     <link rel="stylesheet" href="/styles/header.css">
     <link rel="stylesheet" href="/styles/ads.css">
     <link rel="stylesheet" href="/styles/footer.css">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="img/logos/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/logos/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/logos/favicon-16x16.png">
+<link rel="manifest" href="img/logos/site.webmanifest">
+
+
+    <meta name="description"
+        content="Guía de rutas y horarios de buses interprovinciales en Ecuador. Información de terminales, cooperativas y servicios de transporte terrestre.">
+    <meta name="keywords" content="buses, Ecuador, rutas, horarios, terminales, cooperativas, transporte terrestre">
+    <meta name="author" content="Busvas.com">
 </head>
 
 <body>
     <!-- Barra de navegación principal -->
     <nav class="navbar">
-       
+
         <div class="logo">
             <a href="#" id="logo-link">
                 <img class="img-logo" src="img/logos/busvasLogo2.png" alt="Busvas Logo">
             </a>
         </div>
-         <button class="sidebar-toggle" aria-label="Abrir menú">
+        <button class="sidebar-toggle" aria-label="Abrir menú">
             <i class="fas fa-bars"></i>
         </button>
     </nav>
@@ -49,6 +61,11 @@
         <button class="close-sidebar">
             <i class="fas fa-times"></i>
         </button>
+        <div class="sidebar-path-bar">
+            <button class="sidebar-path-btn active" style="width:100%;">
+                <i class="fas fa-home"></i> Inicio
+            </button>
+        </div>
         <h2>Provincias</h2>
         <ul id="province-list-side"></ul>
     </aside>
@@ -59,9 +76,7 @@
         <!-- SECCIÓN PRINCIPAL (HOME) - PROVINCIAS -->
         <section id="home-section" class="section active-section">
             <h2><i class="fas fa-map-marked-alt"></i> Seleccione su provincia</h2>
-            <div id="province-ads" class="ads-container">
-                <!-- Contenedor para anuncios de provincias -->
-            </div>
+            <div id="province-ads" class="ads-container"></div>
             <div id="province-grid" class="card-grid">
                 <!-- Cartas de provincias se insertarán aquí via JS -->
             </div>
@@ -70,9 +85,7 @@
         <!-- Sección de terminales -->
         <section id="terminal-section" class="section">
             <h2><i class="fas fa-bus-alt"></i> Terminales en <span id="current-province-name"></span></h2>
-            <div id="terminal-ads" class="ads-container">
-                <!-- Contenedor para anuncios de terminales -->
-            </div>
+            <div id="terminal-ads" class="ads-container"></div>
             <div id="terminal-grid" class="card-grid">
                 <!-- Tarjetas de terminales se insertarán aquí via JS -->
             </div>
@@ -104,6 +117,13 @@
     <!-- Footer global -->
     <footer class="footer">
         <div class="footer-content">
+            <div class="footer-description">
+                <p>
+                    Busvas.com es la guía de rutas y horarios de buses interprovinciales en Ecuador. Encuentra
+                    información actualizada de terminales, cooperativas, destinos y servicios de transporte terrestre.
+                    ¡Viaja informado y seguro!
+                </p>
+            </div>
             <div class="footer-logo">
                 <img src="img/logos/busvasLogo2.png" alt="Busvas Logo">
             </div>
@@ -127,5 +147,5 @@
 
     <script src="script.js"></script>
 </body>
-</html>
 
+</html>

@@ -1,41 +1,28 @@
 document.addEventListener('DOMContentLoaded', function () {
     /* ========== ELEMENTOS DEL DOM ========== */
     const DOM = {
-        // Navegación
         navbar: document.querySelector('.navbar'),
         sidebar: document.querySelector('.sidebar'),
         sidebarToggle: document.querySelector('.sidebar-toggle'),
         closeSidebar: document.querySelector('.close-sidebar'),
         sidebarOverlay: document.querySelector('.sidebar-overlay'),
-
-        // Barra de ruta
         pathBar: document.querySelector('.path-bar'),
         btnHome: document.getElementById('btn-home'),
         btnProvince: document.getElementById('btn-province'),
         btnTerminal: document.getElementById('btn-terminal'),
-
-        // Secciones
         sections: {
             home: document.getElementById('home-section'),
             featured: document.getElementById('featured-section'),
             terminal: document.getElementById('terminal-section'),
             cooperative: document.getElementById('cooperative-section')
         },
-
-        // Contenedores
         provinceGrid: document.getElementById('province-grid'),
         terminalGrid: document.getElementById('terminal-grid'),
         cooperativeContainer: document.getElementById('cooperative-container'),
         featuredCooperative: document.getElementById('featured-cooperatives'),
-
-        // Títulos dinámicos
         currentProvinceName: document.getElementById('current-province-name'),
         currentTerminalName: document.getElementById('current-terminal-name'),
-
-        // Sidebar
         provinceListSide: document.getElementById('province-list-side'),
-
-        // Tooltip
         tooltip: document.getElementById('tooltip')
     };
 
@@ -44,8 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
         provincias: [],
         currentProvince: null,
         currentTerminal: null,
-        ciudadesPrincipales: ['Quito', 'Guayaquil', 'Cuenca', 'Santo Domingo', 'Riobamba'],
-        anuncios: {}
+        ciudadesPrincipales: [],
+        anuncio: null
     };
 
     /* ========== INICIALIZACIÓN ========== */
@@ -56,8 +43,8 @@ document.addEventListener('DOMContentLoaded', function () {
         setupEventListeners();
         renderProvinces();
         renderFeaturedCooperatives();
-        renderAllAds(); // Renderizar anuncios principales
-        showSection('home'); // Mostrar provincias al inicio
+        renderHomeAd();
+        showSection('home');
     }
 
     async function loadData() {
@@ -68,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             appData.provincias = data.provincias;
             appData.ciudadesPrincipales = data.ciudades_principales || [];
-            appData.anuncios = data.anuncios || {};
+            appData.anuncio = data.anuncio || null;
         } catch (error) {
             console.error('Error:', error);
             showError('Error al cargar los datos. Por favor recarga la página.');
@@ -81,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function () {
         DOM.provinceListSide.innerHTML = '';
 
         appData.provincias.forEach(provincia => {
-            // Card para el grid principal
             const card = document.createElement('div');
             card.className = 'card';
             card.innerHTML = `
@@ -96,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function () {
             card.addEventListener('click', () => selectProvince(provincia));
             DOM.provinceGrid.appendChild(card);
 
-            // Item para el sidebar
             const li = document.createElement('li');
             li.textContent = provincia.nombre;
             li.addEventListener('click', () => {
@@ -116,10 +101,8 @@ document.addEventListener('DOMContentLoaded', function () {
         DOM.btnTerminal.textContent = 'Terminal';
         renderTerminals();
         renderFeaturedCooperatives();
+        renderProvinceAd();
         showSection('terminal');
-
-        // Mostrar anuncio de terminal para la provincia seleccionada
-        renderTerminalAd();
     }
 
     function renderTerminals() {
@@ -148,6 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
         DOM.btnTerminal.textContent = terminal.nombre;
         DOM.btnTerminal.disabled = false;
         renderCooperatives();
+        renderTerminalAd();
         navigateTo('cooperative');
     }
 
@@ -187,7 +171,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             `;
 
-            // Eventos para el tooltip de rating
             const ratingEl = card.querySelector('.coop-rating');
             if (ratingEl) {
                 ratingEl.addEventListener('mouseenter', showRatingTooltip);
@@ -195,11 +178,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             addTooltipEvents(card);
-
-            // Evento para mostrar anuncio al hacer click en la card
-            card.addEventListener('click', () => {
-                renderCooperativeAd(coop);
-            });
 
             DOM.cooperativeContainer.appendChild(card);
         });
@@ -274,7 +252,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             `;
 
-            // Agrega eventos para el tooltip de rating
             const ratingEl = card.querySelector('.coop-rating');
             if (ratingEl) {
                 ratingEl.addEventListener('mouseenter', showRatingTooltip);
@@ -291,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return rutas.map(ruta => `
             <div class="route">
                 <div class="route-title">
-                    <span class="origin">${appData.currentTerminal.nombre}</span>
+                    <span class="origin">${appData.currentTerminal ? appData.currentTerminal.nombre : ''}</span>
                     <i class="fas fa-arrow-right"></i>
                     <span class="destination">${ruta.destino}</span>
                 </div>
@@ -379,7 +356,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!ratingData) return;
 
         let tooltipContent = '<div style="text-align: center; padding: 0.5rem;">';
-        tooltipContent += '<strong>Puntuación (personal)</strong><br>';
+        tooltipContent += '<strong>Puntuación</strong><br>';
 
         for (const [category, value] of Object.entries(ratingData)) {
             tooltipContent += `${capitalizeFirstLetter(category)}: ${value.toFixed(1)}<br>`;
@@ -446,24 +423,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* ========== EVENT LISTENERS ========== */
     function setupEventListeners() {
-        // Sidebar
         DOM.sidebarToggle.addEventListener('click', toggleSidebar);
         DOM.closeSidebar.addEventListener('click', toggleSidebar);
         DOM.sidebarOverlay.addEventListener('click', toggleSidebar);
 
-        // Navegación
         DOM.btnHome.addEventListener('click', () => {
             resetNavigation();
+            renderHomeAd();
             navigateTo('home');
         });
 
         DOM.btnProvince.addEventListener('click', () => {
+            renderProvinceAd();
             navigateTo('terminal');
         });
 
         DOM.btnTerminal.addEventListener('click', () => {
             if (appData.currentTerminal) {
                 renderCooperatives();
+                renderTerminalAd();
                 navigateTo('cooperative');
             }
         });
@@ -472,11 +450,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (logoLink) {
             logoLink.addEventListener('click', function (e) {
                 e.preventDefault();
+                renderHomeAd();
                 showSection('home');
             });
         }
 
-        // Botón mostrar/ocultar todas
         const toggleAllBtn = document.getElementById('toggle-all');
         if (toggleAllBtn) {
             toggleAllBtn.addEventListener('click', function () {
@@ -611,46 +589,53 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function renderAllAds() {
-        // Provincias
-        renderAds('province', appData.anuncios.provincias);
+    // Renderizar anuncio en HOME
+    function renderHomeAd() {
+        renderAds('province', appData.anuncio);
+    }
 
-        // Terminales (ejemplo: chimborazo)
-        if (appData.anuncios.terminales && appData.anuncios.terminales.chimborazo) {
-            renderAds('terminal', appData.anuncios.terminales.chimborazo);
+    // Renderizar anuncio en pantalla de provincia
+    function renderProvinceAd() {
+        if (appData.currentProvince && appData.currentProvince.anuncio) {
+            renderAds('terminal', appData.currentProvince.anuncio);
         } else {
             renderAds('terminal', null);
         }
+    }
 
-        // Cooperativas (ejemplo: riobamba)
-        if (appData.anuncios.cooperativas && appData.anuncios.cooperativas.riobamba) {
-            renderAds('cooperative', appData.anuncios.cooperativas.riobamba);
+    // Renderizar anuncio en pantalla de terminal
+    function renderTerminalAd() {
+        if (appData.currentTerminal && appData.currentTerminal.anuncio) {
+            renderAds('cooperative', appData.currentTerminal.anuncio);
         } else {
             renderAds('cooperative', null);
         }
     }
 
-    function renderTerminalAd() {
-        if (
-            appData.anuncios &&
-            appData.anuncios.terminales &&
-            appData.currentProvince &&
-            appData.anuncios.terminales[appData.currentProvince.id]
-        ) {
-            renderAds('terminal', appData.anuncios.terminales[appData.currentProvince.id]);
-        } else {
-            renderAds('terminal', appData.anuncios.provincias);
-        }
+    function getAnuncio(obj) {
+        // Si existe el anuncio en el objeto, úsalo
+        if (obj && obj.anuncio) return obj.anuncio;
+        // Si no existe, usa el anuncio principal del home
+        return appData.anuncio;
     }
 
-    function renderCooperativeAd(cooperativa) {
-        if (!cooperativa || !appData.anuncios || !appData.anuncios.cooperativas) return;
-        const coopId = cooperativa.id;
-        const anuncio = appData.anuncios.cooperativas[coopId];
-        if (anuncio) {
-            renderAds('cooperative', anuncio);
-        } else {
-            document.getElementById('cooperative-ads').innerHTML = '';
-        }
+    // Ejemplo de uso en renderizado:
+    function renderHomeAd() {
+        renderAds('province', getAnuncio(appData));
     }
+
+    function renderProvinceAd() {
+        renderAds('terminal', getAnuncio(appData.currentProvince));
+    }
+
+    function renderTerminalAd() {
+        renderAds('cooperative', getAnuncio(appData.currentTerminal));
+    }
+
+
+
+
+
+
+
 });
