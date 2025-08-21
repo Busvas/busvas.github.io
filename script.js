@@ -461,6 +461,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 toggleAllAccordions();
             });
         }
+
+        document.getElementById('sidebar-btn-home').addEventListener('click', function() {
+            // Muestra la sección principal (home)
+            document.getElementById('home-section').classList.add('active-section');
+            document.getElementById('terminal-section').classList.remove('active-section');
+            document.getElementById('cooperative-section').classList.remove('active-section');
+            // Cierra el sidebar
+            document.querySelector('.sidebar').classList.remove('active');
+            document.querySelector('.sidebar-overlay').classList.remove('active');
+        });
     }
 
     /* ========== FUNCIONES UTILITARIAS ========== */
