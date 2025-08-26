@@ -1,6 +1,6 @@
 /* COOPERATIVAS DESTACADAS */
 #featured-section {
-  margin-top: 3rem;
+  margin-top: 10rem;
 }
 
 .featured-grid {
@@ -258,12 +258,14 @@ img {
   height: 100px;
   overflow: hidden;
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .card-img {
-    border-radius: 10px;
+    border-radius: 10px !important;
 
-  width: 100%;
   height: 100%;
   object-fit: contain;
   transition: var(--transition);
@@ -544,7 +546,7 @@ img {
   background: var(--primary);
   color: var(--text-dark);
   /* Texto claro */
-  padding: 1rem;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -637,6 +639,30 @@ img {
   padding: 0.3rem 0.6rem;
   border-radius: 20px;
   font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  box-shadow: 0 1px 4px rgba(44, 79, 158, 0.07);
+}
+
+.time:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: scale(1.08);
+  box-shadow: 0 2px 8px rgba(44, 79, 158, 0.15);
+}
+
+/* Animación al hacer clic (efecto breve) */
+.time:active {
+  background: var(--secondary);
+  color: var(--white);
+  transform: scale(0.95);
+}
+
+.time.active-time {
+  background: var(--secondary);
+  color: var(--white);
+  transform: scale(0.95);
+  box-shadow: 0 2px 8px rgba(44, 79, 158, 0.15);
 }
 
 .route-price {
@@ -797,6 +823,7 @@ img {
     height: 100%;
     object-fit: contain;
     transition: var(--transition);
+    
   }
 
   .card-title {

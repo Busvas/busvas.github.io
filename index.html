@@ -6,30 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Busvas - horarios</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/styles/header.css">
-    <link rel="stylesheet" href="/styles/ads.css">
-    <link rel="stylesheet" href="/styles/footer.css">
-
+    <link rel="stylesheet" href="style.css?v=20250826">
+    <link rel="stylesheet" href="styles/header.css?v=20250825">
+    <link rel="stylesheet" href="styles/ads.css?v=20250825">
+    <link rel="stylesheet" href="styles/footer.css?v=20250825">
+    <link rel="stylesheet" href="styles/favoritos.css?v=20250825">
 
     <link rel="apple-touch-icon" sizes="180x180" href="img/logos/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/logos/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/logos/favicon-16x16.png">
     <link rel="manifest" href="img/logos/site.webmanifest">
 
-
     <meta name="description"
-        content="Guía de rutas y horarios de buses interprovinciales en Ecuador. Información de terminales, cooperativas y servicios de transporte terrestre.">
-    <meta name="keywords" content="buses, Ecuador, rutas, horarios, terminales, cooperativas, transporte terrestre">
-    <meta name="author" content="Busvas.com">
+        content="✅ Horarios de buses en Ecuador 2025 🚌. Consulta rutas, precios y terminales de todas las cooperativas. Información verificada y en tiempo real.">
+    <meta name="keywords"
+        content="horarios buses Ecuador, rutas buses Ecuador, terminal terrestre Quito, Guayaquil buses, cooperativas de transporte Ecuador">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
 </head>
 
 <body>
+    <!-- Modal de rutas favoritas -->
+    <div id="favorite-routes-modal" class="favorite-modal minimized">
+        <div class="favorite-modal-header">
+            <span class="favorite-modal-title"><i class="fas fa-star"></i> Rutas guardadas</span>
+            <button id="toggle-favorite-modal" class="favorite-modal-close">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+        <div id="favorite-routes-list" class="favorite-routes-list">
+            <!-- Aquí se agregan las rutas favoritas dinámicamente -->
+        </div>
+    </div>
+
     <!-- Barra de navegación principal -->
     <nav class="navbar">
-
         <div class="logo">
-            <a href="#" id="logo-link">
+            <a href="/index.html" id="logo-link" >
                 <img class="img-logo" src="img/logos/busvasLogo2.png" alt="Busvas Logo">
             </a>
         </div>
@@ -53,9 +67,6 @@
         </button>
     </div>
 
-
-
-
     <!-- Sidebar para móviles -->
     <aside class="sidebar">
         <button class="close-sidebar">
@@ -65,6 +76,14 @@
             <button id="sidebar-btn-home" class="sidebar-path-btn active" style="width:100%;">
                 <i class="fas fa-home"></i> Inicio
             </button>
+        </div>
+        <!-- NUEVO CONTENEDOR DE AYUDA EN SIDEBAR -->
+        <div class="sidebar-help">
+            <p>¿No hay el horario que buscas?<br>
+                ¿Tienes información de los horarios?</p>
+            <a href="https://wa.me/593991194932" target="_blank" rel="noopener" class="sidebar-help-btn">
+                Ayúdanos con información
+            </a>
         </div>
         <h2>Provincias</h2>
         <ul id="province-list-side"></ul>
@@ -89,7 +108,6 @@
             <div id="terminal-grid" class="card-grid">
                 <!-- Tarjetas de terminales se insertarán aquí via JS -->
             </div>
-
             <!-- Cooperativas destacadas debajo de los terminales -->
             <div id="featured-section" class="section">
                 <h2><i class="fas fa-trophy"></i> Cooperativas Destacadas</h2>
@@ -109,6 +127,7 @@
             <div id="cooperative-ads" class="ads-container"></div>
             <div id="cooperative-container" class="cooperative-grid"></div>
         </section>
+
     </main>
 
     <!-- Tooltip container (se agregará dinámicamente) -->
@@ -123,6 +142,14 @@
                     información actualizada de terminales, cooperativas, destinos y servicios de transporte terrestre.
                     ¡Viaja informado y seguro!
                 </p>
+            </div>
+            <!-- NUEVO CONTENEDOR DE AYUDA -->
+            <div class="footer-help">
+                <p>¿No hay el horario que buscas?<br>
+                    ¿Tienes información de los horarios?</p>
+                <a href="https://wa.me/593991194932" target="_blank" rel="noopener" class="footer-help-btn">
+                    Ayúdanos con información
+                </a>
             </div>
             <div class="footer-logo">
                 <img src="img/logos/busvasLogo2.png" alt="Busvas Logo">
@@ -145,7 +172,19 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20250825"></script>
+    <script src="js/ads.js?v=20250825"></script>
+    <script src="js/favoritos.js?v=20250825"></script>
+
+<script>
+    // Recarga la página cada 12 horas (43200000 ms)
+    setTimeout(function() {
+        location.reload(true);
+    }, 4320000);
+</script>
+
+
+
 </body>
 
 </html>

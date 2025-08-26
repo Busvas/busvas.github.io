@@ -7,7 +7,7 @@
   align-items: center;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 2900;
   box-shadow: var(--shadow-md);
 }
 
@@ -55,12 +55,12 @@
 .sidebar {
   position: fixed;
   top: 0;
-  right: -300px;
-  width: 300px;
+  right: -350px;
+  width: 350px;
   height: 100vh;
   background: var(--white);
   box-shadow: var(--shadow-lg);
-  z-index: 1100;
+  z-index: 30000;
   transition: var(--transition);
   padding: 1.5rem;
   overflow-y: auto;
@@ -112,7 +112,7 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1050;
+  z-index: 2500;
   opacity: 0;
   visibility: hidden;
   transition: var(--transition);
@@ -184,7 +184,7 @@
   border-bottom: 1px solid var(--gray-light);
   position: sticky;
   top: 0px;
-  z-index: 900;
+  z-index: 2000;
   box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
 }
@@ -257,7 +257,7 @@
     box-shadow: var(--shadow-md);
     /* Ajusta la sombra para que parezca un menú inferior */
   }
-  
+
   .path-btn {
     flex-grow: 1;
     /* Asegura que los botones ocupen el espacio disponible */
@@ -283,7 +283,8 @@
   .logo {
     font-size: 1.2rem;
   }
-    .path-btn span {
+
+  .path-btn span {
     display: none;
   }
 
@@ -305,8 +306,34 @@
   .logo {
     font-size: 1.2rem;
   }
-    .path-btn span {
+
+  .path-btn span {
     display: none;
   }
 
+}
+
+/* NUEVO CÓDIGO - AYUDA EN LA SIDEBAR */
+.sidebar-help {
+  background: var(--light);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.sidebar-help-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  background: var(--primary);
+  color: var(--white);
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.sidebar-help-btn:hover {
+  background: var(--secondary);
 }

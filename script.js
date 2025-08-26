@@ -23,11 +23,12 @@ document.addEventListener('DOMContentLoaded', function () {
         currentProvinceName: document.getElementById('current-province-name'),
         currentTerminalName: document.getElementById('current-terminal-name'),
         provinceListSide: document.getElementById('province-list-side'),
-        tooltip: document.getElementById('tooltip')
+        tooltip: document.getElementById('tooltip'),
+        adsCarousel: document.getElementById('ads-carousel')
     };
 
     /* ========== DATOS DE LA APP ========== */
-    const appData = {
+    window.appData = {
         provincias: [],
         currentProvince: null,
         currentTerminal: null,
@@ -43,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         setupEventListeners();
         renderProvinces();
         renderFeaturedCooperatives();
-        renderHomeAd();
+        if (typeof renderHomeAd === 'function') renderHomeAd();
         showSection('home');
     }
 
@@ -61,6 +62,11 @@ document.addEventListener('DOMContentLoaded', function () {
             showError('Error al cargar los datos. Por favor recarga la página.');
         }
     }
+
+    // Borra todas las cookies del dominio actual
+    document.cookie.split(";").forEach(function (c) {
+        document.cookie = c.trim().split("=")[0] + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/";
+    });
 
     /* ========== RENDERIZADO PRINCIPAL ========== */
     function renderProvinces() {
@@ -101,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
         DOM.btnTerminal.textContent = 'Terminal';
         renderTerminals();
         renderFeaturedCooperatives();
-        renderProvinceAd();
+        renderProvinceAd(); // Lógica de anuncios está en ads.js
         showSection('terminal');
     }
 
@@ -113,7 +119,10 @@ document.addEventListener('DOMContentLoaded', function () {
             card.className = 'card';
             card.innerHTML = `
                 <div class="card-img-container">
-                    <img src="img/provincias/ciudades/${terminal.id}.png" alt="Terminal ${terminal.nombre}" class="card-img">
+                    <img src="img/provincias/ciudades/${terminal.id}.png"
+                         alt="Terminal ${terminal.nombre}"
+                         class="card-img"
+                         onerror="this.onerror=null;this.src='img/provincias/ciudades/default.png';">
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Terminal ${terminal.nombre}</h3>
@@ -131,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
         DOM.btnTerminal.textContent = terminal.nombre;
         DOM.btnTerminal.disabled = false;
         renderCooperatives();
-        renderTerminalAd();
+        renderTerminalAd(); // Lógica de anuncios está en ads.js
         navigateTo('cooperative');
     }
 
@@ -181,6 +190,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
             DOM.cooperativeContainer.appendChild(card);
         });
+
+        setTimeout(() => {
+            document.querySelectorAll('.add-favorite-time').forEach(el => {
+                el.addEventListener('click', function (e) {
+                    const coop = el.closest('.cooperative-card')?.querySelector('.coop-info h3')?.textContent || '';
+                    const origen = el.getAttribute('data-origen');
+                    const destino = el.getAttribute('data-destino');
+                    const hora = el.getAttribute('data-hora');
+                    const precio = el.getAttribute('data-precio');
+                    window.addFavoriteRoute({ coop, origen, destino, hora, precio });
+                });
+            });
+        }, 0);
+
+        setTimeout(() => {
+            document.querySelectorAll('.time').forEach(el => {
+                el.addEventListener('click', function () {
+                    // Alterna el estado activo
+                    if (el.classList.contains('active-time')) {
+                        el.classList.remove('active-time');
+                        // Aquí también elimina la ruta guardada si lo deseas
+                    } else {
+                        el.classList.add('active-time');
+                        // Aquí también agrega la ruta guardada si lo deseas
+                    }
+                });
+            });
+        }, 0);
 
         setupAccordionEvents();
         updateToggleButtonState();
@@ -273,7 +310,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     <span class="destination">${ruta.destino}</span>
                 </div>
                 <div class="route-schedule">
-                    ${ruta.horarios.map(h => `<span class="time">${h}</span>`).join('')}
+                    ${ruta.horarios.map(h => `
+                        <span 
+                            class="time add-favorite-time"
+                            data-coop="${appData.currentTerminal && appData.currentTerminal.cooperativas ? appData.currentTerminal.cooperativas[0].nombre : ''}"
+                            data-origen="${appData.currentTerminal ? appData.currentTerminal.nombre : ''}"
+                            data-destino="${ruta.destino}"
+                            data-hora="${h}"
+                            data-precio="${ruta.costo || ''}"
+                            title="Guardar en favoritos"
+                        >${h}</span>
+                    `).join('')}
                 </div>
                 ${ruta.costo ? `<div class="route-price">$${ruta.costo}</div>` : ''}
             </div>
@@ -327,7 +374,6 @@ document.addEventListener('DOMContentLoaded', function () {
         let modal = document.createElement('div');
         modal.className = 'info-modal';
         modal.innerHTML = `
-            <strong>${coopData.nombre}</strong><br>
             ${coopData.telefono ? `<p><strong>Teléfono:</strong> <span class="copy-phone" style="cursor:pointer;color:#234f9e;">${coopData.telefono}</span></p>` : ''}
             ${coopData.sitio_web ? `<p><strong>Sitio web:</strong> <a href="${coopData.sitio_web}" target="_blank" style="color:#234f9e;">${coopData.sitio_web}</a></p>` : ''}
             ${coopData.servicios && coopData.servicios.length > 0 ? `<p><strong>Servicios:</strong> ${coopData.servicios.join(', ')}</p>` : ''}
@@ -414,11 +460,16 @@ document.addEventListener('DOMContentLoaded', function () {
             section.classList.remove('active-section');
         });
 
-        DOM.sections[sectionName].classList.add('active-section');
+        if (DOM.sections[sectionName]) {
+            DOM.sections[sectionName].classList.add('active-section');
+        }
 
-        if (sectionName === 'terminal') {
+        if (sectionName === 'terminal' && DOM.sections.featured) {
             DOM.sections.featured.classList.add('active-section');
         }
+
+        // Scroll al inicio de la página
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     /* ========== EVENT LISTENERS ========== */
@@ -429,19 +480,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
         DOM.btnHome.addEventListener('click', () => {
             resetNavigation();
-            renderHomeAd();
+            // renderHomeAd(); // Lógica de anuncios está en ads.js
             navigateTo('home');
         });
 
         DOM.btnProvince.addEventListener('click', () => {
-            renderProvinceAd();
+            // renderProvinceAd(); // Lógica de anuncios está en ads.js
             navigateTo('terminal');
         });
 
         DOM.btnTerminal.addEventListener('click', () => {
             if (appData.currentTerminal) {
                 renderCooperatives();
-                renderTerminalAd();
+                // renderTerminalAd(); // Lógica de anuncios está en ads.js
                 navigateTo('cooperative');
             }
         });
@@ -450,7 +501,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (logoLink) {
             logoLink.addEventListener('click', function (e) {
                 e.preventDefault();
-                renderHomeAd();
+                // renderHomeAd(); // Lógica de anuncios está en ads.js
                 showSection('home');
             });
         }
@@ -462,7 +513,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
-        document.getElementById('sidebar-btn-home').addEventListener('click', function() {
+        document.getElementById('sidebar-btn-home').addEventListener('click', function () {
             // Muestra la sección principal (home)
             document.getElementById('home-section').classList.add('active-section');
             document.getElementById('terminal-section').classList.remove('active-section');
@@ -578,69 +629,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    /* ========== ANUNCIOS ========== */
-    function renderAds(type, anuncio) {
-        let container;
-        if (type === 'cooperative') {
-            container = document.getElementById('cooperative-ads');
-        } else if (type === 'terminal') {
-            container = document.getElementById('terminal-ads');
-        } else if (type === 'province') {
-            container = document.getElementById('province-ads');
-        }
-        if (!container) return;
-        container.innerHTML = '';
-        if (anuncio) {
-            container.innerHTML = `
-                <a href="${anuncio.link}" target="_blank">
-                    <img src="${anuncio.imagen}" alt="Anuncio" style="width:100%;max-width:400px;">
-                </a>
-            `;
-        }
-    }
 
-    // Renderizar anuncio en HOME
-    function renderHomeAd() {
-        renderAds('province', appData.anuncio);
-    }
 
-    // Renderizar anuncio en pantalla de provincia
-    function renderProvinceAd() {
-        if (appData.currentProvince && appData.currentProvince.anuncio) {
-            renderAds('terminal', appData.currentProvince.anuncio);
-        } else {
-            renderAds('terminal', null);
-        }
-    }
 
-    // Renderizar anuncio en pantalla de terminal
-    function renderTerminalAd() {
-        if (appData.currentTerminal && appData.currentTerminal.anuncio) {
-            renderAds('cooperative', appData.currentTerminal.anuncio);
-        } else {
-            renderAds('cooperative', null);
-        }
-    }
 
-    function getAnuncio(obj) {
-        // Si existe el anuncio en el objeto, úsalo
-        if (obj && obj.anuncio) return obj.anuncio;
-        // Si no existe, usa el anuncio principal del home
-        return appData.anuncio;
-    }
 
-    // Ejemplo de uso en renderizado:
-    function renderHomeAd() {
-        renderAds('province', getAnuncio(appData));
-    }
 
-    function renderProvinceAd() {
-        renderAds('terminal', getAnuncio(appData.currentProvince));
-    }
-
-    function renderTerminalAd() {
-        renderAds('cooperative', getAnuncio(appData.currentTerminal));
-    }
 
 
 
