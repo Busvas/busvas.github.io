@@ -1,11 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     /* ========== ELEMENTOS DEL DOM ========== */
     const DOM = {
-        navbar: document.querySelector('.navbar'),
-        sidebar: document.querySelector('.sidebar'),
-        sidebarToggle: document.querySelector('.sidebar-toggle'),
-        closeSidebar: document.querySelector('.close-sidebar'),
-        sidebarOverlay: document.querySelector('.sidebar-overlay'),
         pathBar: document.querySelector('.path-bar'),
         btnHome: document.getElementById('btn-home'),
         btnProvince: document.getElementById('btn-province'),
@@ -43,8 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
         await loadData();
         setupEventListeners();
         renderProvinces();
-        renderFeaturedCooperatives();
         if (typeof renderHomeAd === 'function') renderHomeAd();
+        if (typeof renderFeaturedCooperatives === 'function') renderFeaturedCooperatives();
         showSection('home');
     }
 
@@ -92,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
             li.textContent = provincia.nombre;
             li.addEventListener('click', () => {
                 selectProvince(provincia);
-                toggleSidebar();
+                // Sidebar toggle está en header.js
             });
             DOM.provinceListSide.appendChild(li);
         });
@@ -106,7 +101,6 @@ document.addEventListener('DOMContentLoaded', function () {
         DOM.btnTerminal.disabled = true;
         DOM.btnTerminal.textContent = 'Terminal';
         renderTerminals();
-        renderFeaturedCooperatives();
         renderProvinceAd(); // Lógica de anuncios está en ads.js
         showSection('terminal');
     }
@@ -119,10 +113,12 @@ document.addEventListener('DOMContentLoaded', function () {
             card.className = 'card';
             card.innerHTML = `
                 <div class="card-img-container">
-                    <img src="img/provincias/ciudades/${terminal.id}.png"
+                    <div class="card-rounded-container">
+                        <img src="img/provincias/ciudades/${terminal.id}.png"
                          alt="Terminal ${terminal.nombre}"
-                         class="card-img"
+                         class="card-img-rounded"
                          onerror="this.onerror=null;this.src='img/provincias/ciudades/default.png';">
+                    </div>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Terminal ${terminal.nombre}</h3>
@@ -221,83 +217,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         setupAccordionEvents();
         updateToggleButtonState();
-    }
-
-    /* ========== COOPERATIVAS DESTACADAS ========== */
-    function renderFeaturedCooperatives() {
-        DOM.featuredCooperative.innerHTML = '';
-
-        const allCooperatives = [];
-        appData.provincias.forEach(provincia => {
-            provincia.terminales.forEach(terminal => {
-                terminal.cooperativas.forEach(coop => {
-                    const mainRoutes = coop.rutas && coop.rutas.length > 0 ? coop.rutas : [];
-                    if (mainRoutes.length > 0) {
-                        allCooperatives.push({
-                            ...coop,
-                            terminal: terminal.nombre,
-                            provincia: provincia.nombre,
-                            mainRoutes,
-                            rating: calculateAverageRating(coop.rating_global)
-                        });
-                    }
-                });
-            });
-        });
-
-        const topCooperatives = allCooperatives
-            .sort((a, b) => b.rating - a.rating)
-            .slice(0, 3);
-
-        if (topCooperatives.length === 0) {
-            DOM.featuredCooperative.innerHTML = '<div style="padding:1rem;">No hay cooperativas destacadas disponibles.</div>';
-            return;
-        }
-
-        topCooperatives.forEach((coop, index) => {
-            const card = document.createElement('div');
-            card.className = 'featured-card';
-
-            card.innerHTML = `
-                <div class="featured-card-header">
-                    ${index === 0 ? '<span class="featured-badge">TOP 1</span>' : ''}
-                    <div class="featured-coop-info">
-                        <img src="img/terminales/${coop.logo || ''}" class="featured-coop-logo" onerror="this.src=''">
-                        <div>
-                            <h3>${coop.nombre}</h3>
-                            <div class="coop-rating" data-rating='${JSON.stringify(coop.rating_global)}'>
-                                ${generateStarRating(coop.rating)}
-                                <span>${coop.rating.toFixed(1)}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="featured-routes">
-                    ${coop.mainRoutes.slice(0, 3).map(route => `
-                        <div class="featured-route">
-                            <div class="route-direction">
-                                <span class="route-city">${coop.terminal}</span>
-                                <i class="fas fa-arrow-right route-arrow"></i>
-                                <span class="route-city">${route.destino}</span>
-                            </div>
-                            <div class="route-meta">
-                                <span>${route.horarios ? route.horarios.slice(0, 15).join(' - ') : ''}</span>
-                                <span>${route.costo ? '$' + route.costo : ''}</span>
-                            </div>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-
-            const ratingEl = card.querySelector('.coop-rating');
-            if (ratingEl) {
-                ratingEl.addEventListener('mouseenter', showRatingTooltip);
-                ratingEl.addEventListener('mouseleave', hideTooltip);
-            }
-
-            addTooltipEvents(card);
-            DOM.featuredCooperative.appendChild(card);
-        });
     }
 
     /* ========== FUNCIONES AUXILIARES ========== */
@@ -474,37 +393,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* ========== EVENT LISTENERS ========== */
     function setupEventListeners() {
-        DOM.sidebarToggle.addEventListener('click', toggleSidebar);
-        DOM.closeSidebar.addEventListener('click', toggleSidebar);
-        DOM.sidebarOverlay.addEventListener('click', toggleSidebar);
-
         DOM.btnHome.addEventListener('click', () => {
             resetNavigation();
-            // renderHomeAd(); // Lógica de anuncios está en ads.js
             navigateTo('home');
         });
 
         DOM.btnProvince.addEventListener('click', () => {
-            // renderProvinceAd(); // Lógica de anuncios está en ads.js
             navigateTo('terminal');
         });
 
         DOM.btnTerminal.addEventListener('click', () => {
             if (appData.currentTerminal) {
                 renderCooperatives();
-                // renderTerminalAd(); // Lógica de anuncios está en ads.js
                 navigateTo('cooperative');
             }
         });
-
-        const logoLink = document.getElementById('logo-link');
-        if (logoLink) {
-            logoLink.addEventListener('click', function (e) {
-                e.preventDefault();
-                // renderHomeAd(); // Lógica de anuncios está en ads.js
-                showSection('home');
-            });
-        }
 
         const toggleAllBtn = document.getElementById('toggle-all');
         if (toggleAllBtn) {
@@ -512,24 +415,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 toggleAllAccordions();
             });
         }
-
-        document.getElementById('sidebar-btn-home').addEventListener('click', function () {
-            // Muestra la sección principal (home)
-            document.getElementById('home-section').classList.add('active-section');
-            document.getElementById('terminal-section').classList.remove('active-section');
-            document.getElementById('cooperative-section').classList.remove('active-section');
-            // Cierra el sidebar
-            document.querySelector('.sidebar').classList.remove('active');
-            document.querySelector('.sidebar-overlay').classList.remove('active');
-        });
     }
 
     /* ========== FUNCIONES UTILITARIAS ========== */
-    function toggleSidebar() {
-        DOM.sidebar.classList.toggle('active');
-        DOM.sidebarOverlay.classList.toggle('active');
-    }
-
     function resetNavigation() {
         DOM.btnProvince.disabled = true;
         DOM.btnTerminal.disabled = true;
@@ -629,17 +517,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    window.showSection = showSection;
+    window.renderProvinceAd = renderProvinceAd;
+    window.renderHomeAd = renderHomeAd;
 });

@@ -240,7 +240,6 @@ img {
 .card {
   background: var(--white);
   border-radius: 10px;
-  overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   cursor: pointer;
@@ -254,45 +253,79 @@ img {
 }
 
 .card-img-container {
-  padding: 5px;
-  height: 100px;
-  overflow: hidden;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: 110px;
+  /* ajusta según tu diseño */
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-rounded-container {
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    animation: cardImgBounce 2s infinite;
+
+}
+
+.card-img-rounded {
+  border-radius: 12px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+    z-index: 10;
+  position: relative;
 }
 
 .card-img {
-    border-radius: 10px !important;
-
+  padding-bottom: 10px;
   height: 100%;
+  width: 100%;
   object-fit: contain;
   transition: var(--transition);
   animation: cardImgBounce 2s infinite;
+  /* Agrega la animación personalizada */
+  z-index: 10;
+  position: relative;
 }
 
 @keyframes cardImgBounce {
   0% {
     transform: scale(1) translateY(0);
+    filter: none;
   }
 
-  50% {
+  40% {
     transform: scale(1.05) translateY(-3px);
+    filter: drop-shadow(0 4px 7px rgba(44, 79, 158, 0.5));
+  }
+
+  60% {
+    transform: scale(1.05) translateY(-3px);
+    filter: drop-shadow(0 4px 7px rgba(44, 79, 158, 0.5));
   }
 
   100% {
     transform: scale(1) translateY(0);
+    filter: none;
   }
 }
 
 .card:hover .card-img {
-  transform: scale(1.05);
+  transform: scale(1.05) translateY(-3px);
+  filter: drop-shadow(0 4px 8px rgba(44, 79, 158, 0.25));
 }
 
 .card-body {
   padding: 0rem 0.2rem;
   text-align: center;
+  background-color: transparent;
 }
 
 .card-title {
@@ -793,14 +826,13 @@ img {
   }
 
   .card-body {
-    padding: 0.5rem;
+    padding: 0 0.5rem;
     text-align: center;
   }
 
   .card {
     background: var(--white);
     border-radius: 10px;
-    overflow: hidden;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     cursor: pointer;
@@ -813,9 +845,7 @@ img {
   }
 
   .card-img-container {
-    padding: 5px;
-    height: 50px;
-    overflow: hidden;
+    height: 60px;
   }
 
   .card-img {
@@ -823,7 +853,7 @@ img {
     height: 100%;
     object-fit: contain;
     transition: var(--transition);
-    
+
   }
 
   .card-title {

@@ -25,6 +25,7 @@
 .favorite-modal.expanded {
     transform: translate(-50%, 0%);
     height: auto;
+    padding-bottom: 15px;
 }
 
 .favorite-modal-header {

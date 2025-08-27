@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Busvas - horarios</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=20250826">
-    <link rel="stylesheet" href="styles/header.css?v=20250825">
-    <link rel="stylesheet" href="styles/ads.css?v=20250825">
-    <link rel="stylesheet" href="styles/footer.css?v=20250825">
-    <link rel="stylesheet" href="styles/favoritos.css?v=20250825">
+    <link rel="stylesheet" href="style.css?v=202508262">
+    <link rel="stylesheet" href="styles/header.css?v=202508262">
+    <link rel="stylesheet" href="styles/ads.css?v=202508262">
+    <link rel="stylesheet" href="styles/footer.css?v=202508262">
+    <link rel="stylesheet" href="styles/favoritos.css?v=202508262">
 
     <link rel="apple-touch-icon" sizes="180x180" href="img/logos/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/logos/favicon-32x32.png">
@@ -42,8 +42,11 @@
 
     <!-- Barra de navegación principal -->
     <nav class="navbar">
+        <button id="back-btn" class="back-btn" aria-label="Retroceder" style="margin-right:10px;">
+            <i class="fas fa-arrow-left"></i>
+        </button>
         <div class="logo">
-            <a href="/index.html" id="logo-link" >
+            <a href="/index.html" id="logo-link">
                 <img class="img-logo" src="img/logos/busvasLogo2.png" alt="Busvas Logo">
             </a>
         </div>
@@ -172,16 +175,18 @@
         </div>
     </footer>
 
-    <script src="script.js?v=20250825"></script>
-    <script src="js/ads.js?v=20250825"></script>
-    <script src="js/favoritos.js?v=20250825"></script>
+    <script src="script.js?v=202508262"></script>
+    <script src="/js/header.js?v=202508262"></script>
+    <script src="js/ads.js?v=202508262"></script>
+    <script src="js/favoritos.js?v=202508262"></script>
+    <script src="/js/destacadas.js?v=202508262"></script>
 
-<script>
-    // Recarga la página cada 12 horas (43200000 ms)
-    setTimeout(function() {
-        location.reload(true);
-    }, 4320000);
-</script>
+    <script>
+        // Recarga la página cada 12 horas (43200000 ms)
+        setTimeout(function () {
+            location.reload(true);
+        }, 4320000);
+    </script>
 
 
 

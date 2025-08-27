@@ -55,8 +55,8 @@
 .sidebar {
   position: fixed;
   top: 0;
-  right: -350px;
-  width: 350px;
+  right: -340px;
+  width: 340px;
   height: 100vh;
   background: var(--white);
   box-shadow: var(--shadow-lg);
@@ -276,6 +276,12 @@
     /* Oculta los separadores entre botones */
   }
 
+
+  .back-btn {
+    font-size: 2rem;
+    margin-right: 0.3rem;
+  }
+
 }
 
 
@@ -336,4 +342,30 @@
 
 .sidebar-help-btn:hover {
   background: var(--secondary);
+}
+
+/* Flecha de retroceso en el header */
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  color: #234f9e;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+  padding: 0.5rem;
+}
+
+@keyframes backBtnBounce {
+  0% { transform: translateX(0); }
+  40% { transform: translateX(12px); }
+  60% { transform: translateX(12px); }
+  100% { transform: translateX(0); }
+}
+
+.back-btn.clicked {
+  color: #e53935;
+  animation: backBtnBounce 0.5s cubic-bezier(.77,0,.18,1);
 }

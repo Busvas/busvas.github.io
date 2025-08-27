@@ -541,10 +541,16 @@
                 {
                     "id": "santo-domingo",
                     "nombre": "Santo Domingo",
-                    "anuncio": {
+                    "anuncio": [
+                        {
                         "imagen": "img/anuncios/banner-bambuka.png",
                         "link": "https://www.instagram.com/bambukarestobar/?hl=es"
                     },
+                    {
+                        "imagen": "img/anuncios/banner-tvo.png",
+                        "link": "https://www.facebook.com/Tvoanuestroestilo"
+                    }
+                    ],
                     "cooperativas": [
                         {
                             "id": "riobamba",
@@ -575,6 +581,24 @@
                                         "19:00"
                                     ],
                                     "costo": "08.00"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "reina-mercedes",
+                            "nombre": "Reina de las Mercedes",
+                            "logo": "icon-bus.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Quito",
+                                    "horarios": [
+                                        "04:00",
+                                        "08:45",
+                                        "11:45",
+                                        "18:45"
+                                    ],
+                                    "costo": ""
                                 }
                             ]
                         }
@@ -2688,6 +2712,57 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "id": "smb",
+                    "nombre": "San Miguel de los Bancos",
+                    "anuncio": [
+                        {
+                            "imagen": "img/anuncios/banner-green.png",
+                            "link": "https://www.instagram.com/green_coffe_smb/?hl=es"
+                        },
+                        {
+                            "imagen": "img/anuncios/banner-mimitos.png",
+                            "link": "https://www.instagram.com/p/DJaQddstOPW/?hl=es&img_index=1"
+                        },
+                        {
+                            "imagen": "img/anuncios/banner-smb.png",
+                            "link": "https://www.instagram.com/p/DARNVpDPiWo/?hl=es"
+                        }
+                    ],
+                    "cooperativas": [
+                        {
+                            "id": "reina-mercedes",
+                            "nombre": "Reina de las Mercedes",
+                            "logo": "icon-bus.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Santo Domingo",
+                                    "horarios": [],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "kennedy",
+                            "nombre": "Kennedy",
+                            "logo": "icon-bus.png",
+                            "rating_global": {},
+                            "rutas": [
+                                {
+                                    "destino": "Los bancos-Quito",
+                                    "horarios": [
+                                        "07:44",
+                                        "11:28",
+                                        "14:45",
+                                        "17:30"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -3566,6 +3641,96 @@
             ]
         },
         {
+            "id": "sucumbios",
+            "nombre": "Sucumbios",
+            "anuncio": [
+                {
+                    "imagen": "img/anuncios/banner-sanku.png",
+                    "link": "https://www.instagram.com/sankufoods/?hl=es"
+                },
+                {
+                    "imagen": "img/anuncios/banner-curvi.png",
+                    "link": "https://www.instagram.com/curvy_closettt/?hl=es"
+                }
+            ],
+            "terminales": [
+                {
+                    "id": "lago-agrio",
+                    "nombre": "Lago Agrio",
+                    "anuncio": {
+                        "imagen": "img/anuncios/banner-sanku.png",
+                        "link": "https://www.instagram.com/sankufoods/?hl=es"
+                    },
+                    "cooperativas": [
+                        {
+                            "id": "zaracay",
+                            "nombre": "Zaracay",
+                            "logo": "zaracay.png",
+                            "rating_global": {},
+                            "telefono": "098 026 8435",
+                            "sitio_web": "https://www.facebook.com/oficialtransporteszaracay?locale=es_LA",
+                            "servicios": [
+                                "Encomiendas",
+                                "atención: 07:30-22:00"
+                            ],
+                            "rutas": [
+                                {
+                                    "destino": "Guayaquil",
+                                    "horarios": [
+                                        "12:40",
+                                        "17:55",
+                                        "21:50"
+                                    ]
+                                },
+                                {
+                                    "destino": "Manta",
+                                    "horarios": [
+                                        "16:00",
+                                        "17:10"
+                                    ]
+                                },
+                                {
+                                    "destino": "Esmeraldas",
+                                    "horarios": [
+                                        "16:30",
+                                        "18:50"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "san-francisco-oriental",
+                            "nombre": "San Francismo Oriental",
+                            "logo": "san-francisco-oriental.png",
+                            "rating_global": {},
+                            "telefono": "099 704 9828",
+                            "sitio_web": "https://www.facebook.com/tourisanfrancisco",
+                            "servicios": [
+                                "Encomiendas"
+                            ],
+                            "rutas": [
+                                {
+                                    "destino": "Zamora (Loreto-Archidona-Tena-Santa Clara-Puyo-Macas-Sucua-Logroño-Bella Unión-Limón-San Juan Bosco-Gualaquiza-El Pangui-Yantazaza)",
+                                    "horarios": [
+                                        "07:55",
+                                        "11:55"
+                                    ],
+                                    "costo": "34.50"
+                                },
+                                {
+                                    "destino": "Gualaquiza (Loreto-Sumaco-Cotundo-Archidona-Tena-Santa Clara-Puyo-Macas-Sucua-Logroño-Bella Unión-Limón-San Juan Bosco-Gualaquiza)",
+                                    "horarios": [
+                                        "16:45"
+                                    ],
+                                    "costo": "29.90"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "id": "napo",
             "nombre": "Napo",
             "anuncio": [
@@ -3668,21 +3833,6 @@
         {
             "id": "santa-elena",
             "nombre": "Santa Elena",
-            "terminales": []
-        },
-        {
-            "id": "sucumbios",
-            "nombre": "Sucumbios",
-            "anuncio": [
-                {
-                    "imagen": "img/anuncios/banner-sanku.png",
-                    "link": "https://www.instagram.com/sankufoods/?hl=es"
-                },
-                {
-                    "imagen": "img/anuncios/banner-curvi.png",
-                    "link": "https://www.instagram.com/curvy_closettt/?hl=es"
-                }
-            ],
             "terminales": []
         },
         {
