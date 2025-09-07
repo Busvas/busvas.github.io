@@ -1,0 +1,64 @@
+{
+    "anuncio": [
+        {
+            "imagen": "img/anuncios/banner-ofi.png",
+            "link": "",
+            "red": "facebook"
+        }
+    ],
+    "empresas": [
+        {
+            "id": "tx-latina",
+            "nombre": "Latina Travel S.A",
+            "logo": "/paginas/empresa/latina.png",
+            "telefono": "995424235",
+            "sitio_web": "https://www.instagram.com/latinatravels.a/?hl=es",
+            "rating_global": {
+                "servicio": 4.7,
+                "puntualidad": 4.8,
+                "comodidad": 4.6
+            },
+            "ciudades": [
+                "Quito",
+                "Guayaquil",
+                "Manta",
+                "Esmeraldas",
+                "Santo Domingo"
+            ],
+            "servicios": [
+                "Puerta a puerta",
+                "Reservas por WhatsApp"
+            ],
+            "telefono_e164": "995424235", 
+            "whatsapp_link": "https://wa.me/59393995424235?text=Hola%2C%20estoy%20consultando%20sobre%20Latina%20Travel%20S.A"
+        },
+        {
+            "id": "tx-destinos",
+            "nombre": "Destinos Servicio de Transporte Ejecutivo",
+            "logo": "/paginas/empresa/destinos.png",
+            "telefono": "939422186",
+            "sitio_web": "https://www.instagram.com/destinos_servicio_ejecutivo/?hl=es",
+            "rating_global": {
+                "servicio": 4.5,
+                "puntualidad": 4.6,
+                "comodidad": 4.4
+            },
+            "ciudades": [
+                "Quito",
+                "Santo Domingo",
+                "El Carmen",
+                "La Concordia",
+                "Quevedo",
+                "Guayaquil",
+                "Quininde",
+                "Buena Fé"
+            ],
+            "servicios": [
+                "Puerta a puerta",
+                "Reservas por WhatsApp"
+            ],
+            "telefono_e164": "939422186",
+            "whatsapp_link": "https://wa.me/593939422186?text=Hola%2C%20estoy%20consultando%20sobre%20Destinos%20Servicio%20de%20Transporte%20Ejecutivo"
+        }
+    ]
+}

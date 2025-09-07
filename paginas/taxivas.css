@@ -1,0 +1,308 @@
+/* ========== CONTENEDOR DE CARTAS ========== */
+.taxi-empresas-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-items: center;
+}
+
+/* ========== CARTA DE TAXI (Unificada para consistencia) ========== */
+.taxi-card, .taxi-company-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: none;
+}
+
+/* ========== TAXI-HEADER (Mejorado: Flexible y sin mediaqueries específicas) ========== */
+.taxi-header {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* ========== TAXI-LOGO (Mejorado: Más responsivo por defecto) ========== */
+.taxi-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 50% !important;
+    margin-right: 15px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    max-width: 100%;
+}
+.taxi-logo-container{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.taxi-info-container {
+    margin-left: 15px;
+    flex: 1;
+    min-width: 0;
+}
+
+/* ========== TAXI-TITLE y TAXI-NAME (Consolidados para evitar repeticiones) ========== */
+.taxi-title, .taxi-name {
+    margin: 0 15px 0 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ========== TAXI-RATING ========== */
+.taxi-rating {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #ff9800;
+}
+
+.taxi-rating span {
+    margin-left: 5px;
+    color: #666;
+}
+
+/* ========== TAXI-BODY ========== */
+.taxi-body {
+    padding: 15px;
+}
+
+.taxi-desc, .taxi-services {
+    margin: 0 0 10px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.taxi-ciudades {
+    margin-bottom: 10px;
+}
+
+.taxi-ciudad {
+    display: inline-block;
+    background: #e9ecef;
+    padding: 2px 8px;
+    margin: 2px 4px 2px 0;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #495057;
+}
+
+.taxi-contact-row {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.taxi-contact-row strong {
+    margin-right: 10px;
+}
+
+.taxi-phone-link, .contact-number {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.taxi-phone-link:hover, .contact-number:hover {
+    text-decoration: underline;
+}
+
+.taxi-info-icon.whatsapp-link {
+    color: #25d366;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.taxi-info-icon.whatsapp-link:hover {
+    color: #128c7e;
+}
+
+.taxi-site {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.taxi-site:hover {
+    text-decoration: underline;
+}
+
+.taxi-contact {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.contact-whatsapp {
+    color: #25d366;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.contact-whatsapp:hover {
+    color: #128c7e;
+}
+
+/* ========== CIUDADES ========== */
+.taxi-ciudades {
+    margin-top: 0.5rem;
+    font-size: 1em;
+    color: #234f9e;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+/* ========== ANUNCIO ========== */
+#taxivas-ads {
+    max-width: 400px;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+#taxivas-ads img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(44,79,158,0.10);
+    margin-bottom: 1rem;
+}
+
+/* ========== TITULO PRINCIPAL (hereda de style.css) ========== */
+.main-title {
+    /* Si quieres sobrescribir algo, hazlo aquí */
+}
+
+/* ========== RESPONSIVE (Mejorado para logo y título) ========== */
+@media (max-width: 1024px) {
+    .taxi-empresas-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    .taxi-header {
+        padding: 10px; /* Aumenta padding para mejor espacio */
+    }
+    .taxi-logo {
+        width: 70px; /* Reduce logo */
+        height: 70px;
+    }
+    .taxi-title, .taxi-name {
+        font-size: 17px; /* Reduce font-size */
+    }
+}
+
+@media (max-width: 768px) {
+    .taxi-empresas-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .taxi-card, .taxi-company-card {
+        width: 100%;
+        padding: 1rem;
+    }
+    .taxi-header {
+        padding: 8px; /* Reduce padding */
+        align-items: center;
+    }
+    .taxi-logo {
+        width: 60px; /* Reduce más */
+        height: 60px;
+        margin-right: 10px;
+    }
+    .taxi-title, .taxi-name {
+        font-size: 16px; /* Reduce font-size */
+        margin: 5px 0;
+    }
+    .taxi-info-container {
+        margin-left: 0px;
+    }
+    .taxi-contact-row {
+        align-items: flex-start;
+    }
+    .taxi-contact {
+        align-items: flex-start;
+    }
+    .contact-whatsapp {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 375px) {
+    .taxi-card, .taxi-company-card {
+        padding: 0.7rem;
+        font-size: 0.95rem;
+    }
+    .taxi-header {
+        padding: 5px;
+    }
+    .taxi-logo {
+        width: 50px; /* Reduce aún más */
+        height: 50px;
+    }
+    .taxi-title, .taxi-name {
+        font-size: 14px; /* Reduce font-size */
+    }
+    .taxi-ciudad {
+        font-size: 0.85em;
+        padding: 0.2em 0.6em;
+    }
+}
+
+@media (max-width: 320px) {
+    .taxi-card, .taxi-company-card {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+    .taxi-logo {
+        width: 45px; /* Mínimo para visibilidad */
+        height: 45px;
+    }
+    .taxi-title, .taxi-name {
+        font-size: 13px; /* Mínimo legible */
+    }
+}
+
+/* ========== GRID DE EMPRESAS (Ajustado para consistencia) ========== */
+.taxi-empresas-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.taxi-company-card {
+    width: 100%;
+}
+
+/* responsive para taxi-company-card */
+@media (max-width: 640px) {
+    .taxi-company-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .taxi-contact {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VM722PC0PC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VM722PC0PC');
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KRDV7FXT');</script>
+    <!-- End Google Tag Manager -->
+    <meta name="google-adsense-account" content="ca-pub-9471796670993449">
+    <meta charset="UTF-8">
+    <title>Transporte puerta a puerta | TaxiVAS</title>
+    <link rel="stylesheet" href="taxivas.css?v=0903">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../style.css">
+    <!-- Font Awesome para los íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <!-- FAVICON Y META -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/logos/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/logos/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/logos/favicon-16x16.png">
+    <link rel="manifest" href="/img/logos/site.webmanifest">
+    <meta name="description"
+        content="✅ Horarios de buses en Ecuador 2025 🚌. Consulta rutas, precios y terminales de todas las cooperativas. Información verificada y en tiempo real.">
+    <meta name="keywords"
+        content="horarios buses Ecuador, rutas buses Ecuador, terminal terrestre Quito, Guayaquil buses, cooperativas de transporte Ecuador">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRDV7FXT" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+    <!-- HEADER igual al principal -->
+    <nav class="navbar">
+        <button id="back-btn" class="back-btn" aria-label="Retroceder">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <a href="taxivas.html" id="taxi-btn" class="taxi-btn" aria-label="Ir a TaxiVAS">
+            <i class="fas fa-taxi"></i>
+        </a>
+        <div class="logo">
+            <a href="../index.html" id="logo-link">
+                <img class="img-logo" src="../img/logos/busvasLogo2.png" alt="Busvas Logo">
+            </a>
+        </div>
+        <button id="search-btn" class="search-btn op" aria-label="Buscar">
+            <i class="fas fa-search"></i>
+        </button>
+        <button class="sidebar-toggle op" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <main class="main-content">
+        <!-- SECCIÓN PRINCIPAL TAXIVAS -->
+        <section id="taxivas-section" class="section active-section">
+            <h2 class="main-title"><i class="fas fa-taxi"></i> Transporte puerta a puerta</h2>
+            <div id="taxivas-ads" class="ads-container"></div>
+            <div class="taxi-empresas-container" id="taxi-empresas-cards">
+                <!-- Cartas de taxis se insertarán aquí via JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <button class="close-sidebar" aria-label="Cerrar menú">
+            <i class="fas fa-times"></i>
+        </button>
+        <h2>Menú</h2>
+        <div class="sidebar-path-bar">
+            <button id="sidebar-btn-home" class="sidebar-path-btn">
+                <i class="fas fa-home"></i> Inicio
+            </button>
+        </div>
+        <ul id="province-list-side">
+            <!-- Las provincias se generan dinámicamente -->
+        </ul>
+    </div>
+
+
+
+
+
+
+    <div class="sidebar-overlay"></div>
+
+    <!-- Scripts -->
+    <script src="taxivas.js?v=0903"></script>
+    <script src="../js/header.js"></script>
+</body>
+
+</html>
