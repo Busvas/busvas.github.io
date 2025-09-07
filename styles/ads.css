@@ -9,8 +9,10 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
-  max-width: 500px;
+  max-width: 400px;
   /* Ajusta según tu diseño */
+  min-height: 80px; /* Evita colapso si no hay contenido */
+  background: transparent; /* Placeholder visual */
 }
 
 /* Imagen dentro del contenedor */

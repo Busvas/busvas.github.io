@@ -1,0 +1,273 @@
+/* ========== MODAL DE BÚSQUEDA ========== */
+.search-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    max-width: 370px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(44,79,158,0.18);
+    transform: translate(-50%, -50%) scale(0.98);
+    z-index: 9999;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    display: none;
+    flex-direction: column;
+    gap: 1.2rem;
+    animation: modalFadeIn 0.3s;
+}
+.search-modal.active {
+    display: flex;
+}
+@keyframes modalFadeIn {
+    0% { opacity: 0; transform: translate(-50%, -60%) scale(0.95);}
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1);}
+}
+
+.search-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(44,79,158,0.18);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s;
+}
+.search-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ========== CONTENIDO DEL MODAL ========== */
+.search-modal-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: stretch;
+}
+
+.search-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #234f9e;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.search-modal-close:hover {
+    color: #e53935;
+}
+
+.search-modal h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #234f9e;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.search-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.search-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+.search-field label {
+    font-size: 1rem;
+    color: #234f9e;
+    font-weight: 600;
+}
+.search-field input {
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    border: 1px solid #cfd8dc;
+    font-size: 1rem;
+    background: #f5f8fa;
+    color: #234f9e;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.search-field input:focus {
+    border-color: #234f9e;
+    background: #e3f2fd;
+}
+
+/* ========== BOTÓN DE BUSCAR ========== */
+.search-btn-modal {
+    margin-top: 3rem;
+    padding: 0.8rem 2rem;
+    background: #234f9e;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(44,79,158,0.10);
+    transition: background 0.2s;
+}
+.search-btn-modal:hover {
+    background: #1565c0;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 500px) {
+    .search-modal {
+        max-width: 98vw;
+        padding: 1.2rem 0.5rem 1rem 0.5rem;
+    }
+    .search-modal-content {
+        gap: 0.8rem;
+    }
+    .search-fields {
+        gap: 0.8rem;
+    }
+    .search-btn-modal {
+        padding: 0.7rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+.destacado-header {
+    background: #ffe082 !important;
+    border-radius: 16px 16px 0 0;
+}
+.destacado-route {
+    background: #fffde7;
+    border-radius: 10px;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Suggestions (appended to body and positioned by JS) */
+.search-suggestions {
+    background: var(--white, #fff);
+    border: 1px solid var(--gray-light, #e6e9ef);
+    box-shadow: 0 8px 28px rgba(16,24,40,0.06);
+    border-radius: 8px;
+    max-height: 260px;
+    overflow: auto;
+    padding: 6px 6px;
+    font-size: 0.95rem;
+    color: var(--text, #222);
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+
+    /* ensure suggestions sit above the modal (modal z-index: 9999) */
+    z-index: 10001 !important;
+    position: absolute; /* JS already sets, keep CSS fallback */
+    pointer-events: auto;
+}
+
+.search-suggestion-item {
+    padding: 8px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: var(--primary, #2c4f9e);
+}
+.search-suggestion-item:hover,
+.search-suggestion-item:focus,
+.search-suggestion-item.active-suggestion,
+.search-suggestion-item.active-suggestion:hover {
+    background: var(--light, #f2f6ff);
+    color: var(--primary, #2c4f9e);
+    outline: none;
+}
+
+/* Main page highlights & focus effects */
+.search-highlight {
+    transition: transform .20s ease, box-shadow .20s ease, outline .12s ease;
+    box-shadow: 0 10px 30px rgba(12,24,60,0.08);
+    transform: translateY(-4px);
+    border-radius: 8px;
+}
+
+/* Blink highlights (JS toggles this class repeatedly) */
+.blink-highlight {
+    background: var(--secondary, #ffd54f) !important;
+    color: var(--light, #fff) !important;
+    transition: background .12s linear, color .12s linear, box-shadow .12s linear;
+    box-shadow: 0 8px 26px rgba(0,0,0,0.08);
+}
+
+/* Terminal-specific blink (different tone) */
+.blink-highlight-terminal {
+    background: var(--primary, #2c4f9e) !important;
+    color: var(--light, #fff) !important;
+    transition: background .12s linear, color .12s linear, box-shadow .12s linear;
+    box-shadow: 0 10px 30px rgba(20,40,90,0.14);
+}
+
+/* Persistent highlight for route times (found by search) */
+.time.search-highlight-time,
+.route .time.search-highlight-time,
+.route-item .time.search-highlight-time {
+    background: var(--primary, #2c4f9e);
+    color: var(--light, #fff);
+    font-weight: 700;
+    border-radius: 6px;
+    padding: 6px 8px;
+    box-shadow: 0 6px 18px rgba(44,79,158,0.12);
+    transition: background .18s ease, color .18s ease, box-shadow .18s ease;
+}
+
+/* Keep hover effect but make persistent state visually consistent */
+.time:hover {
+    background: var(--primary, #2c4f9e);
+    color: var(--light, #fff);
+}
+
+/* When user clicks a time, preserve favorite behavior but show active-time */
+.time.active-time {
+    background: var(--secondary, #ff6b6b);
+    color: var(--light, #fff);
+    box-shadow: 0 6px 16px rgba(255,110,110,0.12);
+}
+
+/* When a time is both search-highlight-time and active-time, prefer search highlight */
+.time.search-highlight-time.active-time {
+    background: var(--primary, #2c4f9e) !important;
+}
+
+/* Small animation pulse optional */
+@keyframes search-pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.02); opacity: .95; }
+    100% { transform: scale(1); opacity: 1; }
+}
+.search-highlight.pulse {
+    animation: search-pulse .7s ease 1;
+}
+
+/* Accessibility & focus outlines for keyboard nav */
+.search-suggestion-item:focus {
+    outline: 2px solid rgba(44,79,158,0.14);
+}
+
+/* Ensure suggestion box doesn't cover inputs visually when positioned */
+.search-suggestions {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+/* Small responsive tweak */
+@media (max-width: 640px) {
+    .search-suggestions { max-width: calc(100vw - 24px); border-radius: 6px; }
+    .time.search-highlight-time { padding: 5px 7px; font-size: 0.9rem; }
+}

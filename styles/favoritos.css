@@ -13,12 +13,13 @@
     transition: transform 0.35s cubic-bezier(.4, 0, .2, 1), height 0.3s;
     overflow-x: hidden;
     box-sizing: border-box;
+    pointer-events: auto;
+    z-index: 1000;
 }
 
 .favorite-modal.minimized {
     transform: translate(-50%, 0%);
     height: 5rem;
-    /* Solo la cabecera visible */
     overflow: hidden;
 }
 
@@ -54,6 +55,9 @@
     color: var(--gray);
     cursor: pointer;
     transition: color 0.2s;
+    margin-left: 0;
+    margin-right: 10px;
+    font-size: 1.25rem;
 }
 
 .favorite-modal-close:hover {
@@ -70,7 +74,6 @@
     width: 100%;
     box-sizing: border-box;
     padding-bottom: 30px !important;
-    /* Espacio para el botón de agregar */
 }
 
 .favorite-route-card {
@@ -87,7 +90,7 @@
 }
 
 .favorite-route-info {
-    display: inline;
+    display: flex;
     flex-direction: column;
     gap: 0.2rem;
     font-size: 1rem;
@@ -95,10 +98,10 @@
     width: 100%;
     box-sizing: border-box;
     word-break: break-word;
+    flex: 1 1 auto;   /* ocupa el espacio disponible */
+    min-width: 0;     /* evita overflow por texto largo */
 }
 
-
-/* Alterna colores entre los spans */
 .favorite-route-info span:nth-child(1) {
     color: var(--primary);
 }
@@ -114,29 +117,119 @@
 .favorite-route-info span:nth-child(4) {
     background: var(--success);
     color: var(--secondary);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-weight: bold;
+    display: inline-block;
 }
 
-.favorite-remove-btn,
-.favorite-heart-btn {
+/* contenedor de botones (x, corazón, etc.) pegado a la derecha y centrado */
+.favorite-actions {
+    display: inline-flex;
+    flex-direction: column;    /* apilar verticalmente */
+    align-items: center;
+    justify-content: center;
+    gap: 6px;                  /* separación entre íconos */
+    margin-left: auto;         /* empuja el contenedor totalmente a la derecha */
+    padding: 5px;              /* padding solicitado */
+    flex-shrink: 0;
+}
+
+/* estilo "anterior" del botón: sin fondo, compacto, icono heredando color */
+.favorite-heart-btn,
+.favorite-remove-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    width: auto;
+    height: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray);
+    transition: color 0.18s ease, transform 0.12s ease;
+    box-sizing: border-box;
+}
+
+/* icono hereda el color del botón */
+.favorite-heart-btn i,
+.favorite-remove-btn i {
+    color: inherit;
+    font-size: 1rem;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+    pointer-events: none;
+}
+
+/* estado activo: color definido con prioridad para evitar override */
+.favorite-heart-btn.active,
+.favorite-heart-btn.active i {
+    color: var(--secondary) !important;
+}
+
+/* pequeño efecto al presionar */
+.favorite-heart-btn:active {
+    transform: scale(0.95);
+}
+
+/* mantener el remove (equis) en color de peligro al hover */
+.favorite-remove-btn:hover { color: var(--danger); }
+
+/* Active time style */
+.time.active-time {
+    background: var(--secondary);
+    color: var(--light);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(44,79,158,0.10);
+    transition: background 1s;
+    font-weight: 700;}
+
+/* Ocultar la lista cuando está minimizado (evita que se vea fuera del header) */
+.favorite-modal.minimized .favorite-routes-list,
+.favorite-modal.minimized .favorite-route-card {
+    display: none;
+}
+
+/* Botón toggle (chevron) */
+.toggle-favorite-modal {
     background: none;
     border: none;
-    font-size: 1.2rem;
     cursor: pointer;
+    font-size: 1.0rem;
     color: var(--gray);
-    margin-left: 0.5rem;
-    transition: color 0.2s;
+    padding: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.toggle-favorite-modal:focus { outline: 2px solid rgba(0,0,0,0.08); }
+
+/* Mensaje cuando está vacío */
+.favorite-empty {
+    padding: 12px;
+    color: #666;
+    font-size: 0.95rem;
 }
 
-.favorite-remove-btn:hover {
-    color: var(--danger);
+/* Clases internas que usa el JS para la info de cada favorito */
+.favorite-coop { font-weight: 700; color: var(--primary); display:block; }
+.favorite-route { color: rgb(69,69,69); display:block; font-size:0.95rem; }
+.favorite-hour { color: var(--primary); display:block; font-size:0.9rem; }
+
+/* Transición para apertura/cierre */
+.favorite-modal { transition: transform .28s ease, height .28s ease, opacity .18s; }
+
+/* Asegurar que icons (fontawesome) se muestran con tamaño correcto */
+.favorite-modal i { font-size: 1rem; vertical-align: middle; }
+
+/* Mejor visibilidad en móviles */
+@media (max-width: 480px) {
+    .favorite-modal { width: 98vw; left: 50%; transform: translate(-50%,0); }
+    .favorite-modal.minimized { height: 4.2rem; }
 }
 
-.favorite-heart-btn.active,
-.favorite-heart-btn:hover {
-    color: var(--secondary);
-}
-
-/* Responsive */
 @media (max-width: 768px) {
     .favorite-modal {
         width: 98vw;
@@ -144,23 +237,13 @@
         min-width: 0;
         left: 0;
         border-radius: 18px 18px 0 0;
+        transform: translateY(-5px) !important;
     }
-
-    .favorite-modal {
-        transform: translateY(-25px) !important;
-    }
-
-
 
     .favorite-modal.minimized,
     .favorite-modal.expanded {
         transform: translateY(0%);
     }
-
-    .favorite-modal {
-        transform: translateY(-5px) !important;
-    }
-
 
     .favorite-modal-header {
         padding: 5px;
@@ -168,6 +251,31 @@
 
     .favorite-modal-title {
         font-size: 1rem;
-       
     }
+}
+
+/* Persistir color y feedback para el botón "heart" */
+.favorite-heart-btn {
+    transition: color 0.18s ease, transform 0.12s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+.favorite-heart-btn i {
+    pointer-events: none;
+    transition: color 0.18s ease;
+}
+
+/* estado activo (cuando JS añade la clase .active) */
+.favorite-heart-btn.active,
+.favorite-heart-btn.active i {
+    color: var(--secondary) !important;
+}
+
+/* pequeño efecto al presionar */
+.favorite-heart-btn:active {
+    transform: scale(0.95);
 }

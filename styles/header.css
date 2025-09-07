@@ -1,4 +1,4 @@
-/* LAYOUT PRINCIPAL */
+/* ========== HEADER NAVBAR ========== */
 .navbar {
   background-color: var(--background);
   color: var(--text-dark);
@@ -9,17 +9,51 @@
   top: 0;
   z-index: 2900;
   box-shadow: var(--shadow-md);
+  gap: 0.5rem;
 }
 
-.sidebar-toggle {
+/* Botón de retroceso */
+.back-btn {
   background: none;
   border: none;
-  color: var(--dark);
-  font-size: 1.25rem;
+  font-size: 1.7rem;
+  color: #234f9e;
   cursor: pointer;
+  margin-right: 0.2rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
   padding: 0.5rem;
 }
+.back-btn.clicked {
+  color: #e53935;
+  animation: backBtnBounce 0.5s cubic-bezier(.77,0,.18,1);
+}
+@keyframes backBtnBounce {
+  0% { transform: translateX(0); }
+  40% { transform: translateX(12px); }
+  60% { transform: translateX(12px); }
+  100% { transform: translateX(0); }
+}
 
+/* Botón TAXI */
+.taxi-btn {
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  color: var(--primary);
+  cursor: pointer;
+  margin-right: 0.2rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+  padding: 0.5rem;
+}
+.taxi-btn:hover {
+  color: var(--secondary);
+}
+
+/* Logo */
 .logo {
   flex-grow: 1;
   display: flex;
@@ -27,31 +61,51 @@
   align-items: center;
   height: 48px;
 }
-
 .img-logo {
   max-height: 40px;
   width: auto;
   display: block;
   object-fit: contain;
 }
-
 .logo a {
   display: flex;
   align-items: center;
   height: 100%;
 }
 
-.main-content {
-  padding: 0.75rem;
-  max-width: 1400px;
-  margin: 0 auto;
+/* Botón de búsqueda */
+.search-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #234f9e;
+  cursor: pointer;
+  margin-left: 0.2rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+  padding: 0.5rem;
+}
+.search-btn:hover {
+  color: var(--secondary);
 }
 
+/* Botón hamburguesa */
+.sidebar-toggle {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.sidebar-toggle:hover {
+  color: var(--secondary);
+}
 
-
-
-
-/* SIDEBAR */
+/* ========== SIDEBAR ========== */
 .sidebar {
   position: fixed;
   top: 0;
@@ -64,10 +118,8 @@
   transition: var(--transition);
   padding: 1.5rem;
   overflow-y: auto;
-
   border-radius: 10px 0px 0px 10px;
 }
-
 .sidebar.active {
   right: 0;
 }
@@ -77,7 +129,6 @@
   margin-bottom: 1.5rem;
   padding-top: 0.5rem;
 }
-
 .close-sidebar {
   background: none;
   border: none;
@@ -88,23 +139,6 @@
   top: 1rem;
   right: 1rem;
 }
-
-#province-list-side {
-  list-style: none;
-}
-
-#province-list-side li {
-  padding: 0.8rem 0;
-  border-bottom: 1px solid var(--light);
-  cursor: pointer;
-  transition: var(--transition);
-  font-weight: 500;
-}
-
-#province-list-side li:hover {
-  color: var(--secondary);
-}
-
 .sidebar-overlay {
   position: fixed;
   top: 0;
@@ -117,13 +151,27 @@
   visibility: hidden;
   transition: var(--transition);
 }
-
 .sidebar-overlay.active {
   opacity: 1;
   visibility: visible;
 }
 
-/* SIDEBAR BREADCRUMBS (COPIA DE .path-bar) */
+/* Lista de provincias en la sidebar */
+#province-list-side {
+  list-style: none;
+}
+#province-list-side li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--light);
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+}
+#province-list-side li:hover {
+  color: var(--secondary);
+}
+
+/* Sidebar breadcrumbs */
 .sidebar-path-bar {
   background: var(--white);
   padding: 0.5rem;
@@ -136,7 +184,6 @@
   transition: all 0.3s ease;
   z-index: 1;
 }
-
 .sidebar-path-btn {
   background: none;
   border: none;
@@ -151,31 +198,23 @@
   width: 100%;
   justify-content: center;
 }
-
 .sidebar-path-btn:disabled {
   color: var(--secondary);
   cursor: default;
 }
-
 .sidebar-path-btn:not(:disabled):hover {
   background: var(--light);
 }
-
 .sidebar-path-btn.active {
   background: var(--secondary);
   color: var(--white);
 }
-
 .sidebar-path-separator {
   color: var(--gray);
   margin: 0 0.3rem;
 }
 
-
-
-
-
-/* BARRA DE RUTA (BREADCRUMBS) */
+/* ========== PATH BAR (BREADCRUMBS) ========== */
 .path-bar {
   background: var(--white);
   padding: 0.5rem;
@@ -188,7 +227,6 @@
   box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
 }
-
 .path-btn {
   background: none;
   border: none;
@@ -201,125 +239,102 @@
   align-items: center;
   gap: 0.5rem;
 }
-
 .path-btn:disabled {
   color: var(--secondary);
   cursor: default;
 }
-
 .path-btn:not(:disabled):hover {
   background: var(--light);
 }
-
 .path-btn.active {
   background: var(--secondary);
   color: var(--white);
 }
-
 .path-separator {
   color: var(--gray);
   margin: 0 0.3rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
-
+  .navbar {
+    padding: 0rem;
+    gap: 0.2rem;
+  }
+  .logo {
+    font-size: 1.2rem;
+    height: 40px;
+  }
+  .img-logo {
+    max-height: 32px;
+  }
+  .back-btn,
+  .taxi-btn,
+  .search-btn {
+    font-size: 2rem;
+    padding: 0.3rem;
+  }
   .main-content {
     padding: 0.5rem;
   }
-
-  .navbar {
-    padding: 0rem;
-  }
-
   .path-bar {
     position: fixed;
     bottom: 0;
-    /* Mueve la barra a la parte inferior */
     top: auto;
-    /* Elimina la posición sticky superior */
     width: 100%;
-    /* Asegura que ocupe todo el ancho */
     border-top: 1px solid var(--gray-light);
-    /* Agrega un borde superior */
     border-bottom: none;
-    /* Elimina el borde inferior */
     box-shadow: var(--shadow-md);
-    /* Ajusta la sombra para que parezca un menú inferior */
   }
-
   .path-btn {
     flex-grow: 1;
-    /* Asegura que los botones ocupen el espacio disponible */
     justify-content: center;
-    /* Centra el contenido de los botones */
     text-align: center;
   }
-
   .path-btn span {
     display: none;
-    /* Oculta el texto en botones si es necesario */
   }
-
   .path-bar .path-separator {
     display: none;
-    /* Oculta los separadores entre botones */
   }
-
-
-  .back-btn {
-    font-size: 2rem;
-    margin-right: 0.3rem;
-  }
-
 }
-
 
 @media (max-width: 375px) {
   .logo {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    height: 32px;
   }
-
+  .img-logo {
+    max-height: 24px;
+  }
+  .back-btn,
+  .taxi-btn,
+  .search-btn {
+    font-size: 1.5rem;
+    padding: 0.2rem;
+  }
   .path-btn span {
     display: none;
   }
-
   .path-btn {
     padding: 0.25rem 0.5rem;
   }
-
-  #btn-province {
-    padding: 0.25rem;
-  }
-
+  #btn-province,
   #btn-terminal {
     padding: 0.25rem;
   }
-
 }
 
 @media (max-width: 320px) {
   .logo {
     font-size: 1.2rem;
   }
-
   .path-btn span {
     display: none;
   }
-
 }
 
-/* NUEVO CÓDIGO - AYUDA EN LA SIDEBAR */
+/* ========== AYUDA EN LA SIDEBAR ========== */
 .sidebar-help {
   background: var(--light);
   border-radius: 10px;
@@ -327,7 +342,6 @@
   margin: 1rem 0;
   text-align: center;
 }
-
 .sidebar-help-btn {
   display: inline-block;
   margin-top: 0.5rem;
@@ -339,33 +353,6 @@
   text-decoration: none;
   transition: background 0.2s;
 }
-
 .sidebar-help-btn:hover {
   background: var(--secondary);
-}
-
-/* Flecha de retroceso en el header */
-.back-btn {
-  background: none;
-  border: none;
-  font-size: 1.7rem;
-  color: #234f9e;
-  cursor: pointer;
-  margin-right: 0.5rem;
-  display: flex;
-  align-items: center;
-  transition: color 0.3s;
-  padding: 0.5rem;
-}
-
-@keyframes backBtnBounce {
-  0% { transform: translateX(0); }
-  40% { transform: translateX(12px); }
-  60% { transform: translateX(12px); }
-  100% { transform: translateX(0); }
-}
-
-.back-btn.clicked {
-  color: #e53935;
-  animation: backBtnBounce 0.5s cubic-bezier(.77,0,.18,1);
 }
