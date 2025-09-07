@@ -10,44 +10,51 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ========== SIDEBAR ==========
     function toggleSidebar() {
-        sidebar.classList.toggle('active');
-        sidebarOverlay.classList.toggle('active');
+        if (sidebar) sidebar.classList.toggle('active');
+        if (sidebarOverlay) sidebarOverlay.classList.toggle('active');
     }
 
-    sidebarToggle && sidebarToggle.addEventListener('click', toggleSidebar);
-    closeSidebar && closeSidebar.addEventListener('click', toggleSidebar);
-    sidebarOverlay && sidebarOverlay.addEventListener('click', toggleSidebar);
+    if (sidebarToggle) sidebarToggle.addEventListener('click', toggleSidebar);
+    if (closeSidebar) closeSidebar.addEventListener('click', toggleSidebar);
+    if (sidebarOverlay) sidebarOverlay.addEventListener('click', toggleSidebar);
 
     // ========== BOTÓN DE RETROCESO ==========
-    backBtn && backBtn.addEventListener('click', function () {
-        backBtn.classList.add('clicked');
-        setTimeout(() => {
-            backBtn.classList.remove('clicked');
-        }, 500);
+    if (backBtn) {
+        backBtn.addEventListener('click', function () {
+            backBtn.classList.add('clicked');
+            setTimeout(() => backBtn.classList.remove('clicked'), 500);
 
-        // Navegación según la sección activa
-        if (document.getElementById('cooperative-section')?.classList.contains('active-section')) {
-            window.showSection && window.showSection('terminal');
-            window.renderProvinceAd && window.renderProvinceAd();
-        } else if (document.getElementById('terminal-section')?.classList.contains('active-section')) {
-            window.showSection && window.showSection('home');
-            window.renderHomeAd && window.renderHomeAd();
-        }
-    });
+            // Navegación según la sección activa
+            if (document.getElementById('cooperative-section')?.classList.contains('active-section')) {
+                window.showSection && window.showSection('terminal');
+                window.renderProvinceAd && window.renderProvinceAd();
+            } else if (document.getElementById('terminal-section')?.classList.contains('active-section')) {
+                window.showSection && window.showSection('home');
+                window.renderHomeAd && window.renderHomeAd();
+            } else {
+                // fallback: usar history.back() si no hay sección activa conocida
+                try { history.back(); } catch (e) {}
+            }
+        });
+    }
 
     // ========== LOGO CLICK ==========
-    logoLink && logoLink.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.showSection && window.showSection('home');
-    });
+    if (logoLink) {
+        logoLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.showSection && window.showSection('home');
+        });
+    }
 
-     // ========== SIDEBAR HOME BUTTON ==========
+    // ========== SIDEBAR HOME BUTTON ==========
     const sidebarBtnHome = document.getElementById('sidebar-btn-home');
-    sidebarBtnHome && sidebarBtnHome.addEventListener('click', function () {
-        document.getElementById('home-section')?.classList.add('active-section');
-        document.getElementById('terminal-section')?.classList.remove('active-section');
-        document.getElementById('cooperative-section')?.classList.remove('active-section');
-        sidebar.classList.remove('active');
-        sidebarOverlay.classList.remove('active');
-    });
+    if (sidebarBtnHome) {
+        sidebarBtnHome.addEventListener('click', function () {
+            document.getElementById('home-section')?.classList.add('active-section');
+            document.getElementById('terminal-section')?.classList.remove('active-section');
+            document.getElementById('cooperative-section')?.classList.remove('active-section');
+            if (sidebar) sidebar.classList.remove('active');
+            if (sidebarOverlay) sidebarOverlay.classList.remove('active');
+        });
+    }
 });
