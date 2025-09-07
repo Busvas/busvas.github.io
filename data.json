@@ -21,31 +21,28 @@
                     },
                     "cooperativas": [
                         {
-                            "id": "riobamba",
-                            "nombre": "Coop Riobamba",
-                            "logo": "riobamba.png",
-                            "rating_global": {},
-                            "telefono": "03 296 1583",
-                            "sitio_web": "https://www.facebook.com/TransportesRiobamba/?locale=es_LA",
-                            "servicios": [
-                                "WiFi",
-                                "Aire acondicionado",
-                                "Enchufes"
-                            ],
+                            "id": "c-riobamba",
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Santo Domingo",
                                     "horarios": [
                                         "03:20",
-                                        "04:40",
+                                        "04:00",
                                         "05:50",
                                         "06:50",
+                                        "07:45",
                                         "08:45",
                                         "10:50",
                                         "12:20",
+                                        "13:20",
                                         "14:20",
                                         "15:50",
-                                        "17:50"
+                                        "17:50",
+                                        "19:00"
                                     ],
                                     "costo": "08.00"
                                 },
@@ -81,7 +78,7 @@
                                     ]
                                 },
                                 {
-                                    "destino": "Puyo - Tena",
+                                    "destino": "Tena",
                                     "horarios": [
                                         "04:00",
                                         "05:00",
@@ -101,8 +98,7 @@
                                         "13:00",
                                         "14:15",
                                         "16:00",
-                                        "17:30",
-                                        "19:00"
+                                        "17:30"
                                     ],
                                     "costo": "05.00"
                                 },
@@ -110,7 +106,7 @@
                                     "destino": "Gualaquiza - Zamora",
                                     "horarios": [
                                         "19:00",
-                                        "20:45"
+                                        "21:00"
                                     ]
                                 },
                                 {
@@ -128,17 +124,11 @@
                             ]
                         },
                         {
-                            "id": "chimborazo",
-                            "nombre": "Coop Chimborazo",
-                            "logo": "chimborazo.png",
-                            "rating_global": {},
-                            "telefono": "(03) 2962 012",
-                            "sitio_web": "https://cooperativachimborazo.com",
-                            "servicios": [
-                                "WiFi",
-                                "Aire acondicionado",
-                                "TV"
-                            ],
+                            "id": "c-chimborazo",
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Quito",
@@ -177,10 +167,12 @@
                             ]
                         },
                         {
-                            "id": "bolivar",
+                            "id": "c-bolivar",
                             "nombre": "Coop Bolivar",
-                            "logo": "bolivar.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Guaranda",
@@ -199,10 +191,12 @@
                             ]
                         },
                         {
-                            "id": "10noviembre",
+                            "id": "c-10noviembre",
                             "nombre": "Coop 10 de Noviembre",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Guaranda - San Miguel",
@@ -224,10 +218,12 @@
                             ]
                         },
                         {
-                            "id": "sangay",
+                            "id": "c-sangay",
                             "nombre": "Coop Sangay",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Latacunga",
@@ -245,13 +241,15 @@
                             ]
                         },
                         {
-                            "id": "banos",
+                            "id": "c-banos",
                             "nombre": "Coop Baños",
-                            "logo": "banos.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
-                                    "destino": "Baños",
+                                    "destino": "Baños de agua santa",
                                     "horarios": [
                                         "09:20",
                                         "11:20",
@@ -278,7 +276,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Sushufindi (Tena-Loreto-Coca-Sacha)",
+                                    "destino": "Shushufindi (Tena-Loreto-Coca-Sacha)",
                                     "horarios": [
                                         "19:45",
                                         "23:45"
@@ -325,10 +323,12 @@
                             ]
                         },
                         {
-                            "id": "patria",
+                            "id": "c-patria",
                             "nombre": "Coop Patria",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Guayaquil",
@@ -439,11 +439,12 @@
                             ]
                         },
                         {
-                            "id": "ecuador",
-                            "nombre": "Coop Ecuador",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
-                            "telefono": "032 962 011",
+                            "id": "c-ejecutivo-ecuador",
+                            "nombre": "Coop Ejecutivo Ecuador",
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Quito",
@@ -533,35 +534,42 @@
         {
             "id": "santo-domingo-de-los-tsachilas",
             "nombre": "Sto Dgo de los Tsáchilas",
-            "anuncio": {
-                "imagen": "img/anuncios/banner-bambuka.png",
-                "link": "https://maps.app.goo.gl/i3fm9kdoQigrJKZ66"
-            },
+            "anuncio": [
+                {
+                    "imagen": "img/anuncios/banner-bambuka.png",
+                    "link": "https://maps.app.goo.gl/i3fm9kdoQigrJKZ66",
+                    "red": "maps"
+                },
+                {
+                    "imagen": "img/anuncios/banner-tvo.png",
+                    "link": "https://www.facebook.com/Tvoanuestroestilo",
+                    "red": "facebook"
+                }
+            ],
             "terminales": [
                 {
                     "id": "santo-domingo",
                     "nombre": "Santo Domingo",
                     "anuncio": [
                         {
-                        "imagen": "img/anuncios/banner-bambuka.png",
-                        "link": "https://www.instagram.com/bambukarestobar/?hl=es"
-                    },
-                    {
-                        "imagen": "img/anuncios/banner-tvo.png",
-                        "link": "https://www.facebook.com/Tvoanuestroestilo"
-                    }
+                            "imagen": "img/anuncios/banner-bambuka.png",
+                            "link": "https://maps.app.goo.gl/i3fm9kdoQigrJKZ66",
+                            "red": "maps"
+                        },
+                        {
+                            "imagen": "img/anuncios/banner-tvo.png",
+                            "link": "https://www.facebook.com/Tvoanuestroestilo",
+                            "red": "facebook"
+                        }
                     ],
                     "cooperativas": [
                         {
-                            "id": "riobamba",
+                            "id": "c-riobamba",
                             "nombre": "Coop Riobamba",
-                            "logo": "riobamba.png",
-                            "rating_global": {},
-                            "telefono": "02 3778 852",
-                            "sitio_web": "https://www.facebook.com/TransportesRiobamba/?locale=es_LA",
-                            "servicios": [
-                                "Aire acondicionado cuando quieren, no actualizan los horarios"
-                            ],
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Riobamba",
@@ -581,22 +589,95 @@
                                         "19:00"
                                     ],
                                     "costo": "08.00"
+                                },
+                                {
+                                    "destino": "Zamora (directo)",
+                                    "horarios": [
+                                        "13:30",
+                                        "14:45",
+                                        "15:45"
+                                    ],
+                                    "costo": ""
                                 }
                             ]
                         },
                         {
-                            "id": "reina-mercedes",
+                            "id": "c-reina-mercedes",
                             "nombre": "Reina de las Mercedes",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
-                                    "destino": "Quito",
+                                    "destino": "Las Mercedes - Los Bancos - Quito",
                                     "horarios": [
                                         "04:00",
                                         "08:45",
                                         "11:45",
                                         "18:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Los Bancos",
+                                    "horarios": [
+                                        "05:00",
+                                        "05:30",
+                                        "06:00",
+                                        "07:00",
+                                        "07:30",
+                                        "08:00",
+                                        "08:30",
+                                        "09:30",
+                                        "10:00",
+                                        "11:00",
+                                        "11:30",
+                                        "12:00",
+                                        "12:30",
+                                        "13:00",
+                                        "13:30",
+                                        "14:00",
+                                        "14:30",
+                                        "16:00",
+                                        "16:30",
+                                        "17:00",
+                                        "17:30",
+                                        "18:00",
+                                        "18:30",
+                                        "19:00",
+                                        "19:30",
+                                        "20:00"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c-kennedy",
+                            "nombre": "Coop Kennedy",
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Los Bancos",
+                                    "horarios": [
+                                        "04:00",
+                                        "04:30",
+                                        "05:15",
+                                        "05:30",
+                                        "06:00",
+                                        "08:00",
+                                        "10:00",
+                                        "10:15",
+                                        "12:00",
+                                        "13:30",
+                                        "14:00",
+                                        "15:15",
+                                        "16:00",
+                                        "18:30"
                                     ],
                                     "costo": ""
                                 }
@@ -611,7 +692,8 @@
             "nombre": "Bolivar",
             "anuncio": {
                 "imagen": "img/anuncios/banner-anita.png",
-                "link": "https://maps.app.goo.gl/JWjWiWVEeCrZhn5m9"
+                "link": "https://maps.app.goo.gl/JWjWiWVEeCrZhn5m9",
+                "red": "maps"
             },
             "terminales": [
                 {
@@ -623,10 +705,12 @@
                     },
                     "cooperativas": [
                         {
-                            "id": "bolivar",
+                            "id": "c-bolivar",
                             "nombre": "Coop Bolivar",
-                            "logo": "bolivar.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Riobamba",
@@ -721,10 +805,12 @@
                             ]
                         },
                         {
-                            "id": "10-noviembre",
+                            "id": "c-10-noviembre",
                             "nombre": "Coop 10 de Noviembre",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Riobamba",
@@ -808,12 +894,12 @@
                             ]
                         },
                         {
-                            "id": "atenas",
+                            "id": "c-atenas",
                             "nombre": "Atenas",
-                            "logo": "atenas.png",
-                            "rating_global": {},
-                            "telefono": "02 3007007",
-                            "sitio_web": "https://www.facebook.com/profile.php?id=100064103738896",
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Riobamba",
@@ -882,12 +968,12 @@
                             ]
                         },
                         {
-                            "id": "banos",
+                            "id": "c-banos",
                             "nombre": "Baños",
-                            "logo": "banos.png",
-                            "rating_global": {},
-                            "telefono": "",
-                            "sitio_web": "https://www.facebook.com/cooperativadetransportesbanos",
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Ambato-Salcedo-Latacunga-Sangolqui-Pifo-Lago Agrio-Shushufindi",
@@ -912,16 +998,78 @@
         {
             "id": "pichincha",
             "nombre": "Pichincha",
+            "anuncio": [
+                {
+                    "imagen": "img/anuncios/banner-green.png",
+                    "link": "https://www.instagram.com/green_coffe_smb/?hl=es",
+                    "red": "instagram"
+                },
+                {
+                    "imagen": "img/anuncios/banner-smb.png",
+                    "link": "https://www.instagram.com/p/DARNVpDPiWo/?hl=es",
+                    "red": "instagram"
+                },
+                {
+                    "imagen": "img/anuncios/banner-mimitos.png",
+                    "link": "https://www.instagram.com/p/DJaQddstOPW/?hl=es&img_index=1",
+                    "red": "instagram"
+                }
+            ],
             "terminales": [
                 {
                     "id": "quitumbe",
                     "nombre": "Sur Quitumbe",
                     "cooperativas": [
                         {
-                            "id": "patria",
+                            "id": "c-riobamba",
+                            "nombre": "Coop Riobamba",
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Riobamba",
+                                    "horarios": [
+                                        "03:00",
+                                        "03:30",
+                                        "04:45",
+                                        "09:15",
+                                        "11:30",
+                                        "14:20",
+                                        "15:50",
+                                        "17:00",
+                                        "20:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Macas (directo)",
+                                    "horarios": [
+                                        "03:00",
+                                        "09:15",
+                                        "11:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Zamora (directo)",
+                                    "horarios": [
+                                        "14:20",
+                                        "15:50",
+                                        "17:00"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c-patria",
                             "nombre": "Coop Patria",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Riobamba",
@@ -940,10 +1088,12 @@
                             ]
                         },
                         {
-                            "id": "amazonas",
+                            "id": "c-amazonas",
                             "nombre": "Amazonas",
-                            "logo": "amazonas.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Tena",
@@ -966,10 +1116,12 @@
                     "nombre": "Norte Carcelen",
                     "cooperativas": [
                         {
-                            "id": "esmeraldas",
+                            "id": "c-trans-esmeraldas",
                             "nombre": "Trans Esmeraldas",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Terminal terrestre Esmeraldas",
@@ -1085,10 +1237,12 @@
                             ]
                         },
                         {
-                            "id": "aerotaxi",
+                            "id": "c-aerotaxi",
                             "nombre": "Aerotaxi",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Terminal terrestre Esmeraldas",
@@ -1118,10 +1272,12 @@
                             ]
                         },
                         {
-                            "id": "occidental",
+                            "id": "c-occidental",
                             "nombre": "Occidental",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Terminal terrestre Esmeraldas",
@@ -1328,10 +1484,12 @@
                             ]
                         },
                         {
-                            "id": "san cristobal",
+                            "id": "c-san-cristobal",
                             "nombre": "Coop. San Cristobal",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Terminal Terrestre de Tulcán",
@@ -1404,10 +1562,12 @@
                             ]
                         },
                         {
-                            "id": "flota imbabura",
+                            "id": "c-flota-imbabura",
                             "nombre": "Flota Imbabura",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Terminal terrestre de Cuenca",
@@ -1484,10 +1644,12 @@
                             ]
                         },
                         {
-                            "id": "transporte ecuador",
+                            "id": "c-transporte-ecuador",
                             "nombre": "Coop. Ecuador",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Terminal terrestre Ventanas",
@@ -1592,10 +1754,12 @@
                             ]
                         },
                         {
-                            "id": "reina del camino",
+                            "id": "c-reina-camino",
                             "nombre": "Reina del Camino",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Tosagua",
@@ -1707,10 +1871,12 @@
                             ]
                         },
                         {
-                            "id": "vencedores",
+                            "id": "c-vencedores",
                             "nombre": "Trans Vencedores",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Tulcán",
@@ -1775,10 +1941,12 @@
                             ]
                         },
                         {
-                            "id": "coactur",
+                            "id": "c-coactur",
                             "nombre": "Coactur",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Terminal terrestre de Portoviejo",
@@ -1849,10 +2017,12 @@
                             ]
                         },
                         {
-                            "id": "panamericana",
+                            "id": "c-panamericana",
                             "nombre": "Panamericana",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Terminal terrestre Santa Rosa",
@@ -1917,10 +2087,12 @@
                             ]
                         },
                         {
-                            "id": "loja",
+                            "id": "c-loja",
                             "nombre": "Coop. Transporte Loja",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Terminal terrestre Shushufindi",
@@ -1984,10 +2156,12 @@
                             ]
                         },
                         {
-                            "id": "carlos aray",
+                            "id": "c-carlos-aray",
                             "nombre": "Coop. Carlos Alberto Aray",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Terminal terrestre de Manta",
@@ -2002,10 +2176,12 @@
                             ]
                         },
                         {
-                            "id": "kennedy",
+                            "id": "c-kennedy",
                             "nombre": "Coop Kennedy",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Terminal terrestre Santo Domingo",
@@ -2021,10 +2197,12 @@
                             ]
                         },
                         {
-                            "id": "aloag",
+                            "id": "c-aloag",
                             "nombre": "Coop Aloag",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Puerto Quito",
@@ -2111,10 +2289,12 @@
                             ]
                         },
                         {
-                            "id": "amazonas",
+                            "id": "c-amazonas",
                             "nombre": "Coop Transportes Amazonas",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "telefonos":{
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Terminal terrestre de Tena",
@@ -2719,15 +2899,18 @@
                     "anuncio": [
                         {
                             "imagen": "img/anuncios/banner-green.png",
-                            "link": "https://www.instagram.com/green_coffe_smb/?hl=es"
-                        },
-                        {
-                            "imagen": "img/anuncios/banner-mimitos.png",
-                            "link": "https://www.instagram.com/p/DJaQddstOPW/?hl=es&img_index=1"
+                            "link": "https://www.instagram.com/green_coffe_smb/?hl=es",
+                            "red": "instagram"
                         },
                         {
                             "imagen": "img/anuncios/banner-smb.png",
-                            "link": "https://www.instagram.com/p/DARNVpDPiWo/?hl=es"
+                            "link": "https://www.instagram.com/p/DARNVpDPiWo/?hl=es",
+                            "red": "instagram"
+                        },
+                        {
+                            "imagen": "img/anuncios/banner-mimitos.png",
+                            "link": "https://www.instagram.com/p/DJaQddstOPW/?hl=es&img_index=1",
+                            "red": "instagram"
                         }
                     ],
                     "cooperativas": [
@@ -2771,7 +2954,8 @@
             "nombre": "Zamora Chinchipe",
             "anuncio": {
                 "imagen": "img/anuncios/banner-croster.png",
-                "link": "https://www.instagram.com/croster.yantzaza/?hl=es"
+                "link": "https://www.instagram.com/croster.yantzaza/?hl=es",
+                "red": "instagram"
             },
             "terminales": [
                 {
@@ -2811,6 +2995,83 @@
                                     "costo": ""
                                 }
                             ]
+                        },
+                        {
+                            "id": "c-union-yanzatza",
+                            "nombre": "Coop Union Yanzatza",
+                            "logo": "icon-bus.png",
+                            "rating_global": {},
+                            "telefono": "03 296 1583",
+                            "sitio_web": [
+                                {
+                                    "nombre": "Instagram",
+                                    "url": "https://unionyanzatza.com.ec/?fbclid=IwY2xjawMp9adleHRuA2FlbQIxMABicmlkETE2bkRsTTN3VUNLVmFhdjByAR5YVQ5Y5leifsMOH3JTkcNUpGLRPsgPGApsLoNZ-s1IZkOHsf_VU92e0QZgPA_aem_w0bPse_KdHf6ORxZY4Zy9g"
+                                },
+                                {
+                                    "nombre": "Facebook",
+                                    "url": "https://www.facebook.com/TransportesRiobamba/?locale=es_LA"
+                                }
+                            ] ,
+                            "servicios": [
+                                "WiFi",
+                                "Aire acondicionado",
+                                "Enchufes"
+                            ],
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "09:35",
+                                        "11:35",
+                                        "13:40",
+                                        "18:55",
+                                        "23:35"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "El Pangui",
+                                    "horarios": [
+                                        "08:40",
+                                        "10:15",
+                                        "13:15",
+                                        "17:45",
+                                        "20:15"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "zamora",
+                    "nombre": "Zamora",
+                    "anuncio": {
+                        "imagen": "img/anuncios/banner-sanku.png",
+                        "link": "https://www.instagram.com/sankufoods/?hl=es",
+                        "red": "instagram"
+                    },
+                    "cooperativas": [
+                        {
+                            "id": "c-riobamba",
+                            "nombre": "Coop Riobamba",
+                            "logo": "riobamba.png",
+                            "rating_global": {},
+                            "telefono": "",
+                            "sitio_web": "https://www.instagram.com/transportesriobamba/?hl=es",
+                            "servicios": [
+                                "Encomiendas"
+                            ],
+                            "rutas": [
+                                {
+                                    "destino": "Riobamba",
+                                    "horarios": [
+                                        "12:50",
+                                        "20:50"
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
@@ -2821,7 +3082,8 @@
             "nombre": "Guayas",
             "anuncio": {
                 "imagen": "img/anuncios/banner-kc.png",
-                "link": "https://www.instagram.com/kevincamachomusic/?hl=es"
+                "link": "https://www.instagram.com/kevincamachomusic/?hl=es",
+                "red": "instagram"
             },
             "terminales": [
                 {
@@ -2831,7 +3093,56 @@
                         "imagen": "img/anuncios/banner-kc.png",
                         "link": "https://www.instagram.com/kevincamachomusic/?hl=es"
                     },
-                    "cooperativas": []
+                    "cooperativas": [
+                        {
+                            "id": "c-riobamba",
+                            "nombre": "Coop Riobamba",
+                            "logo": "riobamba.png",
+                            "rating_global": {},
+                            "telefono": "",
+                            "sitio_web": "",
+                            "servicios": [
+                                "Encomiendas"
+                            ],
+                            "rutas": [
+                                {
+                                    "destino": "Riobamba",
+                                    "horarios": [
+                                        "02:00",
+                                        "04:00",
+                                        "06:30",
+                                        "09:00",
+                                        "12:15",
+                                        "15:00",
+                                        "21:20"
+                                    ]
+                                },
+                                {
+                                    "destino": "Baños",
+                                    "horarios": [
+                                        "02:00",
+                                        "04:00",
+                                        "06:30",
+                                        "09:00"
+                                    ]
+                                },
+                                {
+                                    "destino": "Macas",
+                                    "horarios": [
+                                        "09:00",
+                                        "12:15",
+                                        "21:20"
+                                    ]
+                                },
+                                {
+                                    "destino": "Zamora (directo)",
+                                    "horarios": [
+                                        "15:00"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -2841,11 +3152,13 @@
             "anuncio": [
                 {
                     "imagen": "img/anuncios/banner-sanku.png",
-                    "link": "https://www.instagram.com/sankufoods/?hl=es"
+                    "link": "https://www.instagram.com/sankufoods/?hl=es",
+                    "red": "instagram"
                 },
                 {
                     "imagen": "img/anuncios/banner-curvi.png",
-                    "link": "https://www.instagram.com/curvy_closettt/?hl=es"
+                    "link": "https://www.instagram.com/curvy_closettt/?hl=es",
+                    "red": "instagram"
                 }
             ],
             "terminales": [
@@ -2854,9 +3167,57 @@
                     "nombre": "Macas",
                     "anuncio": {
                         "imagen": "img/anuncios/banner-curvi.png",
-                        "link": "https://www.instagram.com/curvy_closettt/?hl=es"
+                        "link": "https://www.instagram.com/curvy_closettt/?hl=es",
+                        "red": "instagram"
                     },
                     "cooperativas": [
+                        {
+                            "id": "c-riobamba",
+                            "nombre": "Copp Riobamba",
+                            "logo": "riobamba.png",
+                            "rating_global": {},
+                            "telefono": "",
+                            "sitio_web": "https://www.instagram.com/transportesriobamba/?hl=es",
+                            "servicios": [
+                                "WiFi",
+                                "Aire acondicionado"
+                            ],
+                            "rutas": [
+                                {
+                                    "destino": "Riobamba",
+                                    "horarios": [
+                                        "04:00",
+                                        "06:00",
+                                        "07:00",
+                                        "10:00",
+                                        "12:00",
+                                        "13:00",
+                                        "15:00",
+                                        "16:00",
+                                        "20:00",
+                                        "21:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Guayaquil",
+                                    "horarios": [
+                                        "06:00",
+                                        "12:00",
+                                        "21:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Zamora",
+                                    "horarios": [
+                                        "23:15",
+                                        "00:10"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
                         {
                             "id": "san-francisco-oriental",
                             "nombre": "San Francismo Oriental",
@@ -2894,7 +3255,8 @@
             "nombre": "Tungurahua",
             "anuncio": {
                 "imagen": "img/anuncios/banner-armas.png",
-                "link": "https://www.instagram.com/armasfilms_/?hl=es"
+                "link": "https://www.instagram.com/armasfilms_/?hl=es",
+                "red": "instagram"
             },
             "terminales": [
                 {
@@ -2902,7 +3264,8 @@
                     "nombre": "Ambato Sur",
                     "anuncio": {
                         "imagen": "img/anuncios/banner-armas.png",
-                        "link": "https://www.instagram.com/armasfilms_/?hl=es"
+                        "link": "https://www.instagram.com/armasfilms_/?hl=es",
+                        "red": "instagram"
                     },
                     "cooperativas": [
                         {
@@ -3158,9 +3521,66 @@
                     "nombre": "Baños de Agua Santa",
                     "anuncio": {
                         "imagen": "img/anuncios/banner-armas.png",
-                        "link": "https://www.instagram.com/armasfilms_/?hl=es"
+                        "link": "https://www.instagram.com/armasfilms_/?hl=es",
+                        "red": "instagram"
                     },
                     "cooperativas": [
+                        {
+                            "id": "c-riobamba",
+                            "nombre": "Coop Riobamba",
+                            "logo": "riobamba.png",
+                            "rating_global": {},
+                            "telefono": "",
+                            "sitio_web": "",
+                            "servicios": [
+                                "Encomiendas"
+                            ],
+                            "rutas": [
+                                {
+                                    "destino": "Riobamba",
+                                    "horarios": [
+                                        "05:00",
+                                        "06:15",
+                                        "07:00",
+                                        "11:00",
+                                        "11:50",
+                                        "13:10",
+                                        "14:45",
+                                        "15:35",
+                                        "17:15",
+                                        "18:35"
+                                    ]
+                                },
+                                {
+                                    "destino": "Puyo - Tena",
+                                    "horarios": [
+                                        "05:20",
+                                        "06:20",
+                                        "09:20",
+                                        "11:20",
+                                        "13:20",
+                                        "16:20"
+                                    ]
+                                },
+                                {
+                                    "destino": "Puyo",
+                                    "horarios": [
+                                        "10:20",
+                                        "16:00",
+                                        "19:20"
+                                    ]
+                                },
+                                {
+                                    "destino": "Guayaquil (directo)",
+                                    "horarios": [
+                                        "06:50",
+                                        "13:00",
+                                        "15:30",
+                                        "21:45"
+                                    ]
+                                }
+                            ]
+                        },
                         {
                             "id": "banos",
                             "nombre": "Baños",
@@ -3646,11 +4066,13 @@
             "anuncio": [
                 {
                     "imagen": "img/anuncios/banner-sanku.png",
-                    "link": "https://www.instagram.com/sankufoods/?hl=es"
+                    "link": "https://www.instagram.com/sankufoods/?hl=es",
+                    "red": "instagram"
                 },
                 {
                     "imagen": "img/anuncios/banner-curvi.png",
-                    "link": "https://www.instagram.com/curvy_closettt/?hl=es"
+                    "link": "https://www.instagram.com/curvy_closettt/?hl=es",
+                    "red": "instagram"
                 }
             ],
             "terminales": [
@@ -3659,7 +4081,8 @@
                     "nombre": "Lago Agrio",
                     "anuncio": {
                         "imagen": "img/anuncios/banner-sanku.png",
-                        "link": "https://www.instagram.com/sankufoods/?hl=es"
+                        "link": "https://www.instagram.com/sankufoods/?hl=es",
+                        "red": "instagram"
                     },
                     "cooperativas": [
                         {
@@ -3735,15 +4158,66 @@
             "nombre": "Napo",
             "anuncio": [
                 {
-                    "imagen": "img/anuncios/banner-sanku.png",
-                    "link": "https://www.instagram.com/sankufoods/?hl=es"
+                    "imagen": "img/anuncios/banner-curvi.png",
+                    "link": "https://www.instagram.com/curvy_closettt/?hl=es",
+                    "red": "instagram"
                 },
                 {
-                    "imagen": "img/anuncios/banner-curvi.png",
-                    "link": "https://www.instagram.com/curvy_closettt/?hl=es"
+                    "imagen": "img/anuncios/banner-chingu.png",
+                    "link": "https://www.instagram.com/chingu_market.ec/?hl=es",
+                    "red": "instagram"
                 }
             ],
-            "terminales": []
+            "terminales": [
+                {
+                    "id": "tena",
+                    "nombre": "Tena",
+                    "anuncio": [
+                        {
+                            "imagen": "img/anuncios/banner-curvi.png",
+                            "link": "https://www.instagram.com/curvy_closettt/?hl=es",
+                            "red": "instagram"
+                        },
+                        {
+                            "imagen": "img/anuncios/banner-chingu.png",
+                            "link": "https://www.instagram.com/chingu_market.ec/?hl=es",
+                            "red": "instagram"
+                        }
+                    ],
+                    "cooperativas": [
+                        {
+                            "id": "c-riobamba",
+                            "nombre": "Coop Riobamba",
+                            "logo": "riobamba.png",
+                            "rating_global": {},
+                            "telefono": "",
+                            "sitio_web": "https://www.instagram.com/transportesriobamba/?hl=es",
+                            "servicios": [
+                                "Encomiendas"
+                            ],
+                            "rutas": [
+                                {
+                                    "destino": "Riobamba",
+                                    "horarios": [
+                                        "02:00",
+                                        "03:00",
+                                        "04:00",
+                                        "09:00",
+                                        "15:00",
+                                        "18:00"
+                                    ]
+                                },
+                                {
+                                    "destino": "Guayaquil (directo)",
+                                    "horarios": [
+                                        "04:00"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "oro",
@@ -3756,11 +4230,13 @@
             "anuncio": [
                 {
                     "imagen": "img/anuncios/banner-sanku.png",
-                    "link": "https://www.instagram.com/sankufoods/?hl=es"
+                    "link": "https://www.instagram.com/sankufoods/?hl=es",
+                    "red": "instagram"
                 },
                 {
                     "imagen": "img/anuncios/banner-curvi.png",
-                    "link": "https://www.instagram.com/curvy_closettt/?hl=es"
+                    "link": "https://www.instagram.com/curvy_closettt/?hl=es",
+                    "red": "instagram"
                 }
             ],
             "terminales": []
@@ -3783,7 +4259,47 @@
         {
             "id": "imbabura",
             "nombre": "Imbabura",
-            "terminales": []
+            "terminales": [
+                {
+                    "id": "p-ibarra",
+                    "nombre": "Ibarra",
+                    "anuncio": {
+                        "imagen": "img/anuncios/banner-sanku.png",
+                        "link": "https://www.instagram.com/sankufoods/?hl=es",
+                        "red": "instagram"
+                    },
+                    "cooperativas": [
+                        {
+                            "id": "reina-mercedes",
+                            "nombre": "Reina de las Mercedes",
+                            "logo": "reina-mercedes.png",
+                            "rating_global": {},
+                            "telefono": "",
+                            "sitio_web": "https://ttibarra.com/cooperativa-reina-de-las-mercedes",
+                            "servicios": [
+                                "Encomiendas"
+                            ],
+                            "rutas": [
+                                {
+                                    "destino": "Santo Domingo",
+                                    "horarios": [
+                                        "04:00",
+                                        "09:15",
+                                        "17:00"
+                                    ]
+                                },
+                                {
+                                    "destino": "Esmeraldas",
+                                    "horarios": [
+                                        "04:00",
+                                        "16:00"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "orellana",
@@ -3791,11 +4307,13 @@
             "anuncio": [
                 {
                     "imagen": "img/anuncios/banner-sanku.png",
-                    "link": "https://www.instagram.com/sankufoods/?hl=es"
+                    "link": "https://www.instagram.com/sankufoods/?hl=es",
+                    "red": "instagram"
                 },
                 {
                     "imagen": "img/anuncios/banner-curvi.png",
-                    "link": "https://www.instagram.com/curvy_closettt/?hl=es"
+                    "link": "https://www.instagram.com/curvy_closettt/?hl=es",
+                    "red": "instagram"
                 }
             ],
             "terminales": []
@@ -3808,12 +4326,140 @@
         {
             "id": "esmeraldas",
             "nombre": "Esmeraldas",
-            "terminales": []
+            "terminales": [
+                {
+                    "id": "ciudad-esmeraldas",
+                    "nombre": "Ciudad de Esmeraldas",
+                    "anuncio": {
+                        "imagen": "img/anuncios/banner-sanku.png",
+                        "link": "https://www.instagram.com/sankufoods/?hl=es",
+                        "red": "instagram"
+                    },
+                    "cooperativas": [
+                        {
+                            "id": "c-imperial",
+                            "nombre": "Imperial",
+                            "logo": "imperial.png",
+                            "rating_global": {},
+                            "telefono": "",
+                            "sitio_web": "",
+                            "servicios": [
+                                "Encomiendas"
+                            ],
+                            "rutas": [
+                                {
+                                    "destino": "Quito Carcelén",
+                                    "horarios": [
+                                        "07:15",
+                                        "10:25",
+                                        "13:15",
+                                        "16:30",
+                                        "23:30",
+                                        "23:55",
+                                        "00:55"
+                                    ]
+                                },
+                                {
+                                    "destino": "Quito Quitumbe",
+                                    "horarios": [
+                                        "15:40"
+                                    ]
+                                },
+                                {
+                                    "destino": "Guayaquil",
+                                    "horarios": [
+                                        "06:35",
+                                        "11:00",
+                                        "12:15",
+                                        "22:00",
+                                        "22:45",
+                                        "23:15",
+                                        "23:45",
+                                        "00:15"
+                                    ]
+                                },
+                                {
+                                    "destino": "Machala Huaquillas",
+                                    "horarios": [
+                                        "20:40",
+                                        "21:30"
+                                    ]
+                                },
+                                {
+                                    "destino": "Machala Huaquillas",
+                                    "horarios": [
+                                        "22:25",
+                                        "22:50"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c-e-banos",
+                            "nombre": "Expreso Baños",
+                            "logo": "icon-bus.png",
+                            "rating_global": {},
+                            "telefono": "",
+                            "sitio_web": "",
+                            "servicios": [
+                                "Encomiendas"
+                            ],
+                            "rutas": [
+                                {
+                                    "destino": "Santo Domingo-Ambato-Baños-Puyo-Tena",
+                                    "horarios": [
+                                        "18:00",
+                                        "20:45"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
-            "id": "loja",
+            "id": "p-loja",
             "nombre": "Loja",
-            "terminales": []
+            "terminales": [
+                {
+                    "id": "t-loja",
+                    "nombre": "Loja",
+                    "anuncio": {
+                        "imagen": "img/anuncios/banner-sanku.png",
+                        "link": "https://www.instagram.com/sankufoods/?hl=es",
+                        "red": "instagram"
+                    },
+                    "cooperativas": [
+                        {
+                            "id": "c-riobamba",
+                            "nombre": "Riobamba",
+                            "logo": "riobamba.png",
+                            "rating_global": {},
+                            "telefono": "",
+                            "sitio_web": "",
+                            "servicios": [
+                                "Encomiendas"
+                            ],
+                            "rutas": [
+                                {
+                                    "destino": "Riobamba",
+                                    "horarios": [
+                                        "09:30",
+                                        "15:30"
+                                    ]
+                                },
+                                {
+                                    "destino": "Guayaquil",
+                                    "horarios": [
+                                        "20:20"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "pastaza",
@@ -3821,14 +4467,54 @@
             "anuncio": [
                 {
                     "imagen": "img/anuncios/banner-sanku.png",
-                    "link": "https://www.instagram.com/sankufoods/?hl=es"
+                    "link": "https://www.instagram.com/sankufoods/?hl=es",
+                    "red": "instagram"
                 },
                 {
                     "imagen": "img/anuncios/banner-curvi.png",
-                    "link": "https://www.instagram.com/curvy_closettt/?hl=es"
+                    "link": "https://www.instagram.com/curvy_closettt/?hl=es",
+                    "red": "instagram"
                 }
             ],
-            "terminales": []
+            "terminales": [
+                {
+                    "id": "puyo",
+                    "nombre": "Puyo",
+                    "anuncio": {
+                        "imagen": "img/anuncios/banner-sanku.png",
+                        "link": "https://www.instagram.com/sankufoods/?hl=es",
+                        "red": "instagram"
+                    },
+                    "cooperativas": [
+                        {
+                            "id": "c-riobamba",
+                            "nombre": "Riobamba",
+                            "logo": "riobamba.png",
+                            "rating_global": {},
+                            "telefono": "",
+                            "sitio_web": "",
+                            "servicios": [
+                                "Encomiendas"
+                            ],
+                            "rutas": [
+                                {
+                                    "destino": "Riobamba",
+                                    "horarios": [
+                                        "09:30",
+                                        "15:30"
+                                    ]
+                                },
+                                {
+                                    "destino": "Guayaquil",
+                                    "horarios": [
+                                        "20:20"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "santa-elena",
@@ -3848,4 +4534,5 @@
         "Santo Domingo",
         "Riobamba"
     ]
+    
 }

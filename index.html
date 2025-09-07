@@ -2,21 +2,44 @@
 <html lang="es">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VM722PC0PC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VM722PC0PC');
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KRDV7FXT');</script>
+    <!-- End Google Tag Manager -->
+    <meta name="google-adsense-account" content="ca-pub-9471796670993449">
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Busvas - horarios</title>
+    <!-- ICONOS Y ESTILOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=202508262">
-    <link rel="stylesheet" href="styles/header.css?v=202508262">
-    <link rel="stylesheet" href="styles/ads.css?v=202508262">
-    <link rel="stylesheet" href="styles/footer.css?v=202508262">
-    <link rel="stylesheet" href="styles/favoritos.css?v=202508262">
-
+    <link rel="stylesheet" href="style.css?v=0903">
+    <link rel="stylesheet" href="styles/header.css?v=0903">
+    <link rel="stylesheet" href="styles/ads.css?v=0903">
+    <link rel="stylesheet" href="styles/footer.css?v=0903">
+    <link rel="stylesheet" href="styles/favoritos.css?v=0903">
+    <link rel="stylesheet" href="styles/search.css?v=0903">
+    <!-- FAVICON Y META -->
     <link rel="apple-touch-icon" sizes="180x180" href="img/logos/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/logos/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/logos/favicon-16x16.png">
     <link rel="manifest" href="img/logos/site.webmanifest">
-
     <meta name="description"
         content="✅ Horarios de buses en Ecuador 2025 🚌. Consulta rutas, precios y terminales de todas las cooperativas. Información verificada y en tiempo real.">
     <meta name="keywords"
@@ -27,7 +50,11 @@
 </head>
 
 <body>
-    <!-- Modal de rutas favoritas -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRDV7FXT" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- MODAL FAVORITOS -->
     <div id="favorite-routes-modal" class="favorite-modal minimized">
         <div class="favorite-modal-header">
             <span class="favorite-modal-title"><i class="fas fa-star"></i> Rutas guardadas</span>
@@ -35,27 +62,53 @@
                 <i class="fas fa-chevron-down"></i>
             </button>
         </div>
-        <div id="favorite-routes-list" class="favorite-routes-list">
-            <!-- Aquí se agregan las rutas favoritas dinámicamente -->
-        </div>
+        <div id="favorite-routes-list" class="favorite-routes-list"></div>
     </div>
 
-    <!-- Barra de navegación principal -->
+    <!-- MODAL DE BÚSQUEDA -->
+    <div id="search-modal" class="search-modal">
+        <div class="search-modal-content">
+            <button class="search-modal-close" aria-label="Cerrar">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2><i class="fas fa-search-location"></i> Buscar ruta</h2>
+            <div class="search-fields">
+                <div class="search-field">
+                    <label for="search-origin">¿Dónde estás?</label>
+                    <input type="text" id="search-origin" placeholder="Ciudad de origen">
+                </div>
+                <div class="search-field">
+                    <label for="search-dest">¿Dónde quieres ir?</label>
+                    <input type="text" id="search-dest" placeholder="Ciudad de destino">
+                </div>
+            </div>
+            <button id="search-btn-modal" class="search-btn-modal">Buscar</button>
+        </div>
+    </div>
+    <div id="search-modal-overlay" class="search-modal-overlay"></div>
+
+    <!-- NAVBAR -->
     <nav class="navbar">
-        <button id="back-btn" class="back-btn" aria-label="Retroceder" style="margin-right:10px;">
+        <button id="back-btn" class="back-btn" aria-label="Retroceder">
             <i class="fas fa-arrow-left"></i>
         </button>
+        <a href="paginas/taxivas.html" id="taxi-btn" class="taxi-btn" aria-label="Ir a TaxiVAS">
+            <i class="fas fa-taxi"></i>
+        </a>
         <div class="logo">
             <a href="/index.html" id="logo-link">
                 <img class="img-logo" src="img/logos/busvasLogo2.png" alt="Busvas Logo">
             </a>
         </div>
+        <button id="search-btn" class="search-btn" aria-label="Buscar">
+            <i class="fas fa-search"></i>
+        </button>
         <button class="sidebar-toggle" aria-label="Abrir menú">
             <i class="fas fa-bars"></i>
         </button>
     </nav>
 
-    <!-- Barra de ruta (breadcrumbs) -->
+    <!-- BREADCRUMBS -->
     <div class="path-bar">
         <button id="btn-home" class="path-btn active">
             <i class="fas fa-home"></i> Inicio
@@ -70,17 +123,16 @@
         </button>
     </div>
 
-    <!-- Sidebar para móviles -->
+    <!-- SIDEBAR -->
     <aside class="sidebar">
         <button class="close-sidebar">
             <i class="fas fa-times"></i>
         </button>
         <div class="sidebar-path-bar">
-            <button id="sidebar-btn-home" class="sidebar-path-btn active" style="width:100%;">
+            <button id="sidebar-btn-home" class="sidebar-path-btn active">
                 <i class="fas fa-home"></i> Inicio
             </button>
         </div>
-        <!-- NUEVO CONTENEDOR DE AYUDA EN SIDEBAR -->
         <div class="sidebar-help">
             <p>¿No hay el horario que buscas?<br>
                 ¿Tienes información de los horarios?</p>
@@ -93,25 +145,20 @@
     </aside>
     <div class="sidebar-overlay"></div>
 
-    <!-- Contenido principal -->
+    <!-- CONTENIDO PRINCIPAL -->
     <main class="main-content">
-        <!-- SECCIÓN PRINCIPAL (HOME) - PROVINCIAS -->
+        <!-- HOME: PROVINCIAS -->
         <section id="home-section" class="section active-section">
             <h2><i class="fas fa-map-marked-alt"></i> Seleccione su provincia</h2>
             <div id="province-ads" class="ads-container"></div>
-            <div id="province-grid" class="card-grid">
-                <!-- Cartas de provincias se insertarán aquí via JS -->
-            </div>
+            <div id="province-grid" class="card-grid"></div>
         </section>
 
-        <!-- Sección de terminales -->
+        <!-- TERMINALES -->
         <section id="terminal-section" class="section">
             <h2><i class="fas fa-bus-alt"></i> Terminales en <span id="current-province-name"></span></h2>
             <div id="terminal-ads" class="ads-container"></div>
-            <div id="terminal-grid" class="card-grid">
-                <!-- Tarjetas de terminales se insertarán aquí via JS -->
-            </div>
-            <!-- Cooperativas destacadas debajo de los terminales -->
+            <div id="terminal-grid" class="card-grid"></div>
             <div id="featured-section" class="section">
                 <h2><i class="fas fa-trophy"></i> Cooperativas Destacadas</h2>
                 <div class="featured-description">
@@ -121,7 +168,7 @@
             </div>
         </section>
 
-        <!-- Sección de cooperativas -->
+        <!-- COOPERATIVAS -->
         <section id="cooperative-section" class="section">
             <div class="header-container">
                 <h2><i class="fas fa-route"></i> Rutas desde <span id="current-terminal-name"></span></h2>
@@ -130,13 +177,12 @@
             <div id="cooperative-ads" class="ads-container"></div>
             <div id="cooperative-container" class="cooperative-grid"></div>
         </section>
-
     </main>
 
-    <!-- Tooltip container (se agregará dinámicamente) -->
+    <!-- TOOLTIP -->
     <div id="tooltip" class="tooltip"></div>
 
-    <!-- Footer global -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-description">
@@ -146,7 +192,6 @@
                     ¡Viaja informado y seguro!
                 </p>
             </div>
-            <!-- NUEVO CONTENEDOR DE AYUDA -->
             <div class="footer-help">
                 <p>¿No hay el horario que buscas?<br>
                     ¿Tienes información de los horarios?</p>
@@ -174,22 +219,27 @@
             </div>
         </div>
     </footer>
-
-    <script src="script.js?v=202508262"></script>
-    <script src="/js/header.js?v=202508262"></script>
-    <script src="js/ads.js?v=202508262"></script>
-    <script src="js/favoritos.js?v=202508262"></script>
-    <script src="/js/destacadas.js?v=202508262"></script>
-
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9471796670993449"
+        crossorigin="anonymous"></script>
+    <!-- ads-new -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9471796670993449" data-ad-slot="5253063071"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>
-        // Recarga la página cada 12 horas (43200000 ms)
-        setTimeout(function () {
-            location.reload(true);
-        }, 4320000);
+        (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
 
-
-
+    <!-- SCRIPTS: ORDEN CORRECTO -->
+    <script src="js/auxiliar.js?v=0903"></script>
+    <script src="script.js?v=0903"></script>
+    <script src="js/search.js?v=0903"></script>
+    <script src="js/header.js?v=0903"></script>
+    <script src="js/ads.js?v=0903"></script>
+    <script src="js/favoritos.js?v=0903"></script>
+    <script src="js/destacadas.js"></script>
+    <script>
+        setTimeout(function () {
+            location.reload(true);
+        }, 43200000);
+    </script>
 </body>
-
-</html>

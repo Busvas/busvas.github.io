@@ -113,6 +113,7 @@
 
 
 
+
 /* ESTILOS COMPLETOS - TERMINALES DE BUSES ECUADOR */
 :root {
   /* Colores
@@ -203,8 +204,28 @@ img {
   display: none;
 }
 
+.section:not(.active-section) .ads-container {
+  display: block !important;
+  /* Fuerza visibilidad de anuncios */
+}
+
 .section h2 {
-  color: var(--light);
+  color: white;
+  /* Color principal */
+  margin-bottom: 0rem;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 1.5rem;
+}
+.main-content{
+  width: 90%;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+h2.main-title {
+  color: white;
   /* Color principal */
   margin-bottom: 0rem;
   display: flex;
@@ -253,7 +274,6 @@ img {
 }
 
 .card-img-container {
-  width: 100%;
   height: 110px;
   /* ajusta según tu diseño */
   display: flex;
@@ -268,52 +288,83 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-    animation: cardImgBounce 2s infinite;
-
+  position: relative;
+  overflow: hidden;
+  /* asegurar recorte al borde redondeado */
+  background: transparent;
 }
 
-.card-img-rounded {
+/* Forzar que la imagen rellene el alto y, si es más ancha, recorte los lados (no se aplasta) */
+
+.card-rounded-container {
   border-radius: 12px;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
-    z-index: 10;
   position: relative;
+  /* Allow the image to overflow so the animation can "pop out" */
+  overflow: visible;
+  /* cambio: antes estaba hidden */
+  background: transparent;
+}
+
+.card-img-rounded {
+  border-radius: 12px;
+  height: 100%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  z-index: 10;
+  position: relative;
+  animation: cardImgBounce 3s infinite;
+  scale: 0.95;
 }
 
 .card-img {
   padding-bottom: 10px;
+
   height: 100%;
-  width: 100%;
   object-fit: contain;
   transition: var(--transition);
-  animation: cardImgBounce 2s infinite;
+  animation: cardImgBounce 3s infinite;
   /* Agrega la animación personalizada */
   z-index: 10;
   position: relative;
+  scale: 0.95;
 }
 
 @keyframes cardImgBounce {
-  0% {
-    transform: scale(1) translateY(0);
-    filter: none;
+
+  0%,
+  100% {
+    transform: scale(0.95) translateY(0);
+    filter: drop-shadow(0 4px 7px rgba(44, 79, 158, 0.1));
   }
 
-  40% {
-    transform: scale(1.05) translateY(-3px);
-    filter: drop-shadow(0 4px 7px rgba(44, 79, 158, 0.5));
-  }
-
+  40%,
   60% {
     transform: scale(1.05) translateY(-3px);
-    filter: drop-shadow(0 4px 7px rgba(44, 79, 158, 0.5));
+    filter: drop-shadow(0 4px 7px rgba(44, 79, 158, 0.6));
   }
+}
 
-  100% {
-    transform: scale(1) translateY(0);
-    filter: none;
+/* Añade soporte para reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+
+  .card-img,
+  .card-img-rounded {
+    animation: none;
+  }
+}
+
+/* Reduce duración en móviles */
+@media (max-width: 768px) {
+
+  .card-img,
+  .card-img-rounded {
+    animation-duration: 1.5s;
   }
 }
 
@@ -394,15 +445,44 @@ img {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
   pointer-events: none;
   /* Permite que el usuario interactúe con el contenido */
-  z-index: 1;
+  z-index: 0;
   /* Asegura que el gradiente esté sobre el contenido */
 }
 
+.cooperative-card.expanded,
+.cooperative-card.open {
+  overflow: visible;
+}
 
+.coop-body {
+  position: relative;
+  /* ya tiene scroll, ahora posicionable */
+  z-index: 5;
+}
 
+/* bajar z-index del pseudo-elemento para que no bloquee clicks */
+.cooperative-card::after {
+  z-index: 0;
+}
 
+/* asegurar que contenido principal quede por encima del pseudo-elemento */
+.cooperative-card>* {
+  position: relative;
+  z-index: 1;
+}
 
+/* 4) hacer la regla de mostrar panel más tolerante (hermano general en vez de inmediato) */
+.coop-header[aria-expanded="true"]~.coop-body,
+.coop-body.open {
+  display: block;
+  max-height: 320px;
+}
 
+/* 5) soportar rotación del toggle cuando aria-expanded está en el header */
+.coop-header[aria-expanded="true"] .accordion-toggle,
+.accordion-toggle[aria-expanded="true"] {
+  transform: rotate(90deg);
+}
 
 /* MODALES */
 .modal-overlay {
@@ -519,18 +599,29 @@ img {
   border-right-color: var(--text-dark);
 }
 
+@media (max-width: 375px) {
+  .tooltip {
+    max-width: 200px;
+    font-size: 0.8rem;
+  }
 
+  .info-modal {
+    min-width: 180px;
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
+#tooltip {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  max-width: 250px;
+  font-size: 0.9rem;
+}
 
 /* Estado abierto del acordeón */
 .coop-body.open {
@@ -610,7 +701,7 @@ img {
 
 .coop-info h3 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .coop-rating {
@@ -634,14 +725,47 @@ img {
 
 
 
+/* Mejora adicional para .info-icon */
 .info-icon {
   position: relative;
   margin-left: 8px;
-  color: #3498db;
+  color: var(--accent);
   cursor: pointer;
-  font-size: 1.1em;
+  font-size: 1.2em;
   vertical-align: middle;
   display: inline-block;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(231, 76, 60, 0.1));  /* Gradiente sutil */
+  border-radius: 50%;
+  padding: 6px;
+  border: 2px solid var(--accent);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Animación de pulso mejorada */
+  animation: pulse 3s infinite ease-in-out;
+}
+
+.info-icon:hover {
+  background: linear-gradient(135deg, var(--accent), var(--secondary));  /* Gradiente en hover */
+  color: var(--white);
+  transform: scale(1.15);  /* Escala mayor */
+  box-shadow: 0 6px 12px rgba(231, 76, 60, 0.4);  /* Glow rojo */
+}
+
+.info-icon:active {
+  transform: scale(0.9);
+  box-shadow: 0 2px 6px rgba(231, 76, 60, 0.3);
+}
+
+/* Animación de pulso refinada */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.2);
+  }
 }
 
 .route {
@@ -791,7 +915,11 @@ img {
     grid-template-columns: 1fr;
   }
 
-
+.main-content{
+  width: 100%;
+  justify-content: center;
+  margin: 0 auto;
+}
 
   .section h2 {
     font-size: 1rem;
@@ -1045,7 +1173,8 @@ img {
   position: absolute;
   top: 120%;
   right: 0;
-  min-width: 220px;
+  width: 100% !important;  /* Ocupa 100% del ancho de la carta padre */
+  min-width: auto;  /* Remueve min-width para permitir 100% */
   background: var(--white);
   color: var(--dark);
   border: 1px solid var(--gray-light);
@@ -1056,7 +1185,6 @@ img {
   font-size: 0.95rem;
   cursor: auto;
 }
-
 .info-modal a {
   color: #234f9e;
   text-decoration: underline;
@@ -1066,3 +1194,85 @@ img {
 .info-modal p {
   margin: 0.5em 0 0.2em 0;
 }
+
+@media (max-width: 768px) {
+  #tooltip {
+    max-width: 200px;
+    font-size: 0.8rem;
+  }
+}
+
+.info-container {
+  padding: 5px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* ========== MEJORAS PARA EL CONTENEDOR DE INFORMACIÓN ========== */
+
+/* Contenedor principal del modal de info */
+.info-container {
+  padding: 10px;
+  background: var(--white);
+  border: 1px solid var(--gray-light);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  box-shadow: var(--shadow-sm);
+  max-width: 300px;
+}
+
+/* Filas individuales */
+.info-row {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--light);
+  width: 100%;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+/* Íconos generales */
+.info-row i {
+  margin-right: 10px;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* Teléfonos */
+.info-row a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.info-row a:hover {
+  text-decoration: underline;
+  color: var(--primary-dark);
+}
+
+/* Redes sociales: Ocupa todo el ancho, íconos con var(--secondary) */
+.info-row.redes {
+  width: 100%;  /* Ocupa todo el ancho de la carta */
+  justify-content: space-around;
+  /* Añade más propiedades si es necesario */
+}
+
+.info-row.redes i {
+  color: var(--secondary);  /* Color de íconos de redes */
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.info-row.redes i:hover {
+  color: var(--secondary-light);  /* Hover para íconos */
+}
+
+/* Si hay más reglas para redes, añádelas aquí */
