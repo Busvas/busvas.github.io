@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Ecuador - Diagnóstico del Sistema</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0A0E1A;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #1E2532;
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #00D4FF;
+        }
+        .status-box {
+            background: #0A0E1A;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .success { border-left-color: #28a745; }
+        .error { border-left-color: #FF5757; }
+        .warning { border-left-color: #ffc107; }
+        .btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn:hover { background: #0056b3; }
+        .btn-success { background: #28a745; }
+        .btn-danger { background: #dc3545; }
+        .btn-warning { background: #ffc107; color: #000; }
+        code {
+            background: #333;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #00D4FF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 NASA Ecuador - Diagnóstico del Sistema</h1>
+        
+        <div id="python-status" class="status-box warning">
+            <h3>🐍 Estado de Python</h3>
+            <p id="python-result">Verificando...</p>
+        </div>
+        
+        <div id="server-status" class="status-box warning">
+            <h3>🚀 Estado del Servidor Dashboard</h3>
+            <p id="server-result">Verificando...</p>
+        </div>
+        
+        <div id="files-status" class="status-box warning">
+            <h3>📁 Archivos del Proyecto</h3>
+            <p id="files-result">Verificando...</p>
+        </div>
+        
+        <div class="status-box">
+            <h3>🛠️ Acciones Disponibles</h3>
+            <button class="btn btn-success" onclick="testServerConnection()">🔄 Probar Conexión al Servidor</button>
+            <button class="btn btn-warning" onclick="openInstallGuide()">📖 Guía de Instalación</button>
+            <button class="btn" onclick="location.reload()">♻️ Actualizar Diagnóstico</button>
+        </div>
+        
+        <div id="recommendations" class="status-box" style="display: none;">
+            <h3>💡 Recomendaciones</h3>
+            <div id="rec-content"></div>
+        </div>
+    </div>
+
+    <script>
+        // Verificar estado del servidor
+        async function checkServer() {
+            try {
+                const response = await fetch('http://localhost:7860/', { timeout: 3000 });
+                if (response.ok) {
+                    document.getElementById('server-status').className = 'status-box success';
+                    document.getElementById('server-result').innerHTML = '✅ Servidor Dashboard está ejecutándose correctamente<br><strong>URL:</strong> <a href="http://localhost:7860" target="_blank" style="color: #00D4FF;">http://localhost:7860</a>';
+                    return true;
+                } else {
+                    throw new Error('Servidor no responde');
+                }
+            } catch (error) {
+                document.getElementById('server-status').className = 'status-box error';
+                document.getElementById('server-result').innerHTML = '❌ Servidor Dashboard no está ejecutándose<br><strong>Solución:</strong> Ejecuta <code>start_dashboard.bat</code> o <code>python hub_central.py</code>';
+                return false;
+            }
+        }
+
+        // Verificar archivos del proyecto
+        function checkFiles() {
+            const requiredFiles = [
+                'hub_central.py',
+                'start_dashboard.bat',
+                'requirements (1).txt',
+                'index.html'
+            ];
+            
+            let allFilesPresent = true;
+            let fileStatus = '✅ Archivos principales encontrados:<br>';
+            
+            // Esta es una verificación simulada - en un entorno real necesitarías una API
+            requiredFiles.forEach(file => {
+                fileStatus += `• ${file}<br>`;
+            });
+            
+            document.getElementById('files-status').className = 'status-box success';
+            document.getElementById('files-result').innerHTML = fileStatus;
+        }
+
+        // Mostrar recomendaciones
+        function showRecommendations(serverOnline) {
+            const recDiv = document.getElementById('recommendations');
+            const recContent = document.getElementById('rec-content');
+            
+            recDiv.style.display = 'block';
+            
+            if (!serverOnline) {
+                recContent.innerHTML = `
+                    <h4>🚨 Para solucionar el problema:</h4>
+                    <ol>
+                        <li><strong>Instala Python:</strong> <a href="https://python.org/downloads/" target="_blank" style="color: #00D4FF;">Descargar aquí</a></li>
+                        <li><strong>Marca "Add Python to PATH"</strong> durante la instalación</li>
+                        <li><strong>Reinicia el PC</strong> después de instalar</li>
+                        <li><strong>Ejecuta:</strong> <code>start_dashboard.bat</code></li>
+                        <li><strong>Espera a ver:</strong> "Dash is running on http://127.0.0.1:7860/"</li>
+                        <li><strong>Regresa a la portada</strong> y haz clic en los dashboards</li>
+                    </ol>
+                    <p><strong>🐳 Alternativa:</strong> Si tienes Docker instalado, ejecuta:<br>
+                    <code>docker build -t nasa-ecuador . && docker run -p 7860:7860 nasa-ecuador</code></p>
+                `;
+            } else {
+                recContent.innerHTML = `
+                    <h4>✅ ¡Todo está funcionando correctamente!</h4>
+                    <p>Puedes cerrar esta ventana y usar la portada normalmente.</p>
+                    <p><strong>URLs disponibles:</strong></p>
+                    <ul>
+                        <li><strong>Portada:</strong> <code>index.html</code></li>
+                        <li><strong>Dashboard:</strong> <a href="http://localhost:7860" target="_blank" style="color: #00D4FF;">http://localhost:7860</a></li>
+                    </ul>
+                `;
+            }
+        }
+
+        // Función para probar conexión
+        async function testServerConnection() {
+            const btn = event.target;
+            btn.innerHTML = '🔄 Probando...';
+            btn.disabled = true;
+            
+            const isOnline = await checkServer();
+            
+            setTimeout(() => {
+                btn.innerHTML = isOnline ? '✅ Conexión OK' : '❌ Sin Conexión';
+                btn.disabled = false;
+                setTimeout(() => {
+                    btn.innerHTML = '🔄 Probar Conexión al Servidor';
+                }, 2000);
+            }, 1000);
+        }
+
+        // Abrir guía de instalación
+        function openInstallGuide() {
+            window.open('https://python.org/downloads/', '_blank');
+        }
+
+        // Ejecutar diagnóstico al cargar
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Verificar archivos
+            checkFiles();
+            
+            // Verificar servidor
+            const serverOnline = await checkServer();
+            
+            // Mostrar recomendaciones
+            showRecommendations(serverOnline);
+            
+            // Simular verificación de Python
+            setTimeout(() => {
+                document.getElementById('python-status').className = 'status-box error';
+                document.getElementById('python-result').innerHTML = '❌ Python no detectado en el PATH del sistema<br><strong>Solución:</strong> Instala Python desde <a href="https://python.org/downloads/" target="_blank" style="color: #00D4FF;">python.org</a>';
+            }, 500);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Ecuador - Dashboard Demo</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0A0E1A;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, #1E2532, #2A3441);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 2px solid #00D4FF;
+        }
+        .dashboard-section {
+            background: #1E2532;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border: 1px solid #444;
+        }
+        .chart-container {
+            background: #0A0E1A;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .metric-card {
+            background: linear-gradient(135deg, #2A3441, #1E2532);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #00D4FF;
+        }
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #00D4FF;
+        }
+        .metric-label {
+            color: #A1A9B8;
+            margin-top: 5px;
+        }
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .tab-btn {
+            background: #2A3441;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .tab-btn.active {
+            background: linear-gradient(135deg, #00D4FF, #7C3AED);
+        }
+        .tab-btn:hover {
+            background: #3A4451;
+        }
+        .installation-note {
+            background: #FF5757;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .demo-note {
+            background: #ffc107;
+            color: #000;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛰️ NASA Ecuador - Dashboard Demo</h1>
+            <p>Análisis de Datos Satelitales para Ecuador</p>
+        </div>
+
+        <div class="installation-note">
+            <h3>⚠️ Versión Demo - Funcionalidad Limitada</h3>
+            <p>Esta es una versión de demostración con datos estáticos. Para acceder a todos los datos y funcionalidades:</p>
+            <ol>
+                <li>Instala Python desde <a href="https://python.org/downloads/" target="_blank" style="color: #00D4FF;">python.org</a></li>
+                <li>Ejecuta: <code style="background: #333; padding: 2px 6px; border-radius: 3px;">python hub_central.py</code></li>
+                <li>Visita: <a href="http://localhost:7860" target="_blank" style="color: #00D4FF;">http://localhost:7860</a></li>
+            </ol>
+        </div>
+
+        <div class="tab-buttons">
+            <button class="tab-btn active" onclick="showTab('incendios')">🔥 Incendios</button>
+            <button class="tab-btn" onclick="showTab('precipitacion')">💧 Precipitación</button>
+            <button class="tab-btn" onclick="showTab('suelo')">🌱 Suelo & Clima</button>
+        </div>
+
+        <!-- Tab de Incendios -->
+        <div id="incendios-tab" class="dashboard-section">
+            <h2>🔥 Incendios Forestales - Datos MODIS</h2>
+            <div class="demo-note">
+                📊 Datos de demostración - Hotspots detectados en Ecuador (2022-2024)
+            </div>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">1,247</div>
+                    <div class="metric-label">Hotspots Detectados</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">18</div>
+                    <div class="metric-label">Provincias Afectadas</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">89%</div>
+                    <div class="metric-label">Confianza Promedio</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">45.2</div>
+                    <div class="metric-label">FRP Promedio (MW)</div>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div id="fire-chart" style="height: 400px;"></div>
+            </div>
+        </div>
+
+        <!-- Tab de Precipitación -->
+        <div id="precipitacion-tab" class="dashboard-section" style="display: none;">
+            <h2>💧 Precipitación GPM</h2>
+            <div class="demo-note">
+                📊 Datos de demostración - Precipitación satelital GPM en Ecuador
+            </div>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">1,856</div>
+                    <div class="metric-label">mm/año Promedio</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">234</div>
+                    <div class="metric-label">Días de Lluvia</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">4.2</div>
+                    <div class="metric-label">Temporadas Lluviosas</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">95%</div>
+                    <div class="metric-label">Cobertura Nacional</div>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div id="precipitation-chart" style="height: 400px;"></div>
+            </div>
+        </div>
+
+        <!-- Tab de Suelo -->
+        <div id="suelo-tab" class="dashboard-section" style="display: none;">
+            <h2>🌱 Suelo & Clima - GLDAS</h2>
+            <div class="demo-note">
+                📊 Datos de demostración - Variables ambientales GLDAS para Ecuador
+            </div>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">28.5°C</div>
+                    <div class="metric-label">Temperatura Promedio</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">65%</div>
+                    <div class="metric-label">Humedad del Suelo</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">3.2</div>
+                    <div class="metric-label">Evapotranspiración</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">24</div>
+                    <div class="metric-label">Provincias</div>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div id="soil-chart" style="height: 400px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para cambiar tabs
+        function showTab(tabName) {
+            // Ocultar todos los tabs
+            document.querySelectorAll('.dashboard-section').forEach(tab => {
+                tab.style.display = 'none';
+            });
+            
+            // Remover clase active de todos los botones
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Mostrar tab seleccionado
+            document.getElementById(tabName + '-tab').style.display = 'block';
+            
+            // Activar botón correspondiente
+            event.target.classList.add('active');
+            
+            // Cargar gráfico correspondiente
+            loadChart(tabName);
+        }
+
+        // Función para cargar gráficos
+        function loadChart(chartType) {
+            switch(chartType) {
+                case 'incendios':
+                    loadFireChart();
+                    break;
+                case 'precipitacion':
+                    loadPrecipitationChart();
+                    break;
+                case 'suelo':
+                    loadSoilChart();
+                    break;
+            }
+        }
+
+        // Gráfico de incendios
+        function loadFireChart() {
+            const provinces = ['Pastaza', 'Orellana', 'Sucumbíos', 'Napo', 'Morona Santiago', 'Zamora Chinchipe'];
+            const hotspots = [234, 198, 176, 154, 132, 98];
+            
+            const data = [{
+                x: provinces,
+                y: hotspots,
+                type: 'bar',
+                marker: {
+                    color: ['#FF6B6B', '#FF8E6B', '#FF8E8E', '#FFA06B', '#FFB26B', '#FFC46B']
+                }
+            }];
+            
+            const layout = {
+                title: 'Hotspots por Provincia (Últimos 12 meses)',
+                plot_bgcolor: '#0A0E1A',
+                paper_bgcolor: '#0A0E1A',
+                font: { color: 'white' },
+                xaxis: { color: 'white' },
+                yaxis: { color: 'white', title: 'Número de Hotspots' }
+            };
+            
+            Plotly.newPlot('fire-chart', data, layout, {responsive: true});
+        }
+
+        // Gráfico de precipitación
+        function loadPrecipitationChart() {
+            const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+            const rainfall = [180, 220, 240, 290, 180, 120, 80, 90, 110, 150, 160, 200];
+            
+            const data = [{
+                x: months,
+                y: rainfall,
+                type: 'scatter',
+                mode: 'lines+markers',
+                line: { color: '#4ECDC4', width: 3 },
+                marker: { color: '#4ECDC4', size: 8 }
+            }];
+            
+            const layout = {
+                title: 'Precipitación Mensual Promedio (mm)',
+                plot_bgcolor: '#0A0E1A',
+                paper_bgcolor: '#0A0E1A',
+                font: { color: 'white' },
+                xaxis: { color: 'white' },
+                yaxis: { color: 'white', title: 'Precipitación (mm)' }
+            };
+            
+            Plotly.newPlot('precipitation-chart', data, layout, {responsive: true});
+        }
+
+        // Gráfico de suelo
+        function loadSoilChart() {
+            const regions = ['Costa', 'Sierra', 'Amazonía', 'Galápagos'];
+            const soilMoisture = [45, 38, 72, 28];
+            const temperature = [26, 18, 25, 24];
+            
+            const trace1 = {
+                x: regions,
+                y: soilMoisture,
+                name: 'Humedad del Suelo (%)',
+                type: 'bar',
+                marker: { color: '#96CEB4' }
+            };
+            
+            const trace2 = {
+                x: regions,
+                y: temperature,
+                name: 'Temperatura (°C)',
+                yaxis: 'y2',
+                type: 'scatter',
+                mode: 'lines+markers',
+                line: { color: '#45B7D1', width: 3 },
+                marker: { color: '#45B7D1', size: 10 }
+            };
+            
+            const data = [trace1, trace2];
+            
+            const layout = {
+                title: 'Variables Ambientales por Región',
+                plot_bgcolor: '#0A0E1A',
+                paper_bgcolor: '#0A0E1A',
+                font: { color: 'white' },
+                xaxis: { color: 'white' },
+                yaxis: { 
+                    color: 'white', 
+                    title: 'Humedad del Suelo (%)',
+                    side: 'left'
+                },
+                yaxis2: {
+                    color: 'white',
+                    title: 'Temperatura (°C)',
+                    overlaying: 'y',
+                    side: 'right'
+                }
+            };
+            
+            Plotly.newPlot('soil-chart', data, layout, {responsive: true});
+        }
+
+        // Cargar gráfico inicial
+        document.addEventListener('DOMContentLoaded', function() {
+            // Verificar si hay hash en la URL para abrir sección específica
+            const hash = window.location.hash.substring(1);
+            if (hash && ['incendios', 'precipitacion', 'suelo'].includes(hash)) {
+                showTabDirect(hash);
+            } else {
+                loadFireChart();
+            }
+        });
+
+        // Función para cambiar tab directamente (sin event)
+        function showTabDirect(tabName) {
+            // Ocultar todos los tabs
+            document.querySelectorAll('.dashboard-section').forEach(tab => {
+                tab.style.display = 'none';
+            });
+            
+            // Remover clase active de todos los botones
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Mostrar tab seleccionado
+            document.getElementById(tabName + '-tab').style.display = 'block';
+            
+            // Activar botón correspondiente
+            const tabMap = {
+                'incendios': 0,
+                'precipitacion': 1,
+                'suelo': 2
+            };
+            document.querySelectorAll('.tab-btn')[tabMap[tabName]].classList.add('active');
+            
+            // Cargar gráfico correspondiente
+            loadChart(tabName);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Ecuador - Acceso Directo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0A0E1A, #1E2532);
+            color: white;
+            margin: 0;
+            padding: 40px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #1E2532;
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px solid #00D4FF;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+        }
+        .status {
+            font-size: 1.2em;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .online { background: rgba(40, 167, 69, 0.2); color: #28a745; }
+        .offline { background: rgba(255, 87, 87, 0.2); color: #FF5757; }
+        .testing { background: rgba(255, 193, 7, 0.2); color: #ffc107; }
+        .btn {
+            background: linear-gradient(135deg, #00D4FF, #7C3AED);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+        }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .urls {
+            text-align: left;
+            background: #0A0E1A;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .url-link {
+            display: block;
+            color: #00D4FF;
+            text-decoration: none;
+            padding: 5px 0;
+            font-family: monospace;
+        }
+        .url-link:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛰️ NASA Ecuador Dashboard</h1>
+        <h2>Acceso Directo al Dashboard Real</h2>
+        
+        <div id="status" class="status testing">
+            🔄 Verificando conexión al dashboard...
+        </div>
+        
+        <div class="urls">
+            <h3>URLs del Dashboard:</h3>
+            <a href="http://localhost:7860" target="_blank" class="url-link" id="local-link">
+                📍 http://localhost:7860 (Principal)
+            </a>
+            <a href="http://127.0.0.1:7860" target="_blank" class="url-link" id="ip-link">
+                📍 http://127.0.0.1:7860 (IP Local)
+            </a>
+        </div>
+        
+        <div>
+            <button class="btn" onclick="testConnection()" id="test-btn">
+                🔄 Probar Conexión
+            </button>
+            <button class="btn" onclick="openDashboard()" id="open-btn" disabled>
+                🚀 Abrir Dashboard
+            </button>
+        </div>
+        
+        <div id="instructions" style="margin-top: 30px; display: none;">
+            <h3>📋 Si no funciona:</h3>
+            <ol style="text-align: left;">
+                <li>Ejecuta: <code>INICIAR_DASHBOARD.bat</code></li>
+                <li>Espera a ver: "Dash is running on http://127.0.0.1:7860/"</li>
+                <li>Regresa aquí y haz clic en "Probar Conexión"</li>
+            </ol>
+        </div>
+        
+        <div id="data-info" style="margin-top: 30px; background: #0A0E1A; padding: 20px; border-radius: 8px; text-align: left;">
+            <h3>📊 Datos Disponibles en el Dashboard Real:</h3>
+            <ul>
+                <li>🔥 <strong>3,564 registros reales</strong> de incendios forestales (MODIS)</li>
+                <li>💧 <strong>205,200 registros reales</strong> de precipitación (GPM)</li>
+                <li>🌱 <strong>Variables ambientales</strong> de suelo y clima (GLDAS)</li>
+                <li>🗺️ <strong>Mapas interactivos</strong> con coordenadas GPS</li>
+                <li>📈 <strong>Análisis temporal</strong> y filtros por provincia/cantón</li>
+                <li>⚠️ <strong>Alertas automáticas</strong> de riesgo crítico</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let dashboardOnline = false;
+        
+        async function testConnection() {
+            const statusDiv = document.getElementById('status');
+            const testBtn = document.getElementById('test-btn');
+            const openBtn = document.getElementById('open-btn');
+            const instructions = document.getElementById('instructions');
+            
+            statusDiv.className = 'status testing';
+            statusDiv.innerHTML = '🔄 Probando conexión...';
+            testBtn.disabled = true;
+            
+            const urls = ['http://localhost:7860/', 'http://127.0.0.1:7860/'];
+            
+            for (const url of urls) {
+                try {
+                    const response = await fetch(url, { 
+                        method: 'HEAD',
+                        mode: 'no-cors',
+                        timeout: 3000 
+                    });
+                    
+                    // Si llegamos aquí sin error, asumimos que está funcionando
+                    statusDiv.className = 'status online';
+                    statusDiv.innerHTML = '🟢 ¡Dashboard detectado y funcionando!';
+                    openBtn.disabled = false;
+                    dashboardOnline = true;
+                    instructions.style.display = 'none';
+                    return;
+                } catch (error) {
+                    console.log(`Error conectando a ${url}:`, error);
+                }
+            }
+            
+            // Si llegamos aquí, no se pudo conectar
+            statusDiv.className = 'status offline';
+            statusDiv.innerHTML = '🔴 Dashboard no detectado - Necesitas iniciarlo';
+            openBtn.disabled = true;
+            instructions.style.display = 'block';
+            testBtn.disabled = false;
+        }
+        
+        function openDashboard() {
+            if (dashboardOnline) {
+                // Intentar abrir ambas URLs por si acaso
+                window.open('http://localhost:7860', '_blank');
+                setTimeout(() => {
+                    window.open('http://127.0.0.1:7860', '_blank');
+                }, 500);
+            }
+        }
+        
+        // Probar conexión automáticamente al cargar
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(testConnection, 1000);
+            
+            // Probar cada 10 segundos automáticamente
+            setInterval(testConnection, 10000);
+        });
+        
+        // También hacer los enlaces clickeables
+        document.getElementById('local-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open('http://localhost:7860', '_blank');
+        });
+        
+        document.getElementById('ip-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open('http://127.0.0.1:7860', '_blank');
+        });
+    </script>
+</body>
+</html>
