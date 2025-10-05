@@ -1,0 +1,225 @@
+/* =============================================================================
+   MEDIA QUERIES - NASA Ecuador Dashboard
+   Responsive breakpoints: 1024px, 768px, 425px, 375px, 320px
+   ============================================================================= */
+
+/* Forzar layout horizontal hasta 900px */
+@media (min-width: 901px) {
+    .cards-container {
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+    
+    .dashboard-card {
+        flex: 1 1 calc(33.333% - 20px);
+        min-width: 300px;
+        max-width: none;
+        min-height: 400px;
+        height: clamp(400px, 42vh, 480px);
+    }
+}
+
+/* Transición - permitir wrap entre 768px y 900px */
+@media (max-width: 900px) and (min-width: 769px) {
+    .cards-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .dashboard-card {
+        flex: 1 1 calc(33.333% - 15px);
+        min-width: 260px;
+        max-width: 320px;
+        min-height: 380px;
+        height: clamp(380px, 38vh, 420px);
+    }
+    
+    .card-icon {
+        font-size: clamp(3.2rem, 4vw, 4rem);
+    }
+    
+    .dashboard-card h3 {
+        font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+    
+    .dashboard-card p {
+        font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    }
+}
+
+/* Tablet Portrait - cambio a layout vertical */
+@media (max-width: 768px) {
+    .content-container {
+        padding: clamp(30px, 5vw, 50px) clamp(15px, 4vw, 30px);
+    }
+    
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(20px, 3vw, 25px);
+        padding: 0 clamp(15px, 3vw, 25px);
+    }
+    
+    .dashboard-card {
+        flex: none;
+        width: 100%;
+        max-width: 500px;
+        min-width: auto;
+        min-height: 350px;
+        height: clamp(350px, 35vh, 400px);
+    }
+    
+    .section-header {
+        margin-bottom: clamp(30px, 5vw, 50px);
+    }
+    
+    .section-header h2 {
+        font-size: clamp(1.8rem, 5vw, 2.4rem);
+    }
+    
+    .section-description {
+        font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    }
+    
+    .card-icon {
+        font-size: clamp(3rem, 6vw, 3.5rem);
+        margin-bottom: 1rem;
+    }
+    
+    .dashboard-card h3 {
+        font-size: clamp(1rem, 2.5vw, 1.1rem);
+        margin-bottom: 0.8rem;
+    }
+    
+    .dashboard-card p {
+        font-size: clamp(0.8rem, 2vw, 0.85rem);
+        line-height: 1.4;
+    }
+    
+    .card-stats {
+        padding: 6px 15px;
+        margin-top: 12px;
+    }
+    
+    .card-stats span {
+        font-size: clamp(0.7rem, 1.8vw, 0.75rem);
+    }
+}
+
+/* Mobile - layout vertical y responsive */
+@media (max-width: 425px) {
+    .content-container {
+        padding: clamp(25px, 8vw, 40px) clamp(10px, 4vw, 20px);
+    }
+    
+    .dashboard-card {
+        width: 100%;
+        max-width: 400px;
+        min-height: 320px;
+        height: clamp(320px, 38vh, 380px);
+    }
+    
+    .section-header h2 {
+        font-size: clamp(1.5rem, 8vw, 2rem);
+        margin-bottom: clamp(15px, 4vw, 20px);
+    }
+    
+    .section-description {
+        font-size: clamp(0.85rem, 4vw, 1rem);
+        padding: 0 clamp(5px, 2vw, 10px);
+    }
+    
+    .card-icon {
+        font-size: clamp(2.5rem, 8vw, 3.2rem);
+    }
+    
+    .dashboard-card h3 {
+        font-size: clamp(0.9rem, 4vw, 1.1rem);
+    }
+    
+    .dashboard-card p {
+        font-size: clamp(0.75rem, 3.5vw, 0.85rem);
+        line-height: 1.3;
+    }
+    
+    .card-stats span {
+        font-size: clamp(0.65rem, 3vw, 0.75rem);
+    }
+    
+    /* Action buttons responsive */
+    .server-controls {
+        flex-direction: column;
+        gap: clamp(10px, 3vw, 15px);
+        margin-top: clamp(20px, 5vw, 25px);
+    }
+    
+    .launch-dashboard-btn {
+        padding: clamp(14px, 4vw, 18px) clamp(25px, 8vw, 35px);
+        font-size: clamp(0.95rem, 4vw, 1.1rem);
+    }
+    
+    .start-server-btn,
+    .refresh-status-btn {
+        padding: clamp(10px, 3vw, 12px) clamp(18px, 6vw, 25px);
+        font-size: clamp(0.85rem, 3.5vw, 0.95rem);
+        width: 100%;
+        max-width: clamp(250px, 70vw, 300px);
+    }
+}
+
+/* Ultra small screens */
+@media (max-width: 320px) {
+    .section-header {
+        margin-bottom: 25px;
+    }
+    
+    .dashboard-card {
+        max-width: 290px;
+        min-height: 300px;
+        height: clamp(300px, 40vh, 350px);
+        padding: 18px 12px;
+    }
+    
+    .server-help {
+        font-size: 0.75rem;
+        padding: 0 5px;
+    }
+}
+
+/* Header padding responsivo */
+@media (min-width: 769px) {
+    body {
+        padding-top: 75px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 65px !important;
+    }
+    
+    /* Optimización de asteroides para móvil */
+    .asteroide {
+        animation-duration: 3s !important;
+    }
+    
+    .asteroides-background {
+        opacity: 0.7;
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        padding-top: 60px !important;
+    }
+    
+    /* Reducir efectos en pantallas muy pequeñas */
+    .asteroide {
+        opacity: 0.4 !important;
+        animation-duration: 2s !important;
+    }
+    
+    .asteroides-background {
+        opacity: 0.5;
+    }
+}

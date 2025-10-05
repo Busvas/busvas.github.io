@@ -1,0 +1,954 @@
+/* Reset y variables CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container personalizado sin Bootstrap */
+.content-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    background: linear-gradient(45deg, #42a5f5, #66bb6a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-description {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+:root {
+    --primary-color: #0066cc;
+    --secondary-color: #ff6b35;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --space-dark: #0a0a0a;
+    --earth-blue: #4a90e2;
+    --earth-green: #5cb85c;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-light);
+    background: var(--space-dark);
+    overflow-x: hidden;
+}
+
+/* Fondo de estrellas animado */
+.stars,
+.stars2,
+.stars3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.stars {
+    background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="50" cy="50" r="1" fill="white"/><circle cx="150" cy="120" r="0.5" fill="white"/><circle cx="300" cy="200" r="1" fill="white"/><circle cx="450" cy="80" r="0.5" fill="white"/><circle cx="600" cy="300" r="1" fill="white"/><circle cx="750" cy="150" r="0.5" fill="white"/><circle cx="850" cy="250" r="1" fill="white"/><circle cx="200" cy="400" r="0.5" fill="white"/><circle cx="100" cy="300" r="1" fill="white"/><circle cx="400" cy="450" r="0.5" fill="white"/></svg>') repeat;
+    animation: moveStars 200s linear infinite;
+}
+
+.stars2 {
+    background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="100" cy="100" r="0.8" fill="white" opacity="0.8"/><circle cx="250" cy="50" r="0.3" fill="white" opacity="0.6"/><circle cx="400" cy="150" r="0.8" fill="white" opacity="0.7"/><circle cx="550" cy="250" r="0.3" fill="white" opacity="0.5"/><circle cx="700" cy="100" r="0.8" fill="white" opacity="0.8"/><circle cx="800" cy="350" r="0.3" fill="white" opacity="0.6"/></svg>') repeat;
+    animation: moveStars 100s linear infinite;
+}
+
+.stars3 {
+    background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="1.2" fill="white" opacity="0.9"/><circle cx="500" cy="100" r="0.6" fill="white" opacity="0.7"/><circle cx="800" cy="300" r="1.2" fill="white" opacity="0.8"/></svg>') repeat;
+    animation: moveStars 150s linear infinite;
+}
+
+@keyframes moveStars {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-1000px); }
+}
+
+/* Sección principal de la portada */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    position: relative;
+    background: radial-gradient(ellipse at center, rgba(29, 39, 54, 0.16) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+/* Contenedor del planeta */
+.planet-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 80vh;
+    perspective: 1000px;
+}
+
+/* Contenedor del planeta 3D */
+.planet-earth-3d {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 
+        0 0 50px rgba(74, 144, 226, 0.3),
+        0 0 100px rgba(74, 144, 226, 0.1);
+    animation: planetGlow 4s ease-in-out infinite;
+}
+
+/* Clase opcional para rotación automática del contenedor */
+.planet-earth-3d.auto-rotate {
+    animation: planetGlow 4s ease-in-out infinite, earthRotation 120s linear infinite;
+}
+
+.planet-earth-3d iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 50%;
+    transform: scale(1.1);
+    pointer-events: auto; /* Asegurar que el iframe sea interactivo */
+}
+
+@keyframes planetGlow {
+    0%, 100% { 
+        box-shadow: 
+            0 0 50px rgba(74, 144, 226, 0.3),
+            0 0 100px rgba(74, 144, 226, 0.1);
+    }
+    50% { 
+        box-shadow: 
+            0 0 70px rgba(74, 144, 226, 0.5),
+            0 0 120px rgba(74, 144, 226, 0.2);
+    }
+}
+
+/* Rotación automática sutil del contenedor como respaldo */
+@keyframes earthRotation {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.02); }
+}
+
+/* Órbitas de satélites */
+.satellite-orbit {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.orbit-1 {
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: orbitRotate 15s linear infinite;
+}
+
+.orbit-2 {
+    width: 600px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: orbitRotate 20s linear infinite reverse;
+}
+
+.orbit-3 {
+    width: 700px;
+    height: 700px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: orbitRotate 25s linear infinite;
+}
+
+.satellite {
+    width: 15px;
+    height: 15px;
+    background: linear-gradient(45deg, #c0c0c0, #ffffff);
+    border-radius: 2px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: satelliteBlink 2s ease-in-out infinite;
+}
+
+.satellite::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 8px;
+    background: #ffd700;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.satellite::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 3px;
+    background: #ffd700;
+    top: 50%;
+    left: -2px;
+    transform: translateY(-50%);
+}
+
+@keyframes orbitRotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes satelliteBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* Contenido de texto */
+.hero-content {
+    flex: 1;
+    padding: 0 50px;
+    max-width: 600px;
+}
+
+.hero-text {
+    text-align: left;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #00d4ff, #ff6b35);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    color: #b8d4f0;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    color: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 1s forwards;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 1.5s forwards;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.explore-btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 2s forwards;
+    box-shadow: 0 10px 30px rgba(0, 102, 204, 0.3);
+}
+
+.explore-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 102, 204, 0.4);
+}
+
+@keyframes titleGlow {
+    0%, 100% { text-shadow: 0 0 30px rgba(0, 212, 255, 0.3); }
+    50% { text-shadow: 0 0 40px rgba(255, 107, 53, 0.4); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Segunda sección */
+.content-section {
+    min-height: 100vh;
+    padding: 100px 0;
+    background: linear-gradient(180deg, var(--space-dark) 0%, #1a1a2e 100%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.content-section h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.content-section p {
+    font-size: 1.2rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 20px;
+    }
+    
+    .planet-container {
+        margin-bottom: 50px;
+        height: 50vh;
+    }
+    
+    .planet-earth {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .orbit-1, .orbit-2, .orbit-3 {
+        width: 350px;
+        height: 350px;
+    }
+    
+    .hero-content {
+        padding: 0 20px;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .planet-earth {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .orbit-1, .orbit-2, .orbit-3 {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* Container de cartas - Flexbox responsive */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: clamp(15px, 3vw, 30px);
+    padding: 0 clamp(20px, 5vw, 60px);
+    margin-bottom: 50px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+}
+
+/* Estilos mejorados para las tarjetas de dashboard */
+.dashboard-card {
+    background: linear-gradient(135deg, rgba(30, 37, 50, 0.95) 0%, rgba(25, 32, 45, 0.9) 100%);
+    border-radius: 20px;
+    padding: clamp(25px, 4vw, 40px) clamp(20px, 3vw, 30px);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(66, 165, 245, 0.3);
+    height: clamp(380px, 40vh, 450px);
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    flex: 1 1 300px;
+    min-width: 280px;
+    max-width: 400px;
+    z-index: 15; /* Asegurar que estén por encima de los asteroides */
+}
+
+.dashboard-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(66, 165, 245, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.dashboard-card:hover::before {
+    left: 100%;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    border-color: rgba(66, 165, 245, 0.7);
+    box-shadow: 
+        0 25px 50px rgba(66, 165, 245, 0.4),
+        0 0 30px rgba(102, 187, 106, 0.2);
+}
+
+.card-icon {
+    font-size: 4.5rem;
+    margin-bottom: 1.2rem;
+    filter: drop-shadow(0 0 15px rgba(66, 165, 245, 0.5));
+    transition: all 0.3s ease;
+}
+
+.dashboard-card:hover .card-icon {
+    transform: scale(1.1) rotateY(15deg);
+    filter: drop-shadow(0 0 25px rgba(66, 165, 245, 0.8));
+}
+
+.dashboard-card h3 {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+}
+
+.dashboard-card p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    padding: 10px 0;
+}
+
+.card-stats {
+    background: linear-gradient(135deg, rgba(66, 165, 245, 0.2), rgba(102, 187, 106, 0.1));
+    border-radius: 25px;
+    padding: 8px 20px;
+    display: inline-block;
+    border: 1px solid rgba(66, 165, 245, 0.3);
+    backdrop-filter: blur(5px);
+    margin-top: auto;
+    margin-bottom: 5px;
+}
+
+.card-stats span {
+    color: rgba(66, 165, 245, 0.9);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+
+.launch-dashboard-btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 102, 204, 0.3);
+    margin-top: 2rem;
+}
+
+.launch-dashboard-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 102, 204, 0.5);
+}
+
+.start-server-btn {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+    margin-left: 10px;
+}
+
+.start-server-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.5);
+    background: linear-gradient(135deg, #218838, #1e7e34);
+}
+
+.refresh-status-btn {
+    background: linear-gradient(135deg, #17a2b8, #138496);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(23, 162, 184, 0.3);
+    margin-left: 10px;
+}
+
+.refresh-status-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(23, 162, 184, 0.5);
+    background: linear-gradient(135deg, #138496, #117a8b);
+}
+
+/* Estilos para la nueva sección de botones */
+.action-buttons {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.server-controls {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.server-help {
+    color: #A1A9B8;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-top: 15px;
+    display: block;
+    width: 100%;
+}
+
+
+
+/* Header Navigation Styles */
+.header-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(13, 27, 42, 0.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+    width: 100%;
+    padding: 0;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    height: 60px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.logo-icon {
+    font-size: 1.8rem;
+    filter: drop-shadow(0 0 10px rgba(66, 165, 245, 0.5));
+}
+
+.brand-text {
+    background: linear-gradient(45deg, #42a5f5, #66bb6a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(66, 165, 245, 0.2);
+}
+
+.nav-link:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(66, 165, 245, 0.4);
+}
+
+/* Mobile hamburger menu */
+.navbar-toggler {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    gap: 4px;
+}
+
+.hamburger-line {
+    width: 24px;
+    height: 2px;
+    background: var(--text-light);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.navbar-toggler.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.navbar-toggler.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggler.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .brand-text {
+        display: none;
+    }
+    
+    .navbar-nav {
+        gap: 2px;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-toggler {
+        display: flex;
+    }
+    
+    .navbar-menu {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: rgba(13, 27, 42, 0.98);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .navbar-menu.active {
+        max-height: 300px;
+    }
+    
+    .navbar-nav {
+        flex-direction: column;
+        padding: 20px;
+        gap: 5px;
+        width: 100%;
+    }
+    
+    .nav-item {
+        width: 100%;
+    }
+    
+    .nav-link {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
+
+/* Ajuste del contenido principal para compensar el header fijo */
+body {
+    padding-top: 60px;
+}
+
+/* =============================================================================
+   LLUVIA DE ASTEROIDES - EFECTOS DE FONDO
+   ============================================================================= */
+
+.asteroides-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.asteroides-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.asteroide {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(66, 165, 245, 0.6));
+    position: absolute;
+    top: -5%;
+    animation: asteroideFall linear infinite;
+    opacity: 0.8;
+    box-shadow: 0 0 4px rgba(66, 165, 245, 0.5);
+}
+
+@keyframes asteroideFall {
+    0% {
+        transform: translateX(-10vw) translateY(-10vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateX(110vw) translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Diferentes tamaños y velocidades para variedad */
+.asteroide.small {
+    width: 1px;
+    height: 1px;
+    animation-duration: 3s;
+}
+
+.asteroide.medium {
+    width: 2px;
+    height: 2px;
+    animation-duration: 4s;
+}
+
+.asteroide.large {
+    width: 3px;
+    height: 3px;
+    animation-duration: 5s;
+    box-shadow: 0 0 6px rgba(66, 165, 245, 0.7);
+}
+
+/* Asegurar que las cartas estén por encima */
+.content-container {
+    position: relative;
+    z-index: 10;
+}
+
+/* Sección con posición relativa para contener los asteroides */
+.content-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header scroll effects */
+.header-nav.scrolled {
+    background: rgba(13, 27, 42, 0.98);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Header animation transitions */
+.header-nav {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Focus indicators for accessibility */
+.navbar-toggler:focus {
+    outline: 2px solid rgba(66, 165, 245, 0.5);
+    outline-offset: 2px;
+}
+
+/* Loading state for nav links */
+.nav-link.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.nav-link.loading::after {
+    content: '⟳';
+    margin-left: 5px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Enhanced mobile styles */
+@media (max-width: 480px) {
+    .navbar-container {
+        padding: 12px 15px;
+    }
+    
+    .logo-icon {
+        font-size: 1.5rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Space Apps Challenge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="media.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header-nav">
+        <nav class="navbar">
+            <div class="navbar-container">
+                <!-- Logo -->
+                <div class="navbar-brand">
+                    <span class="logo-icon">🛰️</span>
+                    <span class="brand-text">NASA Ecuador - Sistema de Monitoreo Satelital</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="navbar-menu" id="navbarMenu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="#hero" class="nav-link">🏠 Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:void(0)" onclick="openDashboard('/incendios')" class="nav-link">🔥 Incendios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:void(0)" onclick="openDashboard('/precipitacion')" class="nav-link">💧 Precipitación</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:void(0)" onclick="openDashboard('/suelo-clima')" class="nav-link">🌱 Suelo & Clima</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:void(0)" onclick="openDashboard('/predicciones')" class="nav-link">🔮 Predicciones</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Mobile Hamburger Button -->
+                <button class="navbar-toggler" id="navbarToggler" aria-label="Toggle navigation">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Fondo de estrellas -->
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+    
+    <!-- Sección principal de la portada -->
+    <section class="hero-section" id="hero">
+        <!-- Contenedor del planeta Tierra -->
+        <div class="planet-container">
+            <!-- Modelo 3D del planeta desde Sketchfab -->
+            <div class="planet-earth-3d">
+                <iframe 
+                    title="Planeta Tierra 3D" 
+                    frameborder="0" 
+                    allowfullscreen 
+                    mozallowfullscreen="true" 
+                    webkitallowfullscreen="true" 
+                    allow="autoplay; fullscreen; xr-spatial-tracking" 
+                    xr-spatial-tracking 
+                    execution-while-out-of-viewport 
+                    execution-while-not-rendered 
+                    web-share 
+                    src="https://sketchfab.com/models/1dbdb56dd730412cb7e23f772b3794e5/embed?autostart=1&autospin=0.2&ui_controls=0&ui_infos=0&ui_stop=0&ui_watermark=0&ui_help=0&ui_vr=0&ui_fullscreen=0&ui_settings=0&preload=1&transparent=0&orbit_constraint_pan=0&ui_hint=0&ui_inspector=0&ui_annotations=0&ui_loading=0&ui_fadeout=1&ui_hover=0&ui_general=0">
+                </iframe>
+            </div>
+            
+            <!-- Satélites LEO orbitando -->
+            <div class="satellite-orbit orbit-1">
+                <div class="satellite satellite-1"></div>
+            </div>
+            <div class="satellite-orbit orbit-2">
+                <div class="satellite satellite-2"></div>
+            </div>
+            <div class="satellite-orbit orbit-3">
+                <div class="satellite satellite-3"></div>
+            </div>
+        </div>
+        
+        <!-- Contenido de texto -->
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">NASA Space Apps Challenge</h1>
+                <h2 class="hero-subtitle">Explorando las Fronteras del Espacio</h2>
+                <p class="hero-description">
+                    Descubre cómo los satélites en órbita terrestre baja (LEO) están revolucionando 
+                    nuestra comprensión del planeta y mejorando la vida en la Tierra. 
+                    Un proyecto innovador que combina ciencia, tecnología y visión de futuro.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">550km</span>
+                        <span class="stat-label">Altitud LEO</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">90min</span>
+                        <span class="stat-label">Periodo orbital</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">7.8km/s</span>
+                        <span class="stat-label">Velocidad orbital</span>
+                    </div>
+                </div>
+                <button class="explore-btn" onclick="launchDashboard()">Explorar Dashboard</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Segunda sección para el contenido del equipo -->
+    <section class="content-section" id="content">
+        <!-- Lluvia de asteroides como fondo -->
+        <div class="asteroides-background">
+            <div class="asteroides-container">
+                <!-- Los asteroides se generarán aquí con JavaScript -->
+            </div>
+        </div>
+        
+        <div class="content-container">
+            <div class="section-header">
+                <h2>Análisis de Datos Satelitales</h2>
+                <p class="section-description">
+                    Nuestro sistema procesa datos de múltiples satélites NASA para monitorear 
+                    en tiempo real las condiciones ambientales de Ecuador.
+                </p>
+            </div>
+            
+            <div class="cards-container">
+                <div class="dashboard-card" onclick="openDashboard('/incendios')">
+                    <div class="card-icon">🔥</div>
+                    <h3>Incendios Forestales</h3>
+                    <p>Detección y monitoreo de hotspots utilizando datos MODIS y VIIRS</p>
+                    <div class="card-stats">
+                        <span>Datos en tiempo real</span>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card" onclick="openDashboard('/precipitacion')">
+                    <div class="card-icon">💧</div>
+                    <h3>Precipitación GPM</h3>
+                    <p>Análisis de patrones de lluvia con datos del satélite GPM</p>
+                    <div class="card-stats">
+                        <span>Resolución global</span>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card" onclick="openDashboard('/suelo-clima')">
+                    <div class="card-icon">🌱</div>
+                    <h3>Suelo & Clima</h3>
+                    <p>Variables ambientales del sistema GLDAS para análisis climático</p>
+                    <div class="card-stats">
+                        <span>Múltiples variables</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="launch-dashboard-btn" onclick="launchFullDashboard()">
+                    🚀 Lanzar Dashboard Completo
+                </button>
+                <div class="server-controls">
+                    <button class="start-server-btn" onclick="startPythonServer()">
+                        ⚡ Iniciar Servidor Python
+                    </button>
+                    <button class="refresh-status-btn" onclick="forceStatusUpdate()">
+                        🔄 Actualizar Estado
+                    </button>
+                    <small class="server-help">
+                        Si los dashboards no funcionan, haz clic primero en "Iniciar Servidor".<br>
+                        Si ya está iniciado, usa "Actualizar Estado"
+                    </small>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
