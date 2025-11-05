@@ -114,6 +114,7 @@
         renderFavoriteRoutes();
         if (removed) setTimeActiveForRoute(removed, false);
         if (!favoriteRoutes.length) minimizeFavoriteModal();
+        playSound && playSound('tic'); // <-- agrega esto
       });
 
       const heartBtn = document.createElement('button');
@@ -213,7 +214,7 @@
     saveToStorage();
     renderFavoriteRoutes();
     setTimeActiveForRoute(r, true);
-    expandFavoriteModal();
+    expandFavoriteModal();  // Cambio: Expande el modal solo al añadir (al clic en horario)
   }
 
   function registerGlobals() {
@@ -318,5 +319,41 @@
 
   // expose for manual init if needed
   window.initFavoriteButtons = initFavoriteButtons;
+
+  // Cambio: Evento para cerrar con X (mejorado para limpiar todas las rutas)
+  const closeFavoritesBtn = document.getElementById('close-favorites');
+  if (closeFavoritesBtn) {
+    closeFavoritesBtn.addEventListener('click', () => {
+      // Limpiar todas las rutas
+      favoriteRoutes = [];
+      saveToStorage();
+      renderFavoriteRoutes();
+      minimizeFavoriteModal();  // Cerrar el modal
+      console.log('Modal cerrado y todas las rutas eliminadas');
+    });
+  } else {
+    console.warn('⚠️ Elemento #close-favorites no encontrado en el DOM');
+  }
+
+  // Ejemplo de modificación: Añadiendo verificaciones antes de añadir event listeners
+  const element1 = document.getElementById('some-id-1');  // Reemplaza con el ID real
+  if (element1) {  // Añade esta verificación
+      element1.addEventListener('click', function() {
+          // Tu código aquí
+      });
+  } else {
+      console.warn('favoritos.js: Elemento #some-id-1 no encontrado, saltando event listener.');
+  }
+
+  const element2 = document.getElementById('some-id-2');  // Reemplaza con el ID real
+  if (element2) {  // Añade esta verificación
+      element2.addEventListener('click', function() {
+          // Tu código aquí
+      });
+  } else {
+      console.warn('favoritos.js: Elemento #some-id-2 no encontrado, saltando event listener.');
+  }
+
+  const playSound = window.playSound || function() {};
 
 })();

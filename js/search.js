@@ -81,12 +81,18 @@ document.addEventListener('DOMContentLoaded', function () {
         hideSuggestionList(originList);
         hideSuggestionList(destList);
         originInput.focus();
+        // Oculta el modal de la Ruta del Viajero si está visible
+        const viajeroSection = document.getElementById('viajero-section');
+        if (viajeroSection) viajeroSection.style.display = 'none';
     });
     function closeModal() {
-        modal && modal.classList.remove('active');
-        modalOverlay && modalOverlay.classList.remove('active');
-        hideSuggestionList(originList);
-        hideSuggestionList(destList);
+    modal && modal.classList.remove('active');
+    modalOverlay && modalOverlay.classList.remove('active');
+    hideSuggestionList(originList);
+    hideSuggestionList(destList);
+    // Vuelve a mostrar el modal de la Ruta del Viajero si existe
+    const viajeroSection = document.getElementById('viajero-section');
+    if (viajeroSection) viajeroSection.style.display = '';
     }
     modalClose && modalClose.addEventListener('click', closeModal);
     modalOverlay && modalOverlay.addEventListener('click', closeModal);
@@ -145,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     (function loadSynonymsFile() {
         try {
-            fetch('/sinonimos.json', { cache: 'no-cache' })
+            fetch('/sinonimos.json?v=20241001', { cache: 'no-cache' })
                 .then(r => r.ok ? r.json() : Promise.reject(r.statusText))
                 .then(json => {
                     if (Array.isArray(json) && json.length) SYNONYM_ENTRIES = json;
@@ -265,101 +271,18 @@ document.addEventListener('DOMContentLoaded', function () {
     // Helpers for coop accordion/scrolling/highlighting
     function openCoopAccordion(coopEl) {
         if (!coopEl) return false;
-
-        function isExpanded(el) {
-            try {
-                if (!el) return false;
-                const cls = el.classList;
-                if (cls && (cls.contains('open') || cls.contains('expanded') || cls.contains('is-open'))) return true;
-                const ae = el.getAttribute && el.getAttribute('aria-expanded');
-                if (ae === 'true') return true;
-                if (el.tagName && el.tagName.toLowerCase() === 'details' && el.open) return true;
-                const panel = el.querySelector('.coop-body, .coop-content, .accordion-panel, .details, .coop-details, .content');
-                if (panel) {
-                    const cs = getComputedStyle(panel);
-                    if (cs && cs.display !== 'none' && cs.visibility !== 'hidden' && panel.offsetHeight > 0) return true;
-                }
-            } catch (e) { /* ignore */ }
-            return false;
+        const body = coopEl.querySelector('.coop-body');
+        if (!body) return false;
+        // Si ya está abierto, no hacemos nada
+        if (body.classList.contains('open')) return true;
+        // Busca el botón de toggle
+        const toggleBtn = coopEl.querySelector('.accordion-toggle');
+        if (toggleBtn) {
+            try { toggleBtn.click(); return true; } catch (e) { return false; }
         }
-
-        if (isExpanded(coopEl)) return true;
-
-        const triggers = [
-            '.coop-header', '.cooperative-header', '.coop-title', '.coop-toggle',
-            '.coop-toggle-btn', '.accordion-toggle', '.coop-open', '.coop__header', 'button', '[role="button"]', 'a'
-        ];
-        function dispatchMouseEvent(target, type) {
-            try {
-                const ev = new MouseEvent(type, { view: window, bubbles: true, cancelable: true });
-                target.dispatchEvent(ev);
-            } catch (e) { try { target.click(); } catch (e2) {} }
-        }
-
-        for (const sel of triggers) {
-            try {
-                const el = coopEl.querySelector(sel);
-                if (!el) continue;
-                try {
-                    dispatchMouseEvent(el, 'mouseover');
-                    dispatchMouseEvent(el, 'mousedown');
-                    dispatchMouseEvent(el, 'mouseup');
-                    dispatchMouseEvent(el, 'click');
-                    try { el.click(); } catch (e) {}
-                } catch (e) {}
-                if (isExpanded(coopEl)) return true;
-            } catch (e) { /* ignore per-selector errors */ }
-        }
-
-        try {
-            const chk = coopEl.querySelector('input[type="checkbox"], input[data-toggle="checkbox"]');
-            if (chk) {
-                try { chk.checked = true; chk.dispatchEvent(new Event('change', { bubbles: true })); } catch (e) {}
-                if (isExpanded(coopEl)) return true;
-            }
-        } catch (e) {}
-
-        try {
-            const details = coopEl.querySelector('details');
-            if (details) {
-                try { details.open = true; } catch (e) {}
-                if (isExpanded(coopEl)) return true;
-            }
-        } catch (e) {}
-
-        // fallback: force-expansion pero respetando max-height definido en CSS
-        try {
-            if (coopEl.classList) coopEl.classList.add('expanded', 'open', 'is-open');
-            coopEl.setAttribute && coopEl.setAttribute('aria-expanded', 'true');
-
-            const header = coopEl.querySelector('.coop-header, .cooperative-header, .coop-title, .coop-toggle, .accordion-toggle');
-            if (header && header.setAttribute) header.setAttribute('aria-expanded', 'true');
-
-            const panel = coopEl.querySelector('.coop-body, .coop-content, .accordion-panel, .details, .coop-details, .content');
-            if (panel) {
-                // obtener max-height desde CSS si está definido
-                const cs = getComputedStyle(panel);
-                let cssMax = cs && cs.maxHeight ? cs.maxHeight : 'none';
-                let maxLimit = 320; // default fallback si no hay max en CSS
-                if (cssMax && cssMax !== 'none') {
-                    const parsed = parseFloat(cssMax);
-                    if (!isNaN(parsed) && parsed > 0) maxLimit = parsed;
-                }
-                // calcular altura objetivo: no exceder css max-height
-                const targetHeight = Math.min(panel.scrollHeight || maxLimit, maxLimit);
-                panel.style.display = 'block';
-                panel.style.overflowY = 'auto';
-                panel.style.maxHeight = targetHeight + 'px';
-                panel.style.visibility = 'visible';
-                panel.setAttribute && panel.setAttribute('aria-hidden', 'false');
-            }
-
-            try { coopEl.dispatchEvent(new CustomEvent('accordion:open', { bubbles: true })); } catch (e) {}
-
-            return isExpanded(coopEl) || true;
-        } catch (e) {
-            return false;
-        }
+        // Si no hay botón, forzamos la clase (fallback)
+        body.classList.add('open');
+        return true;
     }
     function scrollMainToElement(el) { if (!el) return; try { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {} }
     function scrollWithinCoopToRoute(coopEl, routeEl) { if (!coopEl || !routeEl) return; try { routeEl.scrollIntoView({ behavior: 'smooth', block: 'center' }); routeEl.classList.add('search-highlight'); setTimeout(() => routeEl.classList.remove('search-highlight'), 3000); } catch (e) {} }
@@ -377,23 +300,23 @@ document.addEventListener('DOMContentLoaded', function () {
         const MIN_ORIG_RATIO = 0.4;
         const EXACT_BOOST = 1000;
 
-        const coops = Array.from(document.querySelectorAll('.cooperative-card, .cooperative, .coop-card'));
+        const coops = Array.from(document.querySelectorAll('.cooperative-card'));
         const matches = [];
 
         coops.forEach(coop => {
             const coopName = normalizeText(coop.getAttribute('data-name') || coop.textContent || '').slice(0, 60);
-            const routeEls = Array.from(coop.querySelectorAll('.route, .route-item, .route-row, .time')) || [];
+            const routeEls = Array.from(coop.querySelectorAll('.route')) || [];
             let best = null; let bestScore = 0; let bestDestRatio = 0; let bestOrigRatio = 0;
 
             routeEls.forEach(r => {
                 const destCandidates = [];
-                const destEl = r.querySelector('.destination, .route-destination, .route-to');
+                const destEl = r.querySelector('.destination');
                 if (destEl && destEl.textContent) destCandidates.push(destEl.textContent);
                 const dd = (r.dataset && r.dataset.destino) ? r.dataset.destino : (r.getAttribute ? r.getAttribute('data-destino') : '');
                 if (dd) destCandidates.push(dd);
 
                 const origCandidates = [];
-                const oEl = r.querySelector('.origin, .route-from, .from, .route-origin');
+                const oEl = r.querySelector('.origin');
                 if (oEl && oEl.textContent) origCandidates.push(oEl.textContent);
 
                 const fullText = r.textContent || '';
@@ -438,9 +361,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const accepted = (bestScore >= EXACT_BOOST) ||
                 (bestScore > 0 && bestDestRatio >= MIN_DEST_RATIO && (userOrigTokens.length ? bestOrigRatio >= MIN_ORIG_RATIO || bestScore >= 2 : true));
 
-            // debug minimal: only when dev console open
-            if (window && window.console && console.debug) console.debug('[search] coop:', coopName, 'bestScore:', Math.round(bestScore * 100) / 100, 'destRatio:', Math.round(bestDestRatio * 100) / 100, 'origRatio:', Math.round(bestOrigRatio * 100) / 100);
-
             if (accepted && best) matches.push({ coopEl: coop, bestRouteEl: best, score: bestScore, destRatio: bestDestRatio, origRatio: bestOrigRatio });
         });
 
@@ -454,18 +374,18 @@ document.addEventListener('DOMContentLoaded', function () {
         const userDestTokens = tokenize(destino);
         const userOrigTokens = origen ? tokenize(origen) : [];
         let best = null; let bestScore = 0;
-        const routeEls = Array.from(coopEl.querySelectorAll('.route, .route-item, .route-row, .time')) || [];
+        const routeEls = Array.from(coopEl.querySelectorAll('.route')) || [];
         routeEls.forEach(r => {
             const fullText = r.textContent || '';
             const destCandidates = [];
-            const destEl = r.querySelector('.destination, .route-destination, .route-to');
+            const destEl = r.querySelector('.destination');
             if (destEl && destEl.textContent) destCandidates.push(destEl.textContent);
             const dd = (r.dataset && r.dataset.destino) ? r.dataset.destino : (r.getAttribute ? r.getAttribute('data-destino') : '');
             if (dd) destCandidates.push(dd);
             destCandidates.push(fullText);
 
             const origCandidates = [];
-            const oEl = r.querySelector('.origin, .route-from, .from, .route-origin');
+            const oEl = r.querySelector('.origin');
             if (oEl && oEl.textContent) origCandidates.push(oEl.textContent);
             if (fullText) {
                 const parts = fullText.split(/[-–—]| a | to | hasta /i).map(p => p.trim()).filter(Boolean);
@@ -490,41 +410,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function processDestinationSequence(origen, destino) {
         if (!destino) return;
-        const anyCoops = await waitForSelector('.cooperative-card, .coop-card, .cooperative', 3000);
+        const anyCoops = await waitForSelector('.cooperative-card', 3000);
         if (!anyCoops) return;
 
-        // buscar coincidencias estrictas dentro de cooperativas
         let matches = findMatchingCooperatives(origen, destino);
 
-        // Si no hay matches estrictos, NO hacer fallback que abra todas las cooperativas.
-        // En ese caso abortamos y dejamos al usuario en la vista del terminal para que siga buscando manualmente.
         if (!matches || !matches.length) {
             console.debug('[search] No se encontraron rutas que coincidan con destino:', destino, '-> no abrir cooperativas (mantener vista de terminal).');
             return;
         }
 
-        // Scroll to first coop to give context
         const first = matches[0];
         try { scrollMainToElement(first.coopEl); first.coopEl.classList.add('search-highlight'); setTimeout(() => first.coopEl.classList.remove('search-highlight'), 1600); } catch (e) {}
 
-        // Open accordions for ALL matching cooperatives sequentially (1s between major steps)
-        // and highlight any matching route found inside each one.
         for (let i = 0; i < matches.length; i++) {
             const m = matches[i];
-
-            // 1) bring coop into view
             try { scrollMainToElement(m.coopEl); } catch (e) {}
             await delay(250);
 
-            // 2) open its accordion / details
             try { openCoopAccordion(m.coopEl); } catch (e) {}
-            // wait for internal route elements to appear
-            await waitForSelectorIn(m.coopEl, '.route, .route-item, .route-row, .time', 3000);
+            await waitForSelectorIn(m.coopEl, '.route', 3000);
 
-            // 3) pause 1s as requested between steps
             await delay(1000);
 
-            // 4) find best route in this coop and highlight it (if any)
             try {
                 const res = findBestRouteInCoopScore(m.coopEl, origen, destino);
                 const routeEl = res.routeEl || m.bestRouteEl;
@@ -532,14 +440,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     highlightTimesForRoute(routeEl);
                     scrollWithinCoopToRoute(m.coopEl, routeEl);
                 }
-            } catch (e) { /* ignore per-coop errors */ }
+            } catch (e) { }
 
-            // 5) wait 1s before proceeding to next cooperative (ensures observable sequential behavior)
             await delay(1000);
         }
     }
 
-    // find province/terminal by name: return best match (strict)
     function findProvinceTerminalByName(name) {
         if (!name || !window.appData || !Array.isArray(window.appData.provincias)) return null;
         const targetNorm = normalizeText(name);
@@ -575,13 +481,10 @@ document.addEventListener('DOMContentLoaded', function () {
         return null;
     }
 
-    // Main navigation flow: resolve ORIGEN first, then render cooperatives, then highlight DESTINO
     async function navegarACooperativasDeOrigen(origen, destino) {
         if (!window.appData || !Array.isArray(window.appData.provincias)) return;
 
-        console.debug('[search] iniciar navegación:', { origen, destino });
-
-        // Resolve origin (priority) - reuse existing helper
+        // Resolve origin (priority)
         let originInfo = null;
         if (origen && origen.trim()) originInfo = findProvinceTerminalByName(origen);
 
@@ -617,64 +520,49 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         if (!originInfo || !originInfo.terminal) {
-            console.debug('[search] No se pudo resolver origen para renderizar cooperativas.', originInfo);
             return;
         }
 
         // STEP 0: set current province and ENSURE we ENTER the province screen first (show terminals list)
         try {
             window.appData.currentProvince = originInfo.province;
-            console.debug('[search] STEP 0 set currentProvince (show province screen):', originInfo.province && originInfo.province.nombre);
-
-            // prefer high-level API if available
             if (typeof window.selectProvince === 'function') {
-                try { window.selectProvince(originInfo.province); } catch (e) { /* ignore */ }
+                try { window.selectProvince(originInfo.province); } catch (e) { }
             }
-
-            // explicitly show province view so user sees terminal list first
             if (typeof window.showSection === 'function') {
                 try { window.showSection('province'); } catch (e) {}
             }
-
-            // also set hash as a fallback
             try { window.location.hash = 'province'; } catch (e) {}
-
-            // render terminals immediately so the "Terminales en X" view is populated
             if (typeof window.renderTerminals === 'function') {
                 try { window.renderTerminals(); } catch (e) {}
             }
-
-            // wait 1s so user sees the province screen with terminals before entering terminal
-        } catch (e) { console.debug('[search] STEP0 error', e); }
+        } catch (e) { }
         await delay(1000);
 
-        // STEP 1: ensure terminals are visible (extra safety)
+        // STEP 1: ensure terminals are visible
         try {
-            await waitForSelector('.terminal-card, .terminal, .terminal-item, .terminal-row', 2000);
-            console.debug('[search] STEP 1 terminals should be visible for province:', originInfo.province && originInfo.province.nombre);
-        } catch (e) { /* ignore */ }
+            await waitForSelector('.card--terminal', 2000);
+        } catch (e) { }
 
         // STEP 2: set/select terminal (enter terminal -> cooperatives)
         try {
             window.appData.currentTerminal = originInfo.terminal;
-            console.debug('[search] STEP 2 set currentTerminal (enter terminal):', originInfo.terminal && originInfo.terminal.nombre);
             if (typeof window.selectTerminal === 'function') {
                 try { window.selectTerminal(originInfo.terminal); }
-                catch (e) { /* fallback to DOM click */ }
+                catch (e) { }
             } else {
                 // fallback: find terminal card and click it to enter terminal view
                 const termName = originInfo.terminal.nombre || '';
                 const termEl = findTerminalCard ? findTerminalCard(termName) : null;
                 if (termEl && termEl.click) {
-                    try { termEl.click(); } catch (e) { /* ignore */ }
+                    try { termEl.click(); } catch (e) { }
                 }
             }
-            // ensure terminal view is shown
             if (typeof window.showSection === 'function') {
                 try { window.showSection('terminal'); } catch (e) {}
             }
             try { window.location.hash = 'terminal'; } catch (e) {}
-        } catch (e) { console.debug('[search] STEP2 error', e); }
+        } catch (e) { }
         await delay(1000);
 
         // STEP 3: ensure cooperatives are rendered
@@ -682,40 +570,25 @@ document.addEventListener('DOMContentLoaded', function () {
             if (typeof window.renderCooperatives === 'function') {
                 try { window.renderCooperatives(); } catch (e) {}
             }
-            const ok = await waitForSelector('.cooperative-card, .coop-card, .cooperative', 3000);
-            console.debug('[search] STEP 3 cooperatives rendered?', ok);
-        } catch (e) { console.debug('[search] STEP3 error', e); }
+            await waitForSelector('.cooperative-card', 3000);
+        } catch (e) { }
         await delay(1000);
 
         // STEP 4: show cooperative section explicitly
         try {
             if (typeof window.showSection === 'function') window.showSection('cooperative');
             try { window.location.hash = 'cooperative'; } catch (e) {}
-            console.debug('[search] STEP 4 showSection cooperative');
-        } catch (e) { console.debug('[search] STEP4 error', e); }
+        } catch (e) { }
         await delay(1000);
 
-        // STEP 5: highlight destination terminal/province (non-destructive)
-        try {
-            if (destino && destino.trim()) {
-                const destInfo = findProvinceTerminalByName(destino);
-                if (destInfo) {
-                    const provEl2 = findProvinceCard ? findProvinceCard(destInfo.province.nombre || '') : null;
-                    if (provEl2) await blinkElement(provEl2, { times: 3, interval: 140, className: 'blink-highlight' });
-                    const termEl2 = findTerminalCard ? findTerminalCard(destInfo.terminal.nombre || '') : null;
-                    if (termEl2) await blinkElement(termEl2, { times: 3, interval: 140, className: 'blink-highlight-terminal' });
-                    console.debug('[search] STEP 5 highlighted destino (if found)', destInfo.province && destInfo.terminal && destInfo.terminal.nombre);
-                }
-            }
-        } catch (e) { console.debug('[search] STEP5 error', e); }
-        await delay(1000);
-
-        // STEP 6: run the cooperative matching / sequential highlight of routes
-        try {
-            await delay(250);
-            await processDestinationSequence(originInfo.terminal.nombre || origen, destino);
-            console.debug('[search] STEP 6 processDestinationSequence finished');
-        } catch (e) { console.debug('[search] STEP6 error', e); }
+        // Solo ejecutar la búsqueda de rutas si existen cooperativas en pantalla
+        const coopCards = document.querySelectorAll('.cooperative-card');
+        if (coopCards && coopCards.length > 0) {
+            try {
+                await delay(250);
+                await processDestinationSequence(originInfo.terminal.nombre || origen, destino);
+            } catch (e) { }
+        }
     }
 
     // helper: wait for selector inside a container
@@ -744,20 +617,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // find DOM helpers for blinking
-    function findProvinceCard(provinceName) {
-        if (!provinceName) return null;
-        const target = normalizeText(provinceName);
-        const els = document.querySelectorAll('.province-card, .province, .province-item, .province-row, .provincia-card');
-        for (const el of els) { const txt = normalizeText(el.textContent || el.innerText || ''); if (txt.includes(target)) return el; }
-        const dp = document.querySelector('[data-province]'); if (dp && normalizeText(dp.getAttribute('data-province') || '') === target) return dp;
-        return null;
-    }
     function findTerminalCard(terminalName) {
         if (!terminalName) return null;
         const target = normalizeText(terminalName);
-        const els = document.querySelectorAll('.terminal-card, .terminal, .terminal-item, .terminal-row, .terminal-card-row');
+        const els = document.querySelectorAll('.card--terminal');
         for (const el of els) { const txt = normalizeText(el.textContent || el.innerText || ''); if (txt.includes(target)) return el; }
-        const dt = document.querySelector('[data-terminal]'); if (dt && normalizeText(dt.getAttribute('data-terminal') || '') === target) return dt;
         return null;
     }
 
@@ -771,53 +635,114 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Fuzzy search para ciudades y destinos
+    function levenshtein(a, b) {
+        if (a === b) return 0;
+        if (!a.length) return b.length;
+        if (!b.length) return a.length;
+        const matrix = [];
+        for (let i = 0; i <= b.length; i++) matrix[i] = [i];
+        for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
+        for (let i = 1; i <= b.length; i++) {
+            for (let j = 1; j <= a.length; j++) {
+                if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                    matrix[i][j] = matrix[i - 1][j - 1];
+                } else {
+                    matrix[i][j] = Math.min(
+                        matrix[i - 1][j - 1] + 1, // sustitución
+                        matrix[i][j - 1] + 1,     // inserción
+                        matrix[i - 1][j] + 1      // eliminación
+                    );
+                }
+            }
+        }
+        return matrix[b.length][a.length];
+    }
+
+    function fuzzyFind(term, candidates, maxDistance = 2) {
+        term = term.toLowerCase();
+        let best = null;
+        let bestDist = Infinity;
+        candidates.forEach(c => {
+            const dist = levenshtein(term, c.toLowerCase());
+            if (dist < bestDist && dist <= maxDistance) {
+                best = c;
+                bestDist = dist;
+            }
+        });
+        return best;
+    }
+
+    // Ejemplo de uso en la búsqueda:
+    // const sinonimos = [...]; // cargar sinonimos.json
+    // const ciudades = sinonimos.flatMap(s => [s.canonical, ...s.variants]);
+    // let resultado = fuzzyFind(inputValue, ciudades);
+    // Si resultado es null, no hay coincidencia cercana.
+
     // Search submit handling & bindings
     function handleSearchSubmit() {
         const origen = originInput.value.trim();
         const destino = destInput.value.trim();
         hideSuggestionList(originList);
         hideSuggestionList(destList);
-        if (origen) { closeModal(); navegarACooperativasDeOrigen(origen, destino); }
-    }
-
-    function bindSearchButtons() {
-        const selectors = '#search-btn-modal, .search-btn-modal, [data-search-submit]';
-        try {
-            const buttons = Array.from(document.querySelectorAll(selectors));
-            buttons.forEach(btn => {
-                if (!btn.__searchBound) { btn.addEventListener('click', function (e) { e.preventDefault(); handleSearchSubmit(); }); btn.__searchBound = true; }
-            });
-        } catch (e) { /* ignore */ }
-
-        if (!window.__search_delegate_bound) {
-            document.addEventListener('click', function (e) {
-                const btn = e.target && e.target.closest ? e.target.closest(selectors) : null;
-                if (btn) { e.preventDefault(); handleSearchSubmit(); }
-            });
-            window.__search_delegate_bound = true;
+        if (!origen && !destino) {
+            alert('Por favor ingresa origen o destino.');
+            return;
         }
-    }
-    bindSearchButtons();
-    setTimeout(bindSearchButtons, 500);
 
-    // forms / enter handling
-    document.addEventListener('submit', function (e) {
-        if (!e.target) return;
-        if (e.target.matches('#search-form, .search-form') || e.target.closest('#search-modal')) { e.preventDefault(); handleSearchSubmit(); }
+        // Cargar sinonimos y ciudades
+        const sinonimos = SYNONYM_ENTRIES;
+        const ciudades = sinonimos.flatMap(s => [s.canonical, ...(s.variants || [])]);
+
+        // Buscar origen y destino usando fuzzyFind
+        let resultadoOrigen = origen ? fuzzyFind(origen, ciudades, 2) : null;
+        let resultadoDestino = destino ? fuzzyFind(destino, ciudades, 2) : null;
+
+        // Si no hay coincidencia fuzzy, usar el texto original
+        if (!resultadoOrigen && origen) resultadoOrigen = origen;
+        if (!resultadoDestino && destino) resultadoDestino = destino;
+
+        // Navegar y resaltar rutas como antes
+        navegarACooperativasDeOrigen(resultadoOrigen, resultadoDestino);
+
+        // Cierra el modal
+        modal.style.display = 'none';
+        modalOverlay.style.display = 'none';
+    }
+
+    // Global search handler (debounced)
+    window.handleGlobalSearch = debounce(handleSearchSubmit, 300);
+
+    // Bind enter key on inputs to trigger search
+    originInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') { e.preventDefault(); handleSearchSubmit(); }
     });
-    originInput.addEventListener('keydown', function (e) { if (e.key === 'Enter' && originList.style.display === 'none') { e.preventDefault(); handleSearchSubmit(); } });
-    destInput.addEventListener('keydown', function (e) { if (e.key === 'Enter' && destList.style.display === 'none') { e.preventDefault(); handleSearchSubmit(); } });
+    destInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') { e.preventDefault(); handleSearchSubmit(); }
+    });
 
-    // minimal helper used earlier
-    function matchScore(userDest, candidateText) {
-        const tUser = tokenize(userDest);
-        if (!tUser.length) return 0;
-        const tCand = tokenize(candidateText);
-        if (!tCand.length) return 0;
-        return countTokenMatches(tUser, tCand);
-    }
+    // Search modal open/close logic
+    searchBtn && searchBtn.addEventListener('click', function () {
+        if (modal) {
+            modal.style.display = 'block';
+            modalOverlay && (modalOverlay.style.display = 'block');
+            originInput && originInput.focus();
+        }
+    });
+    modalClose && modalClose.addEventListener('click', function () {
+        if (modal) {
+            modal.style.display = 'none';
+            modalOverlay && (modalOverlay.style.display = 'none');
+        }
+    });
+    modalOverlay && modalOverlay.addEventListener('click', function () {
+        if (modal) {
+            modal.style.display = 'none';
+            modalOverlay.style.display = 'none';
+        }
+    });
 
-    // expose main function for debugging
-    window.__navegarACooperativasDeOrigen = navegarACooperativasDeOrigen;
-
+    // Vincula el submit del modal
+    const searchBtnModal = document.getElementById('search-btn-modal');
+    searchBtnModal && searchBtnModal.addEventListener('click', handleSearchSubmit);
 });

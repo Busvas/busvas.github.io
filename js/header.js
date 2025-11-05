@@ -7,16 +7,26 @@ document.addEventListener('DOMContentLoaded', function () {
     const sidebarOverlay = document.querySelector('.sidebar-overlay');
     const backBtn = document.getElementById('back-btn');
     const logoLink = document.getElementById('logo-link');
+    const sidebarBtnHome = document.getElementById('sidebar-btn-home');
+    const provinceListSide = document.getElementById('province-list-side');
 
     // ========== SIDEBAR ==========
+    function openSidebar() {
+        if (sidebar) sidebar.classList.add('active');
+        if (sidebarOverlay) sidebarOverlay.classList.add('active');
+    }
+    function closeSidebarFn() {
+        if (sidebar) sidebar.classList.remove('active');
+        if (sidebarOverlay) sidebarOverlay.classList.remove('active');
+    }
     function toggleSidebar() {
         if (sidebar) sidebar.classList.toggle('active');
         if (sidebarOverlay) sidebarOverlay.classList.toggle('active');
     }
 
-    if (sidebarToggle) sidebarToggle.addEventListener('click', toggleSidebar);
-    if (closeSidebar) closeSidebar.addEventListener('click', toggleSidebar);
-    if (sidebarOverlay) sidebarOverlay.addEventListener('click', toggleSidebar);
+    if (sidebarToggle) sidebarToggle.addEventListener('click', openSidebar);
+    if (closeSidebar) closeSidebar.addEventListener('click', closeSidebarFn);
+    if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeSidebarFn);
 
     // ========== BOTÓN DE RETROCESO ==========
     if (backBtn) {
@@ -47,14 +57,40 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // ========== SIDEBAR HOME BUTTON ==========
-    const sidebarBtnHome = document.getElementById('sidebar-btn-home');
     if (sidebarBtnHome) {
         sidebarBtnHome.addEventListener('click', function () {
-            document.getElementById('home-section')?.classList.add('active-section');
-            document.getElementById('terminal-section')?.classList.remove('active-section');
-            document.getElementById('cooperative-section')?.classList.remove('active-section');
-            if (sidebar) sidebar.classList.remove('active');
-            if (sidebarOverlay) sidebarOverlay.classList.remove('active');
+            window.showSection && window.showSection('home');
+            closeSidebarFn();
         });
     }
+
+    // ========== PROVINCIAS EN SIDEBAR ==========
+    function renderSidebarProvinces() {
+        const ul = document.getElementById('province-list-side');
+        if (!ul) return;
+        ul.innerHTML = '';
+        if (!window.appData || !Array.isArray(window.appData.provincias)) return;
+        window.appData.provincias.forEach(prov => {
+            const li = document.createElement('li');
+            li.textContent = prov.nombre;
+            li.style.cursor = 'pointer';
+            li.addEventListener('click', () => {
+                window.selectProvince && window.selectProvince(prov);
+                closeSidebarFn();
+            });
+            ul.appendChild(li);
+        });
+    }
+    window.renderSidebarProvinces = renderSidebarProvinces;
+
+    // Llama a renderSidebarProvinces cuando se cargan las provincias
+    if (window.appData && Array.isArray(window.appData.provincias) && window.appData.provincias.length) {
+        renderSidebarProvinces();
+    } else {
+        // Si las provincias se cargan asincrónicamente, escucha el evento o usa un pequeño delay
+        setTimeout(renderSidebarProvinces, 800);
+    }
+
+    // Si tu app recarga provincias dinámicamente, puedes exponer la función:
+    window.renderSidebarProvinces = renderSidebarProvinces;
 });
