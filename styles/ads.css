@@ -5,7 +5,7 @@
   /* Cambia a flex para centrar el contenido */
   justify-content: center;
   align-items: center;
-  margin: 1rem auto;
+  margin: 0.5rem auto;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);

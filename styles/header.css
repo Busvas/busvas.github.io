@@ -116,7 +116,7 @@
   box-shadow: var(--shadow-lg);
   z-index: 30000;
   transition: var(--transition);
-  padding: 1.5rem;
+  padding: 0.5rem;
   overflow-y: auto;
   border-radius: 10px 0px 0px 10px;
 }
