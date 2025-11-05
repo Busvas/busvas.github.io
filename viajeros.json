@@ -1,0 +1,182 @@
+{
+    "places": [
+        {
+            "id": "v-anita",
+            "title": "¿Dónde vas a comer?",
+            "description": "Las tortillas de Mamá Anita. Comida tradicional y platos típicos de San Miguel de Bolivar",
+            "imagen": "img/anuncios/banner-anita.png",
+            "links": {
+                "maps": "https://maps.app.goo.gl/JWjWiWVEeCrZhn5m9"
+            }
+        },
+        {
+            "id": "v-bambuka",
+            "title": "¿Dónde vas a comer?",
+            "description": "Bambuka, restobar, ven y disfruta de comida y un ambiente único.",
+            "imagen": "img/anuncios/banner-bambuka.png",
+            "links": {
+                "maps": "https://maps.app.goo.gl/i3fm9kdoQigrJKZ66"
+            }
+        },
+        {
+            "id": "v-bubble-1",
+            "title": "¿Dónde vas a comer?",
+            "description": "Bubble Planet, la mejor variedad de bubble tea en Riobamba.",
+            "imagen": "img/anuncios/banner-bubble-1.png",
+            "links": {
+                "instagram": "https://www.instagram.com/bubbleplanetrbba"
+            }
+        }
+    ],
+    "placements": {
+        "home": [],
+        "provincias": {
+            "p-chimborazo": {
+                "places": [],
+                "terminales": {
+                    "t-riobamba": ["v-bubble-1"]
+                }
+            },
+            "p-santo-domingo-tsachilas": {
+                "places": [],
+                "terminales": {
+                    "t-santo-domingo": ["v-bambuka"]
+                }
+            },
+            "p-bolivar": {
+                "places": [],
+                "terminales": {
+                    "t-guaranda": ["v-anita"]
+                }
+            },
+            "p-pichincha": {
+                "places": [],
+                "terminales": {
+                    "t-quitumbe": [],
+                    "t-carcelen": [],
+                    "t-san-miguel-bancos": []
+                }
+            },
+            "p-zamora-chinchipe": {
+                "places": [],
+                "terminales": {
+                    "t-yantzaza": [],
+                    "t-zamora": [],
+                    "t-el-pangui": []
+                }
+            },
+            "p-guayas": {
+                "places": [],
+                "terminales": {
+                    "t-guayaquil": []
+                }
+            },
+            "p-morona": {
+                "places": [],
+                "terminales": {
+                    "t-macas": []
+                }
+            },
+            "p-tungurahua": {
+                "places": [],
+                "terminales": {
+                    "t-ambato-sur": [],
+                    "t-banos-agua-santa": []
+                }
+            },
+            "p-sucumbios": {
+                "places": [],
+                "terminales": {
+                    "t-lago-agrio": []
+                }
+            },
+            "p-napo": {
+                "places": [],
+                "terminales": {
+                    "t-tena": []
+                }
+            },
+            "p-esmeraldas": {
+                "places": [],
+                "terminales": {
+                    "t-ciudad-esmeraldas": []
+                }
+            },
+            "p-imbabura": {
+                "places": [],
+                "terminales": {
+                    "t-ibarra": []
+                }
+            },
+            "p-loja": {
+                "places": [],
+                "terminales": {
+                    "t-loja": []
+                }
+            },
+            "p-pastaza": {
+                "places": [],
+                "terminales": {
+                    "t-puyo": []
+                }
+            },
+            "p-orellana": {
+                "places": [],
+                "terminales": {
+                    "t-el-coca": []
+                }
+            },
+            "p-carchi": {
+                "places": [],
+                "terminales": {
+                    "t-tulcan": []
+                }
+            },
+            "p-santa-elena": {
+                "places": [],
+                "terminales": {
+                    "t-santa-elena": []
+                }
+            },
+            "p-manabi": {
+                "places": [],
+                "terminales": {
+                    "t-manta": [],
+                    "t-portoviejo": []
+                }
+            },
+            "p-oro": {
+                "places": [],
+                "terminales": {
+                    "t-machala": []
+                }
+            },
+            "p-azuay": {
+                "places": [],
+                "terminales": {
+                    "t-cuenca": []
+                }
+            },
+            "p-canar": {
+                "places": [],
+                "terminales": {}
+            },
+            "p-rios": {
+                "places": [],
+                "terminales": {
+                    "t-babahoyo": [],
+                    "t-quevedo": []
+                }
+            },
+            "p-cotopaxi": {
+                "places": [],
+                "terminales": {
+                    "t-latacunga": []
+                }
+            }
+        },
+        "defaults": {
+            "places": []
+        }
+    }
+}

@@ -1,26 +1,25 @@
 {
     "c-riobamba": {
-        "telefono_gerencia": "03 296 1583",
+        "nombre": "Coop Riobamba",
+        "verificado": "si",
+        "telefono_gerencia": [
+            "03 296 1583",
+            "0993976357"
+        ],
         "redes": {
             "facebook": "https://www.facebook.com/TransportesRiobamba/?locale=es_LA",
             "instagram": "https://www.instagram.com/transportesriobamba/?hl=es",
-            "web": "https://coopriobamba.com",
-            "tiktok": "https://www.tiktok.com/@transportesriobamba"
+            "tiktok": "https://www.tiktok.com/@transportesriobamba",
+            "email": "transportesriobamba62@gmail.com"
         },
         "rating_global": {
-            "5": 5,
-            "4": 5,
-            "3": 5,
-            "2": 4,
-            "1": 5
         },
         "servicios": [
             "Encomiendas"
-        ],
-        "nombre": "Coop. Riobamba"
+        ]
     },
     "c-chimborazo": {
-        "nombre": "Coop. de Transportes Chimborazo",
+        "nombre": "Coop Chimborazo",
         "telefono_gerencia": "(03) 2962 012",
         "redes": {
             "web": "https://cooperativachimborazo.com"
@@ -28,40 +27,50 @@
         "rating_global": {}
     },
     "c-bolivar": {
+        "nombre": "Coop Bolívar",
         "telefono_gerencia": "",
         "redes": {},
         "rating_global": {}
     },
-    "c-10noviembre": {
+    "c-10-noviembre": {
+        "nombre": "Coop 10 de Noviembre",
         "telefono_gerencia": "",
         "redes": {},
         "rating_global": {}
     },
     "c-sangay": {
+        "nombre": "Transportes Sangay",
         "telefono_gerencia": "",
         "redes": {
-            "facebook": "https://www.facebook.com/cooperativadetransportesangay?locale=es_LA"
+            "facebook": "https://www.facebook.com/cooperativadetransportesangay",
+            "email": "cooperativadetransportesangay@gmail.com"
         },
         "rating_global": {}
     },
-    "c-banos": {
+    "c-transportes-banos": {
+        "nombre": "Transportes Baños",
         "telefono_gerencia": "098 900 7838",
         "redes": {
-            "facebook": "https://www.facebook.com/cooperativadetransportesbanos"
+            "facebook": "https://www.facebook.com/cooperativadetransportesbanos",
+            "web": "https://www.cooperativabanos.com.ec/",
+            "instagram": "https://www.instagram.com/coop.banos"
         },
         "rating_global": {}
     },
     "c-patria": {
+        "nombre": "Patria",
         "telefono_gerencia": "",
         "redes": {},
         "rating_global": {}
     },
     "c-ejecutivo-ecuador": {
+        "nombre": "Ejecutivo Ecuador",
         "telefono_gerencia": "032 962 011",
         "redes": {},
         "rating_global": {}
     },
     "c-atenas": {
+        "nombre": "Transportes Atenas",
         "telefono_gerencia": "02 3007007",
         "redes": {
             "facebook": "https://www.facebook.com/profile.php?id=100064103738896"
@@ -69,43 +78,63 @@
         "rating_global": {}
     },
     "c-cariamanga": {
+        "nombre": "Union Cariamanga Int",
         "telefono_gerencia": "",
         "redes": {},
         "rating_global": {}
     },
     "c-union-yanzatza": {
-        "telefono_gerencia": "03 296 1583",
+        "nombre": "Unión Yanzatza",
+        "telefono_gerencia": "(07) 232-4717",
         "redes": {
-            "facebook": "https://www.facebook.com/TransportesRiobamba/?locale=es_LA",
+            "facebook": "https://www.facebook.com/unionyanzatza",
+            "instagram": "https://www.instagram.com/unionyanzatza?fbclid=IwY2xjawMrOUtleHRuA2FlbQIxMABicmlkETE5RHBJd3ByZTV1V3BqMmFvAR5_3AEZfru2Ov7tXq_wXjX2Vjqllhx7ewUzX5CedcA9aZ4-0jhNVrrOpyk8Ng_aem_uA4BuG5gsYQ7idoU1CANEA",
             "web": "https://unionyanzatza.com.ec/?fbclid=IwY2xjawMp9adleHRuA2FlbQIxMABicmlkETE2bkRsTTN3VUNLVmFhdjByAR5YVQ5Y5leifsMOH3JTkcNUpGLRPsgPGApsLoNZ-s1IZkOHsf_VU92e0QZgPA_aem_w0bPse_KdHf6ORxZY4Zy9g"
         },
-        "rating_global": {}
+        "rating_global": {},
+        "servicios": [
+            "Encomiendas",
+            "Atención de 07:00 a 20:00"
+        ]
     },
+    "c-viajeros-internacional": {
+        "nombre": "Viajeros Internacional",
+        "telefono_gerencia": "0335298",
+        "redes": {
+            "facebook": "https://www.facebook.com/profile.php?id=100064276830053&locale=es_LA",
+            "instagram": "https://www.instagram.com/coopviajerosinternacional/?hl=es"
+        },
+        "rating_global": {},
+        "servicios": [
+            "Encomiendas",
+            "Atención de 07:00 a 12:00 y 14:00 a 20:30"
+        ]
+    },
+
     "c-cita-express-int": {
+        "nombre": "Cita Express Internacional",
         "telefono_gerencia": "098 258 4492",
         "redes": {
             "web": "https://www.transportescita.com/sitio/"
         },
         "rating_global": {}
     },
-    "c-santa": {
+    "c-santa-servicio-especial": {
+        "nombre": "Santa Serivicio Especial",
         "telefono_gerencia": "0998350223",
         "redes": {
             "web": "https://cooperativasanta.ec/"
         },
         "rating_global": {}
     },
-    "c-loja-inter": {
-        "telefono_gerencia": "",
-        "redes": {},
-        "rating_global": {}
-    },
-    "c-e-banos": {
+    "c-expreso-banos": {
+        "nombre": "Expreso de Baños",
         "telefono_gerencia": "",
         "redes": {},
         "rating_global": {}
     },
     "c-aguila-dorada": {
+        "nombre": "Águila Dorada",
         "telefono_gerencia": "0958722711",
         "redes": {
             "facebook": "https://www.facebook.com/TransportesAguilaDorada/"
@@ -113,6 +142,7 @@
         "rating_global": {}
     },
     "c-putumayo": {
+        "nombre": "Transportes Putumayo",
         "telefono_gerencia": "09 6236 9096",
         "redes": {
             "facebook": "https://www.facebook.com/p/Cooperativa-de-Transportes-Putumayo-100057664382007/?locale=es_LA"
@@ -120,6 +150,7 @@
         "rating_global": {}
     },
     "c-el-dorado": {
+        "nombre": "Transportes El Dorado",
         "telefono_gerencia": "0959452352",
         "redes": {
             "facebook": "https://www.facebook.com/CooperativaDeTransportesElDorado/"
@@ -127,20 +158,68 @@
         "rating_global": {}
     },
     "c-zaracay": {
+        "nombre": "Transportes Zaracay",
         "telefono_gerencia": "098 026 8435",
         "redes": {
-            "facebook": "https://www.facebook.com/oficialtransporteszaracay?locale=es_LA"
+            "facebook": "https://www.facebook.com/oficialtransporteszaracay?locale=es_LA",
+            "web": "https://www.transporteszaracay.com.ec/",
+            "instagram": "https://www.instagram.com/transportes_zaracay/?hl=es",
+            "email": "secretaria@transporteszaracay.com.ec"
         },
         "rating_global": {}
     },
     "c-san-francisco-oriental": {
+        "nombre": "San Francisco Oriental",
+        "telefono_gerencia": "099 704 9828",
+        "redes": {
+            "facebook": "https://www.facebook.com/tourisanfrancisco",
+            "instagram": "https://www.instagram.com/tourisanfrancisco/",
+            "email": "sfsecretaria@tourisanfrancisco.com"
+        },
+        "rating_global": {}
+    },
+    "c-transportes-vencedores": {
+        "nombre": "Trans Vencedores",
+        "telefono_gerencia": "(03) 230-6100",
+        "redes": {
+            "facebook": "https://www.facebook.com/transvencedores?locale=es_LA",
+            "instagram": "https://www.instagram.com/transvencedores",
+            "web": "https://transvencedores.com.ec",
+            "email": "coop_transvencedores@hotmail.com"
+        },
+        "rating_global": {}
+    },
+     "c-transportes-patria": {
+        "nombre": "Coop Patria",
         "telefono_gerencia": "",
         "redes": {
-            "facebook": "https://www.facebook.com/tourisanfrancisco"
+            "facebook": "https://www.facebook.com/cooppatriaec?locale=es_LA",
+            "instagram": "https://www.instagram.com/cooperativapatriaec/?hl=es",
+            "web": "https://cooperativapatria.com",
+            "email": ""
+        },
+        "rating_global": {}
+    },
+    "c-nambija-internacional": {
+        "nombre": "Nambija Internacional",
+        "telefono_gerencia": "",
+        "redes": {
+            "facebook": "https://www.facebook.com/coopnambija",
+            "instagram": "https://www.instagram.com/tourisanfrancisco/",
+            "email": "coopnambija1987@gmail.com"
+        },
+        "rating_global": {}
+    },
+    "c-zamora-chinchipe": {
+        "nombre": "Coop Zamora Chinchipe",
+        "telefono_gerencia": "",
+        "redes": {
+            "facebook": "https://www.facebook.com/profile.php?id=100071151942123"
         },
         "rating_global": {}
     },
     "c-amazonas": {
+        "nombre": "Amazonas",
         "telefono_gerencia": "(03) 274-0070",
         "redes": {
             "facebook": "https://www.facebook.com/cooptransportesamazonas?locale=es_LA"
@@ -148,163 +227,163 @@
         "rating_global": {}
     },
     "c-flota-pelileo": {
-        "telefono_gerencia": "099 161 4378",
+        "nombre": "Flota Pelileo",
+        "telefono_gerencia":["(03) 287-1787","099 161 4378"] ,
         "redes": {
-            "facebook": "https://www.facebook.com/CooperativaFlotaPelileo?locale=es_LA"
+            "facebook": "https://www.facebook.com/CooperativaFlotaPelileo?locale=es_LA",
+            "web": "https://flotapelileo.com.ec/"
         },
         "rating_global": {}
     },
-    "c-c-imperial": {
-        "telefono_gerencia": "",
-        "redes": {},
-        "rating_global": {}
-    },
-    "c-c-e-banos": {
-        "telefono_gerencia": "",
-        "redes": {},
-        "rating_global": {}
-    },
-    "c-c-union-yanzatza": {
-        "telefono_gerencia": "",
-        "redes": {},
-        "rating_global": {}
-    },
-    "c-c-riobamba": {
+    "c-imperial": {
+        "nombre": "Imperial",
         "telefono_gerencia": "",
         "redes": {},
         "rating_global": {}
     },
     "c-reina-mercedes": {
+        "nombre": "Reina Mercedes",
         "telefono_gerencia": "",
         "redes": {},
         "rating_global": {}
     },
     "c-kennedy": {
+        "nombre": "Kennedy",
         "telefono_gerencia": "",
         "redes": {},
         "rating_global": {}
     },
     "c-aloag": {
+        "nombre": "Coop Aloag",
         "telefono_gerencia": "",
         "redes": {},
         "rating_global": {}
     },
-    "c-expresso-tulcan": {
-        "telefono_gerencia": "",
-        "redes": {},
+    "c-expreso-tulcan": {
+        "nombre": "Expreso Tulcán",
+        "telefono_gerencia": "0979434964",
+        "redes": {
+            "facebook": "https://www.facebook.com/expresotulcan2021#",
+            "instagram": "",
+            "web": "https://www.expresotulcan.com/",
+            "email": "info@expresotulcan.com"
+        },
         "rating_global": {}
     },
     "c-pullman-carchi": {
+        "nombre": "Pullman Carchi",
         "telefono_gerencia": "",
         "redes": {},
-        "rating_global": {},
-        "logo": "pullman-carchi.png"
+        "rating_global": {}
     },
     "c-expreso-turismo": {
+        "nombre": "Expreso Turismo",
         "telefono_gerencia": "",
         "redes": {},
-        "rating_global": {},
-        "logo": "expreso-turismo.png"
+        "rating_global": {}
     },
     "c-velotax": {
+        "nombre": "Velotax",
         "telefono_gerencia": "",
         "redes": {},
-        "rating_global": {},
-        "logo": "velotax.png"
+        "rating_global": {}
     },
-    "c-flor-del-valle": {
+    "c-flor-valle": {
+        "nombre": "Flor del Valle",
         "telefono_gerencia": "",
         "redes": {},
-        "rating_global": {},
-        "logo": "flor-del-valle.png"
+        "rating_global": {}
     },
     "c-tax-gacela": {
+        "nombre": "Tax Gacela",
         "telefono_gerencia": "",
         "redes": {},
-        "rating_global": {},
-        "logo": "tax-gacela.png"
+        "rating_global": {}
     },
-    "c-san-francisco": {
+    "c-loja-internacional": {
+        "nombre": "Loja Internacional",
         "telefono_gerencia": "",
-        "redes": {},
-        "rating_global": {},
-        "logo": "san-francisco.png"
-    },
-    "c-c-loja": {
-        "telefono_gerencia": "",
-        "redes": {},
-        "rating_global": {},
-        "logo": "c-loja.png"
+        "redes": {
+            "facebook": "",
+            "instagram": "",
+            "web": "https://cooperativaloja.com.ec"
+        },
+        "rating_global": {}
     },
     "c-carlos-aray": {
+        "nombre": "Carlos Aray",
         "telefono_gerencia": "",
         "redes": {},
-        "rating_global": {},
-        "logo": "carlos-aray.png"
+        "rating_global": {}
     },
     "c-coactur": {
+        "nombre": "Coactur",
         "telefono_gerencia": "",
         "redes": {},
-        "rating_global": {},
-        "logo": "coactur.png"
+        "rating_global": {}
     },
     "c-panamericana": {
+        "nombre": "Panamericana",
         "telefono_gerencia": "",
         "redes": {},
-        "rating_global": {},
-        "logo": "panamericana.png"
-    },
-    "c-transportes-banos": {
-        "telefono_gerencia": "",
-        "redes": {},
-        "rating_global": {},
-        "logo": "transportes-banos.png"
+        "rating_global": {}
     },
     "c-flota-imbabura": {
+        "nombre": "Flota Imbabura",
         "telefono_gerencia": "",
         "redes": {},
-        "rating_global": {},
-        "logo": "flota-imbabura.png"
+        "rating_global": {}
     },
     "c-transporte-ecuador": {
+        "nombre": "Transporte Ecuador",
         "telefono_gerencia": "",
         "redes": {},
-        "rating_global": {},
-        "logo": "transporte-ecuador.png"
+        "rating_global": {}
     },
     "c-reina-del-camino": {
+        "nombre": "Reina del Camino",
         "telefono_gerencia": "",
         "redes": {},
-        "rating_global": {},
-        "logo": "reina-del-camino.png"
+        "rating_global": {}
     },
     "c-vencedores": {
+        "nombre": "Vencedores",
         "telefono_gerencia": "",
         "redes": {},
-        "rating_global": {},
-        "logo": "vencedores.png"
+        "rating_global": {}
     },
     "c-san-cristobal": {
+        "nombre": "San Cristóbal",
         "telefono_gerencia": "",
         "redes": {},
-        "rating_global": {},
-        "logo": "san-cristobal.png"
+        "rating_global": {}
     },
     "c-esmeraldas": {
+        "nombre": "Coop Esmeraldas",
         "telefono_gerencia": "",
         "redes": {},
         "rating_global": {}
     },
     "c-aerotaxi": {
+        "nombre": "Aerotaxi",
         "telefono_gerencia": "",
         "redes": {},
-        "rating_global": {},
-        "logo": "aerotaxi.png"
+        "rating_global": {}
     },
-    "c-occidental": {
+    "c-occidentales": {
+        "nombre": "Occidentales",
+        "telefono_gerencia": "099 238 9056",
+        "redes": {
+            "web": "https://occidentales.ec/",
+            "facebook": "https://www.facebook.com/transportes.occidentales",
+            "instagram": "https://www.instagram.com/transportesoccidentales/"
+        },
+        "rating_global": {}
+    },
+     "c-rutas-orenses": {
+        "nombre": "Rutas Orenses",
         "telefono_gerencia": "",
         "redes": {},
-        "rating_global": {},
-        "logo": "occidental.png"
+        "rating_global": {}
     }
 }

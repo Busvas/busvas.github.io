@@ -17,5 +17,42 @@
       "Los bancos",
       "san_miguel_de_los_bancos"
     ]
+  },
+  {
+    "canonical": "quitumbe",
+    "variants": [
+      "quito",
+      "quito sur",
+      "quitumbe",
+      "sur quito",
+      "sur quitumbe",
+      "sur"
+    ]
+  },
+  {
+    "canonical": "carcelen",
+    "variants": [
+      "quito norte",
+      "carcelén",
+      "carcelen norte",
+      "norte",
+      "norte quito"
+    ]
+  },
+  {
+    "canonical": "santo_domingo_de_los_tsachilas",
+    "variants": [
+      "santo domingo de los tsáchilas",
+      "santo domingo",
+      "santo domingo de los colorados",
+      "colorados"
+    ]
+  },
+  {
+    "canonical": "esmeraldas",
+    "variants": [
+      "ciudad de esmeraldas",
+      "esmeralda"
+    ]
   }
 ]

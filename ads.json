@@ -1,0 +1,293 @@
+{
+    "ads": [
+        {
+            "id": "ad-ofi",
+            "imagen": "img/anuncios/banner-ofi.png?v=20241001",
+            "link": "https://www.facebook.com/ofisolucionesintegrales?locale=es_LA",
+            "platform": "facebook"
+        },
+        {
+            "id": "ad-kc",
+            "imagen": "img/anuncios/banner-kc.png?v=20241001",
+            "link": "https://www.instagram.com/kevincamachomusic/",
+            "platform": "instagram"
+        },
+        {
+            "id": "ad-bambuka",
+            "imagen": "img/anuncios/banner-bambuka.png?v=20241001",
+            "link": "https://maps.app.goo.gl/i3fm9kdoQigrJKZ66",
+            "platform": "instagram"
+        },
+        {
+            "id": "ad-anita",
+            "imagen": "img/anuncios/banner-anita.png?v=20241001",
+            "link": "https://maps.app.goo.gl/JWjWiWVEeCrZhn5m9",
+            "platform": "maps"
+        },
+        {
+            "id": "ad-tvo",
+            "imagen": "img/anuncios/banner-tvo.png?v=20241001",
+            "link": "https://www.facebook.com/Tvoanuestroestilo",
+            "platform": "facebook"
+        },
+        {
+            "id": "ad-armas",
+            "imagen": "img/anuncios/banner-armas.png?v=20241001",
+            "link": "https://www.instagram.com/armasfilms_/?hl=es",
+            "platform": "instagram"
+        },
+        {
+            "id": "ad-chingu",
+            "imagen": "img/anuncios/banner-chingu.png?v=20241001",
+            "link": "https://www.instagram.com/chingu_market.ec/?hl=es",
+            "platform": "instagram"
+        },
+        {
+            "id": "ad-curvi",
+            "imagen": "img/anuncios/banner-curvi.png?v=20241001",
+            "link": "https://www.instagram.com/curvy_closettt/?hl=es",
+            "platform": "instagram"
+        },
+        {
+            "id": "ad-croster",
+            "imagen": "img/anuncios/banner-croster.png?v=20241001",
+            "link": "https://www.instagram.com/croster.yantzaza/?hl=es",
+            "platform": "instagram"
+        },
+        {
+            "id": "ad-sanku",
+            "imagen": "img/anuncios/banner-sanku.png?v=20241001",
+            "link": "https://www.instagram.com/sankufoods/?hl=es",
+            "platform": "instagram"
+        },
+        {
+            "id": "ad-bubble-1",
+            "imagen": "img/anuncios/banner-bubble-1.png?v=20241001",
+            "link": "https://www.instagram.com/bubbleplanetrbba",
+            "platform": "instagram"
+        },
+        {
+            "id": "ad-conduespoch",
+            "imagen": "img/anuncios/banner-conduespoch.png?v=20241001",
+            "link": "https://wa.me/5930983384007?text=Hola%2C%20vi%20su%20anuncio%20en%20Busvas%20y%20me%20interesa%20obtener%20m%C3%A1s%20informaci%C3%B3n",
+            "platform": "whatsapp",
+            "whatsapp": "0983384007"
+        },
+        {
+            "id": "ad-up",
+            "imagen": "img/anuncios/banner-up.png",
+            "link": "https://www.instagram.com/up.espoch",
+            "platform": "instagram"
+        }
+    ],
+    "placements": {
+        "home": [
+            "ad-up"
+        ],
+        "taxivas": [
+            "ad-bubble-1"
+        ],
+        "provincias": {
+            "p-chimborazo": {
+                "ads": [
+                    "ad-up"
+                ],
+                "terminales": {
+                    "t-riobamba": [
+                        "ad-up"
+                    ]
+                }
+            },
+            "p-santo-domingo-tsachilas": {
+                "ads": [
+                    "ad-bambuka",
+                    "ad-tvo"
+                ],
+                "terminales": {
+                    "t-santo-domingo": []
+                }
+            },
+            "p-bolivar": {
+                "ads": [
+                    "ad-anita"
+                ],
+                "terminales": {
+                    "t-guaranda": [
+                        "ad-anita"
+                    ]
+                }
+            },
+            "p-pichincha": {
+                "ads": [],
+                "terminales": {
+                    "t-quitumbe": [],
+                    "t-carcelen": [],
+                    "t-san-miguel-bancos": []
+                }
+            },
+            "p-zamora-chinchipe": {
+                "ads": [
+                    "ad-sanku",
+                    "ad-croster"
+                ],
+                "terminales": {
+                    "t-yantzaza": [
+                        "ad-croster"
+                    ],
+                    "t-zamora": [
+                        "ad-sanku"
+                    ],
+                    "t-el-pangui": [
+                        "ad-sanku"
+                    ]
+                }
+            },
+            "p-guayas": {
+                "ads": [
+                    "ad-kc"
+                ],
+                "terminales": {
+                    "t-guayaquil": [
+                        "ad-kc"
+                    ]
+                }
+            },
+            "p-morona": {
+                "ads": [
+                    "ad-sanku"
+                ],
+                "terminales": {
+                    "t-macas": [
+                        "ad-sanku"
+                    ]
+                }
+            },
+            "p-tungurahua": {
+                "ads": [
+                    "ad-armas"
+                ],
+                "terminales": {
+                    "t-ambato-sur": [
+                        "ad-armas"
+                    ],
+                    "t-banos-agua-santa": [
+                        "ad-armas"
+                    ]
+                }
+            },
+            "p-sucumbios": {
+                "ads": [
+                    "ad-sanku"
+                ],
+                "terminales": {
+                    "t-lago-agrio": [
+                        "ad-sanku"
+                    ]
+                }
+            },
+            "p-napo": {
+                "ads": [
+                    "ad-curvi",
+                    "ad-chingu"
+                ],
+                "terminales": {
+                    "t-tena": [
+                        "ad-curvi",
+                        "ad-chingu"
+                    ]
+                }
+            },
+            "p-esmeraldas": {
+                "ads": [],
+                "terminales": {
+                    "t-ciudad-esmeraldas": []
+                }
+            },
+            "p-imbabura": {
+                "ads": [],
+                "terminales": {
+                    "t-ibarra": []
+                }
+            },
+            "p-loja": {
+                "ads": [],
+                "terminales": {
+                    "t-loja": []
+                }
+            },
+            "p-pastaza": {
+                "ads": [
+                    "ad-sanku"
+                ],
+                "terminales": {
+                    "t-puyo": [
+                        "ad-sanku"
+                    ]
+                }
+            },
+            "p-orellana": {
+                "ads": [
+                    "ad-sanku"
+                ],
+                "terminales": {
+                    "t-el-coca": [
+                        "ad-sanku"
+                    ]
+                }
+            },
+            "p-carchi": {
+                "ads": [],
+                "terminales": {
+                    "t-tulcan": []
+                }
+            },
+            "p-santa-elena": {
+                "ads": [],
+                "terminales": {
+                    "t-santa-elena": []
+                }
+            },
+            "p-manabi": {
+                "ads": [],
+                "terminales": {
+                    "t-manta": [],
+                    "t-portoviejo": []
+                }
+            },
+            "p-oro": {
+                "ads": [],
+                "terminales": {
+                    "t-machala": []
+                }
+            },
+            "p-azuay": {
+                "ads": [],
+                "terminales": {
+                    "t-cuenca": []
+                }
+            },
+            "p-canar": {
+                "ads": [],
+                "terminales": {}
+            },
+            "p-rios": {
+                "ads": [],
+                "terminales": {
+                    "t-babahoyo": [],
+                    "t-quevedo": []
+                }
+            },
+            "p-cotopaxi": {
+                "ads": [],
+                "terminales": {
+                    "t-latacunga": []
+                }
+            }
+        },
+        "defaults": {
+            "ads": [
+                ""
+            ]
+        }
+    }
+}

@@ -1,28 +1,17 @@
 {
-    "anuncio": {
-        "imagen": "img/anuncios/banner-ofi.png",
-        "link": "https://www.facebook.com/ofisolucionesintegrales?locale=es_LA"
-    },
     "provincias": [
         {
-            "id": "chimborazo",
+            "id": "p-chimborazo",
             "nombre": "Chimborazo",
-            "anuncio": {
-                "imagen": "img/anuncios/banner-asesor.png",
-                "link": "https://wa.me/593990332338?text=Hola%20vi%20su%20anuncio%20en%20busvas.com,%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20fondos%20de%20inversi%C3%B3n%20para%20empezar%20a%20ahorrar"
-            },
             "terminales": [
                 {
-                    "id": "riobamba",
+                    "id": "t-riobamba",
                     "nombre": "Riobamba",
-                    "anuncio": {
-                        "imagen": "img/anuncios/banner-oasis.png",
-                        "link": "https://www.instagram.com/oasisrestaurant2024/?hl=es"
-                    },
+                    "ubicacion": "https://maps.app.goo.gl/WHpWgwy4FnRk8B9S8",                    
                     "cooperativas": [
                         {
                             "id": "c-riobamba",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
@@ -41,8 +30,7 @@
                                         "13:20",
                                         "14:20",
                                         "15:50",
-                                        "17:50",
-                                        "19:00"
+                                        "17:50"
                                     ],
                                     "costo": "08.00"
                                 },
@@ -78,7 +66,7 @@
                                     ]
                                 },
                                 {
-                                    "destino": "Tena",
+                                    "destino": "Puyo - Tena",
                                     "horarios": [
                                         "04:00",
                                         "05:00",
@@ -98,7 +86,8 @@
                                         "13:00",
                                         "14:15",
                                         "16:00",
-                                        "17:30"
+                                        "17:30",
+                                        "19:00"
                                     ],
                                     "costo": "05.00"
                                 },
@@ -106,7 +95,7 @@
                                     "destino": "Gualaquiza - Zamora",
                                     "horarios": [
                                         "19:00",
-                                        "21:00"
+                                        "20:45"
                                     ]
                                 },
                                 {
@@ -125,7 +114,7 @@
                         },
                         {
                             "id": "c-chimborazo",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
@@ -168,8 +157,7 @@
                         },
                         {
                             "id": "c-bolivar",
-                            "nombre": "Coop Bolivar",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
@@ -191,9 +179,8 @@
                             ]
                         },
                         {
-                            "id": "c-10noviembre",
-                            "nombre": "Coop 10 de Noviembre",
-                            "telefonos":{
+                            "id": "c-10-noviembre",
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
@@ -219,8 +206,7 @@
                         },
                         {
                             "id": "c-sangay",
-                            "nombre": "Coop Sangay",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
@@ -241,9 +227,8 @@
                             ]
                         },
                         {
-                            "id": "c-banos",
-                            "nombre": "Coop Baños",
-                            "telefonos":{
+                            "id": "c-transportes-banos",
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
@@ -323,9 +308,8 @@
                             ]
                         },
                         {
-                            "id": "c-patria",
-                            "nombre": "Coop Patria",
-                            "telefonos":{
+                            "id": "c-transportes-patria",
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
@@ -441,7 +425,7 @@
                         {
                             "id": "c-ejecutivo-ecuador",
                             "nombre": "Coop Ejecutivo Ecuador",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
@@ -526,47 +510,39 @@
                                     "costo": ""
                                 }
                             ]
+                        },
+                        {
+                            "id": "c-occidentales",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Esmeraldas",
+                                    "horarios": [
+                                        "21:00"
+                                    ],
+                                    "costo": "17.80"
+                                }
+                            ]
                         }
                     ]
                 }
             ]
         },
         {
-            "id": "santo-domingo-de-los-tsachilas",
-            "nombre": "Sto Dgo de los Tsáchilas",
-            "anuncio": [
-                {
-                    "imagen": "img/anuncios/banner-bambuka.png",
-                    "link": "https://maps.app.goo.gl/i3fm9kdoQigrJKZ66",
-                    "red": "maps"
-                },
-                {
-                    "imagen": "img/anuncios/banner-tvo.png",
-                    "link": "https://www.facebook.com/Tvoanuestroestilo",
-                    "red": "facebook"
-                }
-            ],
+            "id": "p-santo-domingo-tsachilas",
+            "nombre": "Sto Dgo de los Tsáchilas",           
             "terminales": [
                 {
-                    "id": "santo-domingo",
+                    "id": "t-santo-domingo",
                     "nombre": "Santo Domingo",
-                    "anuncio": [
-                        {
-                            "imagen": "img/anuncios/banner-bambuka.png",
-                            "link": "https://maps.app.goo.gl/i3fm9kdoQigrJKZ66",
-                            "red": "maps"
-                        },
-                        {
-                            "imagen": "img/anuncios/banner-tvo.png",
-                            "link": "https://www.facebook.com/Tvoanuestroestilo",
-                            "red": "facebook"
-                        }
-                    ],
+                    "ubicacion": "https://maps.app.goo.gl/hRqfQWH6opQ5oRmK9",
                     "cooperativas": [
                         {
                             "id": "c-riobamba",
-                            "nombre": "Coop Riobamba",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
@@ -603,8 +579,7 @@
                         },
                         {
                             "id": "c-reina-mercedes",
-                            "nombre": "Reina de las Mercedes",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
@@ -655,8 +630,7 @@
                         },
                         {
                             "id": "c-kennedy",
-                            "nombre": "Coop Kennedy",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
@@ -682,34 +656,41 @@
                                     "costo": ""
                                 }
                             ]
+                        },
+                        {
+                            "id": "c-san-francisco-oriental",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Yantzaza (Gualaquiza-Puyo-Macas-Baños-Ambato)",
+                                    "horarios": [
+                                        "16:30"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
                         }
                     ]
                 }
             ]
         },
         {
-            "id": "bolivar",
+            "id": "p-bolivar",
             "nombre": "Bolivar",
-            "anuncio": {
-                "imagen": "img/anuncios/banner-anita.png",
-                "link": "https://maps.app.goo.gl/JWjWiWVEeCrZhn5m9",
-                "red": "maps"
-            },
             "terminales": [
                 {
-                    "id": "guaranda",
+                    "id": "t-guaranda",
                     "nombre": "Guaranda",
-                    "anuncio": {
-                        "imagen": "img/anuncios/banner-anita.png",
-                        "link": "https://maps.app.goo.gl/JWjWiWVEeCrZhn5m9"
-                    },
+                    "ubicacion": "https://maps.app.goo.gl/HKTdPp6Z7bvXLUJz6",
                     "cooperativas": [
                         {
                             "id": "c-bolivar",
-                            "nombre": "Coop Bolivar",
-                            "telefonos":{
-                                "boleteria": "",
-                                "encomiendas": ""
+                            "telefonos": {
+                                "boleteria": "0996231875",
+                                "encomiendas": "0985875415"
                             },
                             "rutas": [
                                 {
@@ -806,8 +787,7 @@
                         },
                         {
                             "id": "c-10-noviembre",
-                            "nombre": "Coop 10 de Noviembre",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
@@ -895,8 +875,7 @@
                         },
                         {
                             "id": "c-atenas",
-                            "nombre": "Atenas",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
@@ -968,9 +947,9 @@
                             ]
                         },
                         {
-                            "id": "c-banos",
+                            "id": "c-transportes-banos",
                             "nombre": "Baños",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
@@ -996,34 +975,17 @@
             ]
         },
         {
-            "id": "pichincha",
+            "id": "p-pichincha",
             "nombre": "Pichincha",
-            "anuncio": [
-                {
-                    "imagen": "img/anuncios/banner-green.png",
-                    "link": "https://www.instagram.com/green_coffe_smb/?hl=es",
-                    "red": "instagram"
-                },
-                {
-                    "imagen": "img/anuncios/banner-smb.png",
-                    "link": "https://www.instagram.com/p/DARNVpDPiWo/?hl=es",
-                    "red": "instagram"
-                },
-                {
-                    "imagen": "img/anuncios/banner-mimitos.png",
-                    "link": "https://www.instagram.com/p/DJaQddstOPW/?hl=es&img_index=1",
-                    "red": "instagram"
-                }
-            ],
             "terminales": [
                 {
-                    "id": "quitumbe",
+                    "id": "t-quitumbe",
                     "nombre": "Sur Quitumbe",
+                    "ubicacion": "https://maps.app.goo.gl/T2Qme5ZvFL9mjFSx8",
                     "cooperativas": [
                         {
                             "id": "c-riobamba",
-                            "nombre": "Coop Riobamba",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
@@ -1064,9 +1026,8 @@
                             ]
                         },
                         {
-                            "id": "c-patria",
-                            "nombre": "Coop Patria",
-                            "telefonos":{
+                            "id": "c-transportes-patria",
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
@@ -1089,8 +1050,7 @@
                         },
                         {
                             "id": "c-amazonas",
-                            "nombre": "Amazonas",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
@@ -1108,23 +1068,58 @@
                                     "costo": ""
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "id": "carcelen",
-                    "nombre": "Norte Carcelen",
-                    "cooperativas": [
+                        },
                         {
-                            "id": "c-trans-esmeraldas",
-                            "nombre": "Trans Esmeraldas",
-                            "telefonos":{
+                            "id": "c-viajeros-internacional",
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
                             "rutas": [
                                 {
-                                    "destino": "Terminal terrestre Esmeraldas",
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "15:30",
+                                        "16:30",
+                                        "18:30"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c-san-francisco-oriental",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Yantzaza",
+                                    "horarios": [
+                                        "10:00"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "t-carcelen",
+                    "nombre": "Norte Carcelen",
+                    "ubicacion": "https://maps.app.goo.gl/yusXqTx6t4Xny8mF9",
+                    "cooperativas": [
+                        {
+                            "id": "c-trans-esmeraldas",
+                            "nombre": "Trans Esmeraldas",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Esmeraldas",
                                     "horarios": [
                                         "11:10",
                                         "14:05",
@@ -1137,7 +1132,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Atacames",
+                                    "destino": "Atacames",
                                     "horarios": [
                                         "08:00",
                                         "11:10",
@@ -1150,7 +1145,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Machala",
+                                    "destino": "Machala",
                                     "horarios": [
                                         "21:15",
                                         "22:30"
@@ -1158,7 +1153,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Manta",
+                                    "destino": "Manta",
                                     "horarios": [
                                         "19:45",
                                         "21:45",
@@ -1167,7 +1162,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Guayaquil",
+                                    "destino": "Guayaquil",
                                     "horarios": [
                                         "20:50",
                                         "22:10"
@@ -1175,21 +1170,21 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre del Coca",
+                                    "destino": "Coca",
                                     "horarios": [
                                         "21:00"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Lago Agrio",
+                                    "destino": "Lago Agrio",
                                     "horarios": [
                                         "23:00"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Huaquillas",
+                                    "destino": "Huaquillas",
                                     "horarios": [
                                         "18:40",
                                         "19:44",
@@ -1198,7 +1193,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Portoviejo",
+                                    "destino": "Portoviejo",
                                     "horarios": [
                                         "21:30"
                                     ],
@@ -1212,7 +1207,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Santa Elena",
+                                    "destino": "Santa Elena",
                                     "horarios": [
                                         "20:30",
                                         "21:20"
@@ -1239,13 +1234,13 @@
                         {
                             "id": "c-aerotaxi",
                             "nombre": "Aerotaxi",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
                             "rutas": [
                                 {
-                                    "destino": "Terminal terrestre Esmeraldas",
+                                    "destino": "Esmeraldas",
                                     "horarios": [
                                         "08:55",
                                         "11:30",
@@ -1256,7 +1251,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Guayaquil",
+                                    "destino": "Guayaquil",
                                     "horarios": [
                                         "07:30",
                                         "10:00",
@@ -1272,15 +1267,14 @@
                             ]
                         },
                         {
-                            "id": "c-occidental",
-                            "nombre": "Occidental",
-                            "telefonos":{
+                            "id": "c-occidentales",
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
                             "rutas": [
                                 {
-                                    "destino": "Terminal terrestre Esmeraldas",
+                                    "destino": "Esmeraldas",
                                     "horarios": [
                                         "10:00",
                                         "14:20",
@@ -1290,7 +1284,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Camilo Ponce Enriquez",
+                                    "destino": "Camilo Ponce Enriquez",
                                     "horarios": [
                                         "11:30",
                                         "17:15",
@@ -1299,7 +1293,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Viche",
+                                    "destino": "Viche",
                                     "horarios": [
                                         "14:20",
                                         "22:15",
@@ -1308,7 +1302,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Ventanas",
+                                    "destino": "Ventanas",
                                     "horarios": [
                                         "11:30",
                                         "17:15",
@@ -1317,7 +1311,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Tonchigue",
+                                    "destino": "Tonchigue",
                                     "horarios": [
                                         "22:00",
                                         "23:45"
@@ -1325,7 +1319,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Tonsupa",
+                                    "destino": "Tonsupa",
                                     "horarios": [
                                         "10:00",
                                         "22:00",
@@ -1334,7 +1328,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Sua",
+                                    "destino": "Sua",
                                     "horarios": [
                                         "22:00",
                                         "23:45"
@@ -1342,7 +1336,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Same",
+                                    "destino": "Same",
                                     "horarios": [
                                         "22:00",
                                         "23:45"
@@ -1350,7 +1344,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Santo Domingo",
+                                    "destino": "Santo Domingo",
                                     "horarios": [
                                         "11:30",
                                         "14:25",
@@ -1361,7 +1355,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Santa Rosa",
+                                    "destino": "Santa Rosa",
                                     "horarios": [
                                         "17:15",
                                         "20:30"
@@ -1369,16 +1363,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre El Guabo",
-                                    "horarios": [
-                                        "11:30",
-                                        "17:15",
-                                        "20:30"
-                                    ],
-                                    "costo": ""
-                                },
-                                {
-                                    "destino": "Terminal terrestre de Huaquillas",
+                                    "destino": "El Guabo",
                                     "horarios": [
                                         "11:30",
                                         "17:15",
@@ -1387,7 +1372,16 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre La Concordia",
+                                    "destino": "Huaquillas",
+                                    "horarios": [
+                                        "11:30",
+                                        "17:15",
+                                        "20:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "La Concordia",
                                     "horarios": [
                                         "14:20",
                                         "22:00",
@@ -1396,7 +1390,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Arenillas",
+                                    "destino": "Arenillas",
                                     "horarios": [
                                         "17:15",
                                         "20:30"
@@ -1404,7 +1398,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre La Independencia",
+                                    "destino": "La Independencia",
                                     "horarios": [
                                         "14:20",
                                         "22:00",
@@ -1413,7 +1407,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Babahoyo",
+                                    "destino": "Babahoyo",
                                     "horarios": [
                                         "11:30",
                                         "17:15",
@@ -1422,7 +1416,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Buena Fe",
+                                    "destino": "Buena Fe",
                                     "horarios": [
                                         "11:30",
                                         "17:15",
@@ -1431,7 +1425,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre La Unión",
+                                    "destino": "La Unión",
                                     "horarios": [
                                         "14:20",
                                         "22:00",
@@ -1440,7 +1434,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal Terrestre de Machala",
+                                    "destino": "Machala",
                                     "horarios": [
                                         "17:15",
                                         "20:30"
@@ -1448,7 +1442,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Naranjal",
+                                    "destino": "Naranjal",
                                     "horarios": [
                                         "11:30",
                                         "17:15",
@@ -1457,14 +1451,14 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Pasaje",
+                                    "destino": "Pasaje",
                                     "horarios": [
                                         "20:30"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Quevedo",
+                                    "destino": "Quevedo",
                                     "horarios": [
                                         "11:30",
                                         "17:15",
@@ -1473,7 +1467,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Quininde",
+                                    "destino": "Quininde",
                                     "horarios": [
                                         "14:20",
                                         "22:00",
@@ -1485,14 +1479,13 @@
                         },
                         {
                             "id": "c-san-cristobal",
-                            "nombre": "Coop. San Cristobal",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
                             "rutas": [
                                 {
-                                    "destino": "Terminal Terrestre de Tulcán",
+                                    "destino": "Tulcán",
                                     "horarios": [
                                         "00:30",
                                         "01:45",
@@ -1513,21 +1506,21 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal Terrestre de Ibarra",
+                                    "destino": "Ibarra",
                                     "horarios": [
                                         "17:40"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Temrinal Terrestre de Santa Elena",
+                                    "destino": "Santa Elena",
                                     "horarios": [
                                         "19:45"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Guayaquil",
+                                    "destino": "Guayaquil",
                                     "horarios": [
                                         "01:00",
                                         "09:15",
@@ -1544,7 +1537,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal Terrestre de Huaquillas",
+                                    "destino": "Huaquillas",
                                     "horarios": [
                                         "16:40",
                                         "22:50"
@@ -1552,7 +1545,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal Terrestre de Machala",
+                                    "destino": "Machala",
                                     "horarios": [
                                         "16:40",
                                         "22:50"
@@ -1563,14 +1556,13 @@
                         },
                         {
                             "id": "c-flota-imbabura",
-                            "nombre": "Flota Imbabura",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
                             "rutas": [
                                 {
-                                    "destino": "Terminal terrestre de Cuenca",
+                                    "destino": "Cuenca",
                                     "horarios": [
                                         "17:30",
                                         "19:00",
@@ -1582,7 +1574,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Guayaquil",
+                                    "destino": "Guayaquil",
                                     "horarios": [
                                         "08:45",
                                         "13:45",
@@ -1594,7 +1586,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Manta",
+                                    "destino": "Manta",
                                     "horarios": [
                                         "22:00",
                                         "22:15"
@@ -1602,14 +1594,14 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Temrina terrestre de Santa Elena",
+                                    "destino": "Santa Elena",
                                     "horarios": [
                                         "19:45"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Guayaquil",
+                                    "destino": "Guayaquil",
                                     "horarios": [
                                         "01:00",
                                         "09:15",
@@ -1626,7 +1618,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal Terrestre de Huaquillas",
+                                    "destino": "Huaquillas",
                                     "horarios": [
                                         "16:40",
                                         "22:50"
@@ -1634,7 +1626,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal Terrestre de Machala",
+                                    "destino": "Machala",
                                     "horarios": [
                                         "16:40",
                                         "22:50"
@@ -1645,14 +1637,13 @@
                         },
                         {
                             "id": "c-transporte-ecuador",
-                            "nombre": "Coop. Ecuador",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
                             "rutas": [
                                 {
-                                    "destino": "Terminal terrestre Ventanas",
+                                    "destino": "Ventanas",
                                     "horarios": [
                                         "05:15",
                                         "07:00",
@@ -1672,7 +1663,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Santo Domingo",
+                                    "destino": "Santo Domingo",
                                     "horarios": [
                                         "05:15",
                                         "07:00",
@@ -1692,7 +1683,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Quevedo",
+                                    "destino": "Quevedo",
                                     "horarios": [
                                         "05:15",
                                         "07:00",
@@ -1712,7 +1703,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Babahoyo",
+                                    "destino": "Babahoyo",
                                     "horarios": [
                                         "05:15",
                                         "07:00",
@@ -1732,7 +1723,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Guayaquil",
+                                    "destino": "Guayaquil",
                                     "horarios": [
                                         "05:15",
                                         "07:00",
@@ -1755,8 +1746,7 @@
                         },
                         {
                             "id": "c-reina-camino",
-                            "nombre": "Reina del Camino",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
@@ -1774,14 +1764,14 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre San Vicente",
+                                    "destino": "San Vicente",
                                     "horarios": [
                                         "23:55"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Junin",
+                                    "destino": "Junin",
                                     "horarios": [
                                         "08:00",
                                         "19:00"
@@ -1789,7 +1779,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Portoviejo",
+                                    "destino": "Portoviejo",
                                     "horarios": [
                                         "08:00",
                                         "11:05",
@@ -1803,7 +1793,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Chone",
+                                    "destino": "Chone",
                                     "horarios": [
                                         "08:00",
                                         "11:05",
@@ -1818,7 +1808,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Manta",
+                                    "destino": "Manta",
                                     "horarios": [
                                         "08:00",
                                         "11:05",
@@ -1834,14 +1824,14 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Bahia de Caráquez",
+                                    "destino": "Caráquez",
                                     "horarios": [
                                         "23:55"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Buena Fe",
+                                    "destino": "Buena Fe",
                                     "horarios": [
                                         "05:15",
                                         "07:00",
@@ -1861,7 +1851,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Calceta",
+                                    "destino": "Calceta",
                                     "horarios": [
                                         "08:00",
                                         "19:00"
@@ -1872,8 +1862,7 @@
                         },
                         {
                             "id": "c-vencedores",
-                            "nombre": "Trans Vencedores",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
@@ -1889,7 +1878,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Riobamba",
+                                    "destino": "Riobamba",
                                     "horarios": [
                                         "04:15",
                                         "08:00",
@@ -1904,7 +1893,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre San Vicente",
+                                    "destino": "San Vicente",
                                     "horarios": [
                                         "14:45",
                                         "23:00"
@@ -1912,7 +1901,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Pedernales",
+                                    "destino": "Pedernales",
                                     "horarios": [
                                         "07:30",
                                         "10:00",
@@ -1922,7 +1911,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Canoa",
+                                    "destino": "Canoa",
                                     "horarios": [
                                         "03:45",
                                         "11:30"
@@ -1930,7 +1919,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Jama",
+                                    "destino": "Jama",
                                     "horarios": [
                                         "14:40",
                                         "23:00",
@@ -1943,13 +1932,13 @@
                         {
                             "id": "c-coactur",
                             "nombre": "Coactur",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
                             "rutas": [
                                 {
-                                    "destino": "Terminal terrestre de Portoviejo",
+                                    "destino": "Portoviejo",
                                     "horarios": [
                                         "09:00",
                                         "12:00",
@@ -1962,14 +1951,14 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Pedernales",
+                                    "destino": "Pedernales",
                                     "horarios": [
                                         "20:15"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Manta",
+                                    "destino": "Manta",
                                     "horarios": [
                                         "09:00",
                                         "12:00",
@@ -1982,7 +1971,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Montecristi",
+                                    "destino": "Montecristi",
                                     "horarios": [
                                         "09:00",
                                         "12:00",
@@ -1995,7 +1984,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Chone",
+                                    "destino": "Chone",
                                     "horarios": [
                                         "09:00",
                                         "12:00",
@@ -2008,7 +1997,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Bahia de Caráquez",
+                                    "destino": "Bahia de Caráquez",
                                     "horarios": [
                                         "20:15"
                                     ],
@@ -2018,56 +2007,55 @@
                         },
                         {
                             "id": "c-panamericana",
-                            "nombre": "Panamericana",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
                             "rutas": [
                                 {
-                                    "destino": "Terminal terrestre Santa Rosa",
+                                    "destino": "Santa Rosa",
                                     "horarios": [
                                         "18:15"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Manta",
+                                    "destino": "Manta",
                                     "horarios": [
                                         "21:30"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Arenillas",
+                                    "destino": "Arenillas",
                                     "horarios": [
                                         "18:15"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Guayaquil",
+                                    "destino": "Guayaquil",
                                     "horarios": [
                                         "21:00"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Huaquillas",
+                                    "destino": "Huaquillas",
                                     "horarios": [
                                         "18:15"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Machala",
+                                    "destino": "Machala",
                                     "horarios": [
                                         "18:15"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Milagro",
+                                    "destino": "Milagro",
                                     "horarios": [
                                         "11:30",
                                         "17:15",
@@ -2078,7 +2066,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Muisne",
+                                    "destino": "Muisne",
                                     "horarios": [
                                         "23:45"
                                     ],
@@ -2087,43 +2075,42 @@
                             ]
                         },
                         {
-                            "id": "c-loja",
-                            "nombre": "Coop. Transporte Loja",
-                            "telefonos":{
+                            "id": "c-loja-internacional",
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
                             "rutas": [
                                 {
-                                    "destino": "Terminal terrestre Shushufindi",
+                                    "destino": "Shushufindi",
                                     "horarios": [
                                         "22:00"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Sacha",
+                                    "destino": "Sacha",
                                     "horarios": [
                                         "22:00"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Coca",
+                                    "destino": "Coca",
                                     "horarios": [
                                         "22:00"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Macara",
+                                    "destino": "Macara",
                                     "horarios": [
                                         "18:00"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Loja",
+                                    "destino": "Loja",
                                     "horarios": [
                                         "19:15",
                                         "20:00",
@@ -2133,21 +2120,21 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Célica",
+                                    "destino": "Célica",
                                     "horarios": [
                                         "18:00"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Alamor",
+                                    "destino": "Alamor",
                                     "horarios": [
                                         "18:00"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Machala",
+                                    "destino": "Machala",
                                     "horarios": [
                                         "21:30"
                                     ],
@@ -2157,14 +2144,14 @@
                         },
                         {
                             "id": "c-carlos-aray",
-                            "nombre": "Coop. Carlos Alberto Aray",
-                            "telefonos":{
+                            "nombre": "Coop Carlos Alberto Aray",
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
                             "rutas": [
                                 {
-                                    "destino": "Terminal terrestre de Manta",
+                                    "destino": "Manta",
                                     "horarios": [
                                         "09:00",
                                         "10:10",
@@ -2178,13 +2165,13 @@
                         {
                             "id": "c-kennedy",
                             "nombre": "Coop Kennedy",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
                             "rutas": [
                                 {
-                                    "destino": "Terminal terrestre Santo Domingo",
+                                    "destino": "Santo Domingo",
                                     "horarios": [
                                         "05:15",
                                         "08:15",
@@ -2199,7 +2186,7 @@
                         {
                             "id": "c-aloag",
                             "nombre": "Coop Aloag",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
@@ -2273,7 +2260,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Santo Domingo",
+                                    "destino": "Santo Domingo",
                                     "horarios": [
                                         "07:00",
                                         "08:30",
@@ -2291,13 +2278,13 @@
                         {
                             "id": "c-amazonas",
                             "nombre": "Coop Transportes Amazonas",
-                            "telefonos":{
+                            "telefonos": {
                                 "boleteria": "",
                                 "encomiendas": ""
                             },
                             "rutas": [
                                 {
-                                    "destino": "Terminal terrestre de Tena",
+                                    "destino": "Tena",
                                     "horarios": [
                                         "11:30",
                                         "12:00",
@@ -2366,14 +2353,14 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Baños",
+                                    "destino": "Baños",
                                     "horarios": [
                                         "19:25"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Sur de Ambato",
+                                    "destino": "Sur de Ambato",
                                     "horarios": [
                                         "03:00",
                                         "10:20",
@@ -2384,13 +2371,14 @@
                             ]
                         },
                         {
-                            "id": "expresso tulcan",
-                            "nombre": "Expreso Tulcán",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "id": "c-expreso-tulcan",
+                            "telefonos": {
+                                "boleteria": "098 003 7153",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
-                                    "destino": "Terminal terrestre San Gabriel",
+                                    "destino": "San Gabriel",
                                     "horarios": [
                                         "01:00",
                                         "02:00",
@@ -2411,7 +2399,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Tulcán",
+                                    "destino": "Tulcán",
                                     "horarios": [
                                         "01:00",
                                         "02:00",
@@ -2432,7 +2420,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Otavalo",
+                                    "destino": "Otavalo",
                                     "horarios": [
                                         "01:00",
                                         "02:00",
@@ -2453,7 +2441,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Julio Andrade - Huaca",
+                                    "destino": "Julio Andrade - Huaca",
                                     "horarios": [
                                         "01:00",
                                         "02:00",
@@ -2474,7 +2462,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Ibarra",
+                                    "destino": "Ibarra",
                                     "horarios": [
                                         "01:00",
                                         "02:00",
@@ -2495,7 +2483,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Bolívar",
+                                    "destino": "Bolívar",
                                     "horarios": [
                                         "01:00",
                                         "02:00",
@@ -2516,7 +2504,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Atuntaqui",
+                                    "destino": "Atuntaqui",
                                     "horarios": [
                                         "01:00",
                                         "02:00",
@@ -2539,13 +2527,14 @@
                             ]
                         },
                         {
-                            "id": "transportes baños",
-                            "nombre": "Coop Transportes Baños",
-                            "logo": "banos.png",
-                            "rating_global": {},
+                            "id": "c-transportes-banos",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
-                                    "destino": "Terminal terrestre Shushufindi",
+                                    "destino": "Shushufindi",
                                     "horarios": [
                                         "22:00"
                                     ],
@@ -2559,42 +2548,42 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Puyo",
+                                    "destino": "Puyo",
                                     "horarios": [
                                         "20:05"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Macas",
+                                    "destino": "Macas",
                                     "horarios": [
                                         "20:05"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Loreto",
+                                    "destino": "Loreto",
                                     "horarios": [
                                         "22:50"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Lago Agrio",
+                                    "destino": "Lago Agrio",
                                     "horarios": [
                                         "22:00"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Coca",
+                                    "destino": "Coca",
                                     "horarios": [
                                         "22:50"
                                     ],
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Baños",
+                                    "destino": "Baños",
                                     "horarios": [
                                         "20:05"
                                     ],
@@ -2603,13 +2592,14 @@
                             ]
                         },
                         {
-                            "id": "pullman carchi",
-                            "nombre": "Coop Pullman Carchi",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "id": "c-pullman-carchi",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
-                                    "destino": "Terminal terrestre de Tulcán",
+                                    "destino": "Tulcán",
                                     "horarios": [
                                         "02:45",
                                         "03:45",
@@ -2638,13 +2628,10 @@
                             ]
                         },
                         {
-                            "id": "expreso turismo",
-                            "nombre": "Coop Expreso Turismo",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "id": "c-expreso-turismo",
                             "rutas": [
                                 {
-                                    "destino": "Terminal terrestre de Tulcán",
+                                    "destino": "Tulcán",
                                     "horarios": [
                                         "04:50",
                                         "06:00",
@@ -2659,7 +2646,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Ibarra",
+                                    "destino": "Ibarra",
                                     "horarios": [
                                         "04:50",
                                         "05:10",
@@ -2702,13 +2689,10 @@
                             ]
                         },
                         {
-                            "id": "velotax",
-                            "nombre": "Transportes Velotax",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "id": "c-velotax",
                             "rutas": [
                                 {
-                                    "destino": "Terminal terrestre de Tulcán",
+                                    "destino": "Tulcán",
                                     "horarios": [
                                         "00:15",
                                         "01:20",
@@ -2741,7 +2725,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Ibarra",
+                                    "destino": "Ibarra",
                                     "horarios": [
                                         "00:15",
                                         "01:20",
@@ -2776,10 +2760,7 @@
                             ]
                         },
                         {
-                            "id": "flor del valle",
-                            "nombre": "Coop Flor del Valle",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "id": "c-flor-valle",
                             "rutas": [
                                 {
                                     "destino": "Mindo",
@@ -2802,13 +2783,10 @@
                             ]
                         },
                         {
-                            "id": "tax gacela",
-                            "nombre": "Tax Gacela",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "id": "c-tax-gacela",
                             "rutas": [
                                 {
-                                    "destino": "Terminal terrestre de Tulcán",
+                                    "destino": "Tulcán",
                                     "horarios": [
                                         "03:00",
                                         "04:10",
@@ -2830,13 +2808,10 @@
                             ]
                         },
                         {
-                            "id": "putumayo",
-                            "nombre": "Coop. Putumayo",
-                            "logo": "putumayo.png",
-                            "rating_global": {},
+                            "id": "c-putumayo",
                             "rutas": [
                                 {
-                                    "destino": "Terminal terrestre de Lago Agrio",
+                                    "destino": "Lago Agrio",
                                     "horarios": [
                                         "12:30",
                                         "18:45",
@@ -2845,7 +2820,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Coca",
+                                    "destino": "Coca",
                                     "horarios": [
                                         "12:30",
                                         "18:45",
@@ -2856,13 +2831,10 @@
                             ]
                         },
                         {
-                            "id": "san francisco",
-                            "nombre": "Coop. Touris San Francisco",
-                            "logo": "san-francisco-oriental.png",
-                            "rating_global": {},
+                            "id": "c-san-francisco-oriental",
                             "rutas": [
                                 {
-                                    "destino": "Terminal terrestre Sucua",
+                                    "destino": "Sucua",
                                     "horarios": [
                                         "14:30",
                                         "20:15"
@@ -2870,7 +2842,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre Puyo",
+                                    "destino": "Puyo",
                                     "horarios": [
                                         "09:15",
                                         "12:30",
@@ -2882,7 +2854,7 @@
                                     "costo": ""
                                 },
                                 {
-                                    "destino": "Terminal terrestre de Macas",
+                                    "destino": "Macas",
                                     "horarios": [
                                         "12:30",
                                         "20:15"
@@ -2894,44 +2866,12 @@
                     ]
                 },
                 {
-                    "id": "smb",
+                    "id": "t-san-miguel-bancos",
                     "nombre": "San Miguel de los Bancos",
-                    "anuncio": [
-                        {
-                            "imagen": "img/anuncios/banner-green.png",
-                            "link": "https://www.instagram.com/green_coffe_smb/?hl=es",
-                            "red": "instagram"
-                        },
-                        {
-                            "imagen": "img/anuncios/banner-smb.png",
-                            "link": "https://www.instagram.com/p/DARNVpDPiWo/?hl=es",
-                            "red": "instagram"
-                        },
-                        {
-                            "imagen": "img/anuncios/banner-mimitos.png",
-                            "link": "https://www.instagram.com/p/DJaQddstOPW/?hl=es&img_index=1",
-                            "red": "instagram"
-                        }
-                    ],
+                    "ubicacion": "https://maps.app.goo.gl/C6FWP8oNb9EtE72a8",
                     "cooperativas": [
                         {
-                            "id": "reina-mercedes",
-                            "nombre": "Reina de las Mercedes",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
-                            "rutas": [
-                                {
-                                    "destino": "Santo Domingo",
-                                    "horarios": [],
-                                    "costo": ""
-                                }
-                            ]
-                        },
-                        {
-                            "id": "kennedy",
-                            "nombre": "Kennedy",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "id": "c-kennedy",
                             "rutas": [
                                 {
                                     "destino": "Los bancos-Quito",
@@ -2944,33 +2884,64 @@
                                     "costo": ""
                                 }
                             ]
+                        },
+                        {
+                            "id": "c-reina-mercedes",
+                            "rutas": [
+                                {
+                                    "destino": "Santo Domingo",
+                                    "horarios": [],
+                                    "costo": ""
+                                }
+                            ]
                         }
                     ]
                 }
             ]
         },
         {
-            "id": "zamora",
+            "id": "p-zamora-chinchipe",
             "nombre": "Zamora Chinchipe",
-            "anuncio": {
-                "imagen": "img/anuncios/banner-croster.png",
-                "link": "https://www.instagram.com/croster.yantzaza/?hl=es",
-                "red": "instagram"
-            },
             "terminales": [
                 {
-                    "id": "yantzaza",
+                    "id": "t-yantzaza",
                     "nombre": "Yantzaza",
-                    "anuncio": {
-                        "imagen": "img/anuncios/banner-croster.png",
-                        "link": "https://www.instagram.com/croster.yantzaza/?hl=es"
-                    },
+                    "ubicacion": "https://maps.app.goo.gl/KR64me7B3JA5vmuP7",                   
                     "cooperativas": [
                         {
-                            "id": "cariamanga",
-                            "nombre": "Coop Union Cariamanga Int",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
+                            "id": "c-union-yanzatza",
+                            "telefonos": {
+                                "boleteria": [
+                                    "07 2324510",
+                                    "  0960059074"
+                                ],
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "08:00",
+                                        "13:45",
+                                        "14:15"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Huaquillas",
+                                    "horarios": [
+                                        "17:00"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c-cariamanga",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Loja",
@@ -2997,46 +2968,284 @@
                             ]
                         },
                         {
-                            "id": "c-union-yanzatza",
-                            "nombre": "Coop Union Yanzatza",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
-                            "telefono": "03 296 1583",
-                            "sitio_web": [
+                            "id": "c-viajeros-internacional",
+                            "telefonos": {
+                                "boleteria": "0986443875",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
                                 {
-                                    "nombre": "Instagram",
-                                    "url": "https://unionyanzatza.com.ec/?fbclid=IwY2xjawMp9adleHRuA2FlbQIxMABicmlkETE2bkRsTTN3VUNLVmFhdjByAR5YVQ5Y5leifsMOH3JTkcNUpGLRPsgPGApsLoNZ-s1IZkOHsf_VU92e0QZgPA_aem_w0bPse_KdHf6ORxZY4Zy9g"
+                                    "destino": "Zamora-Loja-Cuenca",
+                                    "horarios": [
+                                        "07:45",
+                                        "16:15",
+                                        "20:30"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c-loja-internacional",
+                            "telefonos": {
+                                "boleteria": "2729015",
+                                "encomiendas": "2729016"
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Zamora - Quito",
+                                    "horarios": [
+                                        "16:05"
+                                    ],
+                                    "costo": ""
                                 },
                                 {
-                                    "nombre": "Facebook",
-                                    "url": "https://www.facebook.com/TransportesRiobamba/?locale=es_LA"
+                                    "destino": "Huaquillas",
+                                    "horarios": [
+                                        "08:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Machala",
+                                    "horarios": [
+                                        "10:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Zumba",
+                                    "horarios": [
+                                        "14:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Santo Domingo",
+                                    "horarios": [
+                                        "15:15"
+                                    ],
+                                    "costo": ""
                                 }
-                            ] ,
-                            "servicios": [
-                                "WiFi",
-                                "Aire acondicionado",
-                                "Enchufes"
-                            ],
+                            ]
+                        },
+                        {
+                            "id": "c-san-francisco-oriental",
+                            "telefonos": {
+                                "boleteria": "0991354500",
+                                "encomiendas": ""
+                            },
                             "rutas": [
+                                {
+                                    "destino": "Santo Domingo (Gualaquiza-Puyo-Macas-Baños-Ambato)",
+                                    "horarios": [
+                                        "16:30"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c-nambija-internacional",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": "0990057642"
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Guayaquil",
+                                    "horarios": [
+                                        "17:15",
+                                        "19:40",
+                                        "22:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Quito",
+                                    "horarios": [
+                                        "21:00",
+                                        "23:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Jaen-Perú",
+                                    "horarios": [
+                                        "03:45",
+                                        "11:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Machala",
+                                    "horarios": [
+                                        "04:00",
+                                        "19:15"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Zumba - La Balza",
+                                    "horarios": [
+                                        "03:45",
+                                        "11:45",
+                                        "21:15"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Huaquillas",
+                                    "horarios": [
+                                        "05:45",
+                                        "20:15"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Chicaña",
+                                    "horarios": [
+                                        "19:15"
+                                    ],
+                                    "costo": ""
+                                },
                                 {
                                     "destino": "Loja",
                                     "horarios": [
-                                        "09:35",
-                                        "11:35",
-                                        "13:40",
-                                        "18:55",
-                                        "23:35"
+                                        "02:30",
+                                        "03:45",
+                                        "04:00",
+                                        "05:15",
+                                        "05:45",
+                                        "06:10",
+                                        "08:15",
+                                        "11:45",
+                                        "13:30",
+                                        "14:35",
+                                        "15:05",
+                                        "16:45",
+                                        "17:15",
+                                        "19:15",
+                                        "19:40",
+                                        "20:15",
+                                        "21:15",
+                                        "22:45"
                                     ],
                                     "costo": ""
                                 },
                                 {
                                     "destino": "El Pangui",
                                     "horarios": [
-                                        "08:40",
+                                        "06:15",
+                                        "09:50",
+                                        "11:00",
+                                        "12:45",
+                                        "15:40",
+                                        "18:00",
+                                        "21:15",
+                                        "21:45",
+                                        "22:45",
+                                        "23:00",
+                                        "23:15"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Gualaquiza",
+                                    "horarios": [
+                                        "06:15",
+                                        "12:45",
+                                        "18:00"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Chinapintza",
+                                    "horarios": [
+                                        "10:45",
+                                        "24:00"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c-zamora-chinchipe",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Zamora",
+                                    "horarios": [
+                                        "05:00",
+                                        "06:00",
+                                        "06:40",
+                                        "07:00",
+                                        "07:10",
+                                        "08:00",
+                                        "09:00",
+                                        "09:15",
+                                        "10:00",
                                         "10:15",
-                                        "13:15",
-                                        "17:45",
-                                        "20:15"
+                                        "11:00",
+                                        "12:00",
+                                        "12:50",
+                                        "14:00",
+                                        "15:00",
+                                        "16:00",
+                                        "17:00",
+                                        "18:00",
+                                        "18:45"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "El Pangui",
+                                    "horarios": [
+                                        "09:30",
+                                        "11:30",
+                                        "15:30",
+                                        "17:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Chicaña - El Plateado",
+                                    "horarios": [
+                                        "17:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "El Pangui - Tundayme",
+                                    "horarios": [
+                                        "11:30"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c-transportes-banos",
+                            "telefonos": {
+                                "boleteria": "0996482727",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Lago Agrio",
+                                    "horarios": [
+                                        "15:10",
+                                        "21:15"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Quitumbe",
+                                    "horarios": [
+                                        "16:15"
                                     ],
                                     "costo": ""
                                 }
@@ -3045,24 +3254,16 @@
                     ]
                 },
                 {
-                    "id": "zamora",
+                    "id": "t-zamora",
                     "nombre": "Zamora",
-                    "anuncio": {
-                        "imagen": "img/anuncios/banner-sanku.png",
-                        "link": "https://www.instagram.com/sankufoods/?hl=es",
-                        "red": "instagram"
-                    },
+                    "ubicacion": "https://maps.app.goo.gl/ZEDqg6Tsdksy26pN7",
                     "cooperativas": [
                         {
                             "id": "c-riobamba",
-                            "nombre": "Coop Riobamba",
-                            "logo": "riobamba.png",
-                            "rating_global": {},
-                            "telefono": "",
-                            "sitio_web": "https://www.instagram.com/transportesriobamba/?hl=es",
-                            "servicios": [
-                                "Encomiendas"
-                            ],
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Riobamba",
@@ -3072,38 +3273,110 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "id": "c-union-yanzatza",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Yantzaza",
+                                    "horarios": [
+                                        "07:30",
+                                        "09:10",
+                                        "11:30",
+                                        "15:30",
+                                        "16:30"
+                                    ]
+                                },
+                                {
+                                    "destino": "Quito",
+                                    "horarios": [
+                                        "05:30",
+                                        "17:00"
+                                    ]
+                                },
+                                {
+                                    "destino": "El Pangui",
+                                    "horarios": [
+                                        "06:30",
+                                        "08:30",
+                                        "18:30"
+                                    ]
+                                },
+                                {
+                                    "destino": "Bellavista",
+                                    "horarios": [
+                                        "13:25"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "t-el-pangui",
+                    "nombre": "El Pangui",
+                    "ubicacion": "https://maps.app.goo.gl/amkbpQ7JkEBwekvS8",                    
+                    "cooperativas": [
+                        {
+                            "id": "c-union-yanzatza",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "06:15",
+                                        "10:00",
+                                        "12:45",
+                                        "14:40",
+                                        "15:40",
+                                        "19:00"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c-zamora-chinchipe",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Yantzaza",
+                                    "horarios": [
+                                        "06:30",
+                                        "08:30",
+                                        "14:30"
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
             ]
         },
         {
-            "id": "guayas",
+            "id": "p-guayas",
             "nombre": "Guayas",
-            "anuncio": {
-                "imagen": "img/anuncios/banner-kc.png",
-                "link": "https://www.instagram.com/kevincamachomusic/?hl=es",
-                "red": "instagram"
-            },
             "terminales": [
                 {
-                    "id": "guayaquil",
+                    "id": "t-guayaquil",
                     "nombre": "Guayaquil",
-                    "anuncio": {
-                        "imagen": "img/anuncios/banner-kc.png",
-                        "link": "https://www.instagram.com/kevincamachomusic/?hl=es"
-                    },
+                    "ubicacion": "https://maps.app.goo.gl/NMgo7mvVo1eJzjq66",
                     "cooperativas": [
                         {
                             "id": "c-riobamba",
-                            "nombre": "Coop Riobamba",
-                            "logo": "riobamba.png",
-                            "rating_global": {},
-                            "telefono": "",
-                            "sitio_web": "",
-                            "servicios": [
-                                "Encomiendas"
-                            ],
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Riobamba",
@@ -3141,47 +3414,226 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "id": "c-bolivar",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Guaranda",
+                                    "horarios": [
+                                        "05:00",
+                                        "05:30",
+                                        "06:30",
+                                        "07:30",
+                                        "08:30",
+                                        "09:00",
+                                        "10:30",
+                                        "11:30",
+                                        "13:00",
+                                        "14:30",
+                                        "15:30",
+                                        "17:00",
+                                        "17:30",
+                                        "21:00"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c-transportes-patria",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Riobamba",
+                                    "horarios": [
+                                        "00:30",
+                                        "01:30",
+                                        "02:30",
+                                        "03:00",
+                                        "03:30",
+                                        "05:00",
+                                        "06:00",
+                                        "07:00",
+                                        "08:00",
+                                        "08:30",
+                                        "09:30",
+                                        "10:00",
+                                        "10:30",
+                                        "11:30",
+                                        "12:30",
+                                        "13:30",
+                                        "14:00",
+                                        "14:30",
+                                        "16:30",
+                                        "17:00",
+                                        "18:00",
+                                        "19:00",
+                                        "20:15",
+                                        "21:30",
+                                        "22:30",
+                                        "23:30"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c-san-francisco-oriental",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Riobamba-baños-Puyo-Tena-Coca-Lago Agrio",
+                                    "horarios": [
+                                        "12:40",
+                                        "20:00",
+                                        "22:30"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c-santa-servicio-especial",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Ambato",
+                                    "horarios": [
+                                        "09:00",
+                                        "10:00",
+                                        "11:00",
+                                        "13:00",
+                                        "15:00",
+                                        "20:00",
+                                        "21:30",
+                                        "22:00",
+                                        "23:00"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c-panamericana",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Quito Quitumbe",
+                                    "horarios": [
+                                        "00:45",
+                                        "03:30",
+                                        "06:00",
+                                        "09:00",
+                                        "09:40",
+                                        "12:00",
+                                        "13:00",
+                                        "15:20",
+                                        "17:00",
+                                        "18:30",
+                                        "20:30",
+                                        "21:15",
+                                        "21:50",
+                                        "22:40",
+                                        "23:30"
+                                    ]
+                                },
+                                {
+                                    "destino": "Esmeraldas",
+                                    "horarios": [
+                                        "22:15",
+                                        "23:15"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c-rutas-orenses",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Pasaje",
+                                    "horarios": [
+                                        "13:05",
+                                        "16:05",
+                                        "18:05"
+                                    ]
+                                },
+                                {
+                                    "destino": "Machala",
+                                    "horarios": [
+                                        "04:30",
+                                        "05:00",
+                                        "05:30",
+                                        "06:00",
+                                        "06:30",
+                                        "07:00",
+                                        "07:30",
+                                        "08:00",
+                                        "08:30",
+                                        "09:00",
+                                        "09:30",
+                                        "10:00",
+                                        "10:30",
+                                        "11:00",
+                                        "11:30",
+                                        "12:00",
+                                        "12:30",
+                                        "13:30",
+                                        "13:30",
+                                        "14:00",
+                                        "14:30",
+                                        "15:00",
+                                        "15:30",
+                                        "16:00",
+                                        "16:30",
+                                        "17:00",
+                                        "17:30",
+                                        "18:00",
+                                        "18:30",
+                                        "19:00",
+                                        "19:30",
+                                        "20:00",
+                                        "20:30",
+                                        "22:00"
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
             ]
         },
         {
-            "id": "morona",
+            "id": "p-morona",
             "nombre": "Morona Santiago",
-            "anuncio": [
-                {
-                    "imagen": "img/anuncios/banner-sanku.png",
-                    "link": "https://www.instagram.com/sankufoods/?hl=es",
-                    "red": "instagram"
-                },
-                {
-                    "imagen": "img/anuncios/banner-curvi.png",
-                    "link": "https://www.instagram.com/curvy_closettt/?hl=es",
-                    "red": "instagram"
-                }
-            ],
             "terminales": [
                 {
-                    "id": "macas",
+                    "id": "t-macas",
                     "nombre": "Macas",
-                    "anuncio": {
-                        "imagen": "img/anuncios/banner-curvi.png",
-                        "link": "https://www.instagram.com/curvy_closettt/?hl=es",
-                        "red": "instagram"
-                    },
+                    "ubicacion": "https://maps.app.goo.gl/a9PatMoHBqUVimQ39",                   
                     "cooperativas": [
                         {
                             "id": "c-riobamba",
-                            "nombre": "Copp Riobamba",
-                            "logo": "riobamba.png",
-                            "rating_global": {},
-                            "telefono": "",
-                            "sitio_web": "https://www.instagram.com/transportesriobamba/?hl=es",
-                            "servicios": [
-                                "WiFi",
-                                "Aire acondicionado"
-                            ],
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Riobamba",
@@ -3219,16 +3671,11 @@
                             ]
                         },
                         {
-                            "id": "san-francisco-oriental",
-                            "nombre": "San Francismo Oriental",
-                            "logo": "san-francisco-oriental.png",
-                            "rating_global": {},
-                            "telefono": "",
-                            "sitio_web": "https://www.facebook.com/tourisanfrancisco",
-                            "servicios": [
-                                "WiFi",
-                                "Aire acondicionado"
-                            ],
+                            "id": "c-san-francisco-oriental",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Quitumbe",
@@ -3251,33 +3698,20 @@
             ]
         },
         {
-            "id": "tungurahua",
+            "id": "p-tungurahua",
             "nombre": "Tungurahua",
-            "anuncio": {
-                "imagen": "img/anuncios/banner-armas.png",
-                "link": "https://www.instagram.com/armasfilms_/?hl=es",
-                "red": "instagram"
-            },
             "terminales": [
                 {
-                    "id": "ambato-sur",
+                    "id": "t-ambato-sur",
                     "nombre": "Ambato Sur",
-                    "anuncio": {
-                        "imagen": "img/anuncios/banner-armas.png",
-                        "link": "https://www.instagram.com/armasfilms_/?hl=es",
-                        "red": "instagram"
-                    },
+                    "ubicacion": "https://maps.app.goo.gl/jxYQhfhUgCKhTxeDA",
                     "cooperativas": [
                         {
-                            "id": "cita-express-int",
-                            "nombre": "Cita Express Int.",
-                            "logo": "cita-express-int.png",
-                            "rating_global": {},
-                            "telefono": "098 258 4492",
-                            "sitio_web": "https://www.transportescita.com/sitio/",
-                            "servicios": [
-                                "Encomiendas"
-                            ],
+                            "id": "c-cita-express-int",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Guayaquil",
@@ -3301,15 +3735,11 @@
                             ]
                         },
                         {
-                            "id": "santa",
-                            "nombre": "Santa Servicio Especial",
-                            "logo": "santa.png",
-                            "rating_global": {},
-                            "telefono": "0998350223",
-                            "sitio_web": "https://cooperativasanta.ec/",
-                            "servicios": [
-                                "Encomiendas"
-                            ],
+                            "id": "c-santa-servicio-especial",
+                            "telefonos": {
+                                "boleteria": "0998350223",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Cuenca",
@@ -3371,16 +3801,11 @@
                             ]
                         },
                         {
-                            "id": "loja-inter",
-                            "nombre": "Loja Internacional",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
-                            "telefono": "",
-                            "sitio_web": "",
-                            "servicios": [
-                                "Encomiendas 033920474 07:00- 16:00",
-                                "Boletería 03320020 16:00 - 22:00"
-                            ],
+                            "id": "c-loja-internacional",
+                            "telefonos": {
+                                "boleteria": "03320020",
+                                "encomiendas": "033920474"
+                            },
                             "rutas": [
                                 {
                                     "destino": "Loja",
@@ -3410,15 +3835,11 @@
                             ]
                         },
                         {
-                            "id": "e-banos",
-                            "nombre": "Expreso Baños",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
-                            "telefono": "",
-                            "sitio_web": "",
-                            "servicios": [
-                                "Boletería  06:30 - 23:00"
-                            ],
+                            "id": "c-transportes-banos",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Puyo-Tena",
@@ -3432,15 +3853,11 @@
                             ]
                         },
                         {
-                            "id": "aguila-dorada",
-                            "nombre": "Aguila Dorada",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
-                            "telefono": "0958722711",
-                            "sitio_web": "https://www.facebook.com/TransportesAguilaDorada/",
-                            "servicios": [
-                                "Boletería 09:00 - 16:30"
-                            ],
+                            "id": "c-aguila-dorada",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "San Luis de Pambil",
@@ -3464,15 +3881,11 @@
                             ]
                         },
                         {
-                            "id": "putumayo",
-                            "nombre": "Putumayo",
-                            "logo": "putumayo.png",
-                            "rating_global": {},
-                            "telefono": "09 6236 9096",
-                            "sitio_web": "https://www.facebook.com/p/Cooperativa-de-Transportes-Putumayo-100057664382007/?locale=es_LA",
-                            "servicios": [
-                                ""
-                            ],
+                            "id": "c-putumayo",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Lago Agrio-Pto El Carmen",
@@ -3495,15 +3908,11 @@
                             ]
                         },
                         {
-                            "id": "el-dorado",
-                            "nombre": "El Dorado",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
-                            "telefono": "0959452352",
-                            "sitio_web": "https://www.facebook.com/CooperativaDeTransportesElDorado/",
-                            "servicios": [
-                                ""
-                            ],
+                            "id": "c-el-dorado",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Puyo-Tena-Loreto-Coca",
@@ -3517,24 +3926,16 @@
                     ]
                 },
                 {
-                    "id": "banos-agua-santa",
+                    "id": "t-banos-agua-santa",
                     "nombre": "Baños de Agua Santa",
-                    "anuncio": {
-                        "imagen": "img/anuncios/banner-armas.png",
-                        "link": "https://www.instagram.com/armasfilms_/?hl=es",
-                        "red": "instagram"
-                    },
+                    "ubicacion": "https://maps.app.goo.gl/k5q5yJcKgkSmx9xD7",
                     "cooperativas": [
                         {
                             "id": "c-riobamba",
-                            "nombre": "Coop Riobamba",
-                            "logo": "riobamba.png",
-                            "rating_global": {},
-                            "telefono": "",
-                            "sitio_web": "",
-                            "servicios": [
-                                "Encomiendas"
-                            ],
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Riobamba",
@@ -3582,15 +3983,11 @@
                             ]
                         },
                         {
-                            "id": "banos",
-                            "nombre": "Baños",
-                            "logo": "banos.png",
-                            "rating_global": {},
-                            "telefono": "098 900 7838",
-                            "sitio_web": "https://www.facebook.com/profile.php?id=100089985481167&locale=es_LA",
-                            "servicios": [
-                                "Encomiendas"
-                            ],
+                            "id": "c-transportes-banos",
+                            "telefonos": {
+                                "boleteria": "098 900 7838",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Quitume",
@@ -3735,15 +4132,11 @@
                             ]
                         },
                         {
-                            "id": "amazonas",
-                            "nombre": "Amazonas",
-                            "logo": "amazonas.png",
-                            "rating_global": {},
-                            "telefono": "(03) 274-0070",
-                            "sitio_web": "https://www.facebook.com/cooptransportesamazonas?locale=es_LA",
-                            "servicios": [
-                                "Encomiendas"
-                            ],
+                            "id": "c-amazonas",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Quitume Quito",
@@ -3817,15 +4210,11 @@
                             ]
                         },
                         {
-                            "id": "flota-pelileo",
-                            "nombre": "Flota Pelileo",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
-                            "telefono": "099 161 4378",
-                            "sitio_web": "https://www.facebook.com/CooperativaFlotaPelileo?locale=es_LA",
-                            "servicios": [
-                                "Encomiendas"
-                            ],
+                            "id": "c-flota-pelileo",
+                            "telefonos": {
+                                "boleteria": "099 161 4378",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Puyo-Tena-Coca-Lago Agrio-Sacha",
@@ -3870,15 +4259,11 @@
                             ]
                         },
                         {
-                            "id": "sangay",
-                            "nombre": "Sangay",
-                            "logo": "sangay.png",
-                            "rating_global": {},
-                            "telefono": "",
-                            "sitio_web": "https://www.facebook.com/cooperativadetransportesangay?locale=es_LA",
-                            "servicios": [
-                                "Encomiendas"
-                            ],
+                            "id": "c-sangay",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Puyo",
@@ -3935,15 +4320,11 @@
                             ]
                         },
                         {
-                            "id": "san-francisco-oriental",
-                            "nombre": "San Francismo Oriental",
-                            "logo": "san-francisco-oriental.png",
-                            "rating_global": {},
-                            "telefono": "",
-                            "sitio_web": "https://www.facebook.com/tourisanfrancisco",
-                            "servicios": [
-                                "Encomiendas"
-                            ],
+                            "id": "c-san-francisco-oriental",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Puyo",
@@ -4001,15 +4382,11 @@
                             ]
                         },
                         {
-                            "id": "e-banos",
-                            "nombre": "Expreso Baños",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
-                            "telefono": "",
-                            "sitio_web": "https://www.facebook.com/tourisanfrancisco",
-                            "servicios": [
-                                "Encomiendas"
-                            ],
+                            "id": "c-expreso-banos",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Tena",
@@ -4061,41 +4438,20 @@
             ]
         },
         {
-            "id": "sucumbios",
+            "id": "p-sucumbios",
             "nombre": "Sucumbios",
-            "anuncio": [
-                {
-                    "imagen": "img/anuncios/banner-sanku.png",
-                    "link": "https://www.instagram.com/sankufoods/?hl=es",
-                    "red": "instagram"
-                },
-                {
-                    "imagen": "img/anuncios/banner-curvi.png",
-                    "link": "https://www.instagram.com/curvy_closettt/?hl=es",
-                    "red": "instagram"
-                }
-            ],
             "terminales": [
                 {
-                    "id": "lago-agrio",
+                    "id": "t-lago-agrio",
                     "nombre": "Lago Agrio",
-                    "anuncio": {
-                        "imagen": "img/anuncios/banner-sanku.png",
-                        "link": "https://www.instagram.com/sankufoods/?hl=es",
-                        "red": "instagram"
-                    },
+                    "ubicacion": "https://maps.app.goo.gl/NQEp6SrC7tjCs2hN6",
                     "cooperativas": [
                         {
-                            "id": "zaracay",
-                            "nombre": "Zaracay",
-                            "logo": "zaracay.png",
-                            "rating_global": {},
-                            "telefono": "098 026 8435",
-                            "sitio_web": "https://www.facebook.com/oficialtransporteszaracay?locale=es_LA",
-                            "servicios": [
-                                "Encomiendas",
-                                "atención: 07:30-22:00"
-                            ],
+                            "id": "c-zaracay",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Guayaquil",
@@ -4122,15 +4478,7 @@
                             ]
                         },
                         {
-                            "id": "san-francisco-oriental",
-                            "nombre": "San Francismo Oriental",
-                            "logo": "san-francisco-oriental.png",
-                            "rating_global": {},
-                            "telefono": "099 704 9828",
-                            "sitio_web": "https://www.facebook.com/tourisanfrancisco",
-                            "servicios": [
-                                "Encomiendas"
-                            ],
+                            "id": "c-san-francisco-oriental",
                             "rutas": [
                                 {
                                     "destino": "Zamora (Loreto-Archidona-Tena-Santa Clara-Puyo-Macas-Sucua-Logroño-Bella Unión-Limón-San Juan Bosco-Gualaquiza-El Pangui-Yantazaza)",
@@ -4146,6 +4494,13 @@
                                         "16:45"
                                     ],
                                     "costo": "29.90"
+                                },
+                                {
+                                    "destino": "Yantzaza",
+                                    "horarios": [
+                                        "07:55"
+                                    ],
+                                    "costo": ""
                                 }
                             ]
                         }
@@ -4154,47 +4509,16 @@
             ]
         },
         {
-            "id": "napo",
-            "nombre": "Napo",
-            "anuncio": [
-                {
-                    "imagen": "img/anuncios/banner-curvi.png",
-                    "link": "https://www.instagram.com/curvy_closettt/?hl=es",
-                    "red": "instagram"
-                },
-                {
-                    "imagen": "img/anuncios/banner-chingu.png",
-                    "link": "https://www.instagram.com/chingu_market.ec/?hl=es",
-                    "red": "instagram"
-                }
-            ],
+            "id": "p-napo",
+            "nombre": "Napo",            
             "terminales": [
                 {
-                    "id": "tena",
+                    "id": "t-tena",
                     "nombre": "Tena",
-                    "anuncio": [
-                        {
-                            "imagen": "img/anuncios/banner-curvi.png",
-                            "link": "https://www.instagram.com/curvy_closettt/?hl=es",
-                            "red": "instagram"
-                        },
-                        {
-                            "imagen": "img/anuncios/banner-chingu.png",
-                            "link": "https://www.instagram.com/chingu_market.ec/?hl=es",
-                            "red": "instagram"
-                        }
-                    ],
+                    "ubicacion": "https://maps.app.goo.gl/bUFeb852Ba6Sb6jHA",
                     "cooperativas": [
                         {
                             "id": "c-riobamba",
-                            "nombre": "Coop Riobamba",
-                            "logo": "riobamba.png",
-                            "rating_global": {},
-                            "telefono": "",
-                            "sitio_web": "https://www.instagram.com/transportesriobamba/?hl=es",
-                            "servicios": [
-                                "Encomiendas"
-                            ],
                             "rutas": [
                                 {
                                     "destino": "Riobamba",
@@ -4220,132 +4544,20 @@
             ]
         },
         {
-            "id": "oro",
-            "nombre": "El Oro",
-            "terminales": []
-        },
-        {
-            "id": "azuay",
-            "nombre": "Azuay",
-            "anuncio": [
-                {
-                    "imagen": "img/anuncios/banner-sanku.png",
-                    "link": "https://www.instagram.com/sankufoods/?hl=es",
-                    "red": "instagram"
-                },
-                {
-                    "imagen": "img/anuncios/banner-curvi.png",
-                    "link": "https://www.instagram.com/curvy_closettt/?hl=es",
-                    "red": "instagram"
-                }
-            ],
-            "terminales": []
-        },
-        {
-            "id": "canar",
-            "nombre": "Cañar",
-            "terminales": []
-        },
-        {
-            "id": "rios",
-            "nombre": "Los Ríos",
-            "terminales": []
-        },
-        {
-            "id": "cotopaxi",
-            "nombre": "Cotopaxi",
-            "terminales": []
-        },
-        {
-            "id": "imbabura",
-            "nombre": "Imbabura",
-            "terminales": [
-                {
-                    "id": "p-ibarra",
-                    "nombre": "Ibarra",
-                    "anuncio": {
-                        "imagen": "img/anuncios/banner-sanku.png",
-                        "link": "https://www.instagram.com/sankufoods/?hl=es",
-                        "red": "instagram"
-                    },
-                    "cooperativas": [
-                        {
-                            "id": "reina-mercedes",
-                            "nombre": "Reina de las Mercedes",
-                            "logo": "reina-mercedes.png",
-                            "rating_global": {},
-                            "telefono": "",
-                            "sitio_web": "https://ttibarra.com/cooperativa-reina-de-las-mercedes",
-                            "servicios": [
-                                "Encomiendas"
-                            ],
-                            "rutas": [
-                                {
-                                    "destino": "Santo Domingo",
-                                    "horarios": [
-                                        "04:00",
-                                        "09:15",
-                                        "17:00"
-                                    ]
-                                },
-                                {
-                                    "destino": "Esmeraldas",
-                                    "horarios": [
-                                        "04:00",
-                                        "16:00"
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "orellana",
-            "nombre": "Orellana",
-            "anuncio": [
-                {
-                    "imagen": "img/anuncios/banner-sanku.png",
-                    "link": "https://www.instagram.com/sankufoods/?hl=es",
-                    "red": "instagram"
-                },
-                {
-                    "imagen": "img/anuncios/banner-curvi.png",
-                    "link": "https://www.instagram.com/curvy_closettt/?hl=es",
-                    "red": "instagram"
-                }
-            ],
-            "terminales": []
-        },
-        {
-            "id": "carchi",
-            "nombre": "Carchi",
-            "terminales": []
-        },
-        {
-            "id": "esmeraldas",
+            "id": "p-esmeraldas",
             "nombre": "Esmeraldas",
             "terminales": [
                 {
-                    "id": "ciudad-esmeraldas",
+                    "id": "t-ciudad-esmeraldas",
                     "nombre": "Ciudad de Esmeraldas",
-                    "anuncio": {
-                        "imagen": "img/anuncios/banner-sanku.png",
-                        "link": "https://www.instagram.com/sankufoods/?hl=es",
-                        "red": "instagram"
-                    },
+                    "ubicacion": "https://maps.app.goo.gl/1p5Y8kwUKKHLpbV86",
                     "cooperativas": [
                         {
                             "id": "c-imperial",
-                            "nombre": "Imperial",
-                            "logo": "imperial.png",
-                            "rating_global": {},
-                            "telefono": "",
-                            "sitio_web": "",
-                            "servicios": [
-                                "Encomiendas"
-                            ],
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Quito Carcelén",
@@ -4395,15 +4607,11 @@
                             ]
                         },
                         {
-                            "id": "c-e-banos",
-                            "nombre": "Expreso Baños",
-                            "logo": "icon-bus.png",
-                            "rating_global": {},
-                            "telefono": "",
-                            "sitio_web": "",
-                            "servicios": [
-                                "Encomiendas"
-                            ],
+                            "id": "c-expreso-banos",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
                             "rutas": [
                                 {
                                     "destino": "Santo Domingo-Ambato-Baños-Puyo-Tena",
@@ -4419,28 +4627,53 @@
             ]
         },
         {
+            "id": "p-imbabura",
+            "nombre": "Imbabura",
+            "terminales": [
+                {
+                    "id": "t-ibarra",
+                    "nombre": "Ibarra",
+                    "ubicacion": "https://maps.app.goo.gl/iZVNaBU3yePJrs8p9",
+                    "cooperativas": [
+                        {
+                            "id": "c-reina-mercedes",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Santo Domingo",
+                                    "horarios": [
+                                        "04:00",
+                                        "09:15",
+                                        "17:00"
+                                    ]
+                                },
+                                {
+                                    "destino": "Esmeraldas",
+                                    "horarios": [
+                                        "04:00",
+                                        "16:00"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "id": "p-loja",
             "nombre": "Loja",
             "terminales": [
                 {
                     "id": "t-loja",
                     "nombre": "Loja",
-                    "anuncio": {
-                        "imagen": "img/anuncios/banner-sanku.png",
-                        "link": "https://www.instagram.com/sankufoods/?hl=es",
-                        "red": "instagram"
-                    },
+                    "ubicacion": "https://maps.app.goo.gl/XigYXPhhGbUk7UFk7",
                     "cooperativas": [
                         {
                             "id": "c-riobamba",
-                            "nombre": "Riobamba",
-                            "logo": "riobamba.png",
-                            "rating_global": {},
-                            "telefono": "",
-                            "sitio_web": "",
-                            "servicios": [
-                                "Encomiendas"
-                            ],
                             "rutas": [
                                 {
                                     "destino": "Riobamba",
@@ -4456,46 +4689,117 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "id": "c-viajeros-internacional",
+                            "rutas": [
+                                {
+                                    "destino": "Cuenca",
+                                    "horarios": [
+                                        "02:00",
+                                        "03:00",
+                                        "04:00",
+                                        "05:00",
+                                        "06:00",
+                                        "07:00",
+                                        "09:00",
+                                        "10:00",
+                                        "11:30",
+                                        "12:00",
+                                        "12:30",
+                                        "14:30",
+                                        "15:30",
+                                        "17:15",
+                                        "18:30",
+                                        "19:00",
+                                        "20:30",
+                                        "22:30",
+                                        "23:30",
+                                        "00:30"
+                                    ]
+                                },
+                                {
+                                    "destino": "Quito",
+                                    "horarios": [
+                                        "15:30",
+                                        "18:30",
+                                        "21:30"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c-union-yanzatza",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Yantzaza",
+                                    "horarios": [
+                                        "20:45"
+                                    ]
+                                },
+                                {
+                                    "destino": "El Pangui",
+                                    "horarios": [
+                                        "10:25",
+                                        "13:35",
+                                        "15:20",
+                                        "17:40",
+                                        "20:30",
+                                        "22:15"
+                                    ]
+                                },
+                                {
+                                    "destino": "Chinapintza",
+                                    "horarios": [
+                                        "11:25"
+                                    ]
+                                },
+                                {
+                                    "destino": "Gualaquiza",
+                                    "horarios": [
+                                        "12:45"
+                                    ]
+                                },
+                                {
+                                    "destino": "Guayzimi",
+                                    "horarios": [
+                                        "16:10",
+                                        "17:20"
+                                    ]
+                                },
+                                {
+                                    "destino": "Zurmi",
+                                    "horarios": [
+                                        "17:10"
+                                    ]
+                                },
+                                {
+                                    "destino": "Yacuambi",
+                                    "horarios": [
+                                        "21:45"
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
             ]
         },
         {
-            "id": "pastaza",
+            "id": "p-pastaza",
             "nombre": "Pastaza",
-            "anuncio": [
-                {
-                    "imagen": "img/anuncios/banner-sanku.png",
-                    "link": "https://www.instagram.com/sankufoods/?hl=es",
-                    "red": "instagram"
-                },
-                {
-                    "imagen": "img/anuncios/banner-curvi.png",
-                    "link": "https://www.instagram.com/curvy_closettt/?hl=es",
-                    "red": "instagram"
-                }
-            ],
             "terminales": [
                 {
-                    "id": "puyo",
+                    "id": "t-puyo",
                     "nombre": "Puyo",
-                    "anuncio": {
-                        "imagen": "img/anuncios/banner-sanku.png",
-                        "link": "https://www.instagram.com/sankufoods/?hl=es",
-                        "red": "instagram"
-                    },
+                    "ubicacion": "https://maps.app.goo.gl/kK1vvJSSX8QFMoD78",
                     "cooperativas": [
                         {
                             "id": "c-riobamba",
-                            "nombre": "Riobamba",
-                            "logo": "riobamba.png",
-                            "rating_global": {},
-                            "telefono": "",
-                            "sitio_web": "",
-                            "servicios": [
-                                "Encomiendas"
-                            ],
                             "rutas": [
                                 {
                                     "destino": "Riobamba",
@@ -4517,14 +4821,328 @@
             ]
         },
         {
-            "id": "santa-elena",
+            "id": "p-orellana",
+            "nombre": "Orellana",
+            "terminales": [
+                {
+                    "id": "t-el-coca",
+                    "nombre": "El Coca",
+                    "ubicacion": "https://maps.app.goo.gl/UmEMfzt124sRdkhw7",
+                    "cooperativas": [
+                        {
+                            "id": "c-transportes-banos",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Riobamba",
+                                    "horarios": [
+                                        "08:45",
+                                        "15:30",
+                                        "16:30",
+                                        "18:30"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "p-carchi",
+            "nombre": "Carchi",
+            "terminales": [
+                {
+                    "id": "t-tulcan",
+                    "nombre": "Tulcán",
+                    "ubicacion": "https://maps.app.goo.gl/da4rsSKhihEdnF14A",
+                    "cooperativas": [
+                        {
+                            "id": "c-transportes-vencedores",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Riobamba",
+                                    "horarios": [
+                                        "10:30"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "p-santa-elena",
             "nombre": "Santa Elena",
+            "terminales": [
+                {
+                    "id": "t-santa-elena",
+                    "nombre": "Santa Elena",
+                    "ubicacion": "https://maps.app.goo.gl/LVKqRJUkvrePsLXA7",
+                    "cooperativas": [
+                        {
+                            "id": "c-transportes-patria",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Riobamba",
+                                    "horarios": [
+                                        "15:30",
+                                        "17:00"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "p-manabi",
+            "nombre": "Manabi",
+            "terminales": [
+                {
+                    "id": "t-manta",
+                    "nombre": "Manta",
+                    "ubicacion": "https://maps.app.goo.gl/BR9pCMPRLixsY6RM6",
+                    "cooperativas": [
+                        {
+                            "id": "c-transportes-vencedores",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Riobamba",
+                                    "horarios": [
+                                        "22:15"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "t-portoviejo",
+                    "nombre": "Portoviejo",
+                    "ubicacion": "https://maps.app.goo.gl/obvmTa2eELaS4mvQ9",
+                    "cooperativas": [
+                        {
+                            "id": "c-transportes-banos",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "El Coca",
+                                    "horarios": [
+                                        "18:00"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "p-oro",
+            "nombre": "El Oro",
+            "terminales": [
+                {
+                    "id": "t-machala",
+                    "nombre": "Machala",
+                    "ubicacion": "https://maps.app.goo.gl/JWcxGMyze8SyXLb68",
+                    "cooperativas": [
+                        {
+                            "id": "c-transportes-vencedores",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Riobamba",
+                                    "horarios": [
+                                        "09:45",
+                                        "16:30",
+                                        "21:30"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "p-azuay",
+            "nombre": "Azuay",
+            "terminales": [
+                {
+                    "id": "t-cuenca",
+                    "nombre": "Cuenca",
+                    "ubicacion": "https://maps.app.goo.gl/CdiV4CSTunwuEqvz6",
+                    "cooperativas": [
+                        {
+                            "id": "c-viajeros-internacional",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Loja",
+                                    "horarios": [
+                                        "01:00",
+                                        "02:00",
+                                        "03:30",
+                                        "05:00",
+                                        "06:00",
+                                        "07:00",
+                                        "08:30",
+                                        "09:00",
+                                        "10:00",
+                                        "11:30",
+                                        "13:00",
+                                        "14:00",
+                                        "15:00",
+                                        "15:30",
+                                        "16:30",
+                                        "17:45",
+                                        "18:45",
+                                        "20:30",
+                                        "21:15",
+                                        "22:30",
+                                        "23:30"
+                                    ],
+                                    "costo": ""
+                                },
+                                {
+                                    "destino": "Loja-Zamora-Yantzaza",
+                                    "horarios": [
+                                        "07:00",
+                                        "18:45",
+                                        "21:15"
+                                    ],
+                                    "costo": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "p-canar",
+            "nombre": "Cañar",
             "terminales": []
         },
         {
-            "id": "manabi",
-            "nombre": "Manabi",
-            "terminales": []
+            "id": "p-rios",
+            "nombre": "Los Ríos",
+            "terminales": [
+                {
+                    "id": "t-babahoyo",
+                    "nombre": "Babahoyo",
+                    "ubicacion": "https://maps.app.goo.gl/GLdegVb2PGbMcdmv6",
+                    "cooperativas": [
+                        {
+                            "id": "",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "",
+                                    "horarios": [
+                                        ""
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "t-quevedo",
+                    "nombre": "Quevedo",
+                    "ubicacion": "https://maps.app.goo.gl/BBaaBS11BQ19USBy5",
+                    "cooperativas": [
+                        {
+                            "id": "c-transportes-banos",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Lago Agrio",
+                                    "horarios": [
+                                        "18:00"
+                                    ]
+                                },
+                                {
+                                    "destino": "El Coca",
+                                    "horarios": [
+                                        "18:45"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "p-cotopaxi",
+            "nombre": "Cotopaxi",
+            "terminales": [
+                {
+                    "id": "t-latacunga",
+                    "nombre": "Latacunga",
+                    "ubicacion": "https://maps.app.goo.gl/ehDNBbHdvCR57WqY9",
+                    "cooperativas": [
+                        {
+                            "id": "c-sangay",
+                            "telefonos": {
+                                "boleteria": "",
+                                "encomiendas": ""
+                            },
+                            "rutas": [
+                                {
+                                    "destino": "Riobamba",
+                                    "horarios": [
+                                        "04:40",
+                                        "05:10",
+                                        "06:10",
+                                        "07:10",
+                                        "11:40",
+                                        "13:10",
+                                        "15:10",
+                                        "16:10",
+                                        "17:10",
+                                        "18:10"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "ciudades_principales": [
@@ -4534,5 +5152,4 @@
         "Santo Domingo",
         "Riobamba"
     ]
-    
 }

@@ -27,14 +27,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Busvas - horarios</title>
+
+    <!-- HEADERS NUCLEAR ANTI-CACHÉ PARA COMBATIR CHROME -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, s-maxage=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="If-Modified-Since" content="0">
+    <meta http-equiv="X-Accel-Expires" content="0">
+    <meta http-equiv="Surrogate-Control" content="no-store">
+    <meta name="cache-control" content="no-cache">
+    <meta name="expires" content="Thu, 01 Jan 1970 00:00:00 GMT">
+    <meta name="pragma" content="no-cache">
+    <meta name="vary" content="*">
+    <meta http-equiv="Clear-Site-Data" content="*">
     <!-- ICONOS Y ESTILOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=0903">
-    <link rel="stylesheet" href="styles/header.css?v=0903">
-    <link rel="stylesheet" href="styles/ads.css?v=0903">
-    <link rel="stylesheet" href="styles/footer.css?v=0903">
-    <link rel="stylesheet" href="styles/favoritos.css?v=0903">
-    <link rel="stylesheet" href="styles/search.css?v=0903">
+    <link rel="stylesheet" href="style.css?v=0928">
+    <link rel="stylesheet" href="styles/header.css?v=0928">
+    <link rel="stylesheet" href="styles/ads.css?v=1010">
+    <link rel="stylesheet" href="styles/footer.css?v=0928">
+    <link rel="stylesheet" href="styles/favoritos.css?v=0928">
+    <link rel="stylesheet" href="styles/search.css?v=0928">
+    <link rel="stylesheet" href="styles/viajero.css?v=1010">
+    <link rel="stylesheet" href="styles/noticias.css?v=1012">
+    <!-- ESTILOS PARA AVISO LEGAL -->
+    <style>
+        .footer-legal {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #a0a0a0;
+            border-top: 1px solid #3a3a3a;
+            padding-top: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-legal p {
+            margin: 5px 10px;
+            line-height: 1.5;
+        }
+    </style>
     <!-- FAVICON Y META -->
     <link rel="apple-touch-icon" sizes="180x180" href="img/logos/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/logos/favicon-32x32.png">
@@ -47,6 +80,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="mapa/mapa.css?v=1012">
 </head>
 
 <body>
@@ -103,8 +137,8 @@
         <button id="search-btn" class="search-btn" aria-label="Buscar">
             <i class="fas fa-search"></i>
         </button>
-        <button class="sidebar-toggle" aria-label="Abrir menú">
-            <i class="fas fa-bars"></i>
+        <button class="sidebar-toggle" aria-label="Noticias">
+            <i class="fas fa-newspaper"></i>
         </button>
     </nav>
 
@@ -125,23 +159,37 @@
 
     <!-- SIDEBAR -->
     <aside class="sidebar">
-        <button class="close-sidebar">
-            <i class="fas fa-times"></i>
-        </button>
-        <div class="sidebar-path-bar">
-            <button id="sidebar-btn-home" class="sidebar-path-btn active">
-                <i class="fas fa-home"></i> Inicio
-            </button>
-        </div>
-        <div class="sidebar-help">
-            <p>¿No hay el horario que buscas?<br>
-                ¿Tienes información de los horarios?</p>
-            <a href="https://wa.me/593991194932" target="_blank" rel="noopener" class="sidebar-help-btn">
-                Ayúdanos con información
-            </a>
-        </div>
-        <h2>Provincias</h2>
-        <ul id="province-list-side"></ul>
+        <!-- CONTENEDOR DE NOTICIAS EN SIDEBAR -->
+        <section id="noticias-section" class="noticias-section">
+            <div class="noticias-header">
+                <span class="noticias-icon"><i class="fas fa-newspaper"></i></span>
+                <span class="noticias-title-text">Noticias Nacionales</span>
+                <button class="close-sidebar" aria-label="Cerrar sidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="noticias-medios">
+                <div class="noticias-medios-title">Infórmate por medios digitales del pueblo</div>
+                <div class="noticias-medios-row">
+                    <a href="https://www.instagram.com/bnperiodismo/?hl=es" class="noticias-medio" target="_blank" rel="noopener">
+                        <img src="img/bn.png" alt="Medio 1" class="noticias-medio-img" />
+                    </a>
+                    <a href="https://www.instagram.com/tvo.anuestroestilo/?hl=es" class="noticias-medio" target="_blank" rel="noopener">
+                        <img src="img/tvo.png" alt="Medio 2" class="noticias-medio-img" />
+                    </a>
+                    <a href="https://www.instagram.com/llamingoec_oficial/?hl=es" class="noticias-medio" target="_blank" rel="noopener">
+                        <img src="img/llamingo.png" alt="Medio 3" class="noticias-medio-img" />
+                    </a>
+                    <a href="https://www.instagram.com/radiopichinchamultimedios/?hl=es" class="noticias-medio" target="_blank" rel="noopener">
+                        <img src="img/rp.png" alt="Medio 4" class="noticias-medio-img" />
+                    </a>
+                </div>
+            </div>
+            <div id="noticias-list" class="noticias-list">
+                <!-- Aquí se insertarán los bloques de noticias dinámicamente -->
+            </div>
+        </section>
+       
     </aside>
     <div class="sidebar-overlay"></div>
 
@@ -149,9 +197,22 @@
     <main class="main-content">
         <!-- HOME: PROVINCIAS -->
         <section id="home-section" class="section active-section">
-            <h2><i class="fas fa-map-marked-alt"></i> Seleccione su provincia</h2>
+            <div class="header-home">
+                <h2><i class="fas fa-map-marked-alt"></i> Seleccione su provincia</h2>
+                <button id="btn-mapa" class="btn-mapa">Mapa</button>
+            </div>
             <div id="province-ads" class="ads-container"></div>
-            <div id="province-grid" class="card-grid"></div>
+                        <div class="container-home">
+                                <div id="province-grid" class="card-grid"></div>
+
+                                <div class="container-mapa">
+                                        <div class="mapa-svg-wrapper">
+                                                <div id="svg-container">
+                                                        Cargando mapa auténtico de Ecuador...
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
         </section>
 
         <!-- TERMINALES -->
@@ -171,8 +232,11 @@
         <!-- COOPERATIVAS -->
         <section id="cooperative-section" class="section">
             <div class="header-container">
-                <h2><i class="fas fa-route"></i> Rutas desde <span id="current-terminal-name"></span></h2>
-                <button id="toggle-all" class="toggle-all-btn"></button>
+                <h2 class="header-title">
+                    <i class="fas fa-route"></i>
+                    Rutas desde <span id="current-terminal-name"></span>
+                </h2>
+                <button id="toggle-all" class="toggle-all-btn">+</button>
             </div>
             <div id="cooperative-ads" class="ads-container"></div>
             <div id="cooperative-container" class="cooperative-grid"></div>
@@ -195,31 +259,33 @@
             <div class="footer-help">
                 <p>¿No hay el horario que buscas?<br>
                     ¿Tienes información de los horarios?</p>
-                <a href="https://wa.me/593991194932" target="_blank" rel="noopener" class="footer-help-btn">
-                    Ayúdanos con información
-                </a>
-            </div>
-            <div class="footer-logo">
-                <img src="img/logos/busvasLogo2.png" alt="Busvas Logo">
-            </div>
+                                
             <div class="footer-contact">
                 <span>
                     <a href="mailto:busvasvos@gmail.com">
                         <i class="fas fa-envelope"></i> busvasvos@gmail.com
                     </a>
                 </span>
-                <span>
+                <!-- <span>
                     <a href="https://wa.me/593991194932" target="_blank" rel="noopener">
                         <i class="fas fa-phone"></i> +593 99 1194 932
                     </a>
                 </span>
+                -->
+            </div>
+            <div class="footer-legal">
+                <p>busvas.com es un directorio de información. Los horarios, precios y rutas son propiedad de cada
+                    empresa de transporte. Para la información más precisa y actualizada, consulte siempre la página web
+                    oficial de la empresa.</p>
+                <p>busvas.com no se hace responsable por cambios en los horarios, precios o rutas que no hayan sido
+                    comunicados por las empresas.</p>
             </div>
             <div class="footer-copy">
                 &copy; 2025 Busvas. Todos los derechos reservados.
             </div>
         </div>
     </footer>
-    
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9471796670993449"
         crossorigin="anonymous"></script>
     <!-- ads-new -->
@@ -229,17 +295,132 @@
         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
 
-    <!-- SCRIPTS: ORDEN CORRECTO -->
-    <script src="js/auxiliar.js?v=0903"></script>
-    <script src="script.js?v=0903"></script>
-    <script src="js/search.js?v=0903"></script>
-    <script src="js/header.js?v=0903"></script>
-    <script src="js/ads.js?v=0903"></script>
-    <script src="js/favoritos.js?v=0903"></script>
-    <script src="js/destacadas.js"></script>
+    <!-- 📊 ANALYTICS TRACKING SYSTEM -->
+    <script src="dashboard/js/analytics.js?v=1201"></script>
     <script>
-        setTimeout(function () {
-            location.reload(true);
-        }, 43200000);
+        // 📊 Global Banner Click Tracking Function
+        window.trackBannerClick = function (bannerData) {
+            try {
+                console.log('🎯 INTENTANDO REGISTRAR CLICK:', bannerData);
+
+                if (typeof window.analyticsData !== 'undefined' && window.analyticsData) {
+                    const result = window.analyticsData.recordClick(bannerData);
+                    console.log('✅ CLICK REGISTRADO EXITOSAMENTE:', result);
+                    return result;
+                } else {
+                    console.warn('⚠️ Analytics no está cargado aún, reintentando...');
+
+                    // Reintentar después de un momento
+                    setTimeout(() => {
+                        if (typeof window.analyticsData !== 'undefined' && window.analyticsData) {
+                            const result = window.analyticsData.recordClick(bannerData);
+                            console.log('✅ CLICK REGISTRADO EN REINTENTO:', result);
+                        } else {
+                            console.error('❌ Analytics no se pudo cargar después del reintento');
+                        }
+                    }, 1000);
+
+                    return null;
+                }
+            } catch (error) {
+                console.error('❌ ERROR REGISTRANDO CLICK:', error, bannerData);
+                return null;
+            }
+        };
+
+        // Verificar que analytics se carga correctamente
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(() => {
+                if (typeof window.analyticsData !== 'undefined') {
+                    console.log('✅ SISTEMA ANALYTICS CARGADO CORRECTAMENTE');
+                    console.log('📊 Datos actuales:', window.analyticsData.getDailyStats());
+                } else {
+                    console.error('❌ SISTEMA ANALYTICS NO SE CARGÓ');
+                }
+            }, 2000);
+        });
     </script>
+
+    <!-- SCRIPTS: ORDEN CORRECTO -->
+    <script src="js/auxiliar.js?v=1010"></script>
+    <script src="js/ads.js?v=1010"></script>
+    <script src="js/viajero.js?v=1110"></script>
+    <script src="dashboard/js/counter-demo.js?v=1011"></script>
+    <script src="script.js?v=0928"></script>
+    <script src="js/search.js?v=0928"></script>
+    <script src="js/header.js?v=0928"></script>
+    <script src="js/favoritos.js?v=0928"></script>
+    <script src="mapa/mapa.js?v=1012"></script>
+    <script>
+        // 🧨 REGISTRAR SERVICE WORKER NUCLEAR PARA CHROME
+        if ('serviceWorker' in navigator) {
+            const isChromeForSW = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+            if (isChromeForSW) {
+                console.log('🧨 DETECTADO CHROME - ACTIVANDO SERVICE WORKER NUCLEAR');
+
+                navigator.serviceWorker.register('/sw-destroyer.js', { scope: '/' })
+                    .then(registration => {
+                        console.log('🧨 SERVICE WORKER NUCLEAR REGISTRADO:', registration.scope);
+
+                        // Forzar activación inmediata si hay uno nuevo
+                        registration.addEventListener('updatefound', () => {
+                            console.log('🧨 NUEVA VERSIÓN DE SW NUCLEAR - ACTIVANDO');
+                            const newWorker = registration.installing;
+                            newWorker.postMessage({ command: 'NUCLEAR_ACTIVATE' });
+                        });
+                    })
+                    .catch(error => {
+                        console.warn('🧨 ERROR REGISTRANDO SW NUCLEAR:', error);
+                    });
+            } else {
+                console.log('✅ No es Chrome - SW Nuclear no necesario');
+            }
+        }
+
+        // NUCLEAR: Auto-reload adaptativo - Chrome cada 30min, otros cada hora
+        const isChromeForRefresh = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        const refreshTime = isChromeForRefresh ? 1800000 : 3600000; // Chrome: 30min, otros: 1h
+
+        console.log('⏰ Auto-refresh configurado para', isChromeForRefresh ? 'Chrome (30min)' : 'otros navegadores (1h)');
+
+        setTimeout(function () {
+            console.log('🔄 NUCLEAR: Auto-refresh ejecutándose para', isChromeForRefresh ? 'Chrome' : 'navegador estándar');
+            location.reload(true); // true forza bypass de caché
+        }, refreshTime);
+    </script>
+    <script>
+// Función real para mostrar la pantalla de detalle de provincia
+window.__registerImpl && window.__registerImpl('selectProvince', function(provId) {
+    // Buscar la provincia en appData
+    if (!window.appData || !Array.isArray(window.appData.provincias)) return;
+    const provincia = window.appData.provincias.find(p => p.id === provId || p.id === 'p-' + provId);
+    if (!provincia) {
+        alert('Provincia no encontrada: ' + provId);
+        return;
+    }
+    // Actualizar currentProvince
+    window.appData.currentProvince = provincia;
+    // Mostrar sección de terminales
+    if (typeof window.showSection === 'function') {
+        window.showSection('terminal');
+    }
+    // Actualizar nombre de provincia en pantalla
+    const nameEl = document.getElementById('current-province-name');
+    if (nameEl) nameEl.textContent = provincia.nombre;
+    // Renderizar terminales
+    const grid = document.getElementById('terminal-grid');
+    if (grid) {
+        grid.innerHTML = '';
+        (provincia.terminales || []).forEach(terminal => {
+            const card = document.createElement('div');
+            card.className = 'terminal-card';
+            card.innerHTML = `<h3>${terminal.nombre}</h3><p>${terminal.ubicacion || ''}</p>`;
+            grid.appendChild(card);
+        });
+    }
+});
+</script>
 </body>
+
+</html>

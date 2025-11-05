@@ -1,133 +1,45 @@
-/* COOPERATIVAS DESTACADAS */
-#featured-section {
-  margin-top: 10rem;
-}
-
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.featured-card {
-  background: var(--white);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
-}
-
-.featured-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-}
-
-.featured-card-header {
-  background: var(--primary-light);
-  --text-dark: #ddd;
-  /* Texto claro */
-  padding: 1rem;
-  position: relative;
-}
-
-.featured-badge {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  background: var(--accent);
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-
-.featured-coop-info {
+/* ================== HOME HEADER ================== */
+.header-home {
   display: flex;
   align-items: center;
-  gap: 1rem;
-}
-
-.featured-coop-logo {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--white);
-}
-
-.featured-coop-info h3 {
-  margin-bottom: 0.3rem;
-  font-size: 1.1rem;
-  color: var(--white);
-}
-
-.featured-description {
-  color: var(--light);
-}
-
-.featured-routes {
-  padding: 1rem;
-}
-
-.featured-route {
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px dashed var(--gray-light);
-}
-
-.featured-route:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: none;
-}
-
-.route-direction {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.route-city {
-  font-weight: 600;
-}
-
-.route-arrow {
-  color: var(--gray);
-}
-
-.route-meta {
-  display: flex;
   justify-content: space-between;
-  font-size: 0.9rem;
-  color: var(--gray);
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
+.header-home h2 {
+  margin-bottom: 0;
+  color: white;
+  font-size: 1.5rem;
+  flex: 1 1 auto;
+}
 
+.btn-mapa {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  font-size: 1rem;
+  min-width: 60px;
+  min-height: 32px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
 
+.btn-mapa:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+}
 
-
-
-
-
-
-
-
-/* ESTILOS COMPLETOS - TERMINALES DE BUSES ECUADOR */
+.btn-mapa:active {
+  transform: scale(0.95);
+}
+/* ================== VARIABLES ================== */
 :root {
-  /* Colores
-  #2c3e50
-  #3d566e
-
-  3498db
-  5dade2
-
-  234f9e
-  e23c1b
-   */
   --primary: #234f9e;
   --primary-light: #3d5f9f;
+  --primary-dark: #19376f;
   --secondary: #e23c1b;
   --secondary-light: #e2573c;
   --accent: #e74c3c;
@@ -137,37 +49,17 @@
   --gray-light: #bdc3c7;
   --white: #fff;
   --black: #222;
-
-  /* Sombras */
+  --background: #f5f5f5;
+  --background-dark: #09152c;
+  --text: #333;
+  --text-dark: #ddd;
   --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.15);
   --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.2);
-
-  /* Transiciones */
-  --transition: all 0.3s ease;
-
-
-
-  --background: #f5f5f5;
-  /* Fondo claro */
-  --background-dark: #09152c;
-  /* Fondo oscuro */
-  --text: #333;
-  /* Texto oscuro */
-  --text-dark: #ddd;
-  /* Texto claro */
-  --primary: #234f9e;
-  /* Color principal */
-  --primary-dark: #19376f;
-  /* Color principal en modo oscuro */
-  --accent: #e74c3c;
-  /* Color de acento */
+  --transition: all 0.3s cubic-bezier(.4, 0, .2, 1);
 }
 
-
-
-
-/* RESET Y ESTILOS BASE */
+/* ================== RESET ================== */
 * {
   margin: 0;
   padding: 0;
@@ -182,18 +74,13 @@ body {
   min-height: 100vh;
 }
 
-
-
-
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-
-
-/* SECCIONES */
+/* ================== SECCIONES ================== */
 .section {
   display: block;
   animation: fadeIn 0.5s ease;
@@ -204,21 +91,17 @@ img {
   display: none;
 }
 
-.section:not(.active-section) .ads-container {
-  display: block !important;
-  /* Fuerza visibilidad de anuncios */
-}
-
 .section h2 {
   color: white;
-  /* Color principal */
   margin-bottom: 0rem;
   display: flex;
   align-items: center;
   gap: 0.2rem;
   font-size: 1.5rem;
 }
-.main-content{
+
+.main-content {
+  min-height: 800px;
   width: 90%;
   justify-content: center;
   margin: 0 auto;
@@ -226,7 +109,6 @@ img {
 
 h2.main-title {
   color: white;
-  /* Color principal */
   margin-bottom: 0rem;
   display: flex;
   align-items: center;
@@ -246,11 +128,7 @@ h2.main-title {
   }
 }
 
-
-
-
-
-/* CARDS DE PROVINCIAS (PRIMERA PANTALLA) */
+/* ================== CARDS DE PROVINCIAS ================== */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -275,61 +153,18 @@ h2.main-title {
 
 .card-img-container {
   height: 110px;
-  /* ajusta según tu diseño */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.card-rounded-container {
-  border-radius: 12px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  /* asegurar recorte al borde redondeado */
-  background: transparent;
-}
-
-/* Forzar que la imagen rellene el alto y, si es más ancha, recorte los lados (no se aplasta) */
-
-.card-rounded-container {
-  border-radius: 12px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  /* Allow the image to overflow so the animation can "pop out" */
-  overflow: visible;
-  /* cambio: antes estaba hidden */
-  background: transparent;
-}
-
-.card-img-rounded {
-  border-radius: 12px;
-  height: 100%;
-  display: block;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-  z-index: 10;
-  position: relative;
-  animation: cardImgBounce 3s infinite;
-  scale: 0.95;
-}
 
 .card-img {
   padding-bottom: 10px;
-
   height: 100%;
   object-fit: contain;
   transition: var(--transition);
   animation: cardImgBounce 3s infinite;
-  /* Agrega la animación personalizada */
   z-index: 10;
   position: relative;
   scale: 0.95;
@@ -340,37 +175,14 @@ h2.main-title {
   0%,
   100% {
     transform: scale(0.95) translateY(0);
-    filter: drop-shadow(0 4px 7px rgba(44, 79, 158, 0.1));
+    filter: drop-shadow(0 4px 7px rgba(0, 79, 158, 0.1));
   }
 
   40%,
   60% {
     transform: scale(1.05) translateY(-3px);
-    filter: drop-shadow(0 4px 7px rgba(44, 79, 158, 0.6));
+    filter: drop-shadow(0 4px 7px rgba(0, 79, 158, 0.6));
   }
-}
-
-/* Añade soporte para reducción de movimiento */
-@media (prefers-reduced-motion: reduce) {
-
-  .card-img,
-  .card-img-rounded {
-    animation: none;
-  }
-}
-
-/* Reduce duración en móviles */
-@media (max-width: 768px) {
-
-  .card-img,
-  .card-img-rounded {
-    animation-duration: 1.5s;
-  }
-}
-
-.card:hover .card-img {
-  transform: scale(1.05) translateY(-3px);
-  filter: drop-shadow(0 4px 8px rgba(44, 79, 158, 0.25));
 }
 
 .card-body {
@@ -390,20 +202,14 @@ h2.main-title {
   color: var(--gray);
 }
 
-
-
-/* SECCIÓN DE TERMINALES */
+/* ================== TERMINALES ================== */
 #terminal-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1.5rem;
 }
 
-
-
-
-
-/* SECCIÓN DE COOPERATIVAS - GRID RESPONSIVO */
+/* ================== COOPERATIVAS ================== */
 #cooperative-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -414,13 +220,11 @@ h2.main-title {
 
 .cooperative-card {
   position: relative;
-  /* Necesario para posicionar el gradiente */
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  /* Asegura que el contenido no desborde */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   padding: 0rem 0rem 0rem 0rem;
   display: flex;
@@ -433,7 +237,6 @@ h2.main-title {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Gradiente estático */
 .cooperative-card::after {
   content: '';
   position: absolute;
@@ -441,12 +244,9 @@ h2.main-title {
   left: 0;
   width: 100%;
   height: 50px;
-  /* Altura del gradiente */
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
   pointer-events: none;
-  /* Permite que el usuario interactúe con el contenido */
   z-index: 0;
-  /* Asegura que el gradiente esté sobre el contenido */
 }
 
 .cooperative-card.expanded,
@@ -454,235 +254,23 @@ h2.main-title {
   overflow: visible;
 }
 
-.coop-body {
-  position: relative;
-  /* ya tiene scroll, ahora posicionable */
-  z-index: 5;
-}
-
-/* bajar z-index del pseudo-elemento para que no bloquee clicks */
-.cooperative-card::after {
-  z-index: 0;
-}
-
-/* asegurar que contenido principal quede por encima del pseudo-elemento */
 .cooperative-card>* {
   position: relative;
   z-index: 1;
 }
 
-/* 4) hacer la regla de mostrar panel más tolerante (hermano general en vez de inmediato) */
-.coop-header[aria-expanded="true"]~.coop-body,
-.coop-body.open {
-  display: block;
-  max-height: 320px;
-}
-
-/* 5) soportar rotación del toggle cuando aria-expanded está en el header */
-.coop-header[aria-expanded="true"] .accordion-toggle,
-.accordion-toggle[aria-expanded="true"] {
-  transform: rotate(90deg);
-}
-
-/* MODALES */
-.modal-overlay {
-  position: absolute;
-  top: 100%;
-  /* Aparece justo debajo del ícono */
-  left: 50%;
-  /* Centrado horizontalmente */
-  transform: translateX(-50%);
-  width: 200px;
-  /* Ajusta según el diseño */
-  background: var(--white);
-  border: 1px solid var(--gray-light);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 1rem;
-  z-index: 10;
-  display: none;
-  /* Oculto por defecto */
-}
-
-.modal-overlay.active {
-  display: block;
-  /* Mostrar cuando esté activo */
-}
-
-.modal {
-  background: var(--white);
-  border-radius: 10px;
-  width: 90%;
-  max-width: 300px;
-  padding: 1rem;
-  box-shadow: var(--shadow-lg);
-  text-align: center;
-}
-
-.modal-overlay.active .modal {
-  transform: translateY(0);
-}
-
-.modal-header {
-  padding: 1.5rem;
-  border-bottom: 1px solid var(--light);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.modal-header h3 {
-  color: var(--text-dark);
-}
-
-.close-modal {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--text-dark);
-}
-
-.modal-body {
-  padding: 1.5rem;
-}
-
-/* TOOLTIPS */
-.tooltip {
-  position: absolute;
-  background: var(--primary);
-  color: var(--text-dark);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  pointer-events: none;
-  z-index: 10000;
-  opacity: 0;
-  transition: opacity 0.2s;
-  max-width: 250px;
-  box-shadow: var(--shadow-md);
-}
-
-.tooltip::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-}
-
-.tooltip.top::after {
-  bottom: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-top-color: var(--text-dark);
-}
-
-.tooltip.bottom::after {
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-bottom-color: var(--text-dark);
-}
-
-.tooltip.left::after {
-  right: -12px;
-  top: 50%;
-  transform: translateY(-50%);
-  border-left-color: var(--text-dark);
-}
-
-.tooltip.right::after {
-  left: -12px;
-  top: 50%;
-  transform: translateY(-50%);
-  border-right-color: var(--text-dark);
-}
-
-@media (max-width: 375px) {
-  .tooltip {
-    max-width: 200px;
-    font-size: 0.8rem;
-  }
-
-  .info-modal {
-    min-width: 180px;
-  }
-}
-
-#tooltip {
-  display: none;
-  position: absolute;
-  z-index: 1000;
-  background: #fff;
-  border: 1px solid #ccc;
-  padding: 5px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  max-width: 250px;
-  font-size: 0.9rem;
-}
-
-/* Estado abierto del acordeón */
-.coop-body.open {
-  display: block;
-}
-
-
-/* Botón de alternar */
-.accordion-toggle {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: var(--text-dark);
-  transition: transform 0.3s ease;
-  transform: rotate(0deg);
-}
-
-.accordion-toggle[aria-expanded="true"] {
-  transform: rotate(90deg);
-}
-
-/* Estilos para el acordeón */
-.coop-body {
-  display: none;
-  /* Cerrado por defecto */
-  max-height: 320px;
-  overflow-y: auto;
-  padding: 0 1rem;
-  transition: max-height 0.3s ease-out;
-}
-
-/* Mostrar cuando el header tiene aria-expanded="true" */
-.coop-header[aria-expanded="true"]+.coop-body {
-  display: block;
-  max-height: 320px;
-}
-
-/* Ocultar el cuerpo cuando está colapsado */
-[aria-expanded="false"]+.coop-body {
-  display: none;
-}
-
-
+/* ================== ACORDEÓN ================== */
 .coop-header {
   background: var(--primary);
   color: var(--text-dark);
-  /* Texto claro */
   padding: 0.5rem;
   display: flex;
   align-items: center;
   gap: 1rem;
-
-
-
   cursor: pointer;
   user-select: none;
 }
 
-
-/* Mantener el hover effect solo en el header */
 .coop-header:hover {
   background-color: var(--primary-dark);
 }
@@ -716,58 +304,183 @@ h2.main-title {
 .coop-rating-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* Esto separa izquierda y derecha */
   margin-top: 0.3rem;
   gap: 0.5rem;
 }
 
+/* Botón de alternar */
+.accordion-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text-dark);
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
+}
 
+.accordion-toggle[aria-expanded="true"] {
+  transform: rotate(90deg);
+}
 
+/* ACORDEÓN: transición slide-down real y scroll interno */
+.coop-body {
+  overflow-y: auto;
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  transition: max-height 0.5s cubic-bezier(.4, 0, .2, 1), opacity 0.5s cubic-bezier(.4, 0, .2, 1), padding 0.5s cubic-bezier(.4, 0, .2, 1);
+  display: block;
+  will-change: max-height, opacity, padding;
+}
 
+.coop-body.open {
+  max-height: 315px;
+  /* Ajusta según el contenido máximo esperado */
+  opacity: 1;
+  padding: 0.2rem 0.5rem;
+  transition: max-height 0.5s cubic-bezier(.4, 0, .2, 1), opacity 0.5s cubic-bezier(.4, 0, .2, 1), padding 0.5s cubic-bezier(.4, 0, .2, 1);
+  overflow-y: auto;
+}
 
-/* Mejora adicional para .info-icon */
-.info-icon {
+/* ================== MODAL INFO ================== */
+.info-container {
   position: relative;
-  margin-left: 8px;
-  color: var(--accent);
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px) scale(0.98);
+  transition: opacity 0.4s cubic-bezier(.4, 0, .2, 1), transform 0.4s cubic-bezier(.4, 0, .2, 1), height 0.4s cubic-bezier(.4, 0, .2, 1), margin 0.4s, padding 0.4s;
+  background: var(--white);
+  border: 1px solid var(--gray-light);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  box-shadow: var(--shadow-sm);
+  height: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  max-width: 100%;
+  width: auto;
+  overflow: hidden;
+}
+
+.info-container.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  height: auto;
+  margin: 0.5rem 1rem 0.5rem 1rem;
+  padding: 0.7rem 1rem;
+  overflow: visible;
+}
+
+/* Filas individuales del modal info */
+.info-row {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--light);
+  width: 100%;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-row i {
+  margin-right: 10px;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.info-row a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.info-row a:hover {
+  text-decoration: none;
+  color: var(--primary-dark);
+}
+
+.phone-display {
+  text-decoration: none !important;
+
+}
+
+.info-row.redes {
+  width: 100%;
+  justify-content: space-around;
+}
+
+.info-row.redes i {
+  color: var(--secondary);
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.info-row.redes i:hover {
+  color: var(--secondary-light);
+}
+
+/* ================== INFO BTN ================== */
+.info-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  display: flex;
+  scale: 1.5;
+  margin-right: 10px;
+}
+
+.info-icon {
+  margin-left: 0;
+  color: rgba(255, 255, 255, 0.455);
   cursor: pointer;
   font-size: 1.2em;
   vertical-align: middle;
-  display: inline-block;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(231, 76, 60, 0.1));  /* Gradiente sutil */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
   border-radius: 50%;
-  padding: 6px;
-  border: 2px solid var(--accent);
+  padding: 0;
+  border: none;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Animación de pulso mejorada */
+  box-shadow: none;
   animation: pulse 3s infinite ease-in-out;
 }
 
 .info-icon:hover {
-  background: linear-gradient(135deg, var(--accent), var(--secondary));  /* Gradiente en hover */
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
   color: var(--white);
-  transform: scale(1.15);  /* Escala mayor */
-  box-shadow: 0 6px 12px rgba(231, 76, 60, 0.4);  /* Glow rojo */
+  transform: scale(1.25);
+  box-shadow: 0 6px 12px rgba(231, 76, 60, 0.4);
 }
 
-.info-icon:active {
-  transform: scale(0.9);
-  box-shadow: 0 2px 6px rgba(231, 76, 60, 0.3);
-}
-
-/* Animación de pulso refinada */
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+
   50% {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(231, 76, 60, 0.2);
   }
 }
 
+/* ================== RUTAS ================== */
 .route {
   padding: 0.5rem 0;
   border-bottom: 1px solid #eee;
@@ -805,10 +518,8 @@ h2.main-title {
   background: var(--primary);
   color: var(--white);
   transform: scale(1.08);
-  box-shadow: 0 2px 8px rgba(44, 79, 158, 0.15);
 }
 
-/* Animación al hacer clic (efecto breve) */
 .time:active {
   background: var(--secondary);
   color: var(--white);
@@ -819,7 +530,6 @@ h2.main-title {
   background: var(--secondary);
   color: var(--white);
   transform: scale(0.95);
-  box-shadow: 0 2px 8px rgba(44, 79, 158, 0.15);
 }
 
 .route-price {
@@ -828,60 +538,21 @@ h2.main-title {
   color: var(--accent);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-.scroll-indicator {
-  text-align: center;
-  margin-top: 0.25rem;
-  animation: bounce 1.5s infinite;
-  opacity: 0.8;
+/* ================== TOOLTIP ================== */
+#tooltip {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  max-width: 250px;
+  font-size: 0.9rem;
 }
 
-.scroll-indicator i {
-  font-size: 1rem;
-  color: var(--gray);
-  transition: opacity 0.3s ease;
-}
-
-.scroll-indicator:hover i {
-  opacity: 1;
-}
-
-@keyframes bounce {
-
-  0%,
-  100% {
-    transform: translateY(0);
-    opacity: 0.8;
-  }
-
-  50% {
-    transform: translateY(-5px);
-    opacity: 1;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-/* ERROR */
+/* ================== ERROR ================== */
 .error {
   text-align: center;
   padding: 2rem;
@@ -894,13 +565,12 @@ h2.main-title {
   margin-bottom: 1rem;
 }
 
+/* ================== RESPONSIVE ================== */
 @media (max-width: 1024px) {
   #cooperative-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-
 
 @media (max-width: 768px) {
 
@@ -908,40 +578,34 @@ h2.main-title {
   #terminal-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    transition: 0.5s;
   }
 
   #cooperative-container {
     grid-template-columns: 1fr;
   }
 
-.main-content{
-  width: 100%;
-  justify-content: center;
-  margin: 0 auto;
-}
+  .main-content {
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto;
+  }
 
   .section h2 {
     font-size: 1rem;
   }
 
-
-
   .accordion-toggle {
     display: inline-block;
-    /* Mostrar el botón de acordeón */
   }
 
   #cooperative-section h2 {
     flex-wrap: wrap;
-    /* Permite que el botón baje si no hay espacio */
   }
 
   .toggle-all-btn {
     font-size: 0.9rem;
-    padding: 0.4rem 0.5rem;
+    padding: 0.4rem;
   }
-
 }
 
 @media (max-width: 375px) {
@@ -950,7 +614,6 @@ h2.main-title {
   #terminal-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    transition: 1s;
   }
 
   .card-body {
@@ -981,35 +644,18 @@ h2.main-title {
     height: 100%;
     object-fit: contain;
     transition: var(--transition);
-
   }
 
   .card-title {
     font-weight: 600;
     color: var(--primary);
     margin-bottom: 0.3rem;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .card-meta {
     font-size: 0.55rem;
     color: var(--gray);
-  }
-
-
-
-
-
-
-
-  .featured-description p {
-    text-align: center;
-  }
-
-
-
-  .section h2 {
-    font-size: 0.85rem;
   }
 
   .coop-header {
@@ -1028,16 +674,13 @@ h2.main-title {
     font-size: 1rem;
   }
 
-  .coop-body {
-    max-height: 280px;
-    /* Ajusta según el diseño */
-    overflow-y: auto;
-    /* Habilita el desplazamiento vertical */
-    padding-right: 0.2rem;
-    /* Espacio para evitar que el scroll tape el contenido */
+  .coop-body.open {
+    max-height: 250px;
   }
 
-
+  .coop-body {
+    max-height: 0;
+  }
 }
 
 @media (max-width: 320px) {
@@ -1048,80 +691,22 @@ h2.main-title {
     gap: 1rem;
   }
 
-
-
-
-  .featured-description p {
-    text-align: center;
-  }
-
-
-
   .section h2 {
     font-size: 0.75rem;
   }
 
-
+  .toggle-all-btn {
+    font-size: 0.7rem;
+    padding: 0.2rem;
+  }
 }
 
-/* Contenedor para el título y el botón */
-#cooperative-section h2 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.25rem;
-  /* Espaciado entre el título y el botón */
-  margin: 0;
-  /* Elimina márgenes adicionales */
-}
-
-
-
-
-/* Estilo del botón MOSTRAR TODAS */
+/* ================== BOTÓN MOSTRAR TODAS ================== */
 .toggle-all-btn {
   background-color: var(--primary);
   color: var(--white);
   border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.toggle-all-btn:hover {
-  background-color: var(--primary-dark);
-  transform: scale(1.05);
-}
-
-.toggle-all-btn:active {
-  transform: scale(0.95);
-}
-
-
-
-
-/* Contenedor para el título y el botón */
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  /* Espaciado entre el título y el botón */
-  margin-bottom: 1rem;
-  /* Espaciado inferior para separar del contenido */
-}
-
-
-
-/* Estilo general para el botón "MOSTRAR TODAS" */
-.toggle-all-btn {
-  background-color: var(--primary);
-  color: var(--white);
-  border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   font-size: 1rem;
   font-weight: bold;
   border-radius: 5px;
@@ -1132,25 +717,16 @@ h2.main-title {
 .toggle-all-btn:hover {
   background-color: var(--primary-dark);
   transform: scale(1.05);
-  /* Efecto de hover */
 }
 
 .toggle-all-btn:active {
   transform: scale(0.95);
-  /* Efecto al hacer clic */
 }
 
-/* Ajustes para pantallas más pequeñas */
 @media (max-width: 767px) {
-  .header-container {
-    flex-wrap: wrap;
-    margin-bottom: 0.5rem;
-    /* Permite que el botón baje si no hay espacio */
-  }
-
   .toggle-all-btn {
     font-size: 0.9rem;
-    padding: 0.4rem 0.7rem;
+    padding: 0.4rem;
   }
 }
 
@@ -1161,118 +737,101 @@ h2.main-title {
   }
 }
 
-@media (max-width: 320px) {
-  .toggle-all-btn {
-    font-size: 0.7rem;
-    padding: 0.2rem;
-  }
+/* ================== OTROS ================== */
+#btn-home.inactive {
+  background-color: var(--gray-light) !important;
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
 }
 
-/* Nueva clase para el modal de información */
-.info-modal {
-  position: absolute;
-  top: 120%;
-  right: 0;
-  width: 100% !important;  /* Ocupa 100% del ancho de la carta padre */
-  min-width: auto;  /* Remueve min-width para permitir 100% */
-  background: var(--white);
-  color: var(--dark);
-  border: 1px solid var(--gray-light);
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
-  padding: 1rem;
-  z-index: 100001;
-  font-size: 0.95rem;
-  cursor: auto;
-}
-.info-modal a {
-  color: #234f9e;
-  text-decoration: underline;
-  word-break: break-all;
-}
-
-.info-modal p {
-  margin: 0.5em 0 0.2em 0;
-}
-
-@media (max-width: 768px) {
-  #tooltip {
-    max-width: 200px;
-    font-size: 0.8rem;
-  }
-}
-
-.info-container {
-  padding: 5px;
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-/* ========== MEJORAS PARA EL CONTENEDOR DE INFORMACIÓN ========== */
-
-/* Contenedor principal del modal de info */
-.info-container {
-  padding: 10px;
-  background: var(--white);
-  border: 1px solid var(--gray-light);
-  border-radius: 8px;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  box-shadow: var(--shadow-sm);
-  max-width: 300px;
-}
-
-/* Filas individuales */
-.info-row {
+/* ================== HEADER CONTAINER ================== */
+.header-container {
   display: flex;
   align-items: center;
-  margin: 8px 0;
-  padding: 5px 0;
-  border-bottom: 1px solid var(--light);
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  margin-bottom: 0.5rem;
   width: 100%;
 }
 
-.info-row:last-child {
-  border-bottom: none;
+.header-title {
+  display: inline-flex;
+  align-items: center;
+  font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+  margin-bottom: 0;
+  min-width: 0;
+  color: #fff;
+  white-space: nowrap !important;
+  overflow: hidden;
+  flex: 1 1 auto;
+  max-width: calc(100% - 40px);
+  /* Deja espacio para el botón */
 }
 
-/* Íconos generales */
-.info-row i {
-  margin-right: 10px;
-  font-size: 1.1rem;
+.toggle-all-btn {
   flex-shrink: 0;
+  min-width: 28px;
+  min-height: 28px;
+  width: 32px;
+  /* Ancho fijo para el cálculo */
+  font-size: 1.1rem;
+  padding: 0.2rem;
+  border-radius: 6px;
+  height: 32px;
+  align-self: center;
 }
 
-/* Teléfonos */
-.info-row a {
+/* Responsive: en pantallas muy pequeñas, permite que el texto se corte pero nunca baja el botón */
+@media (max-width: 500px) {
+
+  .header-container h2,
+  #current-terminal-name {
+    font-size: 0.80rem;
+  }
+
+  .toggle-all-btn {
+    font-size: 1rem;
+    padding: 0.1rem;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.verificado-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  margin-right: 0.7em;
+}
+
+.verificado-icon {
+  color: var(--secondary);
+  font-size: 1.1em;
+  vertical-align: middle;
+}
+
+.verificado-text {
+  color: white;
+  font-size: 0.8em;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.terminal-location {
+  margin-top: 0.3em;
+}
+
+.terminal-location a {
   color: var(--primary);
   text-decoration: none;
-  font-weight: 500;
+  font-size: 0.8em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2em;
 }
 
-.info-row a:hover {
-  text-decoration: underline;
-  color: var(--primary-dark);
+.location-icon {
+  color: var(--primary);
+  font-size: 1.1em;
+  vertical-align: middle;
 }
-
-/* Redes sociales: Ocupa todo el ancho, íconos con var(--secondary) */
-.info-row.redes {
-  width: 100%;  /* Ocupa todo el ancho de la carta */
-  justify-content: space-around;
-  /* Añade más propiedades si es necesario */
-}
-
-.info-row.redes i {
-  color: var(--secondary);  /* Color de íconos de redes */
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-}
-
-.info-row.redes i:hover {
-  color: var(--secondary-light);  /* Hover para íconos */
-}
-
-/* Si hay más reglas para redes, añádelas aquí */
