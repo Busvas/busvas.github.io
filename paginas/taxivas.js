@@ -52,34 +52,168 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // ========== CARGA DE TAXIVAS.JSON ==========
-    fetch('/paginas/taxivas.json')
-        .then(response => {
-            if (!response.ok) throw new Error('No se pudo cargar taxivas.json');
-            return response.json();
-        })
-        .then(data => {
-            window.taxivasData = data;
-            renderTaxivasAnuncio(data.anuncio);
-            renderTaxiEmpresas(data.empresas);
-        })
-        .catch(error => {
-            console.error('Error cargando taxivas.json:', error);
+  // ========== CARGAR TANTO TAXIVAS.JSON COMO ADS.JSON ==========
+  
+  // Primero cargar ads.json
+  async function loadTaxivasWithAds() {
+    try {
+      // Cargar ads.json primero
+      console.log('🚕 TaxiVas: Cargando ads.json...');
+      const adsResponse = await fetch('/ads.json?v=20241001', {
+        cache: 'no-store',
+        headers: {
+          'Cache-Control': 'no-cache'
+        }
+      });
+      
+      if (!adsResponse.ok) {
+        throw new Error('No se pudo cargar ads.json: ' + adsResponse.status);
+      }
+      
+      const adsData = await adsResponse.json();
+      window.adsData = adsData;
+      
+      console.log('🔍 DATOS CARGADOS ads.json completo:', adsData);
+      
+      // Crear índice por ID
+      window.adsById = {};
+      if (Array.isArray(adsData.ads)) {
+        adsData.ads.forEach(ad => {
+          if (ad && ad.id) {
+            window.adsById[ad.id] = ad;
+            console.log('🔍 Indexando anuncio:', ad.id, '→', ad);
+          }
         });
-
-    // Renderiza el anuncio en el contenedor correspondiente
-    function renderTaxivasAnuncio(anuncios) {
-        const container = document.getElementById('taxivas-ads');
-        if (!container || !anuncios) return;
-        const arr = Array.isArray(anuncios) ? anuncios : [anuncios];
-        container.innerHTML = arr.map(anuncio => `
-            <a href="${anuncio.link}" target="_blank">
-                <img src="${anuncio.imagen || '../img/anuncios/default.png'}" alt="Anuncio TaxiVAS"
-                     style="width:100%;max-width:400px;display:block;"
-                     onerror="this.onerror=null;this.src='../img/anuncios/default.png';">
-            </a>
-        `).join('');
+      }
+      
+      console.log('🚕 TaxiVas: ads.json cargado exitosamente');
+      console.log('🔍 window.adsData:', window.adsData);
+      console.log('🔍 window.adsById keys:', Object.keys(window.adsById));
+      console.log('🔍 Específicamente ad-conduespoch:', window.adsById['ad-conduespoch']);
+      
+      // Luego cargar taxivas.json
+      console.log('🚕 TaxiVas: Cargando taxivas.json...');
+      const taxivasResponse = await fetch('/paginas/taxivas.json?v=20241001');
+      if (!taxivasResponse.ok) throw new Error('No se pudo cargar taxivas.json');
+      const taxivasData = await taxivasResponse.json();
+      
+      window.taxivasData = taxivasData;
+      renderTaxiEmpresas(taxivasData.empresas);
+      
+      // Ahora renderizar anuncios
+      renderTaxivasAds();
+      
+    } catch (error) {
+      console.error('🚕 Error cargando datos TaxiVas:', error);
     }
+  }
+  
+  // Función para renderizar anuncios específicamente
+  function renderTaxivasAds() {
+    try {
+      console.log('🚕 TaxiVas: Renderizando anuncios...');
+      const container = document.getElementById('taxivas-ads');
+      if (!container) {
+        console.warn('🚕 Container #taxivas-ads no encontrado');
+        return;
+      }
+      
+      // Obtener anuncios del placement 'taxivas'
+      let items = [];
+      const adsData = window.adsData;
+      
+      console.log('🔍 DEBUG: adsData completo:', adsData);
+      console.log('🔍 DEBUG: adsData.placements:', adsData?.placements);
+      console.log('🔍 DEBUG: adsData.placements.taxivas:', adsData?.placements?.taxivas);
+      console.log('🔍 DEBUG: window.adsById:', window.adsById);
+      
+      if (adsData && adsData.placements && adsData.placements.taxivas) {
+        // Usar placement específico de taxivas
+        const taxivasIds = adsData.placements.taxivas;
+        console.log('🔍 DEBUG: taxivasIds array:', taxivasIds);
+        
+        items = taxivasIds.map(id => {
+          const ad = window.adsById?.[id];
+          console.log('🔍 DEBUG: Mapeando ID', id, '→', ad);
+          return ad;
+        }).filter(Boolean);
+        
+        console.log('🚕 Anuncios desde placement taxivas:', items.length, items);
+      } else if (adsData && adsData.placements && adsData.placements.home) {
+        // Fallback a home
+        const homeIds = adsData.placements.home;
+        console.log('🔍 DEBUG: homeIds array (fallback):', homeIds);
+        
+        items = homeIds.map(id => {
+          const ad = window.adsById?.[id];
+          console.log('🔍 DEBUG: Mapeando ID', id, '→', ad);
+          return ad;
+        }).filter(Boolean);
+        
+        console.log('🚕 Anuncios desde placement home (fallback):', items.length, items);
+      } else if (adsData && adsData.ads && adsData.ads.length > 0) {
+        // Fallback a primer anuncio
+        items = [adsData.ads[0]];
+        console.log('🚕 Usando primer anuncio como fallback:', items.length, items);
+      }
+      
+      if (!items || items.length === 0) {
+        console.error('� PROBLEMA: No hay anuncios para mostrar en TaxiVas');
+        console.error('🚨 items:', items);
+        console.error('🚨 adsData:', adsData);
+        console.error('🚨 placements.taxivas:', adsData?.placements?.taxivas);
+        console.error('🚨 window.adsById:', window.adsById);
+        
+        // Mostrar mensaje de error en lugar de anuncio
+        container.innerHTML = '<p style="color:#ff6b6b;text-align:center;padding:20px;border:2px dashed #ff6b6b;">❌ Error: No se pudo cargar el anuncio configurado</p>';
+        return;
+      }
+
+      console.log('✅ ÉXITO: Anuncios encontrados para renderizar:', items);
+
+      // NUCLEAR: Cache-busting para TaxiVAS
+      const timestamp = Date.now();
+      const isChrome = /Chrome/.test(navigator.userAgent);
+      
+      container.innerHTML = items.map((a, index) => {
+        console.log('🔍 Renderizando anuncio #' + index + ':', a);
+        console.log('🔍 a.imagen:', a.imagen);
+        console.log('🔍 a.link:', a.link);
+        console.log('🔍 a.id:', a.id);
+        
+        // 🎯 ARREGLAR: Convertir ruta absoluta a relativa para TaxiVas
+        let imgSrc = a.imagen || '../img/anuncios/default.png';
+        
+        // Si la imagen NO empieza con ../ (es ruta absoluta), convertirla
+        if (imgSrc && !imgSrc.startsWith('../') && !imgSrc.startsWith('http')) {
+          imgSrc = '../' + imgSrc;
+          console.log('🔧 CORRIGIENDO ruta para TaxiVas:', a.imagen, '→', imgSrc);
+        }
+        
+        if (!a.imagen) {
+          console.error('🚨 PROBLEMA: a.imagen es undefined para anuncio:', a);
+        }
+        
+        if (isChrome) {
+          imgSrc += (imgSrc.includes('?') ? '&' : '?') + 'taxivas=' + timestamp + '&chrome=1&nuclear=' + Math.random();
+        } else {
+          imgSrc += (imgSrc.includes('?') ? '&' : '?') + 't=' + timestamp + '&taxivas=1';
+        }
+        
+        return `<a href="${a.link||'#'}" target="_blank" rel="noopener"><img src="${imgSrc}" alt="Ad TaxiVAS" style="width:100%;max-width:400px;display:block;" onerror="this.onerror=null;this.src='../img/anuncios/default.png?nuclear=${Date.now()}';"></a>`;
+      }).join('');
+      
+      console.log('🚕 Anuncios renderizados exitosamente en #taxivas-ads');
+      
+    } catch (e) { 
+      console.error('🚕 Error renderizando anuncios:', e);
+    }
+  }
+  
+  // Inicializar carga
+  loadTaxivasWithAds();
+
+  // (anuncios ahora se sirven desde ads.json; ver bloque arriba)
 
     // == helpers para teléfonos / whatsapp ==
     const DEFAULT_COUNTRY = '593';
@@ -275,7 +409,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       // cargar JSON
-      fetch('/paginas/taxivas.json')
+      fetch('/paginas/taxivas.json?v=20241001')
         .then(r => r.ok ? r.json() : Promise.reject(r.statusText))
         .then(data => {
           const empresas = (data && data.empresas) ? data.empresas : [];

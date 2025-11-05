@@ -1,11 +1,4 @@
 {
-    "anuncio": [
-        {
-            "imagen": "img/anuncios/banner-ofi.png",
-            "link": "",
-            "red": "facebook"
-        }
-    ],
     "empresas": [
         {
             "id": "tx-latina",

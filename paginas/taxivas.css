@@ -8,6 +8,12 @@
     justify-items: center;
 }
 
+/* ========== CORRECCIÓN DEL HEADER PRINCIPAL ========== */
+/* Esta regla anula el 'space-between' y centra el logo en la página de taxis */
+header {
+    justify-content: center !important;
+}
+
 /* ========== CARTA DE TAXI (Unificada para consistencia) ========== */
 .taxi-card, .taxi-company-card {
     border: 1px solid #ddd;
@@ -21,6 +27,8 @@
 }
 
 /* ========== TAXI-HEADER (Mejorado: Flexible y sin mediaqueries específicas) ========== */
+/* Se elimina la regla .logo que usaba !important. Ya no es necesaria. */
+
 .taxi-header {
     display: flex;
     align-items: center;
@@ -35,12 +43,14 @@
 .taxi-logo {
     width: 80px;
     height: 80px;
-    object-fit: contain;
-    border-radius: 50% !important;
-    margin-right: 15px;
+    object-fit: cover; /* Cambiado a 'cover' para que la imagen llene el círculo */
+    border-radius: 50%; /* Asegura que sea un círculo */
+    border: 3px solid #fff; /* Añade un borde blanco para separar del fondo */
+    margin-right: 15px; /* Usa margin para espaciar, no padding */
     flex-shrink: 0;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-    max-width: 100%;
+    background-color: #fff; /* Fondo blanco por si la imagen tiene transparencias */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* Sombra mejorada */
+    /* Se eliminaron: padding-right, filter, max-width (innecesarios aquí) */
 }
 .taxi-logo-container{
     align-items: center;
@@ -52,6 +62,17 @@
     margin-left: 15px;
     flex: 1;
     min-width: 0;
+}
+
+#search-btn{
+    display: none;
+
+}
+.sidebar-toggle{
+    display: none !important;
+}
+.sidebar{
+    display: none;
 }
 
 /* ========== TAXI-TITLE y TAXI-NAME (Consolidados para evitar repeticiones) ========== */
